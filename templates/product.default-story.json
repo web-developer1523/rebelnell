@@ -1,0 +1,330 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "klaviyo_reviews_average_rating_UW9Hnk": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/average-rating/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "wishlist_plus_wishlist_pdp_button_9ime63": {
+          "type": "shopify://apps/wishlist-plus/blocks/wishlist-pdp-button/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
+          "settings": {
+            "swym_atw_button_icon": "heart",
+            "swym_atw_icon_thickness": 1.7,
+            "swym_atw_display_btn_text": false,
+            "swym_button_position": "add_to_cart_button_right",
+            "swym_atw_button_vertical_offset": 0,
+            "swym_atw_full_width": true,
+            "swym_atw_button_alignment": "center",
+            "swym_add_to_wishlist_color": "#c81688",
+            "swym_added_to_wishlist_color": "#222222",
+            "swym_button_text_color": "#ffffff",
+            "swym_atw_border_color": "#000000",
+            "swym_atw_border_thickness": 0,
+            "swym_atw_button_border_radius": 0,
+            "swym_enable_hover_customization": false,
+            "swym_hover_add_to_wishlist_color": "#000000",
+            "swym_hover_added_to_wishlist_color": "#222222",
+            "swym_hover_button_text_color": "#ffffff",
+            "swym_hover_atw_border_color": "#000000",
+            "swym_hover_atw_border_thickness": 0,
+            "swym_hover_atw_button_border_radius": 0,
+            "swym_custom_css": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "text_QUeJrM": {
+          "type": "text",
+          "name": "Delivery Date",
+          "settings": {
+            "text": "{{ product.metafields.custom.estimated_delivery_date.value }}"
+          }
+        },
+        "description_3KCJkV": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "tab_BqtARF": {
+          "type": "tab",
+          "settings": {
+            "title": "Product Details",
+            "content": "{{ product.metafields.custom[\"product-details\"] | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "tab_HdjWAq": {
+          "type": "tab",
+          "settings": {
+            "title": "Unique Story",
+            "content": "{{ product.metafields.custom.unique_story | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "tab_UxkVzT": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "title": "Free Shipping On Orders of $100+",
+            "content": "",
+            "page": "shipping"
+          }
+        },
+        "tab_ciANkK": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "title": "30-Day Returns",
+            "content": "",
+            "page": "30-day-returns"
+          }
+        },
+        "tab_93ngW8": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "title": "2 Year Warranty",
+            "content": "",
+            "page": "1-year-warranty"
+          }
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_average_rating_UW9Hnk",
+        "price",
+        "variant_picker",
+        "wishlist_plus_wishlist_pdp_button_9ime63",
+        "buy_buttons",
+        "text_QUeJrM",
+        "description_3KCJkV",
+        "tab_BqtARF",
+        "tab_HdjWAq",
+        "tab_UxkVzT",
+        "tab_ciANkK",
+        "tab_93ngW8"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": false,
+        "thumbnail_position": "below",
+        "thumbnail_height": "fixed",
+        "thumbnail_arrows": true,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "blocks": {
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
+        }
+      },
+      "block_order": [
+        "contact"
+      ],
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "text_columns_8wwk4Q": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_xVC3pk": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Hand_Made_In_Detroit.png",
+            "image_mask": "none",
+            "image_width": 160,
+            "title": "Handmade in Detroit",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_GX46kn": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Custom_Gifting_1.webp",
+            "image_mask": "none",
+            "image_width": 200,
+            "title": "Women-Owned Business",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_JQG8GP": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/1706895042943.jpg",
+            "image_mask": "none",
+            "image_width": 160,
+            "title": "Social Enterprise",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_xVC3pk",
+        "text_block_GX46kn",
+        "text_block_JQG8GP"
+      ],
+      "settings": {
+        "custom-css": "cst-text-col-section",
+        "title": "",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "Pairs Well With",
+        "related_count": 4,
+        "products_per_row": 4
+      }
+    },
+    "tabs_ykbXYK": {
+      "type": "tabs",
+      "blocks": {
+        "tab_dE8Bp3": {
+          "type": "tab",
+          "settings": {
+            "tab-btn": "Free shipping On Orders of $100+",
+            "tab-heading": "",
+            "tab-description": "<h3><strong>SHIPPING</strong></h3><p><strong>How/when will my order ship?</strong></p><p>All orders are shipped via USPS. We offer Standard, Expedited, Overnight, and International shipping options with tracking included. Free standard shipping is included on orders of $100 and over.</p><p>It is important to note that it will take 1-2 business days for us to process your order. If you order overnight shipping after 12pm on Friday, your overnight order should be delivered on Tuesday.</p><p><strong>Do you ship internationally?</strong></p><p>We do! When you find a piece you love simply add it to your cart and proceed to checkout. There will be an option to switch your address to an international address. The shipping and handling fee will also display while in the checkout process. Depending on where you're located, shipping could take up to three weeks. Please note that we are not responsible for any customs fees that may be incurred. </p><p></p>",
+            "page": ""
+          }
+        },
+        "tab_4wcbrJ": {
+          "type": "tab",
+          "settings": {
+            "tab-btn": "30 Day Returns",
+            "tab-heading": "",
+            "tab-description": "<h3>RETURNS</h3><p><strong>What is your return policy?</strong></p><p>Not digging the piece you purchased? We've got you! If you are unhappy with your item and would like to return it, please do so within 30 days from the original date of purchase. Items must be unworn and in their original condition in order to be eligible for return. Engraved, custom, and sale items are considered final sale and not eligible for return or exchange. </p><p>Eligible returns can be sent to us at 1948 Division St Suite #104 Detroit, MI 48207. Please be sure to include your name, order number, and a note letting us know you're interested in returning the item purchased. Returns will be processed within 5-7 business days from the time we receive your return. After we receive your item, a credit will be issued to the original method of payment and a return receipt will be sent to the email used during the original purchase. If the return was a gift, please shoot us an email at rebelnell@rebelnell.com to make other accommodations. At this time we do not offer free shipping on returns.</p><p>Eligible returns may also be returned at our Downtown Detroit store located at 1435 Farmer St Suite 126 Detroit, MI 48226 or our Division St location at 1948 Division St Suite #104 Detroit, MI 48207.</p><p><strong>What if I see something else I like better than the piece I purchased?</strong></p><p>See something you like better than what you received? No worries! Because each piece of Rebel Nell is unique, exchanges are a bit tricky as we sometimes cannot pull the piece you like better before another customer purchases the item. For this reason, we recommend purchasing the item you like better now and sending the original item back to us for a full refund. This way you will be guaranteed to receive the piece you love!</p>",
+            "page": ""
+          }
+        },
+        "tab_KAa7nT": {
+          "type": "tab",
+          "settings": {
+            "tab-btn": "2 Year Warranty",
+            "tab-heading": "",
+            "tab-description": "<p>At Rebel Nell, our jewelry is handmade by real people. That means that each and every piece has been created with intention and purpose by one of the amazing women we serve. Under our two year warranty, if we created a piece that is damaged or defective, we'll gladly fix it for you. The warranty does not cover issues from general wear and tear (like tarnishing and scratches), improper use, or any modifications from a third-party. </p><p>To initiate a repair, send us an email at rebelnell@rebelnell.com. Please be sure to include your name, order number, shipping address, and a brief description of the required repair.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_dE8Bp3",
+        "tab_4wcbrJ",
+        "tab_KAa7nT"
+      ],
+      "settings": {}
+    },
+    "171863023765d2cd69": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_reviews_product_reviews_cpKLrK": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/product-reviews/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_product_reviews_cpKLrK"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "more-products-vendor": {
+      "type": "more-products-vendor",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "more-products-collection": {
+      "type": "more-products-collection",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {}
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {
+        "color_scheme": "none"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "text_columns_8wwk4Q",
+    "recommendations",
+    "tabs_ykbXYK",
+    "171863023765d2cd69",
+    "more-products-vendor",
+    "more-products-collection",
+    "recently-viewed",
+    "collection-return"
+  ]
+}

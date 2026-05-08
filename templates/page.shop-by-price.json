@@ -1,0 +1,149 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_image_JiifY4": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_4NCFTj": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Gifting_Hub_meta_mobile.png",
+            "image_mobile": "shopify://shop_images/Gifting_Hub_meta_mobile.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_4NCFTj"
+      ],
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_WKkHdw": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wYHBiC": {
+          "type": "heading",
+          "settings": {
+            "title": "Gifts for Every Budget",
+            "heading_size": "h2"
+          }
+        },
+        "text_XbteEm": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Find one-of-a-kind Rebel Nell gifts at every price point. Handmade in Detroit from reclaimed materials that empower women and spark connection.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wYHBiC",
+        "text_XbteEm"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "text_columns_RUcpwE": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_cLiwNe": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Gifts_under_75_meta_cover.png",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "Under $75",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/gifts-under-76"
+          }
+        },
+        "text_block_PV6wpr": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Gifts_under_150_meta_cover.png",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "Under $150",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/gifts-under-151"
+          }
+        },
+        "text_block_RKqifg": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Gifts_under_200_meta_cover.png",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "Under $200",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/gift-under-200"
+          }
+        },
+        "text_block_nQciaW": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Gifts_200_meta_cover.png",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "$200+",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/gifts-200"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_cLiwNe",
+        "text_block_PV6wpr",
+        "text_block_RKqifg",
+        "text_block_nQciaW"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "custom-css": "",
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_image_JiifY4",
+    "rich_text_WKkHdw",
+    "text_columns_RUcpwE"
+  ]
+}

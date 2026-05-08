@@ -1,0 +1,130 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "17629217025d5f9a3f": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17629196982748273b": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "slideshow_8m9P83": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_RayKVN": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Own A Piece Of Detroit History</p>",
+            "title_size": 40,
+            "subheading": "Limited-edition jewelry made from repurposed Detroit history.",
+            "link": "shopify://pages/shop-by-story",
+            "link_text": "Shop Holiday Favorites",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/Fox_Theatre_Collaboration_Collection_Page_Meta_Field_Desktop.jpg",
+            "image_mobile": "shopify://shop_images/Fox_Theatre_Collaboration_Collection_Page_Meta_Field_Mobile.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_RayKVN"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slides.name",
+      "settings": {
+        "full_width": false,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collections_fQKQNN": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_4bFd88": {
+          "type": "collection",
+          "settings": {
+            "collection": "hudsons-collab",
+            "title": "Hudson's Collaboration"
+          }
+        },
+        "collection_bXFkby": {
+          "type": "collection",
+          "settings": {
+            "collection": "fox-theatre-collaboration-all",
+            "title": "Fox Theatre Collaboration"
+          }
+        },
+        "collection_GChWWa": {
+          "type": "collection",
+          "settings": {
+            "collection": "campus-story",
+            "title": ""
+          }
+        },
+        "collection_cKr4WN": {
+          "type": "collection",
+          "settings": {
+            "collection": "grand-hotel-collaboration",
+            "title": ""
+          }
+        },
+        "collection_9pm6Br": {
+          "type": "collection",
+          "settings": {
+            "collection": "detroit-lions-collection",
+            "title": "Detroit Lions Collaboration"
+          }
+        },
+        "collection_FAbarm": {
+          "type": "collection",
+          "settings": {
+            "collection": "comerica-park-dugout",
+            "title": "Comerica Park Collaboration"
+          }
+        }
+      },
+      "block_order": [
+        "collection_4bFd88",
+        "collection_bXFkby",
+        "collection_GChWWa",
+        "collection_cKr4WN",
+        "collection_9pm6Br",
+        "collection_FAbarm"
+      ],
+      "name": "t:sections.featured-collections.presets.collection_list.name",
+      "settings": {
+        "title": "Shop By Story",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "17629217025d5f9a3f",
+    "17629196982748273b",
+    "slideshow_8m9P83",
+    "main",
+    "featured_collections_fQKQNN"
+  ]
+}

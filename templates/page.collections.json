@@ -1,0 +1,171 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collections_AcdeyH": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_MxJnCc": {
+          "type": "collection",
+          "settings": {
+            "collection": "affirmation-collection",
+            "title": ""
+          }
+        },
+        "collection_84zQAd": {
+          "type": "collection",
+          "settings": {
+            "collection": "alluring-collection",
+            "title": ""
+          }
+        },
+        "collection_6fYmim": {
+          "type": "collection",
+          "settings": {
+            "collection": "birthstone-collection",
+            "title": ""
+          }
+        },
+        "collection_9wWDyX": {
+          "type": "collection",
+          "settings": {
+            "collection": "commanding-collection",
+            "title": ""
+          }
+        },
+        "collection_MpMrpn": {
+          "type": "collection",
+          "settings": {
+            "collection": "confident-collection",
+            "title": ""
+          }
+        },
+        "collection_xg3F6a": {
+          "type": "collection",
+          "settings": {
+            "collection": "conquering-collection",
+            "title": ""
+          }
+        },
+        "collection_DAHH9U": {
+          "type": "collection",
+          "settings": {
+            "collection": "detroit-necklaces",
+            "title": ""
+          }
+        },
+        "collection_hj3NaX": {
+          "type": "collection",
+          "settings": {
+            "collection": "everyday",
+            "title": ""
+          }
+        },
+        "collection_pqLwrW": {
+          "type": "collection",
+          "settings": {
+            "collection": "love",
+            "title": ""
+          }
+        },
+        "collection_FbAz8f": {
+          "type": "collection",
+          "settings": {
+            "collection": "power-all",
+            "title": ""
+          }
+        },
+        "collection_m9xdc8": {
+          "type": "collection",
+          "settings": {
+            "collection": "pride-collection",
+            "title": ""
+          }
+        },
+        "collection_FcxQVx": {
+          "type": "collection",
+          "settings": {
+            "collection": "protection-collection",
+            "title": ""
+          }
+        },
+        "collection_Uh8mXg": {
+          "type": "collection",
+          "settings": {
+            "collection": "sensual",
+            "title": ""
+          }
+        },
+        "collection_GWrTK6": {
+          "type": "collection",
+          "settings": {
+            "collection": "collection-signature",
+            "title": ""
+          }
+        },
+        "collection_gUdLFE": {
+          "type": "collection",
+          "settings": {
+            "collection": "sparkling-collection",
+            "title": "Sparkling"
+          }
+        },
+        "collection_HENzEG": {
+          "type": "collection",
+          "settings": {
+            "collection": "strong",
+            "title": ""
+          }
+        },
+        "collection_DKFGwH": {
+          "type": "collection",
+          "settings": {
+            "collection": "transforming-collection",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_MxJnCc",
+        "collection_84zQAd",
+        "collection_6fYmim",
+        "collection_9wWDyX",
+        "collection_MpMrpn",
+        "collection_xg3F6a",
+        "collection_DAHH9U",
+        "collection_hj3NaX",
+        "collection_pqLwrW",
+        "collection_FbAz8f",
+        "collection_m9xdc8",
+        "collection_FcxQVx",
+        "collection_Uh8mXg",
+        "collection_GWrTK6",
+        "collection_gUdLFE",
+        "collection_HENzEG",
+        "collection_DKFGwH"
+      ],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_collections_AcdeyH"
+  ]
+}

@@ -1,0 +1,11 @@
+{% assign collections = collections | slice: 0, 5 %}
+<div class="predictive-search-collections">
+  <h4>Browse Our Collections</h4>
+  <ul>
+    {% for collection in collections %}
+      <li>
+        <a href="{{ collection.url }}">{{ collection.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

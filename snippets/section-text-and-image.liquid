@@ -1,0 +1,158 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {boolean} divider - show divider
+   * @param {number} image_width - image width
+   * @param {object} image - image
+   * @param {object} image2 - image 2
+   * @param {string} image_mask - image mask
+   * @param {string} image2_mask - image 2 mask
+   * @param {boolean} lazyload_images - lazyload images
+   * @param {boolean} top_padding - top padding
+   * @param {boolean} bottom_padding - bottom padding
+   * @param {string} color_scheme - color scheme
+   * @param {string} heading_size - heading size
+   * @param {string} title - title
+   * @param {string} subtitle - subtitle
+   * @param {string} text - text
+   * @param {string} align_text - text alignment
+   * @param {string} button_label - button label
+   * @param {string} button_link - button link
+   * @param {string} layout - layout
+   */
+{% endcomment %}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+{%- liquid
+  assign image_width = image_width
+  assign overlap_images = true
+  if image == blank or image2 == blank
+    assign overlap_images = false
+  endif
+
+  if image == blank and image2 == blank
+    assign overlap_images = true
+    assign placeholder_images = true
+  endif
+-%}
+
+{% style %}
+  {% if top_padding == false %}
+    #shopify-section-{{ section.id }} .index-section { padding-top: 0 !important; }
+  {% endif %}
+  {% if bottom_padding == false %}
+    #shopify-section-{{ section.id }} .index-section { padding-bottom: 0 !important; }
+  {% endif %}
+{% endstyle %}
+
+<div class="index-section color-scheme-{{ color_scheme }}">
+  {%- if color_scheme != 'none' -%}
+    {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+  {%- endif -%}
+
+  <div class="page-width feature-row-wrapper feature-row--{{ image_width }}">
+    {%- capture image_layout -%}
+      <div class="feature-row__item feature-row__images{% if overlap_images %} feature-row__item--overlap-images{% endif %} {% if placeholder_images %}feature-row__item--placeholder-images{% endif %}">
+          {%- if image != blank -%}
+            <div class="feature-row__first-image">
+              {%- if button_label != blank and button_link != blank -%}<a href="{{ button_link }}">{%- endif -%}
+                <div class="image-wrap {% if image_mask != 'none' %}svg-mask svg-mask--{{ image_mask }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: image.aspect_ratio }}%;">
+                  {%- liquid
+                    if image2 == blank
+                      assign sizeVariable = image_width | append: 'vw'
+                      assign fallback = '100vw'
+                    else
+                      assign sizeVariable = 'calc(0.4 * 50vw)'
+                      assign fallback = '40vw'
+                    endif
+
+                    assign imageWidth = image_width | times: 1
+                    if imageWidth >= 50
+                      assign loading = lazyload_images
+                    else
+                      assign loading = true
+                    endif
+                  -%}
+                  {%- render 'image-element',
+                    img: image,
+                    widths: '180, 360, 540, 750, 900, 1080',
+                    loading: loading,
+                    sizeVariable: sizeVariable,
+                    fallback: fallback,
+                    classes: 'feature-row__image',
+                  -%}
+                </div>
+              {%- if button_label != blank and button_link != blank -%}</a>{%- endif -%}
+            </div>
+          {%- endif -%}
+          {%- if image2 != blank -%}
+            <div class="feature-row__second-image">
+              {%- if button_label != blank and button_link != blank -%}<a href="{{ button_link }}">{%- endif -%}
+                <div class="image-wrap {% if image2_mask != 'none' %}svg-mask svg-mask--{{ image2_mask }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: image2.aspect_ratio }}%;">
+                  {%- liquid
+                    if image == blank
+                      assign sizeVariable = image_width | append: 'vw'
+                      assign fallback = '100vw'
+                    else
+                      assign sizeVariable = 'calc(0.6 * 50vw)'
+                      assign fallback = '60vw'
+                    endif
+                  -%}
+                  {%- render 'image-element',
+                    img: image2,
+                    widths: '180, 360, 540, 750, 900, 1080',
+                    sizeVariable: sizeVariable,
+                    fallback: fallback,
+                    classes: 'feature-row__image',
+                  -%}
+                </div>
+              {%- if button_label != blank and button_link != blank -%}</a>{%- endif -%}
+            </div>
+          {%- endif -%}
+          {%- if image == blank and image2 == blank -%}
+            <div class="placeholder-image-wrap">
+              <div class="image-wrap">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+            <div class="placeholder-image-wrap">
+              <div class="image-wrap">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+          {%- endif -%}
+      </div>
+    {%- endcapture -%}
+
+    <div class="feature-row">
+      {%- if layout == 'left' -%}
+        {{ image_layout }}
+      {%- endif -%}
+
+      <div class="feature-row__item feature-row__text feature-row__text--{{ layout }} text-{{ align_text }}">
+        {%- if subtitle != blank -%}
+          <p class="accent-subtitle">{{ subtitle }}</p>
+        {%- endif -%}
+        {%- if title != blank -%}
+          <h2 class="{{ heading_size }}">{{ title | escape }}</h2>
+        {%- endif -%}
+        {%- if text != blank -%}
+          <div class="rte featured-row__subtext">{{ text }}</div>
+        {%- endif -%}
+        {%- if button_label != blank -%}
+          <a href="{{ button_link }}" class="btn btn--{{ button_style }}">
+            {{ button_label }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- if layout == 'right' -%}
+        {{ image_layout }}
+      {%- endif -%}
+    </div>
+  </div>
+
+</div>
+
+{%- if divider -%}</div>{%- endif -%}

@@ -1,0 +1,150 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_AQPUA8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AiRcQm": {
+          "type": "heading",
+          "settings": {
+            "title": "Case Studies",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AiRcQm"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "slideshow_bVMJew": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_46jxiX": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/DETROIT_PISTONS_AND_ALLY_BANK_Case_Study.png",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_46jxiX"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slides.name",
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "slideshow_BfzmqH": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_GtrDt3": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/The_Kresge_Foundation_Case_Study_f6efaa47-0e5b-4f8c-a26c-7220ab5bb9e1.png",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_GtrDt3"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slides.name",
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "slideshow_dcAjjT": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_X9z9W3": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/Rocket_Mortgage_Classic_Case_Study.png",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_X9z9W3"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slides.name",
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_AQPUA8",
+    "slideshow_bVMJew",
+    "slideshow_BfzmqH",
+    "slideshow_dcAjjT"
+  ]
+}

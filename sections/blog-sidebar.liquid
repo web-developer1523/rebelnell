@@ -1,0 +1,134 @@
+{%- render 'section-blog-sidebar',
+    section: section,
+    blog: blog,
+    article: article,
+    section_blocks_size: section.blocks.size,
+    quick_add_enable: settings.quick_add_enable,
+    quick_shop_enable: settings.quick_shop_enable,
+    product_grid_image_size: settings.product_grid_image_size,
+    product_grid_image_fill: settings.product_grid_image_fill,
+    product_hover_image: settings.product_hover_image,
+    enable_swatches: settings.enable_swatches,
+    vendor_enable: settings.vendor_enable,
+    product_save_amount: settings.product_save_amount,
+    product_save_type: settings.product_save_type,
+    enable_product_reviews: settings.enable_product_reviews,
+    superscript_decimals: settings.superscript_decimals,
+    share_facebook: settings.share_facebook,
+    share_twitter: settings.share_twitter,
+    share_pinterest: settings.share_pinterest,
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.blog-sidebar.name",
+  "class": "blog-layout__sidebar",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.blog-sidebar.settings.content"
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "article",
+      "name": "t:sections.blog-sidebar.blocks.featured_article.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.blog-sidebar.blocks.featured_article.settings.title.label",
+          "default": "Popular posts"
+        },
+        {
+          "type": "article",
+          "id": "article",
+          "label": "t:sections.blog-sidebar.blocks.featured_article.settings.article.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_tags",
+          "label": "t:sections.blog-sidebar.blocks.featured_article.settings.blog_show_tags.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_date",
+          "label": "t:sections.blog-sidebar.blocks.featured_article.settings.blog_show_date.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_comments",
+          "label": "t:sections.blog-sidebar.blocks.featured_article.settings.blog_show_comments.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_author",
+          "label": "t:sections.blog-sidebar.blocks.featured_article.settings.blog_show_author.label"
+        },
+        {
+          "type": "select",
+          "id": "blog_image_size",
+          "label": "t:sections.blog-sidebar.blocks.featured_article.settings.blog_image_size.label",
+          "default": "wide",
+          "options": [
+            {
+              "value": "natural",
+              "label": "t:sections.blog-sidebar.blocks.featured_article.settings.blog_image_size.options.natural.label"
+            },
+            {
+              "value": "square",
+              "label": "t:sections.blog-sidebar.blocks.featured_article.settings.blog_image_size.options.square.label"
+            },
+            {
+              "value": "landscape",
+              "label": "t:sections.blog-sidebar.blocks.featured_article.settings.blog_image_size.options.landscape.label"
+            },
+            {
+              "value": "portrait",
+              "label": "t:sections.blog-sidebar.blocks.featured_article.settings.blog_image_size.options.portrait.label"
+            },
+            {
+              "value": "wide",
+              "label": "t:sections.blog-sidebar.blocks.featured_article.settings.blog_image_size.options.wide.label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tags",
+      "name": "t:sections.blog-sidebar.blocks.tags.name",
+      "limit": 1
+    },
+    {
+      "type": "product",
+      "name": "t:sections.blog-sidebar.blocks.featured_product.name",
+      "settings": [
+        {
+          "type": "product",
+          "id": "featured_product",
+          "label": "t:sections.blog-sidebar.blocks.featured_product.settings.featured_product.label"
+        }
+      ]
+    },
+    {
+      "type": "share",
+      "name": "t:sections.blog-sidebar.blocks.share_links.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.blog-sidebar.blocks.share_links.settings.content"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

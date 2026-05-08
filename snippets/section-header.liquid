@@ -1,0 +1,272 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {object} main_menu_link_list - main menu link list
+   * @param {string} logo_alignment - logo alignment (default: 'left')
+   * @param {string} nav_position - nav position (default: 'below')
+   * @param {string} main_menu_alignment - main menu alignment
+   * @param {boolean} overlay_header - overlay header (default: false)
+   * @param {object} collection - collection object
+   * @param {boolean} sticky_index - sticky index
+   * @param {boolean} sticky_collection - sticky collection
+   * @param {number} type_navigation_size - theme's navigation font size
+   * @param {boolean} type_navigation_capitalize - theme's capitalize navigation setting
+   * @param {string} color_header - header color
+   * @param {string} color_body_bg - body background color
+   * @param {string} type_navigation_style - theme's navigation style
+   * @param {boolean} header_sticky - sticky header
+   * @param {string} context - context (default: 'header')
+   * @param {boolean} disable_aria - disable aria (default: false)
+   * @param {boolean} mega_products - mega products
+   * @param {boolean} hover_menu - hover menu
+   * @param {boolean} header_footer_menu - header footer menu
+   * @param {boolean} quick_add_enable - whether quick add is enabled
+   * @param {boolean} quick_shop_enable - whether quick shop is enabled
+   * @param {string} product_grid_image_size - the image size to use for the grid item
+   * @param {boolean} product_grid_image_fill - whether the image should fill the grid item
+   * @param {boolean} product_hover_image - whether second image will be shown on hover
+   * @param {boolean} enable_swatches - whether swatches are enabled
+   * @param {boolean} vendor_enable - whether to show the vendor
+   * @param {boolean} product_save_amount - show save amount
+   * @param {string} product_save_type - dollar or percent
+   * @param {boolean} enable_product_reviews - whether to show product reviews
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   * @param {string} color_header_search - header search color
+   * @param {object} predictive_search_enabled - whether predictive search is enabled
+   * @param {string} text_direction - text direction
+   * @param {string} cart_icon - The icon to use for the cart
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- liquid
+  assign main_menu = linklists[main_menu_link_list]
+
+  if main_menu_alignment == 'left' or main_menu_alignment == 'left-center'
+    assign nav_position = 'beside'
+  endif
+
+  if main_menu_alignment == 'center'
+    assign logo_alignment = 'center'
+  endif
+
+  assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle
+
+  if template_name == 'index' and sticky_index
+    assign overlay_header = true
+  endif
+  if template_name contains 'collection' and collection.image and sticky_collection
+    assign overlay_header = true
+  endif
+
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+<style>
+  .site-nav__link {
+    font-size: {{ type_navigation_size }}px;
+  }
+  {% if type_navigation_capitalize %}
+    .site-nav__link {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+  {% endif %}
+
+  {% if mainmenu.length > 6 %}
+    .site-nav__link {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  {% endif %}
+
+  {%- if color_header == color_body_bg or color_body_bg contains color_header -%}
+    .site-header,
+    .site-header__element--sub {
+      box-shadow: 0 0 25px rgb(0 0 0 / 10%);
+    }
+
+    .is-light .site-header,
+    .is-light .site-header__element--sub {
+      box-shadow: none;
+    }
+  {%- endif -%}
+</style>
+
+<is-land {{ hydration }}>
+  <header-section data-section-id="{{ section.id }}" data-section-type="header">
+    <div id="HeaderWrapper" class="header-wrapper{% if overlay_header %} header-wrapper--overlay is-light{% endif %}">
+      <header
+        id="SiteHeader"
+        class="site-header{% if type_navigation_style == 'heading' %} site-header--heading-style{% endif %}"
+        data-sticky="{{ header_sticky }}"
+        data-overlay="{{ overlay_header }}">
+
+        <div class="site-header__element site-header__element--top">
+          <div class="page-width">
+            <div class="header-layout" data-layout="{{ main_menu_alignment }}" data-nav="{{ nav_position }}" data-logo-align="{{ logo_alignment }}">
+
+              {%- if nav_position == 'below' and logo_alignment == 'left' -%}
+                <div class="header-item header-item--compress-nav small--hide">
+                  <button type="button" class="site-nav__link site-nav__link--icon site-nav__compress-menu">
+                    {% render 'icon-hamburger' %}
+                    <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+                  </button>
+                </div>
+              {%- endif -%}
+
+              {%- if logo_alignment == 'left' -%}
+                <div class="header-item header-item--logo">
+                  {%- render 'header-logo-block', section: section -%}
+                </div>
+              {%- endif -%}
+
+              {%- if nav_position == 'below' -%}
+                <div class="header-item header-item--search small--hide">
+                  {%- if logo_alignment == 'center' -%}
+                    <button type="button" class="site-nav__link site-nav__link--icon site-nav__compress-menu">
+                      {% render 'icon-hamburger' %}
+                      <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+                    </button>
+                  {%- endif -%}
+
+                  {%- render 'predictive-search',
+                    color_header_search: color_header_search,
+                    context: context,
+                    predictive_search_enabled: predictive_search_enabled,
+                    routes: routes,
+                    search: search,
+                    hydration: hydration
+                  -%}
+                </div>
+              {%- endif -%}
+
+              {%- if nav_position == 'beside' -%}
+                <div class="header-item header-item--navigation{% if main_menu_alignment == 'left-center' %} text-center{% endif %}" {% unless disable_aria %}role="navigation" aria-label="Primary"{% endunless %}>
+                  {%- render 'header-desktop-nav',
+                    main_menu: main_menu,
+                    nav_position: nav_position,
+                    show_mega_products: mega_products,
+                    hover_menu: hover_menu,
+                    quick_add_enable: quick_add_enable,
+                    quick_shop_enable: quick_shop_enable,
+                    product_grid_image_size: product_grid_image_size,
+                    product_grid_image_fill: product_grid_image_fill,
+                    product_hover_image: product_hover_image,
+                    enable_swatches: enable_swatches,
+                    vendor_enable: vendor_enable,
+                    product_save_amount: product_save_amount,
+                    product_save_type: product_save_type,
+                    enable_product_reviews: enable_product_reviews,
+                    superscript_decimals: superscript_decimals,
+                  -%}
+                </div>
+              {%- endif -%}
+
+              {%- if logo_alignment == 'center' -%}
+                <div class="header-item header-item--logo">
+                  {%- render 'header-logo-block', section: section -%}
+                </div>
+              {%- endif -%}
+
+              <div class="header-item header-item--icons">
+                {%- render 'header-icons',
+                  nav_position: nav_position,
+                  cart_icon: cart_icon
+                -%}
+              </div>
+            </div>
+          </div>
+
+          <div class="site-header__search-container">
+            <div class="page-width">
+              <div class="site-header__search">
+                {%- render 'predictive-search',
+                  color_header_search: color_header_search,
+                  context: context,
+                  predictive_search_enabled: predictive_search_enabled,
+                  routes: routes,
+                  search: search,
+                -%}
+                <button type="button" class="text-link site-header__search-btn site-header__search-btn--cancel">
+                  <span class="medium-up--hide">{% render 'icon-close' %}</span>
+                  <span class="small--hide">{{ 'general.search.cancel' | t }}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {%- if nav_position == 'below' -%}
+          <div class="site-header__element site-header__element--sub" data-type="nav">
+            <div class="page-width{% if logo_alignment == 'center' %} text-center{% endif %}" {% unless disable_aria %}role="navigation" aria-label="Primary"{% endunless %}>
+              {%- render 'header-desktop-nav',
+                main_menu: main_menu,
+                nav_position: nav_position,
+                show_mega_products: mega_products,
+                hover_menu: hover_menu,
+                quick_add_enable: quick_add_enable,
+                quick_shop_enable: quick_shop_enable,
+                product_grid_image_size: product_grid_image_size,
+                product_grid_image_fill: product_grid_image_fill,
+                product_hover_image: product_hover_image,
+                enable_swatches: enable_swatches,
+                vendor_enable: vendor_enable,
+                product_save_amount: product_save_amount,
+                product_save_type: product_save_type,
+                enable_product_reviews: enable_product_reviews,
+                superscript_decimals: superscript_decimals
+              -%}
+            </div>
+          </div>
+
+          <div class="site-header__element site-header__element--sub" data-type="search">
+            <div class="page-width medium-up--hide">
+              {%- render 'predictive-search',
+                color_header_search: color_header_search,
+                context: context,
+                predictive_search_enabled: predictive_search_enabled,
+                routes: routes,
+                search: search,
+              -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+        <div class="page-width site-header__drawers">
+          <div class="site-header__drawers-container">
+            <div class="site-header__drawer site-header__cart" id="HeaderCart">
+              <div class="site-header__drawer-animate">
+                {%- render 'header-cart-drawer'
+                  cart_notes_enable: cart_notes_enable,
+                  cart_terms_conditions_enable: cart_terms_conditions_enable,
+                  cart_terms_conditions_page: cart_terms_conditions_page,
+                  cart_type: cart_type,
+                  cart_additional_buttons: cart_additional_buttons
+                -%}
+              </div>
+            </div>
+
+            <div class="site-header__drawer site-header__mobile-nav medium-up--hide" id="MobileNav">
+              <div class="site-header__drawer-animate">
+                {%- render 'header-mobile-nav',
+                  main_menu: main_menu,
+                  text_direction: text_direction
+                -%}
+                {%- if header_footer_menu -%}
+                  <div id="MobileNavFooter"></div>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </header-section>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-header';
+    </script>
+  </template>
+</is-land>

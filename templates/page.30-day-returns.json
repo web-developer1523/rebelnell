@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_UrfF8j": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8J4zi6": {
+          "type": "heading",
+          "settings": {
+            "title": "RETURNS",
+            "heading_size": "h2"
+          }
+        },
+        "text_pWHbdq": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>What is your return policy?</strong></p><p>Not digging the piece you purchased? We've got you! If you are unhappy with your item and would like to return it, please do so within 30 days from the original date of purchase. Items must be unworn and in their original condition in order to be eligible for return. Engraved, custom, and sale items are considered final sale and not eligible for return or exchange. </p><p>Eligible returns can be sent to us at 1948 Division St suite 104, Detroit, MI 48207. Please be sure to include your name, order number, and a note letting us know you're interested in returning the item purchased. Returns will be processed within 5-7 business days from the time we receive your return. After we receive your item, a credit will be issued to the original method of payment and a return receipt will be sent to the email used during the original purchase. If the return was a gift, please shoot us an email at rebelnell@rebelnell.com to make other accommodations. At this time we do not offer free shipping on returns.</p><p>Eligible returns may also be returned at our Downtown Detroit store located at 1435 Farmer St Suite 126 Detroit, MI 48226 or our Eastern Market location at 1948 Division St suite 104, Detroit, MI 48207.</p><p><strong>What if I see something else I like better than the piece I purchased?</strong></p><p>See something you like better than what you received? No worries! Because each piece of Rebel Nell is unique, exchanges are a bit tricky as we sometimes cannot pull the piece you like better before another customer purchases the item. For this reason, we recommend purchasing the item you like better now and sending the original item back to us for a full refund. This way you will be guaranteed to receive the piece you love!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8J4zi6",
+        "text_pWHbdq"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "left",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "rich_text_nhGczt": {
+      "type": "rich-text",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_UrfF8j",
+    "rich_text_nhGczt"
+  ]
+}

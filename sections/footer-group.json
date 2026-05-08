@@ -1,0 +1,165 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "blocks": {
+        "footer-promotions-0": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "1"
+          }
+        },
+        "footer-promotions-1": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "3"
+          }
+        },
+        "footer-promotions-2": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "2"
+          }
+        }
+      },
+      "block_order": [
+        "footer-promotions-0",
+        "footer-promotions-1",
+        "footer-promotions-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "hide_homepage": false,
+        "image_size": "square"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "contact_4UTPQJ": {
+          "type": "contact",
+          "settings": {
+            "phone": "",
+            "contact": "",
+            "chat": "",
+            "enable_social": true,
+            "footer_image": "shopify://shop_images/Rebel_Nell_-_Logo_Black_1.png",
+            "footer_image_link": "/",
+            "image_width": 150
+          }
+        },
+        "image_GyfJ44": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Rebel_Nell_-_Logo_Black_1.png",
+            "image_mask": "none",
+            "link": "/"
+          }
+        },
+        "footer-0": {
+          "type": "menu",
+          "settings": {
+            "title": "",
+            "menu": "footer-help",
+            "enable_account_link": false
+          }
+        },
+        "menu_CAWHah": {
+          "type": "menu",
+          "settings": {
+            "title": "Service",
+            "menu": "service-copy",
+            "enable_account_link": false
+          }
+        },
+        "menu_t8368w": {
+          "type": "menu",
+          "settings": {
+            "title": "Custom Account",
+            "menu": "customer-account-main-menu",
+            "enable_account_link": false
+          }
+        },
+        "newsletter_Q6zLLM": {
+          "type": "newsletter",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "subtext": "<p>Get styling tips, new arrival alerts, and exclusive offers - plus a free jewelry care guide when you subscribe!</p>",
+            "show_social": false
+          }
+        },
+        "image_XBABW6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-2_08130357-ce36-4965-99f5-b35f5dc57402.svg",
+            "image_mask": "none",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "contact_4UTPQJ",
+        "image_GyfJ44",
+        "footer-0",
+        "menu_CAWHah",
+        "menu_t8368w",
+        "newsletter_Q6zLLM",
+        "image_XBABW6"
+      ],
+      "custom_css": [
+        ".footer__block--mobile .footer__title {display: none;}",
+        ".icon {fill: rgb(200 22 136);}",
+        ".footer__social a {border-color: #c81688;}",
+        ".footer__social a:hover > .icon {fill: rgb(255 255 255);}",
+        ".footer__social a .icon:hover {fill: rgb(255 255 255);}",
+        ".footer__social a:hover {background-color: #c81688;}",
+        ".footer__social a {padding: 10px;}",
+        ".footer__social .icon {height: 15px; width: 15px;}",
+        ".input-group {flex-wrap: unset;}"
+      ],
+      "settings": {
+        "show_newsletter": true,
+        "newsletter_richtext": "<p>Subscribe today to hear first about our impact, offers and collaborations.</p>",
+        "footer_main_menu": true,
+        "show_copyright": true,
+        "copyright_text": "© 2025, Rebel Nell",
+        "policies_menu": ""
+      }
+    }
+  },
+  "order": [
+    "footer-promotions",
+    "footer"
+  ]
+}

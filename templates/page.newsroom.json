@@ -1,0 +1,481 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_UayGLC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gbAEAU": {
+          "type": "heading",
+          "settings": {
+            "title": "Newsroom",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gbAEAU"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "promo_grid_qFdXNC": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_f8J7Hj": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "CBS NEWS | Girl Scout Discover Detroit",
+            "textarea": "",
+            "cta_text1": "WATCH NOW",
+            "cta_link1": "https://drive.google.com/file/d/1ZM7a7D3YacvnmSeqcJp2CgNDeRCPo0_X/view",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/CBS_NEWS_Girl_Scout_Discover_Detroit.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_37B8xC": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Canvas Rebel",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://canvasrebel.com/meet-amy-peterson-2/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/CANVAS_REBEL.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_AXTRFn": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "The Next Destination",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://thenextdestination.com/episode/detroit-travel-guide/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Next_Destination.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_9tHVDU": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Bold Journey Magazine",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://boldjourney.com/news/meet-amy-peterson/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Bold_Journey.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_cfnUxK": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Detroit Free Press",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://www.freep.com/story/money/business/michigan/2023/06/28/rebel-nell-congregation-amy-peterson-detroit/70350934007/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Detroit_Free_Press.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_FLyeeE": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Detroitisit",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://detroitisit.com/working-to-make-the-world-a-better-place-a-empowered-street-corner-at-a-time/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Detroitisit.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_NxJBfh": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Hour Detroit",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://www.hourdetroit.com/fashion-topics/metro-detroit-jewelry-shops-with-show-stopping-pieces/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Hour_Detroit.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_xcyEeX": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Fast Company",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://www.fastcompany.com/90891766/how-rebel-nell-is-lifting-women-out-of-poverty-by-transforming-graffiti-into-jewelry?utm_source=newsletters&utm_medium=email&utm_campaign=FC%20-%20Compass%20Newsletter.Newsletter%20-%20FC%20-%20Compass%205-8-23&leadId=646887&mkt_tok=NjEwLUxFRS04NzIAAAGLmioB6J_AZRK1YhHzpW-dMRtC9Z586W2EM-FD0-ha0NU9iM4Hx2EqRK6QqBOztersDvhUnNK_qE9wU8KPUQQzJXkLwUk64FapnRxAabQ",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Fast_Company.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_n6cRLG": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Click On Detroit",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://www.clickondetroit.com/live-in-the-d/2023/05/02/this-small-business-makes-a-big-statement-when-it-comes-to-jewelry/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Click_on_Detroit.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_deV7EP": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Team Subkit ",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://www.collabs.io/mag/rebel-nell/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Team_Subkit.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_xy3Vyb": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "CBS Detroit",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://www.cbsnews.com/detroit/news/michigan-made-detroits-rebel-nell-empowers-women-while-preserving-history/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/CBS_News.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_nmWVfg": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Marie Claire",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://www.marieclaire.com/fashion/small-business-spotlight-rebel-nell/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Marie_Claire.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_RXBfz6": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "DBusiness",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://www.dbusiness.com/daily-news/dbusiness-daily-update-rebel-nell-jack-whites-third-man-records-create-accessory-collection-and-more/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/DBusiness.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_g7QXjy": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Canvas Rebel",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://canvasrebel.com/meet-amy-peterson/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Canvas_Rebel_2022.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_YRVWCk": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Detroit Free Press 2022",
+            "textarea": "",
+            "cta_text1": "READ NOW",
+            "cta_link1": "https://www.freep.com/story/news/local/michigan/detroit/2022/08/24/detroit-city-football-club-jewelry-gifts/10347789002/",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Detroit_Free_Press_2022.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_f8J7Hj",
+        "advanced_37B8xC",
+        "advanced_AXTRFn",
+        "advanced_9tHVDU",
+        "advanced_cfnUxK",
+        "advanced_FLyeeE",
+        "advanced_NxJBfh",
+        "advanced_xcyEeX",
+        "advanced_n6cRLG",
+        "advanced_deV7EP",
+        "advanced_xy3Vyb",
+        "advanced_nmWVfg",
+        "advanced_RXBfz6",
+        "advanced_g7QXjy",
+        "advanced_YRVWCk"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_pA7ccy": {
+      "type": "rich-text",
+      "blocks": {
+        "text_xRewHm": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://drive.google.com/file/d/1ZM7a7D3YacvnmSeqcJp2CgNDeRCPo0_X/view?usp=sharing\" target=\"_blank\" title=\"https://drive.google.com/file/d/1ZM7a7D3YacvnmSeqcJp2CgNDeRCPo0_X/view?usp=sharing\">CBS NEWS | Girl Scout Discover Detroit</a></h3>"
+          }
+        },
+        "text_bktY7H": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://canvasrebel.com/meet-amy-peterson-2/\" target=\"_blank\" title=\"https://canvasrebel.com/meet-amy-peterson-2/\">CANVAS REBEL</a></h3>"
+          }
+        },
+        "text_GX8f7r": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://thenextdestination.com/episode/detroit-travel-guide/\" target=\"_blank\" title=\"https://thenextdestination.com/episode/detroit-travel-guide/\">The Next Destination</a></h3>"
+          }
+        },
+        "text_rNRrJq": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://boldjourney.com/news/meet-amy-peterson/\" target=\"_blank\" title=\"https://boldjourney.com/news/meet-amy-peterson/\">BOLD JOURNEY MAGAZINE</a></h3>"
+          }
+        },
+        "text_kTn4Ea": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://www.freep.com/story/money/business/michigan/2023/06/28/rebel-nell-congregation-amy-peterson-detroit/70350934007/\" title=\"https://www.freep.com/story/money/business/michigan/2023/06/28/rebel-nell-congregation-amy-peterson-detroit/70350934007/\">Detroit Free Press</a></h3>"
+          }
+        },
+        "text_cPhwgE": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://detroitisit.com/working-to-make-the-world-a-better-place-a-empowered-street-corner-at-a-time/\" target=\"_blank\" title=\"https://detroitisit.com/working-to-make-the-world-a-better-place-a-empowered-street-corner-at-a-time/\">DETROITISIT</a></h3>"
+          }
+        },
+        "text_7nVmdY": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://www.hourdetroit.com/fashion-topics/metro-detroit-jewelry-shops-with-show-stopping-pieces/\" target=\"_blank\" title=\"https://www.hourdetroit.com/fashion-topics/metro-detroit-jewelry-shops-with-show-stopping-pieces/\">HOUR DETROIT MAGAZINE</a></h3>"
+          }
+        },
+        "text_TdUcQi": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://www.fastcompany.com/90891766/how-rebel-nell-is-lifting-women-out-of-poverty-by-transforming-graffiti-into-jewelry?utm_source=newsletters&utm_medium=email&utm_campaign=FC%20-%20Compass%20Newsletter.Newsletter%20-%20FC%20-%20Compass%205-8-23&leadId=646887&mkt_tok=NjEwLUxFRS04NzIAAAGLmioB6J_AZRK1YhHzpW-dMRtC9Z586W2EM-FD0-ha0NU9iM4Hx2EqRK6QqBOztersDvhUnNK_qE9wU8KPUQQzJXkLwUk64FapnRxAabQ\" target=\"_blank\" title=\"https://www.fastcompany.com/90891766/how-rebel-nell-is-lifting-women-out-of-poverty-by-transforming-graffiti-into-jewelry?utm_source=newsletters&utm_medium=email&utm_campaign=FC%20-%20Compass%20Newsletter.Newsletter%20-%20FC%20-%20Compass%205-8-23&leadId=646887&mkt_tok=NjEwLUxFRS04NzIAAAGLmioB6J_AZRK1YhHzpW-dMRtC9Z586W2EM-FD0-ha0NU9iM4Hx2EqRK6QqBOztersDvhUnNK_qE9wU8KPUQQzJXkLwUk64FapnRxAabQ\">FAST COMPANY</a></h3>"
+          }
+        },
+        "text_D3wbWi": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://www.clickondetroit.com/live-in-the-d/2023/05/02/this-small-business-makes-a-big-statement-when-it-comes-to-jewelry/\" target=\"_blank\" title=\"https://www.clickondetroit.com/live-in-the-d/2023/05/02/this-small-business-makes-a-big-statement-when-it-comes-to-jewelry/\">CLICK ON DETROIT</a></h3>"
+          }
+        },
+        "text_zEKQHL": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://gosolo.subkit.com/rebel-nell/\" target=\"_blank\" title=\"https://gosolo.subkit.com/rebel-nell/\">SUBKIT</a></h3>"
+          }
+        },
+        "text_qMf4rA": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://www.cbsnews.com/detroit/news/michigan-made-detroits-rebel-nell-empowers-women-while-preserving-history/\" target=\"_blank\" title=\"https://www.cbsnews.com/detroit/news/michigan-made-detroits-rebel-nell-empowers-women-while-preserving-history/\">CBS DETROIT</a></h3>"
+          }
+        },
+        "text_rPwP8A": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://www.marieclaire.com/fashion/small-business-spotlight-rebel-nell/\" target=\"_blank\" title=\"https://www.marieclaire.com/fashion/small-business-spotlight-rebel-nell/\">MARIE CLAIRE</a></h3>"
+          }
+        },
+        "text_jbiw77": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://www.dbusiness.com/daily-news/dbusiness-daily-update-rebel-nell-jack-whites-third-man-records-create-accessory-collection-and-more/\" target=\"_blank\" title=\"https://www.dbusiness.com/daily-news/dbusiness-daily-update-rebel-nell-jack-whites-third-man-records-create-accessory-collection-and-more/\">DBUSINESS</a></h3>"
+          }
+        },
+        "text_Gxt47A": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://canvasrebel.com/meet-amy-peterson/\" target=\"_blank\" title=\"https://canvasrebel.com/meet-amy-peterson/\">CANVASREBEL MAGAZINE</a></h3>"
+          }
+        },
+        "text_YB8KqP": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3><a href=\"https://www.freep.com/story/news/local/michigan/detroit/2022/08/24/detroit-city-football-club-jewelry-gifts/10347789002/\" target=\"_blank\" title=\"https://www.freep.com/story/news/local/michigan/detroit/2022/08/24/detroit-city-football-club-jewelry-gifts/10347789002/\">DETROIT FREE PRESS 2022</a></h3>"
+          }
+        }
+      },
+      "block_order": [
+        "text_xRewHm",
+        "text_bktY7H",
+        "text_GX8f7r",
+        "text_rNRrJq",
+        "text_kTn4Ea",
+        "text_cPhwgE",
+        "text_7nVmdY",
+        "text_TdUcQi",
+        "text_D3wbWi",
+        "text_zEKQHL",
+        "text_qMf4rA",
+        "text_rPwP8A",
+        "text_jbiw77",
+        "text_Gxt47A",
+        "text_YB8KqP"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h3 a {color: #c81688;}"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_UayGLC",
+    "promo_grid_qFdXNC",
+    "rich_text_pA7ccy"
+  ]
+}

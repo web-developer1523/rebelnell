@@ -1,0 +1,71 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {boolean} show_section - show section (default: true)
+   * @param {boolean} hide_homepage - hide on homepage
+   * @param {number} section_blocks_size - number of blocks in section
+   */
+{% endcomment %}
+
+{%- liquid
+  if template == 'index' and hide_homepage
+    assign show_section = false
+  endif -%
+-%}
+
+{%- if show_section -%}
+  {%- if section_blocks_size > 0 -%}
+    {%- liquid
+      assign grid_item_width = 'medium-up--one-half'
+      if section_blocks_size == 3
+        assign grid_item_width = 'medium-up--one-third'
+      endif
+    -%}
+
+    <div class="index-section">
+      <div class="section--divider">
+        <div class="page-width footer-promotions">
+          <div class="new-grid new-grid--center" data-view="3-1">
+            {%- for block in section.blocks -%}
+              <div class="grid-item {{ grid_item_width }}" {{ block.shopify_attributes }}>
+                <div class="footer-promotion color-scheme-{{ block.settings.color_scheme }}">
+                  {%- if block.settings.color_scheme != 'none' -%}
+                    {%- render 'color-scheme-texture', color_scheme: block.settings.color_scheme -%}
+                  {%- endif -%}
+                  {%- if block.settings.enable_image -%}
+                    <a href="{{ block.settings.button_link }}" class="footer__grid-image" aria-label="{{ block.settings.title }}">
+                      {%- if block.settings.image != blank -%}
+                        <div class="image-wrap {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;">
+                          {%- render 'image-element',
+                            img: block.settings.image,
+                            widths: '180, 360, 540, 720, 900, 1080',
+                            sizeVariable: 3
+                          -%}
+                        </div>
+                      {%- else -%}
+                        <div class="image-wrap {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}">
+                          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--no-padding' }}
+                        </div>
+                      {%- endif -%}
+                    </a>
+                  {%- endif -%}
+                  {%- if block.settings.title != blank -%}
+                    <h2 class="h3 rte--block">{{ block.settings.title }}</h2>
+                  {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <div class="rte-setting rte--block text-spacing">{{ block.settings.text }}</div>
+                  {%- endif -%}
+                  {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
+                    <a href="{{ block.settings.button_link }}" class="btn btn--secondary btn--small">
+                      {{ block.settings.button_label }}
+                    </a>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,390 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_image_JiifY4": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_4NCFTj": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/young_rebels.jpg",
+            "image_mobile": "shopify://shop_images/Young_Rebels_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_4NCFTj"
+      ],
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_LgPpjG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ccnJPt": {
+          "type": "heading",
+          "settings": {
+            "title": "Young Rebels",
+            "heading_size": "h1"
+          }
+        },
+        "text_WY8YBV": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Looking for fresh and fun <em>kids birthday party ideas in Detroit</em>? Celebrate your child with a one-of-a-kind experience at Rebel Nell! Each party is designed to spotlight your child’s personality and creativity. Kids create their own meaningful talisman and leave with a keepsake that celebrates what makes them unique. We provide the space, materials, and guidance — you bring the birthday energy! A party like no other, filled with self-expression and unforgettable memories.<br/><br/></p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ccnJPt",
+        "text_WY8YBV"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "rich_text_RJigEt": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_V6JVWF": {
+          "type": "heading",
+          "settings": {
+            "title": "Event Includes:",
+            "heading_size": "h2"
+          }
+        },
+        "text_apYiNW": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<ul><li>(1) Taylor bracelet per child (appropriate for all genders)</li><li>Empowerment activity - includes creating individual artwork.</li><li>Hosted onsite at our Eastern Market studio</li><li>Behind-the-scenes tour of Rebel Nell</li></ul><p>Packages start at $75 per person 10 person minimum</p><p>Suggested age is 6 - 18</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_V6JVWF",
+        "text_apYiNW"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "rich_text_mFH6tB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_WYTpFg": {
+          "type": "heading",
+          "settings": {
+            "title": "Book Your Party Today!",
+            "heading_size": "h2"
+          }
+        },
+        "button_F6TMBJ": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/young-rebels-experience",
+            "link_text": "BOOK NOW"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WYTpFg",
+        "button_F6TMBJ"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "rich_text_Mqhjw9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TWLdWk": {
+          "type": "heading",
+          "settings": {
+            "title": "A One-of-a-Kind Kids Birthday Party Experience in Detroit",
+            "heading_size": "h2"
+          }
+        },
+        "text_ehzBcG": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Looking for unique kids birthday party ideas in Detroit?</strong> Meet the ultimate celebration for the young rebels — a birthday party that honors individuality, creativity, and self-expression.This isn’t just a party. It’s a bold statement: You are one of a kind — and that’s worth celebrating.</p><p><strong>🎉 What Makes This Party So Different?</strong> Forget cookie-cutter themes. This experience is designed to spotlight what makes each child special. </p><p><strong>Here’s how: </strong>Empower Each Guest. Every child is recognized for who they are. Through thoughtful activities and guided reflection, each guest gets a moment to shine — no one fades into the background but the birthday guest is celebrated with honor.</p><p><strong>Craft a Personalized Gift</strong>: The crown jewel of the party: a hands-on creative session where each child designs their own unique talisman. Think of it as a wearable symbol of their superpowers — courage, kindness, creativity, you name it. It’s fun, meaningful, and something they’ll actually want to keep.</p><p><strong>Detroit-Based, Fun-filled and Creativity Packed, this experience is crafted for kids— and for parents who want a memorable birthday for their kids.</strong><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TWLdWk",
+        "text_ehzBcG"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "2",
+        "divider": false
+      }
+    },
+    "promo_grid_z8zQ8w": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_NjDXWW": {
+          "type": "advanced",
+          "settings": {
+            "custom_class_promo": "",
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/45_9563d4fa-e4e0-4ff1-a534-f48cc7dc61ea.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff",
+            "color_accent_hover": "#000000"
+          }
+        },
+        "advanced_9F7Hpy": {
+          "type": "advanced",
+          "settings": {
+            "custom_class_promo": "",
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/46_387289b8-3a9c-4f05-b3b9-9ec7ce6b691d.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff",
+            "color_accent_hover": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_NjDXWW",
+        "advanced_9F7Hpy"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 4,
+        "space_above": false,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    },
+    "text_and_image_8atzce": {
+      "type": "text-and-image",
+      "name": "t:sections.text-and-image.presets.image_with_text.name",
+      "settings": {
+        "image": "shopify://shop_images/Original_size_Website_Product_Images_a39290a8-4f83-4638-9c2e-a5409aec408b.jpg",
+        "image_mask": "none",
+        "image2": "shopify://shop_images/50_2d7b2d65-3413-4e1a-a279-4b767b8bd912.jpg",
+        "image2_mask": "none",
+        "subtitle": "A Gift that Continues",
+        "title": "Why Parents Love It",
+        "heading_size": "h2",
+        "text": "<p>It’s interactive and meaningful, not just entertaining.<br/><br/>It builds confidence and self-worth in every child.<br/><br/>It’s an unforgettable experience that kids talk about long after the candles are blown out and reminded when they wear their custom gift that they designed on their own.<br/><br/>Ideal for birthday parties ages 6–18</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "featured_video_yT6zhe": {
+      "type": "featured-video",
+      "name": "t:sections.featured-video.presets.video.name",
+      "settings": {
+        "title": "Unique Detroit Birthday Party for Kids",
+        "video_url": "https://youtu.be/crm4bcPfuOA",
+        "divider": false
+      }
+    },
+    "promo_grid_AjG4dF": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_NXKwJw": {
+          "type": "advanced",
+          "settings": {
+            "custom_class_promo": "",
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/47_c0b4df5a-8088-4e90-86cc-0f1ae2b5acd1.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff",
+            "color_accent_hover": "#000000"
+          }
+        },
+        "advanced_F3Jaen": {
+          "type": "advanced",
+          "settings": {
+            "custom_class_promo": "",
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/48_93cc0062-f1b4-4f08-af6a-1a45db78a856.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff",
+            "color_accent_hover": "#000000"
+          }
+        },
+        "advanced_dhzA6K": {
+          "type": "advanced",
+          "settings": {
+            "custom_class_promo": "",
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/49_822c29f5-888a-4d64-8681-06d7eda18082.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff",
+            "color_accent_hover": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_NXKwJw",
+        "advanced_F3Jaen",
+        "advanced_dhzA6K"
+      ],
+      "name": "t:sections.promo-grid.presets.promotional_grid.name",
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "lazyload_images": true
+      }
+    },
+    "testimonials_FJnDxE": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_EehqUE": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Both of my girls have hosted a Young Rebels birthday party and absolutely loved it. It is such a unique and special experience. </p>",
+            "image": "shopify://shop_images/Original_size_Website_Product_Images_1.jpg",
+            "author": "Megan G.",
+            "author_info": "Grosse Pointe, MI"
+          }
+        },
+        "testimonial_tAebNJ": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>We celebrated my daughter's 12 birthday at Rebel Nell and it was a blast! Everyone had a great time and the girls left feeling empowered. The mural they created now hangs in my daughter's room. </p>",
+            "image": "shopify://shop_images/Original_size_Website_Product_Images_2.jpg",
+            "author": "Jordana L.",
+            "author_info": "Bloomfield Hills, MI"
+          }
+        },
+        "testimonial_xMfUU4": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>I highly recommend this experience for any parent that is looking for a unique opportunity. We actually took our Girl Scout troop to Rebel Nell for this experience and it was amazing. It was beautiful see them empower one another and the jewelry is absolutely beautiful. 10 out of 10</p>",
+            "image": "shopify://shop_images/PXL_20240126_224631583.jpg",
+            "author": "Rosalinda G",
+            "author_info": "Detroit, MI"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_EehqUE",
+        "testimonial_tAebNJ",
+        "testimonial_xMfUU4"
+      ],
+      "name": "t:sections.testimonials.presets.testimonials.name",
+      "settings": {
+        "title": "From our customers",
+        "align_text": "center",
+        "round_images": true,
+        "color_scheme": "none"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_image_JiifY4",
+    "rich_text_LgPpjG",
+    "rich_text_RJigEt",
+    "rich_text_mFH6tB",
+    "rich_text_Mqhjw9",
+    "promo_grid_z8zQ8w",
+    "text_and_image_8atzce",
+    "featured_video_yT6zhe",
+    "promo_grid_AjG4dF",
+    "testimonials_FJnDxE"
+  ]
+}

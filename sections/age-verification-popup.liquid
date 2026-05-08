@@ -1,0 +1,127 @@
+{%- render 'section-age-verification-popup',
+    section: section,
+    image: section.settings.image,
+    color_scheme: section.settings.color_scheme,
+    enable_test_mode: section.settings.enable_test_mode,
+    blur_image: section.settings.blur_image,
+    heading: section.settings.heading,
+    text: section.settings.text,
+    decline_button_label: section.settings.decline_button_label,
+    approve_button_label: section.settings.approve_button_label,
+    decline_heading: section.settings.decline_heading,
+    decline_text: section.settings.decline_text,
+    return_button_label: section.settings.return_button_label,
+    hydration: 'on:idle'
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.age-verification-popup.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_test_mode",
+      "label": "t:sections.age-verification-popup.settings.enable_test_mode.label",
+      "info": "t:sections.age-verification-popup.settings.enable_test_mode.info",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:sections.age-verification-popup.settings.color_scheme.label",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.age-verification-popup.settings.color_scheme.options.none.label"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.age-verification-popup.settings.header_background_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.age-verification-popup.settings.image.label",
+      "info": "t:sections.age-verification-popup.settings.image.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "blur_image",
+      "label": "t:sections.age-verification-popup.settings.blur_image.label",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.age-verification-popup.settings.header_age_verification_question"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.age-verification-popup.settings.heading.label",
+      "default": "Confirm your age"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.age-verification-popup.settings.text.label",
+      "default": "<p>Are you 18 years old or older?</p>"
+    },
+    {
+      "type": "text",
+      "id": "decline_button_label",
+      "label": "t:sections.age-verification-popup.settings.decline_button_label.label",
+      "default": "No I'm not"
+    },
+    {
+      "type": "text",
+      "id": "approve_button_label",
+      "label": "t:sections.age-verification-popup.settings.approve_button_label.label",
+      "default": "Yes I am"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.age-verification-popup.settings.header_declined"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.age-verification-popup.settings.content"
+    },
+    {
+      "type": "text",
+      "id": "decline_heading",
+      "label": "t:sections.age-verification-popup.settings.decline_heading.label",
+      "default": "Come back when you're older"
+    },
+    {
+      "type": "richtext",
+      "id": "decline_text",
+      "label": "t:sections.age-verification-popup.settings.decline_text.label",
+      "default": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.</p>"
+    },
+    {
+      "type": "text",
+      "id": "return_button_label",
+      "label": "t:sections.age-verification-popup.settings.return_button_label.label",
+      "default": "Oops, I entered incorrectly"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header"]
+  }
+}
+{% endschema %}

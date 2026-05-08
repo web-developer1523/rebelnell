@@ -1,0 +1,141 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "list-collections-template",
+      "blocks": {
+        "collection_ecwFy7": {
+          "type": "collection",
+          "settings": {
+            "collection": "all"
+          }
+        },
+        "collection_igiq64": {
+          "type": "collection",
+          "settings": {
+            "collection": "necklaces"
+          }
+        },
+        "collection_XVfUEx": {
+          "type": "collection",
+          "settings": {
+            "collection": "bracelets"
+          }
+        },
+        "collection_wkFbGB": {
+          "type": "collection",
+          "settings": {
+            "collection": "earrings"
+          }
+        },
+        "collection_3PnPdp": {
+          "type": "collection",
+          "settings": {
+            "collection": "ring"
+          }
+        },
+        "collection_8fQpAp": {
+          "type": "collection",
+          "settings": {
+            "collection": "unisex"
+          }
+        },
+        "collection_gXPjJ4": {
+          "type": "collection",
+          "settings": {
+            "collection": "collection-kids"
+          }
+        },
+        "collection_mKxNkz": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-collection"
+          }
+        }
+      },
+      "block_order": [
+        "collection_ecwFy7",
+        "collection_igiq64",
+        "collection_XVfUEx",
+        "collection_wkFbGB",
+        "collection_3PnPdp",
+        "collection_8fQpAp",
+        "collection_gXPjJ4",
+        "collection_mKxNkz"
+      ],
+      "settings": {
+        "title_enable": false,
+        "display_type": "selected",
+        "sort": "alphabetical"
+      }
+    },
+    "logo-list": {
+      "type": "logo-list",
+      "blocks": {
+        "logo1": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo2": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo3": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo4": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo5": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo6": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo1",
+        "logo2",
+        "logo3",
+        "logo4",
+        "logo5",
+        "logo6"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Our brands",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "logo-list"
+  ]
+}

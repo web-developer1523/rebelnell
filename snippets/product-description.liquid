@@ -1,0 +1,23 @@
+{% comment %}
+  /**
+   * @param {object} product - product object
+   * @param {boolean} is_tab - whether to render as tab or not
+   * @param {string} id - tab id
+   */
+{% endcomment %}
+
+{% capture description %}
+  {%- if product.empty? -%}
+    {{ 'home_page.onboarding.product_description' | t }}
+  {%- else -%}
+    {{ product.description }}
+  {%- endif -%}
+{% endcapture %}
+{%- if is_tab -%}
+  {% assign title = 'products.product.description' | t %}
+  {%- render 'tab', id: id, title: title, content: description -%}
+{%- else -%}
+  <div class="rte">
+    {{ description }}
+  </div>
+{%- endif -%}

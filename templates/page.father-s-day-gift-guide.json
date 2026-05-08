@@ -1,0 +1,145 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_image_JiifY4": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_4NCFTj": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Father_s_Day_Gift_Guide_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_4NCFTj"
+      ],
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_LgPpjG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ccnJPt": {
+          "type": "heading",
+          "settings": {
+            "title": "Father's Day Gift Guide",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ccnJPt"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "featured_collections_QN7BVR": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_JAA6Y3": {
+          "type": "collection",
+          "settings": {
+            "collection": "antonio-cuff-links-square",
+            "title": "Cuff Links"
+          }
+        },
+        "collection_nCjt9N": {
+          "type": "collection",
+          "settings": {
+            "collection": "divot-tool",
+            "title": ""
+          }
+        },
+        "collection_eMMFta": {
+          "type": "collection",
+          "settings": {
+            "collection": "carl-bracelet",
+            "title": ""
+          }
+        },
+        "collection_WMDYD9": {
+          "type": "collection",
+          "settings": {
+            "collection": "jayson-dog-tag",
+            "title": ""
+          }
+        },
+        "collection_gd6rb8": {
+          "type": "collection",
+          "settings": {
+            "collection": "money-clip",
+            "title": ""
+          }
+        },
+        "collection_DyQVV3": {
+          "type": "collection",
+          "settings": {
+            "collection": "russell-tie-clips",
+            "title": ""
+          }
+        },
+        "collection_wj6BWV": {
+          "type": "collection",
+          "settings": {
+            "collection": "bottle-stopper",
+            "title": ""
+          }
+        },
+        "collection_FgVtmW": {
+          "type": "collection",
+          "settings": {
+            "collection": "design-your-own-jewelry",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_JAA6Y3",
+        "collection_nCjt9N",
+        "collection_eMMFta",
+        "collection_WMDYD9",
+        "collection_gd6rb8",
+        "collection_DyQVV3",
+        "collection_wj6BWV",
+        "collection_FgVtmW"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_image_JiifY4",
+    "rich_text_LgPpjG",
+    "featured_collections_QN7BVR"
+  ]
+}

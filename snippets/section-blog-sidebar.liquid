@@ -1,0 +1,101 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {object} blog - blog object
+   * @param {object} article - article object
+   * @param {number} section_blocks_size - number of blocks in the section
+   * @param {boolean} quick_add_enable - whether quick add is enabled
+   * @param {boolean} quick_shop_enable - whether quick shop is enabled
+   * @param {string} product_grid_image_size - the image size to use for the grid item
+   * @param {boolean} product_grid_image_fill - whether the image should fill the grid item
+   * @param {boolean} product_hover_image - whether second image will be shown on hover
+   * @param {boolean} enable_swatches - whether swatches are enabled
+   * @param {boolean} vendor_enable - whether to show the vendor
+   * @param {boolean} product_save_amount - show save amount
+   * @param {string} product_save_type - dollar or percent
+   * @param {boolean} enable_product_reviews - whether to show product reviews
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   * @param {boolean} share_facebook - whether to show facebook share button
+   * @param {boolean} share_twitter - whether to show twitter share button
+   * @param {boolean} share_pinterest - whether to show pinterest share button
+   */
+{% endcomment %}
+
+{%- if section_blocks_size == 0 -%}
+  <style>
+    .blog-layout__sidebar { display: none; }
+  </style>
+{%- endif -%}
+
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'article' -%}
+      {%- assign article_object = articles[block.settings.article] -%}
+      <div class="theme-block" {{ block.shopify_attributes }}>
+        {%- if block.settings.title != blank -%}
+          <h4>{{ block.settings.title }}</h4>
+        {%- endif -%}
+        {%- render 'article-grid-item',
+          blog: blog,
+          article: article_object,
+          style: 'compact',
+          show_tags: block.settings.blog_show_tags,
+          show_date: block.settings.blog_show_date,
+          show_comments: block.settings.blog_show_comments,
+          show_author: block.settings.blog_show_author,
+          image_size: block.settings.blog_image_size -%}
+      </div>
+    {%- when 'tags' -%}
+      {%- if blog.all_tags.size > 0 -%}
+        <div class="theme-block" {{ block.shopify_attributes }}>
+          <h4>{{ 'blogs.article.explore_more' | t }}</h4>
+          <ul class="no-bullets tag-list">
+            {%- for tag in blog.all_tags -%}
+              {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
+              <li class="tag tag--inline">
+                <a href="{{ blog.url }}/tagged/{{ tag.handle }}" class="article-tag">{{ tag }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    {%- when 'product' -%}
+      {%- assign product = all_products[block.settings.featured_product] -%}
+      {%- unless product.empty? -%}
+        <div class="theme-block" {{ block.shopify_attributes }}>
+          <h4>{{ 'blogs.article.featured_product' | t }}</h4>
+          {%- render 'product-grid-item',
+            product: product,
+            no_actions: true,
+            sizeVariable: '40vw',
+            collection: collection,
+            quick_add_enable: quick_add_enable,
+            quick_shop_enable: quick_shop_enable,
+            product_grid_image_size: product_grid_image_size,
+            product_grid_image_fill: product_grid_image_fill,
+            product_hover_image: product_hover_image,
+            enable_swatches: enable_swatches,
+            vendor_enable: vendor_enable,
+            product_save_amount: product_save_amount,
+            product_save_type: product_save_type,
+            enable_product_reviews: enable_product_reviews,
+            superscript_decimals: superscript_decimals
+          -%}
+        </div>
+      {%- endunless -%}
+    {%- when 'share' -%}
+      {%- if article -%}
+        <div class="theme-block" {{ block.shopify_attributes }}>
+          <h4>{{ 'general.social.share_this' | t }}</h4>
+          {%- render 'social-sharing',
+            share_facebook: share_facebook,
+            share_twitter: share_twitter,
+            share_pinterest: share_pinterest,
+            share_title: article.title,
+            share_permalink: article.url,
+            share_image: article.image
+          -%}
+        </div>
+      {%- endif -%}
+  {%- endcase -%}
+{%- endfor -%}

@@ -1,0 +1,52 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {string} color_scheme - color scheme
+   * @param {string} text - text to scroll
+   * @param {string} direction - direction to scroll
+   * @param {number} speed - speed to scroll
+   * @param {string} text_size - size of text
+   * @param {string} text_spacing - spacing between text
+   * @param {string} link - link to go to
+   * @param {string} color_button - color of button
+   * @param {string} color_button_text - color of button text
+   */
+{% endcomment %}
+
+<div class="color-scheme-{{ color_scheme }}">
+  {%- if color_scheme != 'none' -%}
+    {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+  {%- endif -%}
+
+  {% style %}
+    .scrolling-text--{{ section.id }} {
+      --move-speed: {{ speed }}s;
+    }
+
+    .scrolling-text--{{ section.id }} span {
+      font-size: {{ text_size }}px;
+    }
+
+    {% if color_scheme == 'button' %}
+      .scrolling-text--{{ section.id }} {
+        background: {{ color_button }};
+        color: {{ color_button_text }};
+      }
+    {% endif %}
+  {% endstyle %}
+
+  {% if link != blank %}
+    <a href="{{ link }}">
+  {% endif %}
+  <div class="scrolling-text scrolling-text--{{ section.id }}">
+    <div class="scrolling-text__inner scrolling-text__inner--{{ direction }}" aria-hidden="true" tabindex="0" style="gap: {% if text_spacing %}40px{% else %}10px{% endif %};">
+      {% for i in (1..35) %}
+        <span>{{ text }}</span>
+      {% endfor %}
+    </div>
+  </div>
+  {% if link != blank %}
+    </a>
+  {% endif %}
+
+</div>

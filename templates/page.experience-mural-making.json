@@ -1,0 +1,814 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1774987692d420f840": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_bc10dbc_TTj38B": {
+          "type": "ai_gen_block_bc10dbc",
+          "settings": {
+            "image": "shopify://shop_images/Website_Secondary_Hero_Images_2_b4c04d27-bb15-43c3-843c-3fd45e7f839b.jpg",
+            "background_color": "#000000",
+            "min_height": 600,
+            "min_height_mobile": 400,
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.5,
+            "heading": "Create Something Together. Remember It Forever.",
+            "subheading": "<p>Hands-on mural-making experiences for teams, brands, milestones and celebrations—transforming connection into something you can hold, wear, and remember.</p>",
+            "text_alignment": "center",
+            "content_max_width": 700,
+            "heading_size": 50,
+            "heading_color": "#ffffff",
+            "heading_letter_spacing": 1,
+            "heading_uppercase": true,
+            "heading_spacing": 15,
+            "subheading_size": 20,
+            "subheading_color": "#ffffff",
+            "button_spacing": 25,
+            "button_text": "",
+            "button_link": "",
+            "button_background": "#c81688",
+            "button_background_hover": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_text_color_hover": "#c81688",
+            "button_border_color": "#c81688",
+            "button_border_color_hover": "#ffffff",
+            "button_border_width": 2,
+            "button_font_size": 16,
+            "button_padding_vertical": 16,
+            "button_padding_horizontal": 40,
+            "button_border_radius": 0,
+            "button_letter_spacing": 2,
+            "button_uppercase": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_bc10dbc_TTj38B"
+      ],
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_LgPpjG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ccnJPt": {
+          "type": "heading",
+          "settings": {
+            "title": "Mural Making",
+            "heading_size": "h1"
+          }
+        },
+        "heading_XVgQBQ": {
+          "type": "heading",
+          "settings": {
+            "title": "Team Building That Actually Means Something",
+            "heading_size": "h2"
+          }
+        },
+        "text_WY8YBV": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>We don’t just preserve memories—we help create them. Interactive mural-making experiences for team building, corporate events, networking, and milestone celebrations—bringing people together through creativity, connection, and moments that last.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ccnJPt",
+        "heading_XVgQBQ",
+        "text_WY8YBV"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "177498848660fced2f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ccd7160_HPGegM": {
+          "type": "ai_gen_block_ccd7160",
+          "settings": {
+            "title": "How it works",
+            "subtitle": "Follow these simple steps to get started",
+            "header_spacing": 20,
+            "step_1_image": "shopify://shop_images/Website_Secondary_Hero_Images_3_8fcf12f5-44fa-410c-a6f6-a6346b0cdae7.jpg",
+            "step_1_title": "Engage & Create Together",
+            "step_1_text": "<p>We will create a customized mural experience for you. Your group collaborates on a hands-on mural experience designed to spark connection.</p>",
+            "step_2_image": "shopify://shop_images/Website_Secondary_Hero_Images_5_3b228f23-b9e0-4e0c-b556-21a8541d0cb8.jpg",
+            "step_2_title": "Reveal the Moment",
+            "step_2_text": "<p>At a key point in your event, the mural is unveiled—capturing the energy of the experience.</p>",
+            "step_3_image": "shopify://shop_images/Website_Secondary_Hero_Images_6_87189118-6560-4214-a074-5cd7fff57dca.jpg",
+            "step_3_title": "Preserve It (Optional)",
+            "step_3_text": "<p>Transform the mural into custom keepsakes so the moment lives on long after the event.</p>",
+            "max_width": 1200,
+            "section_padding": 25,
+            "grid_gap": 40,
+            "mobile_gap": 20,
+            "grid_spacing": 20,
+            "tablet_columns": "2",
+            "show_numbers": true,
+            "number_size": 50,
+            "number_font_size": 20,
+            "number_position": 16,
+            "number_bg_color": "#c81688",
+            "number_text_color": "#ffffff",
+            "image_aspect_ratio": "4/3",
+            "image_border_radius": 8,
+            "background_color": "#ffffff",
+            "title_color": "#000000",
+            "subtitle_color": "#666666",
+            "step_title_color": "#000000",
+            "step_text_color": "#666666",
+            "title_size": 36,
+            "subtitle_size": 16,
+            "step_title_size": 20,
+            "step_text_size": 15
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ccd7160_HPGegM"
+      ],
+      "settings": {}
+    },
+    "rich_text_FtPpwE": {
+      "type": "rich-text",
+      "blocks": {
+        "button_Dp8Dd4": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/rebel-nell-experinces-contact-us-form",
+            "link_text": "BOOK NOW"
+          }
+        }
+      },
+      "block_order": [
+        "button_Dp8Dd4"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "rich_text_RJigEt": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_V6JVWF": {
+          "type": "heading",
+          "settings": {
+            "title": "Event Includes:",
+            "heading_size": "h2"
+          }
+        },
+        "text_apYiNW": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Our Mural Making Experience includes a group mural, paint markers, easel, instructional signage (upon request), and display materials. The price varies depending on the size of the group. To put a perfect bow on this experience, custom gifts can be made from mural remnants and purchased at a group rate. Ask your host for more details about this additional opportunity.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_V6JVWF",
+        "text_apYiNW"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "3",
+        "divider": false
+      }
+    },
+    "text_columns_VxcKPF": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_wNnqUC": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Mural_Making_056369a7-9fbc-480d-be2e-4432cd0d4e2b.jpg",
+            "image_mask": "none",
+            "image_width": 120,
+            "title": "",
+            "text": "<p>Canvas mural with hidden message, delivered to your event location</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_JLNMXG": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Markers.jpg",
+            "image_mask": "none",
+            "image_width": 120,
+            "title": "",
+            "text": "<p>Custom color paint markers and easel</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_dUTwjX": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Instructions.jpg",
+            "image_mask": "none",
+            "image_width": 120,
+            "title": "",
+            "text": "<p>Instructional signage (optional)</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_cfYiML": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Facilitator.jpg",
+            "image_mask": "none",
+            "image_width": 120,
+            "title": "",
+            "text": "<p>Facilitator (optional)</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_wNnqUC",
+        "text_block_JLNMXG",
+        "text_block_dUTwjX",
+        "text_block_cfYiML"
+      ],
+      "settings": {
+        "custom-css": "",
+        "title": "",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "rich_text_mFH6tB": {
+      "type": "rich-text",
+      "blocks": {
+        "button_F6TMBJ": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/rebel-nell-experinces-contact-us-form",
+            "link_text": "BOOK NOW"
+          }
+        }
+      },
+      "block_order": [
+        "button_F6TMBJ"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "3",
+        "divider": false
+      }
+    },
+    "slideshow_split_9CmYTd": {
+      "type": "slideshow-split",
+      "blocks": {
+        "slide_kPtiC9": {
+          "type": "slide",
+          "settings": {
+            "custom_class_slide": "",
+            "top_subheading": "",
+            "title": "Team Building",
+            "title_size": 50,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "right",
+            "image": "shopify://shop_images/WEBSITE_TEMPLATES_Experiences_App_4_b30c7b8d-7328-4809-adbc-7b3361aed98f.png",
+            "indent_image": true,
+            "color_scheme": "2"
+          }
+        },
+        "slide_7RGtiy": {
+          "type": "slide",
+          "settings": {
+            "custom_class_slide": "",
+            "top_subheading": "",
+            "title": "Corporate Retreats",
+            "title_size": 60,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "right",
+            "image": "shopify://shop_images/mural_experience.png",
+            "indent_image": true,
+            "color_scheme": "2"
+          }
+        },
+        "slide_jrNeAA": {
+          "type": "slide",
+          "settings": {
+            "custom_class_slide": "",
+            "top_subheading": "",
+            "title": "Conferences",
+            "title_size": 60,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "right",
+            "image": "shopify://shop_images/NSK.jpg",
+            "indent_image": true,
+            "color_scheme": "2"
+          }
+        }
+      },
+      "block_order": [
+        "slide_kPtiC9",
+        "slide_7RGtiy",
+        "slide_jrNeAA"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "height": 510,
+        "height_mobile": 350,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "slideshow_split_fyTtxt": {
+      "type": "slideshow-split",
+      "blocks": {
+        "slide_7mJBqy": {
+          "type": "slide",
+          "settings": {
+            "custom_class_slide": "",
+            "top_subheading": "",
+            "title": "Group Outings",
+            "title_size": 60,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "right",
+            "image": "shopify://shop_images/WEBSITE_TEMPLATES_Experiences_App_9.png",
+            "indent_image": true,
+            "color_scheme": "none"
+          }
+        },
+        "slide_fLCrdP": {
+          "type": "slide",
+          "settings": {
+            "custom_class_slide": "",
+            "top_subheading": "",
+            "title": "Fundraiser",
+            "title_size": 50,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "right",
+            "image": "shopify://shop_images/WEBSITE_TEMPLATES_Experiences_App_8.png",
+            "indent_image": true,
+            "color_scheme": "none"
+          }
+        },
+        "slide_VMMMLg": {
+          "type": "slide",
+          "settings": {
+            "custom_class_slide": "",
+            "top_subheading": "",
+            "title": "Networking Events",
+            "title_size": 60,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "right",
+            "image": "shopify://shop_images/WEBSITE_TEMPLATES_Columns_Experiences_App_1000_x_700_px_2.jpg",
+            "indent_image": true,
+            "color_scheme": "none"
+          }
+        }
+      },
+      "block_order": [
+        "slide_7mJBqy",
+        "slide_fLCrdP",
+        "slide_VMMMLg"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "height": 510,
+        "height_mobile": 350,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "text_columns_zcXFCY": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_T9Byr4": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Comerica_Post_for_LinkedIN_30.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Networking Event",
+            "text": "<p>Tired of boring networking events. Make them interactive. Turn conversations into art with interactive murals that break the ice, encourage participation, and create a memorable networking experience.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_gWUwJ7": {
+          "type": "text_block",
+          "disabled": true,
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Linkedin_Post_Square_31.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Corporate Retreats",
+            "text": "<p>Whether in Detroit or elsewhere, we can elevate your corporate retreat with collaborative mural-making that inspires creativity, aligns teams, and transforms shared experiences into a lasting visual story.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_RbCtdV": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Linkedin_Post_Square_30.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Team Building",
+            "text": "<p>Bring your team together through collaborative mural-making that sparks creativity, strengthens connections, and builds a shared sense of purpose.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_T9Byr4",
+        "text_block_gWUwJ7",
+        "text_block_RbCtdV"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "custom-css": "",
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "1774968524b65c5e0e": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17749931496f7bf735": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f440877_PNj7e7": {
+          "type": "ai_gen_block_f440877",
+          "settings": {
+            "headline": "Large Scale Activations",
+            "text": "<p>From stadiums to conferences, no event is too big for this meaningful, memorable experience. It’s a powerful way to engage fans, connect sponsors with attendees, and create a standout photo backdrop while preserving memories in real time.</p>",
+            "text_alignment": "center",
+            "image_1": "shopify://shop_images/IMG_2424.jpg",
+            "image_2": "shopify://shop_images/IMG_2405.jpg",
+            "image_3": "shopify://shop_images/IMG_2432.jpg",
+            "desktop_width_percent": 100,
+            "image_gap": 20,
+            "mobile_image_width": 85,
+            "mobile_image_gap": 12,
+            "scrollbar_color": "#c81688",
+            "scrollbar_hover_color": "#a01270",
+            "section_padding": 4,
+            "headline_size": 26,
+            "text_size": 16,
+            "spacing_between_headline_text": 12,
+            "spacing_below_header": 20,
+            "image_border_radius": 0,
+            "headline_color": "#000000",
+            "text_color": "#000000"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f440877_PNj7e7"
+      ],
+      "settings": {}
+    },
+    "177497002123fbf6d0": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17749793607d1b2d36": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "rich_text_nR6NVW": {
+      "type": "rich-text",
+      "blocks": {
+        "button_6XHGYf": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/rebel-nell-experinces-contact-us-form",
+            "link_text": "BOOK NOW"
+          }
+        }
+      },
+      "block_order": [
+        "button_6XHGYf"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "3",
+        "divider": false
+      }
+    },
+    "1774979472c74a6d25": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "featured_video_MkHbYT": {
+      "type": "featured-video",
+      "settings": {
+        "title": "Watch - Mural-Making Video",
+        "video_url": "https://youtu.be/xxNIWaalSSw",
+        "divider": false
+      }
+    },
+    "1775000231d3ccc0e3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3831cc0_iLQpD8": {
+          "type": "ai_gen_block_3831cc0",
+          "settings": {
+            "heading": "Wall of Fame",
+            "heading_size": 36,
+            "heading_color": "#000000",
+            "desktop_width_percent": 100,
+            "background_color": "#ffffff",
+            "card_width": 280,
+            "card_spacing": 10,
+            "card_background": "#ffffff",
+            "card_border_radius": 12,
+            "name_size": 16,
+            "review_size": 14,
+            "text_color": "#000000",
+            "show_stars": true,
+            "star_color": "#c81688",
+            "button_color": "#c81688",
+            "button_hover_color": "#000000",
+            "button_text_color": "#ffffff",
+            "scrollbar_color": "#c81688",
+            "review_1_enabled": true,
+            "review_1_image": "shopify://shop_images/inforum.jpg",
+            "review_1_name": "Inforum 20th Anniversary",
+            "review_1_text": "One of my favorite elements of the evening was the Rebel Nell graffiti board! What a cool and creative way to capture everyone’s ideas and words of what Inforum means to them. - Mary G.",
+            "review_1_rating": 5,
+            "review_2_enabled": true,
+            "review_2_image": "shopify://shop_images/Troy.jpg",
+            "review_2_name": "Troy Chamber Networking",
+            "review_2_text": "The Rebel Nell mural-making experience brought our team together in such a meaningful way. It was amazing to see everyone collaborate and express themselves, and the final reveal was truly inspiring. Having the mural repurposed into keepsakes made the experience even more special and long-lasting. - Tara T.",
+            "review_2_rating": 5,
+            "review_3_enabled": true,
+            "review_3_image": "shopify://shop_images/PXL_20240308_014501340.jpg",
+            "review_3_name": "Ally Bank x Detroit Pistons",
+            "review_3_text": "We brought in Rebel Nell to create a fan experience for International Women’s Day at the Detroit Pistons. Hundreds of fans added their voices to the mural experience and what resulted was an amazing work of art. We turned the remnants into collectible pins which ensured the message kept living long after the game. For us at Ally, that’s impact you can measure in both numbers and smiles.- Andrea B.",
+            "review_3_rating": 5,
+            "review_4_enabled": true,
+            "review_4_image": "shopify://shop_images/IMG_3162_1.heic",
+            "review_4_name": "Independent Bank",
+            "review_4_text": "Partnering with Rebel Nell on the mural experience was a unique way to bring our employees and community members together... It was such a meaningful reminder that community is at the core of our business. We can’t recommend this experience enough! - Lane S.",
+            "review_4_rating": 5,
+            "review_5_enabled": true,
+            "review_5_image": "shopify://shop_images/IMG_3852_1.heic",
+            "review_5_name": "GBC Conference",
+            "review_5_text": "Rebel Nell’s mini mural activation was a delight at our conference experience. It brought creativity, humanity, and storytelling into a business setting. The engagement, energy, and conversation it sparked among leaders during our Global Business Banking summit was remarkable and everyone left with their own personal mural created from the reflections they had throughout the day.  A great way to remind them all year of the work we did at the event. We would absolutely partner with them again. - Sara P.",
+            "review_5_rating": 5,
+            "review_6_enabled": true,
+            "review_6_image": "shopify://shop_images/IMG_3059.heic",
+            "review_6_name": "Detroit Tigers",
+            "review_6_text": "Creating the mural together with the Detroit Tigers significant others was such a powerful way to connect — everyone brought their own touch, and together it told a bigger story about their love for the community and team. Designing our own jewelry gave us something personal to take home, but the real takeaway was the memories we made and the bonds we built through this enriching experience.",
+            "review_6_rating": 5,
+            "review_7_enabled": true,
+            "review_7_image": "shopify://shop_images/PXL_20260309_153554801.jpg",
+            "review_7_name": "ACES",
+            "review_7_text": "",
+            "review_7_rating": 5,
+            "review_8_enabled": false,
+            "review_8_image": "shopify://shop_images/Comerica_Post_for_LinkedIN_32.png",
+            "review_8_name": "Wedding Celebration",
+            "review_8_text": "",
+            "review_8_rating": 5,
+            "review_9_enabled": true,
+            "review_9_image": "shopify://shop_images/IMG_3670_1.jpg",
+            "review_9_name": "America Cancer Society",
+            "review_9_text": "",
+            "review_9_rating": 5,
+            "review_10_enabled": true,
+            "review_10_image": "shopify://shop_images/IMG_1933_1.jpg",
+            "review_10_name": "BasBlue",
+            "review_10_text": "",
+            "review_10_rating": 5
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_aca0487_y9HzKi": {
+          "type": "ai_gen_block_aca0487",
+          "settings": {
+            "title": "Frequently asked questions",
+            "desktop_width_percent": 70,
+            "section_padding": 0,
+            "faq_1_question": "Can we choose custom colors to match our brand?",
+            "faq_1_answer": "Yes. Every Rebel Nell mural-making experience is fully customizable to your brand, event theme, or company colors. Whether you're planning a corporate event, conference activation, or team building experience in Detroit, Grand Rapids, or nationwide, we design the mural to reflect your identity and message.",
+            "faq_2_question": "What do you mean by \"remnants\"? Do you take the mural apart or can we keep it?",
+            "faq_2_answer": "Great question — and one we get often. You always keep your mural. After your team building or corporate event experience, the mural is revealed as a complete piece that you can display in your office or space. If you choose, we can also transform portions of the mural into custom jewelry or keepsakes. These \"remnants\" allow your team or attendees to take a piece of the experience home — turning a shared moment into something you can hold, wear, and remember.",
+            "faq_3_question": "Is this a mural on a wall?",
+            "faq_3_answer": "No — this is not painted directly on a wall. Our mural-making experience is a mobile, self-contained installation designed for corporate events, conferences, and team building activities. It can be set up in your office, event venue, or conference space in Detroit, Grand Rapids, or anywhere in the U.S. or globally — with no permanent installation required.",
+            "faq_4_question": "What is the mural reveal?",
+            "faq_4_answer": "The mural reveal is one of the most powerful parts of the experience. Throughout the event, participants contribute to the mural without seeing the full picture. At a key moment, we remove the overlay to reveal the completed artwork — bringing together everyone's contributions into one unified piece. This creates a memorable, high-impact moment that's perfect for corporate events, conferences, and team building experiences.",
+            "faq_5_question": "Do participants really get to take something home?",
+            "faq_5_answer": "Yes — and this is what makes the experience truly unique. After your event, the mural is yours and will go home with you. Additionally, you can choose to transform the mural into custom keepsakes or jewelry, allowing each participant to take home a piece of the experience or ship it to you at a later date. It's a meaningful alternative to traditional corporate gifts and a powerful way to extend the impact of your event.",
+            "faq_6_question": "How long does the experience take?",
+            "faq_6_answer": "Most mural-making experiences range from 1 to 3 hours, making them easy to integrate into corporate events, conferences, networking events, and team building activities. We can customize timing based on your schedule and group size.",
+            "faq_7_question": "What does facilitation include?",
+            "faq_7_answer": "Our team fully facilitates the experience from start to finish. This includes setup, guidance during the activity, prompting participation, managing flow, and leading the mural reveal. Whether it's a corporate event, conference activation, or team building experience, we ensure everything runs smoothly so you can focus on your guests.",
+            "faq_8_question": "Can you come to our space or do we need to come to you?",
+            "faq_8_answer": "We do both. We can host your team building activity or corporate event at your office, conference venue, or event space in Detroit, Grand Rapids, or nationwide. We also offer experiences at our space in Eastern Market in Detroit for groups looking for an offsite location. The capacity in Eastern Market is 35. We also recommend the Congregation as another Detroit alternative location.",
+            "faq_9_question": "Do you offer team building activities near me?",
+            "faq_9_answer": "Yes. Rebel Nell provides mural-making experiences in Detroit, Grand Rapids, nationwide and globally. If you're searching for a team building activity near you, we can bring this experience directly to your office, venue, or event space.",
+            "faq_10_question": "Do you host corporate events in Detroit, Grand Rapids and Elsewhere?",
+            "faq_10_answer": "Yes. We regularly host corporate event experiences, team building activities, and conference activations in Detroit and Grand Rapids, and we also travel nationwide for events of all sizes.",
+            "faq_11_question": "Can you travel for conferences and corporate events across the U.S.?",
+            "faq_11_answer": "Absolutely. While we are based in Detroit and Grand Rapids, our team travels nationwide and globally to deliver mural-making experiences for conferences, corporate retreats, and large-scale activations.",
+            "faq_12_question": "What makes this different from other team building activities?",
+            "faq_12_answer": "Unlike traditional team building activities, this experience creates a lasting, physical outcome. Your team collaborates on a mural that is revealed in a powerful moment and can then be displayed or transformed into keepsakes — making it one of the most meaningful corporate event experiences available.",
+            "faq_13_question": "Is this a good option for corporate retreats or offsite team building?",
+            "faq_13_answer": "Yes. Our mural-making experience is a perfect fit for corporate retreats, offsite team building, and conference experiences in Detroit, Grand Rapids, or any destination. It creates a shared moment that strengthens connection, engagement, and memory.",
+            "title_size": 24,
+            "title_spacing": 15,
+            "title_alignment": "left",
+            "title_color": "#000000",
+            "question_size": 15,
+            "question_weight": "600",
+            "question_color": "#000000",
+            "question_hover_color": "#c81688",
+            "answer_size": 14,
+            "answer_color": "#000000",
+            "item_padding": 12,
+            "border_color": "#eef0f6",
+            "icon_color": "#000000"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3831cc0_iLQpD8",
+        "ai_gen_block_aca0487_y9HzKi"
+      ],
+      "settings": {}
+    },
+    "1774994169dd16c006": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9ea40ce_eXQ6jM": {
+          "type": "ai_gen_block_9ea40ce",
+          "disabled": true,
+          "settings": {
+            "heading": "Wall of Fame",
+            "heading_size": 36,
+            "heading_color": "#000000",
+            "heading_alignment": "center",
+            "heading_spacing": 30,
+            "item_width": 280,
+            "image_height": 200,
+            "gap": 20,
+            "animation_speed": 30,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "background_color": "#ffffff",
+            "card_background": "#ffffff",
+            "text_color": "#000000",
+            "star_color": "#c81688",
+            "border_radius": 8,
+            "image_border_radius": 4,
+            "card_padding": 15,
+            "name_size": 16,
+            "review_size": 14,
+            "image_1": "shopify://shop_images/inforum.jpg",
+            "name_1": "Inforum 20th Conference",
+            "rating_1": 5,
+            "review_1": "One of my favorite elements of the evening was the Rebel Nell graffiti board! What a cool and creative way to capture everyone’s ideas and words of what Inforum means to them. - Mary G.",
+            "image_2": "shopify://shop_images/Troy.jpg",
+            "name_2": "Troy Chamber Networking",
+            "rating_2": 5,
+            "review_2": "The Rebel Nell mural-making experience brought our team together in such a meaningful way. It was amazing to see everyone collaborate and express themselves, and the final reveal was truly inspiring. Having the mural repurposed into keepsakes made the experience even more special and long-lasting. - Tara T.",
+            "image_3": "shopify://shop_images/PXL_20240308_014501340.jpg",
+            "name_3": "Ally Bank x Detroit Pistons Game",
+            "rating_3": 5,
+            "review_3": "We brought in Rebel Nell to create a fan experience for International Women’s Day at the Detroit Pistons. Hundreds of fans added their voices to the mural experience and what resulted was an amazing work of art. We turned the remnants into collectible pins which ensured the message kept living long after the game. For us at Ally, that’s impact you can measure in both numbers and smiles.- Andrea B.",
+            "image_4": "shopify://shop_images/IMG_3162_1.heic",
+            "name_4": "Independent Bank",
+            "rating_4": 5,
+            "review_4": "Partnering with Rebel Nell on the mural experience was a unique way to bring our employees and community members together... It was such a meaningful reminder that community is at the core of our business. We can’t recommend this experience enough! - Lane S.",
+            "image_5": "shopify://shop_images/IMG_3852_1.heic",
+            "name_5": "GBC Conference",
+            "rating_5": 5,
+            "review_5": "Rebel Nell’s mini mural activation was a delight at our conference experience. It brought creativity, humanity, and storytelling into a business setting. The engagement, energy, and conversation it sparked among leaders during our Global Business Banking summit was remarkable and everyone left with their own personal mural created from the reflections they had throughout the day.  A great way to remind them all year of the work we did at the event. We would absolutely partner with them again. - Sara P.",
+            "image_6": "shopify://shop_images/IMG_3059.heic",
+            "name_6": "Detroit Tigers",
+            "rating_6": 5,
+            "review_6": "Creating the mural together with the Detroit Tigers significant others was such a powerful way to connect — everyone brought their own touch, and together it told a bigger story about their love for the community and team. Designing our own jewelry gave us something personal to take home, but the real takeaway was the memories we made and the bonds we built through this enriching experience.",
+            "image_7": "shopify://shop_images/PXL_20260309_153554801.jpg",
+            "name_7": "ACES",
+            "rating_7": 5,
+            "review_7": "",
+            "image_8": "shopify://shop_images/Linkedin_Post_Square_31.png",
+            "name_8": "MGM",
+            "rating_8": 5,
+            "review_8": "",
+            "image_9": "shopify://shop_images/IMG_3670_1.jpg",
+            "name_9": "American Cancer Society",
+            "rating_9": 5,
+            "review_9": "",
+            "image_10": "shopify://shop_images/Comerica_Post_for_LinkedIN_32.png",
+            "name_10": "Wedding",
+            "rating_10": 5,
+            "review_10": "Exceptional quality and beautiful design. Couldn't be happier!"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9ea40ce_eXQ6jM"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "1774987692d420f840",
+    "main",
+    "rich_text_LgPpjG",
+    "177498848660fced2f",
+    "rich_text_FtPpwE",
+    "rich_text_RJigEt",
+    "text_columns_VxcKPF",
+    "rich_text_mFH6tB",
+    "slideshow_split_9CmYTd",
+    "slideshow_split_fyTtxt",
+    "text_columns_zcXFCY",
+    "1774968524b65c5e0e",
+    "17749931496f7bf735",
+    "177497002123fbf6d0",
+    "17749793607d1b2d36",
+    "rich_text_nR6NVW",
+    "1774979472c74a6d25",
+    "featured_video_MkHbYT",
+    "1775000231d3ccc0e3",
+    "1774994169dd16c006"
+  ]
+}

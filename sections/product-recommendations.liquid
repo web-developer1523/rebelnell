@@ -1,0 +1,60 @@
+{% render 'section-product-recommendations',
+  section: section,
+  product_recommendations_heading: section.settings.product_recommendations_heading,
+  related_count: section.settings.related_count,
+  products_per_row: section.settings.products_per_row,
+  recommendations: recommendations,
+  product: product,
+  routes: routes,
+  quick_add_enable: settings.quick_add_enable,
+  quick_shop_enable: settings.quick_shop_enable,
+  product_grid_image_size: settings.product_grid_image_size,
+  product_grid_image_fill: settings.product_grid_image_fill,
+  product_hover_image: settings.product_hover_image,
+  enable_swatches: settings.enable_swatches,
+  vendor_enable: settings.vendor_enable,
+  product_save_amount: settings.product_save_amount,
+  product_save_type: settings.product_save_type,
+  enable_product_reviews: settings.enable_product_reviews,
+  superscript_decimals: settings.superscript_decimals,
+  hydration: 'on:visible'
+%}
+
+{% schema %}
+{
+  "name": "t:sections.product-recommendations.name",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.product-recommendations.settings.content"
+    },
+    {
+      "type": "text",
+      "id": "product_recommendations_heading",
+      "label": "t:sections.product-recommendations.settings.product_recommendations_heading.label",
+      "default": "You may also like"
+    },
+    {
+      "type": "range",
+      "id": "related_count",
+      "label": "t:sections.product-recommendations.settings.related_count.label",
+      "default": 6,
+      "min": 2,
+      "max": 6,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "t:sections.product-recommendations.settings.products_per_row.label",
+      "default": 3,
+      "min": 2,
+      "max": 5,
+      "step": 1
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

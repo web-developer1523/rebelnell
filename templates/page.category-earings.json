@@ -1,0 +1,163 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_fMFFVh": {
+      "type": "featured-collection",
+      "settings": {
+        "custom-class": "",
+        "title": "Featured Earrings",
+        "heading_size": "h3",
+        "heading_position": "left",
+        "home_featured_products": "earrings",
+        "count": 5,
+        "products_per_row": 5,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "featured_collections_wiNFEq": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_8mddpw": {
+          "type": "collection",
+          "settings": {
+            "collection": "earrings",
+            "title": "All Earrings"
+          }
+        },
+        "collection_UyTnan": {
+          "type": "collection",
+          "settings": {
+            "collection": "arnisha-ear-jackets",
+            "title": ""
+          }
+        },
+        "collection_XaLkVG": {
+          "type": "collection",
+          "settings": {
+            "collection": "astrid-drop-earrings",
+            "title": "Astrid Drop Earrings"
+          }
+        },
+        "collection_zAmGUL": {
+          "type": "collection",
+          "settings": {
+            "collection": "beatrice-huggie-earrings",
+            "title": ""
+          }
+        },
+        "collection_xM3d8c": {
+          "type": "collection",
+          "settings": {
+            "collection": "power-brene-earrings",
+            "title": ""
+          }
+        },
+        "collection_6pLyPK": {
+          "type": "collection",
+          "settings": {
+            "collection": "brittany-earrings",
+            "title": ""
+          }
+        },
+        "collection_iDBQ4x": {
+          "type": "collection",
+          "settings": {
+            "collection": "callie-earrings",
+            "title": ""
+          }
+        },
+        "collection_A87xha": {
+          "type": "collection",
+          "settings": {
+            "collection": "clara-earrings",
+            "title": ""
+          }
+        },
+        "collection_4F6pzD": {
+          "type": "collection",
+          "settings": {
+            "collection": "diana-earrings",
+            "title": ""
+          }
+        },
+        "collection_qYMywR": {
+          "type": "collection",
+          "settings": {
+            "collection": "jasmine-earrings",
+            "title": ""
+          }
+        },
+        "collection_6QUBtn": {
+          "type": "collection",
+          "settings": {
+            "collection": "jourdan-earrings",
+            "title": ""
+          }
+        },
+        "collection_qxmC8E": {
+          "type": "collection",
+          "settings": {
+            "collection": "mo-drop-earrings",
+            "title": ""
+          }
+        },
+        "collection_gwywLb": {
+          "type": "collection",
+          "settings": {
+            "collection": "megan-earrings",
+            "title": ""
+          }
+        },
+        "collection_NzKKA3": {
+          "type": "collection",
+          "settings": {
+            "collection": "tatiana-stud-earrings",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_8mddpw",
+        "collection_UyTnan",
+        "collection_XaLkVG",
+        "collection_zAmGUL",
+        "collection_xM3d8c",
+        "collection_6pLyPK",
+        "collection_iDBQ4x",
+        "collection_A87xha",
+        "collection_4F6pzD",
+        "collection_qYMywR",
+        "collection_6QUBtn",
+        "collection_qxmC8E",
+        "collection_gwywLb",
+        "collection_NzKKA3"
+      ],
+      "settings": {
+        "title": "Earring Collections",
+        "heading_size": "h3",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_collection_fMFFVh",
+    "featured_collections_wiNFEq"
+  ]
+}

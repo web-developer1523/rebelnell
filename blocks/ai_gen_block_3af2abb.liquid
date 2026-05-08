@@ -1,0 +1,1096 @@
+{% doc %}
+  @prompt
+    now i need two parallel sections:
+    
+    Left section: 
+    Main Title center aligned: What Do You Need to Accomplish?
+    - Title: Build Culture & Connection
+    sub: From offsites to all-hands, create experiences that matter—co-created artifacts that spark belonging.
+    Drop down of title and sub text: See examples & matching solutions
+    
+    -Title: Engage Customers & Audiences
+    Sub: Turn booths and brand moments into experiences that matter—lines people want to stand in.
+    Drop down of title and sub text: See examples & matching solutions
+    
+    -Title: Celebrate Milestones
+    Sub: Recognition that matters—tangible pieces people keep on their desk.
+    Drop down of title and sub text: See examples & matching solutions
+    
+    -Title: Build Purposeful Partnerships
+    
+    Sub: Co-create experiences that matter—align CSR, brand, and community impact.
+    Drop down of title and sub text: See examples & matching solutions
+    
+    on the right side 
+    Main title: What We Offer
+    All the sections should have an image once someone hovers over that section
+    - title: Mural-Making Experiences
+    sub: Each offering is crafted to create experiences that matter—memorable, purposeful, and lasting.
+    
+    -title: Design Your Own Branded Takeaway
+    sub: Each offering is crafted to create experiences that matter—memorable, purposeful, and lasting.
+    
+    - title: Custom Gifts
+    Sub: Each offering is crafted to create experiences that matter—memorable, purposeful, and lasting.
+    
+    - title: Fan & Community Activations
+    sub: Each offering is crafted to create experiences that matter—memorable, purposeful, and lasting.
+    
+    -title: Amy Peterson Speaking
+    sub: Each offering is crafted to create experiences that matter—memorable, purposeful, and lasting., the section on the right should have examples links , they should also be align to each other, the titles be middle aligned , on mobile this section should stay parallel. , All the section boxes should be left aligned  , The Drop down on the left side should have a sub title after the sub text. Once you click on see example & matching solutions it should be a drop down that have a title and sub text , Instead of a hover over image for the right section the background of each of those sections should have images , Remove the last section on the right side, The left side boxes should match the width and height of the right side boxes, The text in the left side boxes should be centered aligned , on the left section the text should be left aligned but it the same location in the box, the right side should be a video or image
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-parallel-sections-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.section_gap }}px;
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-parallel-section-{{ ai_gen_id }} {
+    padding: {{ block.settings.inner_padding }}px;
+  }
+
+  .ai-section-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.title_font.family }}, {{ block.settings.title_font.fallback_families }};
+    font-weight: {{ block.settings.title_font.weight }};
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    text-align: center;
+    margin-bottom: {{ block.settings.title_margin }}px;
+    line-height: 1.2;
+  }
+
+  .ai-left-section-{{ ai_gen_id }} .ai-section-title-{{ ai_gen_id }} {
+    text-align: center;
+  }
+
+  .ai-right-section-{{ ai_gen_id }} .ai-section-title-{{ ai_gen_id }} {
+    text-align: center;
+  }
+
+  .ai-item-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.item_spacing }}px;
+    position: relative;
+  }
+
+  .ai-item-header-{{ ai_gen_id }} {
+    padding: {{ block.settings.item_padding }}px;
+    border: 1px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    background-color: {{ block.settings.item_background }};
+    transition: all 0.3s ease;
+    text-align: left;
+    min-height: {{ block.settings.background_item_height }}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ai-item-header-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.item_hover_background }};
+    border-color: {{ block.settings.border_hover_color }};
+  }
+
+  .ai-item-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ai-item-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.item_title_font.family }}, {{ block.settings.item_title_font.fallback_families }};
+    font-weight: {{ block.settings.item_title_font.weight }};
+    font-size: {{ block.settings.item_title_size }}px;
+    color: {{ block.settings.item_title_color }};
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  .ai-item-subtitle-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subtitle_font.family }}, {{ block.settings.subtitle_font.fallback_families }};
+    font-weight: {{ block.settings.subtitle_font.weight }};
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .ai-dropdown-trigger-{{ ai_gen_id }} {
+    color: {{ block.settings.link_color }};
+    text-decoration: underline;
+    font-size: {{ block.settings.link_size }}px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+  }
+
+  .ai-dropdown-trigger-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.link_hover_color }};
+  }
+
+  .ai-dropdown-{{ ai_gen_id }} {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: {{ block.settings.dropdown_background }};
+    border: 1px solid {{ block.settings.border_color }};
+    border-top: none;
+    border-radius: 0 0 {{ block.settings.border_radius }}px {{ block.settings.border_radius }}px;
+  }
+
+  .ai-dropdown-{{ ai_gen_id }}.active {
+    max-height: 300px;
+    padding: {{ block.settings.item_padding }}px;
+  }
+
+  .ai-dropdown-content-{{ ai_gen_id }} {
+    text-align: left;
+  }
+
+  .ai-dropdown-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.item_title_font.family }}, {{ block.settings.item_title_font.fallback_families }};
+    font-weight: {{ block.settings.item_title_font.weight }};
+    font-size: {{ block.settings.dropdown_title_size }}px;
+    color: {{ block.settings.dropdown_title_color }};
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  .ai-dropdown-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.dropdown_text_size }}px;
+    color: {{ block.settings.dropdown_text_color }};
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .ai-right-item-{{ ai_gen_id }} {
+    position: relative;
+    margin-bottom: {{ block.settings.item_spacing }}px;
+  }
+
+  .ai-right-item-header-{{ ai_gen_id }} {
+    padding: {{ block.settings.item_padding }}px;
+    border: 1px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    text-align: left;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: {{ block.settings.background_item_height }}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .ai-right-item-header-{{ ai_gen_id }}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, {{ block.settings.overlay_opacity_top }}) 0%,
+      rgba(0, 0, 0, {{ block.settings.overlay_opacity_bottom }}) 100%
+    );
+    border-radius: {{ block.settings.border_radius }}px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .ai-right-item-header-{{ ai_gen_id }}:hover::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, {{ block.settings.overlay_opacity_top | times: 0.8 }}) 0%,
+      rgba(0, 0, 0, {{ block.settings.overlay_opacity_bottom | times: 0.8 }}) 100%
+    );
+  }
+
+  .ai-right-item-video-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: {{ block.settings.border_radius }}px;
+    z-index: 0;
+  }
+
+  .ai-right-item-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ai-right-item-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.item_title_font.family }}, {{ block.settings.item_title_font.fallback_families }};
+    font-weight: {{ block.settings.item_title_font.weight }};
+    font-size: {{ block.settings.item_title_size }}px;
+    color: {{ block.settings.right_item_title_color }};
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  .ai-right-item-subtitle-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subtitle_font.family }}, {{ block.settings.subtitle_font.fallback_families }};
+    font-weight: {{ block.settings.subtitle_font.weight }};
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.right_subtitle_color }};
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .ai-examples-link-{{ ai_gen_id }} {
+    display: inline-block;
+    color: {{ block.settings.right_link_color }};
+    text-decoration: underline;
+    font-size: {{ block.settings.link_size }}px;
+    transition: color 0.3s ease;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+  }
+
+  .ai-examples-link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.right_link_hover_color }};
+  }
+
+  .ai-background-placeholder-{{ ai_gen_id }} {
+    background-color: #f4f4f4;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23cccccc'%3E%3Cpath d='M20 20h60v60H20z' fill='none' stroke='%23cccccc' stroke-width='2'/%3E%3Cpath d='M30 40l15 15 10-10 15 15'/%3E%3Ccircle cx='40' cy='35' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 60px 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-parallel-sections-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.mobile_section_gap }}px;
+    }
+
+    .ai-section-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_title_size }}px;
+    }
+
+    .ai-item-title-{{ ai_gen_id }},
+    .ai-right-item-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_item_title_size }}px;
+    }
+
+    .ai-item-subtitle-{{ ai_gen_id }},
+    .ai-right-item-subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_subtitle_size }}px;
+    }
+
+    .ai-item-header-{{ ai_gen_id }},
+    .ai-right-item-header-{{ ai_gen_id }} {
+      min-height: {{ block.settings.mobile_background_item_height }}px;
+    }
+  }
+{% endstyle %}
+
+<parallel-sections-{{ ai_gen_id }} class="ai-parallel-sections-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-parallel-section-{{ ai_gen_id }} ai-left-section-{{ ai_gen_id }}">
+    <h2 class="ai-section-title-{{ ai_gen_id }}">{{ block.settings.left_title }}</h2>
+    
+    <div class="ai-item-{{ ai_gen_id }}">
+      <div class="ai-item-header-{{ ai_gen_id }}">
+        <div class="ai-item-content-{{ ai_gen_id }}">
+          <h3 class="ai-item-title-{{ ai_gen_id }}">{{ block.settings.left_item_1_title }}</h3>
+          <p class="ai-item-subtitle-{{ ai_gen_id }}">{{ block.settings.left_item_1_subtitle }}</p>
+          <button class="ai-dropdown-trigger-{{ ai_gen_id }}" data-dropdown="dropdown-1">
+            See examples & matching solutions
+          </button>
+        </div>
+      </div>
+      <div class="ai-dropdown-{{ ai_gen_id }}" id="dropdown-1">
+        <div class="ai-dropdown-content-{{ ai_gen_id }}">
+          <h4 class="ai-dropdown-title-{{ ai_gen_id }}">{{ block.settings.left_item_1_dropdown_title }}</h4>
+          <p class="ai-dropdown-text-{{ ai_gen_id }}">{{ block.settings.left_item_1_dropdown_text }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-item-{{ ai_gen_id }}">
+      <div class="ai-item-header-{{ ai_gen_id }}">
+        <div class="ai-item-content-{{ ai_gen_id }}">
+          <h3 class="ai-item-title-{{ ai_gen_id }}">{{ block.settings.left_item_2_title }}</h3>
+          <p class="ai-item-subtitle-{{ ai_gen_id }}">{{ block.settings.left_item_2_subtitle }}</p>
+          <button class="ai-dropdown-trigger-{{ ai_gen_id }}" data-dropdown="dropdown-2">
+            See examples & matching solutions
+          </button>
+        </div>
+      </div>
+      <div class="ai-dropdown-{{ ai_gen_id }}" id="dropdown-2">
+        <div class="ai-dropdown-content-{{ ai_gen_id }}">
+          <h4 class="ai-dropdown-title-{{ ai_gen_id }}">{{ block.settings.left_item_2_dropdown_title }}</h4>
+          <p class="ai-dropdown-text-{{ ai_gen_id }}">{{ block.settings.left_item_2_dropdown_text }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-item-{{ ai_gen_id }}">
+      <div class="ai-item-header-{{ ai_gen_id }}">
+        <div class="ai-item-content-{{ ai_gen_id }}">
+          <h3 class="ai-item-title-{{ ai_gen_id }}">{{ block.settings.left_item_3_title }}</h3>
+          <p class="ai-item-subtitle-{{ ai_gen_id }}">{{ block.settings.left_item_3_subtitle }}</p>
+          <button class="ai-dropdown-trigger-{{ ai_gen_id }}" data-dropdown="dropdown-3">
+            See examples & matching solutions
+          </button>
+        </div>
+      </div>
+      <div class="ai-dropdown-{{ ai_gen_id }}" id="dropdown-3">
+        <div class="ai-dropdown-content-{{ ai_gen_id }}">
+          <h4 class="ai-dropdown-title-{{ ai_gen_id }}">{{ block.settings.left_item_3_dropdown_title }}</h4>
+          <p class="ai-dropdown-text-{{ ai_gen_id }}">{{ block.settings.left_item_3_dropdown_text }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-item-{{ ai_gen_id }}">
+      <div class="ai-item-header-{{ ai_gen_id }}">
+        <div class="ai-item-content-{{ ai_gen_id }}">
+          <h3 class="ai-item-title-{{ ai_gen_id }}">{{ block.settings.left_item_4_title }}</h3>
+          <p class="ai-item-subtitle-{{ ai_gen_id }}">{{ block.settings.left_item_4_subtitle }}</p>
+          <button class="ai-dropdown-trigger-{{ ai_gen_id }}" data-dropdown="dropdown-4">
+            See examples & matching solutions
+          </button>
+        </div>
+      </div>
+      <div class="ai-dropdown-{{ ai_gen_id }}" id="dropdown-4">
+        <div class="ai-dropdown-content-{{ ai_gen_id }}">
+          <h4 class="ai-dropdown-title-{{ ai_gen_id }}">{{ block.settings.left_item_4_dropdown_title }}</h4>
+          <p class="ai-dropdown-text-{{ ai_gen_id }}">{{ block.settings.left_item_4_dropdown_text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-parallel-section-{{ ai_gen_id }} ai-right-section-{{ ai_gen_id }}">
+    <h2 class="ai-section-title-{{ ai_gen_id }}">{{ block.settings.right_title }}</h2>
+    
+    <div class="ai-right-item-{{ ai_gen_id }}">
+      <div class="ai-right-item-header-{{ ai_gen_id }} {% unless block.settings.right_item_1_image or block.settings.right_item_1_video %}ai-background-placeholder-{{ ai_gen_id }}{% endunless %}"
+           {% if block.settings.right_item_1_image and block.settings.right_item_1_video == blank %}
+           style="background-image: url('{{ block.settings.right_item_1_image | image_url: width: 800 }}');"
+           {% endif %}>
+        {% if block.settings.right_item_1_video %}
+          <video class="ai-right-item-video-{{ ai_gen_id }}" autoplay muted loop playsinline>
+            <source src="{{ block.settings.right_item_1_video }}" type="video/mp4">
+          </video>
+        {% endif %}
+        <div class="ai-right-item-content-{{ ai_gen_id }}">
+          <h3 class="ai-right-item-title-{{ ai_gen_id }}">{{ block.settings.right_item_1_title }}</h3>
+          <p class="ai-right-item-subtitle-{{ ai_gen_id }}">{{ block.settings.right_item_1_subtitle }}</p>
+          {% if block.settings.right_item_1_link %}
+            <a href="{{ block.settings.right_item_1_link }}" class="ai-examples-link-{{ ai_gen_id }}">See examples & matching solutions</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-right-item-{{ ai_gen_id }}">
+      <div class="ai-right-item-header-{{ ai_gen_id }} {% unless block.settings.right_item_2_image or block.settings.right_item_2_video %}ai-background-placeholder-{{ ai_gen_id }}{% endunless %}"
+           {% if block.settings.right_item_2_image and block.settings.right_item_2_video == blank %}
+           style="background-image: url('{{ block.settings.right_item_2_image | image_url: width: 800 }}');"
+           {% endif %}>
+        {% if block.settings.right_item_2_video %}
+          <video class="ai-right-item-video-{{ ai_gen_id }}" autoplay muted loop playsinline>
+            <source src="{{ block.settings.right_item_2_video }}" type="video/mp4">
+          </video>
+        {% endif %}
+        <div class="ai-right-item-content-{{ ai_gen_id }}">
+          <h3 class="ai-right-item-title-{{ ai_gen_id }}">{{ block.settings.right_item_2_title }}</h3>
+          <p class="ai-right-item-subtitle-{{ ai_gen_id }}">{{ block.settings.right_item_2_subtitle }}</p>
+          {% if block.settings.right_item_2_link %}
+            <a href="{{ block.settings.right_item_2_link }}" class="ai-examples-link-{{ ai_gen_id }}">See examples & matching solutions</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-right-item-{{ ai_gen_id }}">
+      <div class="ai-right-item-header-{{ ai_gen_id }} {% unless block.settings.right_item_3_image or block.settings.right_item_3_video %}ai-background-placeholder-{{ ai_gen_id }}{% endunless %}"
+           {% if block.settings.right_item_3_image and block.settings.right_item_3_video == blank %}
+           style="background-image: url('{{ block.settings.right_item_3_image | image_url: width: 800 }}');"
+           {% endif %}>
+        {% if block.settings.right_item_3_video %}
+          <video class="ai-right-item-video-{{ ai_gen_id }}" autoplay muted loop playsinline>
+            <source src="{{ block.settings.right_item_3_video }}" type="video/mp4">
+          </video>
+        {% endif %}
+        <div class="ai-right-item-content-{{ ai_gen_id }}">
+          <h3 class="ai-right-item-title-{{ ai_gen_id }}">{{ block.settings.right_item_3_title }}</h3>
+          <p class="ai-right-item-subtitle-{{ ai_gen_id }}">{{ block.settings.right_item_3_subtitle }}</p>
+          {% if block.settings.right_item_3_link %}
+            <a href="{{ block.settings.right_item_3_link }}" class="ai-examples-link-{{ ai_gen_id }}">See examples & matching solutions</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-right-item-{{ ai_gen_id }}">
+      <div class="ai-right-item-header-{{ ai_gen_id }} {% unless block.settings.right_item_4_image or block.settings.right_item_4_video %}ai-background-placeholder-{{ ai_gen_id }}{% endunless %}"
+           {% if block.settings.right_item_4_image and block.settings.right_item_4_video == blank %}
+           style="background-image: url('{{ block.settings.right_item_4_image | image_url: width: 800 }}');"
+           {% endif %}>
+        {% if block.settings.right_item_4_video %}
+          <video class="ai-right-item-video-{{ ai_gen_id }}" autoplay muted loop playsinline>
+            <source src="{{ block.settings.right_item_4_video }}" type="video/mp4">
+          </video>
+        {% endif %}
+        <div class="ai-right-item-content-{{ ai_gen_id }}">
+          <h3 class="ai-right-item-title-{{ ai_gen_id }}">{{ block.settings.right_item_4_title }}</h3>
+          <p class="ai-right-item-subtitle-{{ ai_gen_id }}">{{ block.settings.right_item_4_subtitle }}</p>
+          {% if block.settings.right_item_4_link %}
+            <a href="{{ block.settings.right_item_4_link }}" class="ai-examples-link-{{ ai_gen_id }}">See examples & matching solutions</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</parallel-sections-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ParallelSections{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupDropdowns();
+      }
+
+      setupDropdowns() {
+        const dropdownTriggers = this.querySelectorAll('[data-dropdown]');
+        
+        dropdownTriggers.forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const dropdownId = trigger.getAttribute('data-dropdown');
+            const dropdown = this.querySelector(`#${dropdownId}`);
+            
+            const isActive = dropdown.classList.contains('active');
+            
+            this.querySelectorAll('.ai-dropdown-{{ ai_gen_id }}').forEach(d => {
+              d.classList.remove('active');
+            });
+            
+            if (!isActive) {
+              dropdown.classList.add('active');
+            }
+          });
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!event.target.closest('.ai-item-{{ ai_gen_id }}')) {
+            this.querySelectorAll('.ai-dropdown-{{ ai_gen_id }}').forEach(dropdown => {
+              dropdown.classList.remove('active');
+            });
+          }
+        });
+      }
+    }
+
+    customElements.define('parallel-sections-{{ ai_gen_id }}', ParallelSections{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Parallel sections",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_gap",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap between sections",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_section_gap",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile gap between sections",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "inner_padding",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Inner section padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Item spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Item padding",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "item_background",
+      "label": "Item background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "item_hover_background",
+      "label": "Item hover background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "dropdown_background",
+      "label": "Dropdown background",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "border_hover_color",
+      "label": "Border hover color",
+      "default": "#c81688"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Box dimensions"
+    },
+    {
+      "type": "range",
+      "id": "background_item_height",
+      "min": 150,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Box height",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "mobile_background_item_height",
+      "min": 120,
+      "max": 250,
+      "step": 10,
+      "unit": "px",
+      "label": "Mobile box height",
+      "default": 160
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity_top",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "Overlay opacity top",
+      "default": 0.2
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity_bottom",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "Overlay opacity bottom",
+      "default": 0.6
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title font",
+      "default": "avenir_next_n6"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_size",
+      "min": 18,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile title size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "title_margin",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Title margin bottom",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "font_picker",
+      "id": "item_title_font",
+      "label": "Item title font",
+      "default": "avenir_next_n6"
+    },
+    {
+      "type": "range",
+      "id": "item_title_size",
+      "min": 16,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Item title size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_title_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile item title size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "item_title_color",
+      "label": "Item title color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "right_item_title_color",
+      "label": "Right item title color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "font_picker",
+      "id": "subtitle_font",
+      "label": "Subtitle font",
+      "default": "avenir_next_n4"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_subtitle_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile subtitle size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "right_subtitle_color",
+      "label": "Right subtitle color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "dropdown_title_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Dropdown title size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "dropdown_title_color",
+      "label": "Dropdown title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "dropdown_text_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Dropdown text size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "dropdown_text_color",
+      "label": "Dropdown text color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "link_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Link size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link hover color",
+      "default": "#a01470"
+    },
+    {
+      "type": "color",
+      "id": "right_link_color",
+      "label": "Right link color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "right_link_hover_color",
+      "label": "Right link hover color",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "header",
+      "content": "Left section"
+    },
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Left section title",
+      "default": "What Do You Need to Accomplish?"
+    },
+    {
+      "type": "text",
+      "id": "left_item_1_title",
+      "label": "Item 1 title",
+      "default": "Build Culture & Connection"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_1_subtitle",
+      "label": "Item 1 subtitle",
+      "default": "From offsites to all-hands, create experiences that matter—co-created artifacts that spark belonging."
+    },
+    {
+      "type": "text",
+      "id": "left_item_1_dropdown_title",
+      "label": "Item 1 dropdown title",
+      "default": "Examples & Solutions"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_1_dropdown_text",
+      "label": "Item 1 dropdown text",
+      "default": "Discover how we help teams build stronger connections through collaborative art experiences and meaningful takeaways."
+    },
+    {
+      "type": "text",
+      "id": "left_item_2_title",
+      "label": "Item 2 title",
+      "default": "Engage Customers & Audiences"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_2_subtitle",
+      "label": "Item 2 subtitle",
+      "default": "Turn booths and brand moments into experiences that matter—lines people want to stand in."
+    },
+    {
+      "type": "text",
+      "id": "left_item_2_dropdown_title",
+      "label": "Item 2 dropdown title",
+      "default": "Examples & Solutions"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_2_dropdown_text",
+      "label": "Item 2 dropdown text",
+      "default": "See how brands create memorable customer experiences through interactive art installations and engaging activations."
+    },
+    {
+      "type": "text",
+      "id": "left_item_3_title",
+      "label": "Item 3 title",
+      "default": "Celebrate Milestones"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_3_subtitle",
+      "label": "Item 3 subtitle",
+      "default": "Recognition that matters—tangible pieces people keep on their desk."
+    },
+    {
+      "type": "text",
+      "id": "left_item_3_dropdown_title",
+      "label": "Item 3 dropdown title",
+      "default": "Examples & Solutions"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_3_dropdown_text",
+      "label": "Item 3 dropdown text",
+      "default": "Explore meaningful ways to celebrate achievements with custom art pieces that honor important moments and milestones."
+    },
+    {
+      "type": "text",
+      "id": "left_item_4_title",
+      "label": "Item 4 title",
+      "default": "Build Purposeful Partnerships"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_4_subtitle",
+      "label": "Item 4 subtitle",
+      "default": "Co-create experiences that matter—align CSR, brand, and community impact."
+    },
+    {
+      "type": "text",
+      "id": "left_item_4_dropdown_title",
+      "label": "Item 4 dropdown title",
+      "default": "Examples & Solutions"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_4_dropdown_text",
+      "label": "Item 4 dropdown text",
+      "default": "Learn how partnerships can create positive community impact while strengthening brand values through collaborative art projects."
+    },
+    {
+      "type": "header",
+      "content": "Right section"
+    },
+    {
+      "type": "text",
+      "id": "right_title",
+      "label": "Right section title",
+      "default": "What We Offer"
+    },
+    {
+      "type": "text",
+      "id": "right_item_1_title",
+      "label": "Item 1 title",
+      "default": "Mural-Making Experiences"
+    },
+    {
+      "type": "textarea",
+      "id": "right_item_1_subtitle",
+      "label": "Item 1 subtitle",
+      "default": "Each offering is crafted to create experiences that matter—memorable, purposeful, and lasting."
+    },
+    {
+      "type": "url",
+      "id": "right_item_1_link",
+      "label": "Item 1 link"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_item_1_image",
+      "label": "Item 1 background image"
+    },
+    {
+      "type": "text",
+      "id": "right_item_1_video",
+      "label": "Item 1 video URL"
+    },
+    {
+      "type": "text",
+      "id": "right_item_2_title",
+      "label": "Item 2 title",
+      "default": "Design Your Own Branded Takeaway"
+    },
+    {
+      "type": "textarea",
+      "id": "right_item_2_subtitle",
+      "label": "Item 2 subtitle",
+      "default": "Each offering is crafted to create experiences that matter—memorable, purposeful, and lasting."
+    },
+    {
+      "type": "url",
+      "id": "right_item_2_link",
+      "label": "Item 2 link"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_item_2_image",
+      "label": "Item 2 background image"
+    },
+    {
+      "type": "text",
+      "id": "right_item_2_video",
+      "label": "Item 2 video URL"
+    },
+    {
+      "type": "text",
+      "id": "right_item_3_title",
+      "label": "Item 3 title",
+      "default": "Custom Gifts"
+    },
+    {
+      "type": "textarea",
+      "id": "right_item_3_subtitle",
+      "label": "Item 3 subtitle",
+      "default": "Each offering is crafted to create experiences that matter—memorable, purposeful, and lasting."
+    },
+    {
+      "type": "url",
+      "id": "right_item_3_link",
+      "label": "Item 3 link"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_item_3_image",
+      "label": "Item 3 background image"
+    },
+    {
+      "type": "text",
+      "id": "right_item_3_video",
+      "label": "Item 3 video URL"
+    },
+    {
+      "type": "text",
+      "id": "right_item_4_title",
+      "label": "Item 4 title",
+      "default": "Fan & Community Activations"
+    },
+    {
+      "type": "textarea",
+      "id": "right_item_4_subtitle",
+      "label": "Item 4 subtitle",
+      "default": "Each offering is crafted to create experiences that matter—memorable, purposeful, and lasting."
+    },
+    {
+      "type": "url",
+      "id": "right_item_4_link",
+      "label": "Item 4 link"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_item_4_image",
+      "label": "Item 4 background image"
+    },
+    {
+      "type": "text",
+      "id": "right_item_4_video",
+      "label": "Item 4 video URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Parallel sections"
+    }
+  ]
+}
+{% endschema %}

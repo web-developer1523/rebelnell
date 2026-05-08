@@ -1,0 +1,85 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {number} height - section height
+   * @param {boolean} parallax - parallax effect
+   * @param {string} parallax_direction - parallax direction
+   * @param {object} image - image
+   * @param {boolean} lazyload_images - lazyload images
+   * @param {string} subtitle - subtitle
+   * @param {string} title - title
+   * @param {string} text - text
+   * @param {string} layout - layout
+   * @param {string} button_label - button label
+   * @param {string} button_link - button link
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- assign hydration = hydration | default: 'on:idle' -%}
+
+<is-land {{ hydration }}>
+  <background-image>
+   <div
+      data-section-id="{{ section.id }}"
+      data-section-type="background-image"
+      class="background-media-text background-media-text--{{ section.id }} background-media-text--{{ height }}"
+      {% if parallax %}data-parallax="true"{% endif %}>
+
+      <div class="background-media-text__container">
+        {%- if parallax -%}
+          <parallax-image class="parallax-container">
+            <div class="parallax-image" data-movement="15%" data-parallax-image data-angle="{{ parallax_direction }}">
+        {%- endif -%}
+
+          {%- if image != blank -%}
+            {% assign classes = 'image-fit background-media-text__image background-media-text__image--' | append: section.id %}
+            {% comment %} Full width image so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+            {%- render 'image-element',
+              img: image,
+              img_width: 2400,
+              loading: lazyload_images,
+              classes: classes,
+            -%}
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+
+        {%- if parallax -%}
+            </div>
+          </parallax-image>
+        {%- endif -%}
+      </div>
+      {%- if subtitle != blank or title != blank or text != blank -%}
+        <div class="background-media-text__inner">
+          <div class="background-media-text__aligner background-media-text--{{ layout }}">
+            <div class="animation-contents">
+              <div class="background-media-text__text">
+                {%- if subtitle != blank -%}
+                  <p class="accent-subtitle">{{ subtitle }}</p>
+                {%- endif -%}
+                {%- if title != blank -%}
+                  <p class="h3">{{ title | escape }}</p>
+                {%- endif -%}
+                {%- if text != blank -%}
+                  <div class="rte background-media-text__subtext">{{ text }}</div>
+                {%- endif -%}
+                {%- if button_label != blank and button_link != blank -%}
+                  <a href="{{ button_link }}" class="btn">
+                    {{ button_label }}
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </background-image>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-background-image-text';
+    </script>
+  </template>
+</is-land>

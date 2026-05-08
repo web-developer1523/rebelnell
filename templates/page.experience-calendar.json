@@ -1,0 +1,256 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_M7b83a": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_aBxiTt": {
+          "type": "heading",
+          "settings": {
+            "title": "Rebel Nell Events",
+            "heading_size": "h2"
+          }
+        },
+        "text_nY4mDP": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>In addition to preserving memories, now we want to make memories with you. Rebel Nell events is an extension of that belief, to bring people together in real time—to create, reflect, heal, and connect through shared moments. From intimate gatherings and creative workshops to larger community celebrations, each experience is designed with intention. Some events are free, others ticketed based on what it takes to host them, but all are rooted in the same purpose: creating moments that matter and building meaningful connection, together.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_aBxiTt",
+        "text_nY4mDP"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "3",
+        "divider": false
+      }
+    },
+    "177127049396b3a3e2": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7404d90_UnnckC": {
+          "type": "ai_gen_block_7404d90",
+          "settings": {
+            "section_title": "March",
+            "title_size": 32,
+            "title_color": "#000000",
+            "title_alignment": "left",
+            "title_spacing": 20,
+            "desktop_width_percent": 100,
+            "item_width_desktop": 25,
+            "item_width_mobile": 80,
+            "gap": 16,
+            "border_radius": 0,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.6,
+            "text_color": "#ffffff",
+            "heading_size": 28,
+            "subtext_size": 14,
+            "button_bg_color": "#c81688",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#a01270",
+            "button_hover_text_color": "#ffffff",
+            "button_font_size": 14,
+            "button_padding_vertical": 10,
+            "button_padding_horizontal": 20,
+            "button_border_radius": 0,
+            "button_border_width": 0,
+            "button_border_color": "#ffffff",
+            "scrollbar_color": "#c81688",
+            "heading_1": "",
+            "subtext_1": "",
+            "button_text_1": "",
+            "link_1": "shopify://products/new-year-new-you-the-mind-alchemy",
+            "heading_2": "",
+            "subtext_2": "",
+            "button_text_2": "",
+            "link_2": "shopify://products/new-year-new-you-the-mind-alchemy",
+            "image_3": "shopify://shop_images/2_a978892d-0dea-4d84-999a-712e5d90cd6b.png",
+            "heading_3": "6th Annual IWD",
+            "subtext_3": "Wednesday, March 18th | 4:30-9",
+            "button_text_3": "BUY YOUR TICKET",
+            "link_3": "shopify://products/6th-annual-international-womens-day-experience",
+            "image_4": "shopify://shop_images/319_Pop-Up_at_Hudsons.png",
+            "heading_4": "Hudsons Pop Up",
+            "subtext_4": "Thursday, March 19th",
+            "button_text_4": "",
+            "link_4": "",
+            "heading_5": "",
+            "subtext_5": "",
+            "button_text_5": "",
+            "link_5": "",
+            "heading_6": "",
+            "subtext_6": "",
+            "button_text_6": "",
+            "link_6": "",
+            "heading_7": "",
+            "subtext_7": "",
+            "button_text_7": "",
+            "link_7": "",
+            "heading_8": "",
+            "subtext_8": "",
+            "button_text_8": "",
+            "link_8": "",
+            "heading_9": "",
+            "subtext_9": "",
+            "button_text_9": "",
+            "link_9": "",
+            "heading_10": "",
+            "subtext_10": "",
+            "button_text_10": "",
+            "link_10": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7404d90_UnnckC"
+      ],
+      "settings": {}
+    },
+    "blocks_NCCiFc": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7404d90_A6dC4t": {
+          "type": "ai_gen_block_7404d90",
+          "settings": {
+            "section_title": "April",
+            "title_size": 32,
+            "title_color": "#000000",
+            "title_alignment": "left",
+            "title_spacing": 20,
+            "desktop_width_percent": 100,
+            "item_width_desktop": 25,
+            "item_width_mobile": 80,
+            "gap": 16,
+            "border_radius": 0,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.7,
+            "text_color": "#ffffff",
+            "heading_size": 28,
+            "subtext_size": 14,
+            "button_bg_color": "#c81688",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#a01270",
+            "button_hover_text_color": "#ffffff",
+            "button_font_size": 14,
+            "button_padding_vertical": 10,
+            "button_padding_horizontal": 20,
+            "button_border_radius": 0,
+            "button_border_width": 0,
+            "button_border_color": "#ffffff",
+            "scrollbar_color": "#c81688",
+            "image_1": "shopify://shop_images/Website_Shop_By_Category.png",
+            "heading_1": "New Collaboration Launch",
+            "subtext_1": "Tuesday, April 7th",
+            "button_text_1": "FREE EVENT",
+            "link_1": "",
+            "heading_2": "",
+            "subtext_2": "",
+            "button_text_2": "",
+            "link_2": "https://www.rebelnell.com/products/6th-annual-international-womens-day-experience",
+            "image_3": "shopify://shop_images/415_Daffodile_Luncheon.jpg",
+            "heading_3": "Daffodile Luncheon Pop Up",
+            "subtext_3": "Wednesday, April 15th",
+            "button_text_3": "",
+            "link_3": "",
+            "heading_4": "",
+            "subtext_4": "",
+            "button_text_4": "",
+            "link_4": "",
+            "heading_5": "",
+            "subtext_5": "",
+            "button_text_5": "",
+            "link_5": "",
+            "heading_6": "",
+            "subtext_6": "",
+            "button_text_6": "",
+            "link_6": "",
+            "heading_7": "",
+            "subtext_7": "",
+            "button_text_7": "",
+            "link_7": "",
+            "heading_8": "",
+            "subtext_8": "",
+            "button_text_8": "",
+            "link_8": "",
+            "heading_9": "",
+            "subtext_9": "",
+            "button_text_9": "",
+            "link_9": "",
+            "heading_10": "",
+            "subtext_10": "",
+            "button_text_10": "",
+            "link_10": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7404d90_A6dC4t"
+      ],
+      "settings": {}
+    },
+    "17689364597db738a0": {
+      "type": "apps",
+      "blocks": {
+        "experiences_app_aggregate_view_VHwVDq": {
+          "type": "shopify://apps/experiences-app/blocks/aggregate-view/0f7bacd4-dd8b-4f37-98a0-d0ca3a8c3995",
+          "settings": {
+            "mainHeader": "Upcoming Events",
+            "showEventsHideToggle": true,
+            "defaultView": "listMonth",
+            "contentWrap": false,
+            "hideFutureDates": false,
+            "languageCode": "en-US",
+            "displayType": "default",
+            "tagColor": "",
+            "filterTags": "Experiences only",
+            "backgroundColor": "#ffffff",
+            "primaryColor": "#c81688",
+            "secondaryColor": "#424242",
+            "textColor": "#424242",
+            "disabledColor": "#999b9e",
+            "buttonShape": "square",
+            "containerPaddingTop": 12,
+            "containerPaddingBottom": 12
+          }
+        }
+      },
+      "block_order": [
+        "experiences_app_aggregate_view_VHwVDq"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "rich_text_M7b83a",
+    "177127049396b3a3e2",
+    "blocks_NCCiFc",
+    "17689364597db738a0",
+    "main"
+  ]
+}

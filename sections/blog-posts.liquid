@@ -1,0 +1,148 @@
+{%- render 'section-blog-posts',
+    section: section,
+    blog: section.settings.blog,
+    blog_show_tags: section.settings.blog_show_tags,
+    sidebar_count: 4,
+    heading_position: section.settings.heading_position,
+    text_direction: settings.text_direction,
+    divider: section.settings.divider,
+    title: section.settings.title,
+    heading_size: section.settings.heading_size,
+    blog_show_date: section.settings.blog_show_date,
+    blog_show_comments: section.settings.blog_show_comments,
+    blog_show_author: section.settings.blog_show_author,
+    blog_image_size: section.settings.blog_image_size,
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.blog-posts.name",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.blog-posts.settings.title.label",
+      "default": "From the blog"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:common.heading_size.label",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:common.heading_size.options.small.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:common.heading_size.options.medium.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:common.heading_size.options.large.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:common.heading_size.options.extra_large.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "t:common.heading_position.label",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:common.heading_position.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:common.heading_position.options.center.label"
+        },
+        {
+          "value": "right",
+          "label": "t:common.heading_position.options.right.label"
+        }
+      ]
+    },
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "t:sections.blog-posts.settings.blog.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_tags",
+      "label": "t:sections.blog-posts.settings.blog_show_tags.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "t:sections.blog-posts.settings.blog_show_date.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_comments",
+      "label": "t:sections.blog-posts.settings.blog_show_comments.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "t:sections.blog-posts.settings.blog_show_author.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "blog_image_size",
+      "label": "t:sections.blog-posts.settings.blog_image_size.label",
+      "default": "wide",
+      "options": [
+        {
+          "value": "natural",
+          "label": "t:sections.blog-posts.settings.blog_image_size.options.natural.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.blog-posts.settings.blog_image_size.options.square.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:sections.blog-posts.settings.blog_image_size.options.landscape.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.blog-posts.settings.blog_image_size.options.portrait.label"
+        },
+        {
+          "value": "wide",
+          "label": "t:sections.blog-posts.settings.blog_image_size.options.wide.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.blog-posts.settings.divider.label",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.blog-posts.presets.blog_posts.name",
+      "settings": {
+        "blog": "News"
+      }
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

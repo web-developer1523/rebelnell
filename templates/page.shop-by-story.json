@@ -1,0 +1,149 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_image_JiifY4": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_4NCFTj": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Shop_by_Story_meta_mobile.png",
+            "image_mobile": "shopify://shop_images/Shop_by_Story_meta_mobile.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_4NCFTj"
+      ],
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_cxEGNW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HdqaTa": {
+          "type": "heading",
+          "settings": {
+            "title": "Shop by Story",
+            "heading_size": "h2"
+          }
+        },
+        "text_hnQa86": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Every Rebel Nell piece tells a story—of Detroit, resilience, and purpose. Shop meaningful jewelry and accessories handmade by women in Detroit.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HdqaTa",
+        "text_hnQa86"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "text_columns_7MPark": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_njMP7k": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/A_piece_of_Detroit_history_meta_cover.png",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "Detroit History",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/a-piece-of-detroit-history"
+          }
+        },
+        "text_block_han8aW": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Campus_Story_meta_cover.png",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "Campus Story",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/campus-story"
+          }
+        },
+        "text_block_nmUwQq": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Designed_to_Stand_Out_meta_cover.png",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "Stand Out",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/designed-to-stand-out"
+          }
+        },
+        "text_block_kJ7KrY": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Something_Subtle_that_Speaks_Volumes_meta_cover.png",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "Quiet Power",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/something-subtle-that-speaks-volumes"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_njMP7k",
+        "text_block_han8aW",
+        "text_block_nmUwQq",
+        "text_block_kJ7KrY"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "custom-css": "",
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_image_JiifY4",
+    "rich_text_cxEGNW",
+    "text_columns_7MPark"
+  ]
+}

@@ -1,0 +1,272 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
+  <head>
+    <meta name="google-site-verification" content="kujDTKxp-FoPgfQBDuvOzSNxcNgQwAM1NNjavWSkKjQ" />
+    <!-- Start of Shoplift scripts -->
+    {% render 'shoplift' %}
+    <!-- End of Shoplift scripts -->
+
+    {% render 'visually_io_sdk' %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_button }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.gstatic.com">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    >
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+
+    {%- render 'seo-title' -%}
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {%- render 'social-meta-tags' -%}
+    {% comment %}
+      {%- if shop.enabled_currencies.size > 1 -%}
+        <link
+          rel="stylesheet"
+          href="{{ 'country-flags.css' | asset_url | split: '?' | first }}"
+          media="print"
+          onload="this.media='all'"
+        >
+      {%- endif -%}
+    {% endcomment %}
+
+    {%- render 'font-face' -%}
+    {{ 'components.css' | asset_url | stylesheet_tag: preload: true }}
+    {%- render 'css-variables' -%}
+    {{ 'custom1.css' | asset_url | stylesheet_tag: preload: true }}
+    <!-- Rebel Nell Bootstrap -->
+    {{ 'bootstrap-grid.min.css' | asset_url | stylesheet_tag }}
+    {{ 'bootstrap-utilities.min.css' | asset_url | stylesheet_tag }}
+    {% comment %}    {{ 'bootstrap-mod.css' | asset_url | stylesheet_tag }} {% endcomment %}
+
+    {%- liquid
+      assign enableSuperScript = false
+      unless shop.money_format contains 'money' or shop.money_format contains '.'
+        if settings.superscript_decimals
+          if shop.money_format contains '{{amount}}' or shop.money_format contains '{{ amount }}'
+            assign enableSuperScript = true
+          elsif shop.money_format contains '{{amount_with_comma_separator}}' or shop.money_format contains '{{ amount_with_comma_separator }}'
+            assign enableSuperScript = true
+          endif
+        endif
+      endunless
+    -%}
+
+    <script defer="defer" async>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+      window.theme = window.theme || {};
+      theme.routes = {
+        home: "{{ routes.root_url }}",
+        collections: "{{ routes.collections_url }}",
+        cart: "{{ routes.cart_url | append: '.js' }}",
+        cartPage: "{{ routes.cart_url }}",
+        cartAdd: "{{ routes.cart_add_url | append: '.js' }}",
+        cartChange: "{{ routes.cart_change_url | append: '.js' }}",
+        search: "{{ routes.search_url }}",
+        predictiveSearch: "{{ routes.predictive_search_url }}"
+      };
+
+      theme.strings = {
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        inStockLabel: {{ 'products.product.in_stock_label' | t | json }},
+        oneStockLabel: {{ 'products.product.stock_label.one' | t: count: '[count]' | json }},
+        otherStockLabel: {{ 'products.product.stock_label.other' | t: count: '[count]' | json }},
+        willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+        willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+        waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+        savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
+        cartEmpty: {{ 'cart.general.empty' | t | json }},
+        cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }},
+        searchCollections: {{ 'general.search.collections' | t | json }},
+        searchPages: {{ 'general.search.pages' | t | json }},
+        searchArticles: {{ 'general.search.articles' | t | json }},
+        maxQuantity: {{ 'cart.general.max_quantity' | t: quantity: '[quantity]', title: '[title]' | json }}
+      };
+      theme.settings = {
+        cartType: {{ settings.cart_type | json }},
+        isCustomerTemplate: {% if request.page_type contains 'customers/' %}true{% else %}false{% endif %},
+        moneyFormat: {{ shop.money_format | json }},
+        saveType: {{ settings.product_save_type | json }},
+        productImageSize: {{ settings.product_grid_image_size | json }},
+        productImageCover: {{ settings.product_grid_image_fill }},
+        predictiveSearch: {{ settings.predictive_search_enabled }},
+        predictiveSearchType: {{ settings.search_type | json }},
+        superScriptSetting: {{ settings.superscript_decimals }},
+        superScriptPrice: {{ enableSuperScript }},
+        quickView: {{ settings.quick_shop_enable }},
+        quickAdd: {{ settings.quick_add_enable }},
+        themeName: 'Expanse',
+        themeVersion: "5.0.0"
+      };
+    </script>
+    <!-- yotpo script -->
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/NJrJJk7rW1ef5VUb7MwvpA" async defer="defer"></script>
+
+    {%- render 'import-map' -%}
+    {%- render 'es-module-shims' -%}
+    {%- render 'is-land' -%}
+
+    {{ content_for_header }}
+
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer" async></script>
+
+    {%- if request.page_type contains 'customers/' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer" async></script>
+    {%- endif -%}
+
+    {% if request.design_mode %}
+      <script src="https://api.archetypethemes.co/design-mode.js" defer="defer" async></script>
+    {% endif %}
+
+    {% render 'wsg-custom' %}
+    {% comment %} <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script> {% endcomment %}
+    <!-- Include Slick Slider -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    >
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    >
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  </head>
+  <!--
+    yotpo container
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="787073"></div>
+  -->
+
+  <body
+    class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %} {% if request.path == '/cart' %}cst-cart-page{% endif %}"
+    data-button_style="{{ settings.button_style }}"
+    data-edges="{{ settings.roundness }}"
+    data-type_header_capitalize="{{ settings.type_header_capitalize }}"
+    data-swatch_style="{{ settings.swatch_style }}"
+    data-grid-style="{{ settings.product_grid_style }}"
+  >
+    <a class="in-page-link visually-hidden skip-link" href="#MainContent">
+      {{- 'general.accessibility.skip_to_content' | t -}}
+    </a>
+
+    <div id="PageContainer" class="page-container">
+      <div class="transition-body">
+        {%- sections 'header-group' -%}
+        {%- sections 'popup-group' -%}
+
+        <main class="main-content" id="MainContent">
+          {{ content_for_layout }}
+        </main>
+
+        {%- sections 'footer-group' -%}
+      </div>
+    </div>
+
+    {%- liquid
+      render 'video-modal'
+      render 'photoswipe-template'
+      render 'tool-tip'
+    -%}
+
+    <style>
+          countdown-timer {
+          display: none;
+      }
+
+          .header-layout is-land {
+          width: 100%;
+      }
+
+          #SiteHeader .search__input-wrap {
+          max-width: 205px;
+      }
+
+          .header-layout is-land form[role="search"] {
+          max-width: 100%;
+      }
+        .site-header__element.site-header__element--sub[data-type="nav"] .site-navigation {
+          position: relative;
+      }
+
+      .new-grid .grid-product__image-wrap {
+          margin: 0;
+      }
+
+        .new-grid .grid-item__content .grid-product__title {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      }
+
+          .scrolling-text .scrolling-text__inner span {
+            font-size: 14px;
+        }
+
+        @media screen and (max-width:1400px){
+
+          summary.site-nav__link {
+            padding: 10px;
+            font-size: 12px;
+          }
+        }
+
+          @media screen and (max-width:1200px){
+
+         .site-header__element.site-header__element--sub[data-type="nav"] ul.site-navigation {
+          display: none !important;
+        }
+      #SiteHeader .mobile-nav-trigger {
+          display: block !important;
+      }
+
+      .site-header__drawer.is-active {
+          display: block !important;
+      }
+
+      #HeaderWrapper .header-item .site-nav__compress-menu {
+          display: none;
+      }
+
+      #HeaderWrapper .header-item predictive-search {
+          transform: translate(0);
+      }
+          }
+    </style>
+    <script>
+         $(document).ready(function(){
+           $('.cst-cart-btn').on('click', function(e){
+         e.stopImmediatePropagation(); // Prevents other listeners on this element
+        e.preventDefault();            // Prevent default action if needed
+         $('#HeaderCart').css('display', 'none');
+          window.location.href='/cart';
+      });
+         });
+    </script>
+  </body>
+</html>

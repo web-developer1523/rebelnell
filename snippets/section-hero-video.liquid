@@ -1,0 +1,185 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {boolean} full_width - full width
+   * @param {number} height_mobile - height mobile
+   * @param {number} title_size - title size
+   * @param {number} height - height desktop
+   * @param {string} color_accent - accent color
+   * @param {number} overlay_opacity - overlay opacity
+   * @param {string} video_url - video url
+   * @param {string} text_align - text align
+   * @param {string} title - title
+   * @param {string} subheading - subheading
+   * @param {string} link - link
+   * @param {string} link_text - link text
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- assign hydration = hydration | default: 'on:idle' -%}
+
+<section>
+  {%- unless full_width -%}
+    <div class="page-width hero--padded">
+  {%- endunless -%}
+
+    {%- style -%}
+      .hero--{{ section.id }} {
+        height: {{ height_mobile }}px;
+      }
+      .hero--{{ section.id }} .hero__title {
+        font-size: {{ title_size | times: 0.5 }}px;
+      }
+      @media only screen and (min-width: 769px) {
+        .hero--{{ section.id }} {
+          height: {{ height }}px;
+        }
+        .hero--{{ section.id }} .hero__title {
+          font-size: {{ title_size }}px;
+        }
+      }
+
+      {%- assign button_alpha = color_accent | color_extract: 'alpha' -%}
+      {% unless button_alpha == 0.0 %}
+        .hero--{{ section.id }} .btn {
+          background: {{ color_accent }} !important;
+          border-color: {{ color_accent }} !important;
+
+          {%- assign accent_brightness = color_accent | color_extract: 'lightness' -%}
+
+          {% if accent_brightness > 40 %}
+            color: #000 !important;
+          {% endif %}
+        }
+      {% endunless %}
+
+      {% if overlay_opacity > 0 %}
+        .hero--{{ section.id }} .hero__text-wrap:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: 3;
+          background-color: #000;
+          opacity: {{ overlay_opacity | divided_by: 100.0 }};
+        }
+      {% endif %}
+    {%- endstyle -%}
+
+    <is-land {{ hydration }}>
+      <video-section
+        data-section-id="{{ section.id }}"
+        data-section-type="video-section"
+        class="video-parent-section hero hero--{{ section.id }}">
+
+        <div class="hero__media hero__media--{{ section.id }}">
+          <div class="hero__media-container">
+
+            {%- if video_url contains 'youtube.com/watch' -%}
+              {%- assign video_id = video_url | split: 'v=' -%}
+              {%- assign video_id = video_id[1] | split: '&' | first -%}
+              <div
+                id="YouTubeVideo-{{ section.id }}"
+                class="video-div"
+                data-type="youtube"
+                data-video-id="{{ video_id }}"></div>
+            {%- endif -%}
+
+            {%- if video_url contains 'youtu.be/' -%}
+              {%- assign video_id = video_url | split: '.be/' -%}
+              {%- assign video_id = video_id[1] | split: '&' | first -%}
+              <div
+                id="YouTubeVideo-{{ section.id }}"
+                class="video-div"
+                data-type="youtube"
+                data-video-id="{{ video_id }}"></div>
+            {%- endif -%}
+
+            {%- if video_url contains 'vimeo.com' -%}
+              {%- assign video_id = video_url | split: '.com/' -%}
+              {%- assign video_id = video_id[1] | split: '/' | first -%}
+              <div
+                id="Vimeo-{{ section.id }}"
+                class="video-div"
+                data-type="vimeo"
+                data-video-id="{{ video_id }}"></div>
+            {%- endif -%}
+
+            {%- if video_url contains '.mp4' or video_url contains '.MP4' -%}
+              <video
+                id="Mp4Video-{{ section.id }}"
+                class="video-div"
+                data-type="mp4"
+                src="{{ video_url }}"
+                loop muted playsinline autoplay></video>
+            {%- endif -%}
+
+          </div>
+        </div>
+
+        <div class="hero__text-wrap">
+          <div class="page-width">
+            <div class="hero__text-content {{ text_align }}">
+              <div class="hero__text-shadow">
+                {%- if video_url contains 'vimeo.com' -%}
+                  <button type="button" id="VimeoTrigger-{{ section.id }}" class="vimeo-mobile-trigger medium-up--hide">
+                    {% render 'icon-play' %}
+                  </button>
+                {%- endif -%}
+
+                {%- unless title == blank -%}
+                  <h2 class="h1 hero__title">
+                    <div class="animation-contents">
+                    {{ title | newline_to_br }}
+                    </div>
+                  </h2>
+                {%- endunless -%}
+                {%- if subheading or link -%}
+                  {%- unless subheading == blank -%}
+                    <div class="hero__subtitle">
+                      <div class="animation-contents">
+                        {{ subheading | escape }}
+                      </div>
+                    </div>
+                  {%- endunless -%}
+                  {%- if link_text != blank -%}
+                    {%- assign link_href = link -%}
+                    {%- if link == blank -%}
+                      {%- assign link_href = video_url -%}
+                    {%- endif -%}
+                    <div class="hero__link">
+                      <a href="{{ link_href }}"
+                        class="btn{% if color_accent and color_accent == 'rgba(0,0,0,0)' %} btn--inverse{% endif %}"
+                        {%- if video_url contains 'vimeo.com' -%}
+                          data-video-id="{{ video_id }}"
+                        {%- endif -%}
+                      >
+                        {%- if link_href contains 'youtube.com/watch' or link_href contains 'youtu.be/' -%}
+                          {% render 'icon-play' %}
+                        {%- endif -%}
+                        {{ link_text }}
+                      </a>
+                    </div>
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </video-section>
+
+      <template data-island>
+        <script type="module">
+          import 'components/section-hero-video';
+        </script>
+      </template>
+    </is-land>
+
+  {%- unless full_width -%}
+    </div>
+  {%- endunless -%}
+</section>

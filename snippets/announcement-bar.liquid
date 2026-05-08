@@ -1,0 +1,69 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {boolean} show_announcement - whether to show announcement
+   * @param {number} announcement_block_count - number of announcement blocks
+   * @param {boolean} announcement_center - whether to center announcement's content
+   */
+{% endcomment %}
+
+{% if show_announcement %}
+  <div class="toolbar__item toolbar__item--announcements">
+    <div class="announcement-bar{% if announcement_center %} text-center{% endif %}">
+      <div class="slideshow-wrapper">
+        <button type="button" class="visually-hidden slideshow__pause" data-id="{{ section.id }}" aria-live="polite">
+          <span class="slideshow__pause-stop">
+            {% render 'icon-pause' %}
+            <span class="icon__fallback-text">{{ 'sections.slideshow.pause_slideshow' | t }}</span>
+          </span>
+          <span class="slideshow__pause-play">
+            {% render 'icon-play' %}
+            <span class="icon__fallback-text">{{ 'sections.slideshow.play_slideshow' | t }}</span>
+          </span>
+        </button>
+
+        <div
+          id="AnnouncementSlider"
+          class="announcement-slider"
+          data-block-count="{{ announcement_block_count }}">
+          {%- assign slide_index = 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == '@app' -%}
+              <div
+                id="AnnouncementSlide-{{ block.id }}"
+                class="slideshow__slide announcement-slider__slide"
+                data-index="{{ slide_index }}"
+                {{ block.shopify_attributes }}
+              >
+                {%- render block -%}
+              </div>
+              {%- assign slide_index = slide_index | plus: 1 -%}
+            {%- endif -%}
+            {%- if block.type == 'announcement' -%}
+              <div
+                id="AnnouncementSlide-{{ block.id }}"
+                class="slideshow__slide announcement-slider__slide"
+                data-index="{{ slide_index }}"
+                {{ block.shopify_attributes }}
+              >
+                <div class="announcement-slider__content">
+                  {%- if block.settings.richtext_mobile != blank -%}
+                    <div class="medium-up--hide">
+                      {{ block.settings.richtext_mobile }}
+                    </div>
+                    <div class="small--hide">
+                      {{ block.settings.richtext }}
+                    </div>
+                  {%- else -%}
+                    {{ block.settings.richtext }}
+                  {%- endif -%}
+                </div>
+              </div>
+              {%- assign slide_index = slide_index | plus: 1 -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,241 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "hero_video_RUxtGE": {
+      "type": "hero-video",
+      "name": "t:sections.hero-video.presets.video_hero.name",
+      "settings": {
+        "full_width": true,
+        "title": "",
+        "title_size": 70,
+        "subheading": "",
+        "link_text": "",
+        "link": "",
+        "color_accent": "#ffffff",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/1af245ed4ff7404eb4e15a357f70e214.mp4",
+        "overlay_opacity": 0,
+        "height": 540,
+        "height_mobile": 300
+      }
+    },
+    "featured_collection_TzAGt9": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "custom-class": "",
+        "title": "Best Sellers",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "home_featured_products": "valentines-gift-guide-all",
+        "count": 10,
+        "products_per_row": 5,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "blocks_nbYUgf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b6c4a57_zKDJVB": {
+          "type": "ai_gen_block_b6c4a57",
+          "settings": {
+            "heading": "Shop by Price",
+            "subheading": "",
+            "heading_font": "arial_n4",
+            "heading_size": 36,
+            "heading_alignment": "center",
+            "heading_color": "#000000",
+            "heading_bold": true,
+            "subheading_size": 16,
+            "subheading_color": "#666666",
+            "link_1_title": "Gifts Under $75",
+            "link_1_url": "shopify://collections/gifts-under-76",
+            "link_1_image": "shopify://shop_images/Gifts_under_75_meta_cover.png",
+            "link_1_description": "",
+            "link_2_title": "Gifts Under $150",
+            "link_2_url": "https://www.rebelnell.com/collections/gifts-under-151",
+            "link_2_image": "shopify://shop_images/Gifts_under_150_meta_cover.png",
+            "link_2_description": "",
+            "link_3_title": "Gifts Under $200",
+            "link_3_url": "https://www.rebelnell.com/collections/gift-under-200",
+            "link_3_image": "shopify://shop_images/Gifts_under_200_meta_cover.png",
+            "link_3_description": "",
+            "link_4_title": "Link 4",
+            "link_4_url": "",
+            "link_4_description": "",
+            "card_background": "#ffffff",
+            "card_border_radius": 8,
+            "card_title_size": 20,
+            "card_title_color": "#000000",
+            "card_description_size": 14,
+            "card_description_color": "#666666",
+            "nav_button_color": "#000000",
+            "nav_button_hover_color": "#ffffff",
+            "dot_color": "#000000",
+            "background_color": "#f9f9f9"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b6c4a57_zKDJVB"
+      ],
+      "name": "Page carousel",
+      "settings": {}
+    },
+    "blocks_8HxWWr": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c5413ce_DV4h7F": {
+          "type": "ai_gen_block_c5413ce",
+          "settings": {
+            "collection": "fox-theatre-collaboration-all",
+            "products_limit": 12,
+            "hero_image": "shopify://shop_images/Fox_Theatre_Secondary_Hero_Image.jpg",
+            "hero_height": 300,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "title": "Fox Theatre Collaboration",
+            "description": "",
+            "button_text": "Shop All",
+            "hero_text_bottom_spacing": 40,
+            "text_color": "#ffffff",
+            "title_size": 48,
+            "description_size": 18,
+            "text_spacing": 20,
+            "button_bg_color": "#c81688",
+            "button_hover_bg_color": "#a01270",
+            "button_text_color": "#ffffff",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 0,
+            "products_bg_color": "#ffffff",
+            "products_padding_top": 40,
+            "products_padding_bottom": 40,
+            "product_width": 280,
+            "product_gap": 20,
+            "scrollbar_color": "#cccccc",
+            "card_bg_color": "#ffffff",
+            "card_border_radius": 8,
+            "card_padding": 16,
+            "product_text_color": "#000000",
+            "product_title_size": 16,
+            "product_price_size": 16,
+            "add_to_cart_text": "Add to Cart",
+            "add_to_cart_bg_color": "#c81688",
+            "add_to_cart_hover_bg_color": "#a01270",
+            "add_to_cart_text_color": "#ffffff",
+            "add_to_cart_font_size": 14,
+            "add_to_cart_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c5413ce_DV4h7F"
+      ],
+      "name": "Featured collection",
+      "settings": {}
+    },
+    "text_with_icons_PthGWi": {
+      "type": "text-with-icons",
+      "blocks": {
+        "text_block_Wp79Vi": {
+          "type": "text_block",
+          "settings": {
+            "icon": "truck",
+            "title": "Free Shipping",
+            "text": "<p>on Orders $100+</p>"
+          }
+        },
+        "text_block_wzzYgQ": {
+          "type": "text_block",
+          "settings": {
+            "icon": "charity",
+            "title": "Made in Detroit",
+            "text": "<p>Handcrafted locally with purpose</p>"
+          }
+        },
+        "text_block_XLJmYg": {
+          "type": "text_block",
+          "settings": {
+            "icon": "gift",
+            "title": "One of a Kind, Always",
+            "text": "<p>No two pieces are exactly alike</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_Wp79Vi",
+        "text_block_wzzYgQ",
+        "text_block_XLJmYg"
+      ],
+      "name": "t:common.text_with_icons.presets.text_with_icons.name",
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "desktop_columns_per_row": 3,
+        "icon_color": "#c81688",
+        "button_label": "",
+        "button_link": "",
+        "divider": false
+      }
+    },
+    "rich_text_76RTte": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4Pkz9n": {
+          "type": "heading",
+          "settings": {
+            "title": "Valentine's Day Shipping Deadline",
+            "heading_size": "h2"
+          }
+        },
+        "text_TDVFkY": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Standard Shipping </strong>cut off Feb 9th at 12 PM EST<br/><strong>Priority Shipping </strong>cut off Feb 10th at 12 PM EST</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4Pkz9n",
+        "text_TDVFkY"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_video_RUxtGE",
+    "featured_collection_TzAGt9",
+    "blocks_nbYUgf",
+    "blocks_8HxWWr",
+    "text_with_icons_PthGWi",
+    "rich_text_76RTte"
+  ]
+}

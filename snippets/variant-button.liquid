@@ -1,0 +1,242 @@
+{% comment %}
+  /**
+   * @param {object} section - section
+   * @param {object} product - product
+   * @param {object} forloop - forloop object
+   * @param {string} form_id - form id
+   * @param {string} size_chart_title - title for the size chart tool tip
+   * @param {string} swatch_file_extension - file extension for swatch images
+   * @param {object} option - variant option object
+   * @param {boolean} variant_labels - whether or not to show variant labels
+   * @param {boolean} connect_to_sizechart - whether or not to connect to size chart
+   * @param {number} sizechart_index - index of size chart block
+   * @param {boolean} is_color - whether or not the option is a color
+   * @param {number} color_option_index - index of color option
+   */
+{% endcomment %}
+
+{%- liquid
+  assign is_size = false
+  assign size_trigger = 'products.general.size_trigger' | t | downcase
+  assign downcased_option = option.name | downcase
+
+  if downcased_option contains size_trigger
+    assign is_size = true
+  endif
+-%}
+
+<div class="variant-wrapper js" data-type="button">
+  <label
+    tabindex="0"
+    class="variant__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels %} hidden-label{% endunless %}"
+    for="ProductSelect-{{ section.id }}-{{ product.id }}-option-{{ index0 }}"
+  >
+    {{ option.name }}
+    {%- if connect_to_sizechart and is_size -%}
+      <span class="variant__label-info">
+        &mdash;
+        {%- render 'tool-tip-trigger',
+          title: size_chart_title,
+          content: section.blocks[sizechart_index].settings.size_chart.content,
+          context: 'size-chart'
+        -%}
+      </span>
+    {%- endif -%}
+    {%- if is_color -%}
+      <span class="variant__label-info">
+        &mdash;
+        <span
+          data-variant-color-label
+          data-index="{{ forloop.index0 }}"
+          data-option-index="{{ color_option_index }}"
+        >
+          {{ option.selected_value }}
+        </span>
+      </span>
+    {%- endif -%}
+  </label>
+  {%- assign option_index = forloop.index -%}
+  <fieldset
+    class="variant-input-wrap"
+    name="{{ option.name }}"
+    data-index="option{{ option_index }}"
+    data-handle="{{ option.name | handleize }}"
+    id="ProductSelect-{{ section.id }}-{{ product.id }}-option-{{ forloop.index0 }}"
+  >
+    <legend class="hide">{{ option.name }}</legend>
+    {% comment %} {%- for value in option.values -%}
+      {%- liquid
+        assign product_available = true
+        if product.options.size == 1
+          assign product_available = product.variants[forloop.index0].available
+        endif
+      -%}
+      <div
+        class="variant-input"
+        data-index="option{{ option_index }}"
+        data-value="{{ value | escape }}"
+      >
+        <input
+          type="radio"
+          form="{{ form_id }}"
+          {% if option.selected_value == value %}
+            checked="checked"
+          {% endif %}
+          value="{{ value | escape }}"
+          data-index="option{{ option_index }}"
+          name="{{ option.name }}"
+          data-variant-input
+          class="{% unless product_available %} disabled{% endunless %}{% if is_color %} variant__input--color-swatch{% endif %}"
+          {% if is_color %}
+            data-color-name="{{ value | escape }}"
+          {% endif %}
+          {% if is_color %}
+            data-color-index="{{ color_option_index }}"
+          {% endif %}
+          id="ProductSelect-{{ section.id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+          {% unless product_available %} disabled{% endunless %}
+        >
+        {%- if is_color -%}
+          {%- liquid
+            assign color_file_name = value | handle | append: '.' | append: swatch_file_extension
+            assign color_image = color_file_name | file_img_url: '50x50' | prepend: 'https:' | split: '?' | first
+            assign color_swatch_fallback = value | split: ' ' | last | handle
+          -%}
+          <label
+            tabindex="0"
+            for="ProductSelect-{{ section.id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+            class="variant__button-label color-swatch color-swatch--{{ value | handle }}{% unless product_available %} disabled{% endunless %}"
+            data-variant-id="{{ variant.id }}"
+            style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url({{ color_image }});{% endif %}"
+          >
+            {{ value | escape }}
+          </label>
+        {%- else -%}
+          <label
+            tabindex="0"
+            for="ProductSelect-{{ section.id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+            class="variant__button-label{% unless product_available %} disabled{% endunless %}"
+            data-variant-id="{{ variant.id }}"
+          >
+            {{- value | escape -}}
+          </label>
+        {%- endif -%}
+      </div>
+    {%- endfor -%} {% endcomment %}
+     {%- for value in option.values -%}
+  {%- liquid
+    assign product_available = false
+
+    for v in product.variants
+      if v.available
+        case option.position
+          when 1
+            if v.option1 == value
+              assign product_available = true
+            endif
+          when 2
+            if v.option2 == value
+              assign product_available = true
+            endif
+          when 3
+            if v.option3 == value
+              assign product_available = true
+            endif
+        endcase
+      endif
+    endfor
+  -%}
+
+  <div class="variant-input" data-index="option{{ option_index }}" data-value="{{ value | escape }}">
+    <input
+      type="radio"
+      form="{{ form_id }}"
+      {% if option.selected_value == value %}checked="checked"{% endif %}
+      value="{{ value | escape }}"
+      data-index="option{{ option_index }}"
+      name="{{ option.name }}"
+      data-variant-input
+      class="{% if is_color %}variant__input--color-swatch{% endif %}{% unless product_available %} disabled{% endunless %}"
+      {% if is_color %}
+        data-color-name="{{ value | escape }}"
+        data-color-index="{{ color_option_index }}"
+      {% endif %}
+      id="ProductSelect-{{ section.id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+    >
+
+    <label
+      tabindex="0"
+      for="ProductSelect-{{ section.id }}-{{ product.id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+      class="variant__button-label{% if is_color %} color-swatch color-swatch--{{ value | handle }}{% endif %}{% unless product_available %} disabled{% endunless %}"
+    >
+      {{ value | escape }}
+    </label>
+  </div>
+{%- endfor -%}
+
+  </fieldset>
+</div>
+{% comment %} <style>
+/* Keep disabled variant options visible but styled */
+.variant-input input.disabled {
+  display: inline-block !important; /* or inline-flex if needed */
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.variant__button-label.disabled {
+  display: inline-block !important;
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none; /* stops clicking but still shows */
+}
+</style> {% endcomment %}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const productData = {{ product | json }};
+  
+  function updateOptions() {
+    const selectedOptions = [];
+    document.querySelectorAll("[data-variant-input]:checked").forEach(input => {
+      const idx = input.getAttribute("data-index").replace("option", "");
+      selectedOptions[idx - 1] = input.value;
+    });
+
+    document.querySelectorAll("[data-variant-input]").forEach(input => {
+      const optionIndex = parseInt(input.getAttribute("data-index").replace("option", "")) - 1;
+      const optionValue = input.value;
+
+      // clone selected options and substitute this option value
+      const testOptions = [...selectedOptions];
+      testOptions[optionIndex] = optionValue;
+
+      // check if variant with this combo exists and is available
+      const match = productData.variants.find(v =>
+        v.option1 == testOptions[0] &&
+        (productData.options.length < 2 || v.option2 == testOptions[1]) &&
+        (productData.options.length < 3 || v.option3 == testOptions[2])
+      );
+
+      if (!match || !match.available) {
+        input.disabled = true;
+        input.classList.add("disabled");
+        input.nextElementSibling.classList.add("disabled");
+      } else {
+        input.disabled = false;
+        input.classList.remove("disabled");
+        input.nextElementSibling.classList.remove("disabled");
+      }
+    });
+  }
+
+  // initial run
+  updateOptions();
+
+  // update on change
+  document.querySelectorAll("[data-variant-input]").forEach(input => {
+    input.addEventListener("change", updateOptions);
+  });
+});
+</script>
+

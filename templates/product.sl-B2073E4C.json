@@ -1,0 +1,180 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": false,
+            "color_swatches": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description_3KCJkV": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "tab_UxkVzT": {
+          "type": "tab",
+          "settings": {
+            "title": "Free Shipping On Orders of $100+",
+            "content": "<h3><strong>SHIPPING</strong></h3><p><strong>How/when will my order ship?</strong></p><p>All orders are shipped via USPS. We offer Standard, Expedited, Overnight, and International shipping options with tracking included. Free standard shipping is included on orders of $100 and over.</p><p>It is important to note that it will take 1-2 business days for us to process your order. If you order overnight shipping after 12pm on Friday, your overnight order should be delivered on Tuesday.</p><p><strong>Do you ship internationally?</strong></p><p>We do! When you find a piece you love simply add it to your cart and proceed to checkout. There will be an option to switch your address to an international address. The shipping and handling fee will also display while in the checkout process. Depending on where you're located, shipping could take up to three weeks. Please note that we are not responsible for any customs fees that may be incurred. </p>",
+            "page": ""
+          }
+        },
+        "tab_ciANkK": {
+          "type": "tab",
+          "settings": {
+            "title": "30-Day Returns",
+            "content": "<p><strong>What is your return policy?</strong></p><p>Not digging the piece you purchased? We've got you! If you are unhappy with your item and would like to return it, please do so within 30 days from the original date of purchase. Items must be unworn and in their original condition in order to be eligible for return. Engraved, custom, and sale items are considered final sale and not eligible for return or exchange. </p><p>Eligible returns can be sent to us at 1314 Holden Detroit, MI 48202. Please be sure to include your name, order number, and a note letting us know you're interested in returning the item purchased. Returns will be processed within 5-7 business days from the time we receive your return. After we receive your item, a credit will be issued to the original method of payment and a return receipt will be sent to the email used during the original purchase. If the return was a gift, please shoot us an email at rebelnell@rebelnell.com to make other accommodations. At this time we do not offer free shipping on returns.</p><p>Eligible returns may also be returned at our Downtown Detroit store located at 1435 Farmer St Suite 126 Detroit, MI 48226 or our Holden location at 1314 Holden Detroit, MI 48202.</p><p><strong>What if I see something else I like better than the piece I purchased?</strong></p><p>See something you like better than what you received? No worries! Because each piece of Rebel Nell is unique, exchanges are a bit tricky as we sometimes cannot pull the piece you like better before another customer purchases the item. For this reason, we recommend purchasing the item you like better now and sending the original item back to us for a full refund. This way you will be guaranteed to receive the piece you love!</p>",
+            "page": ""
+          }
+        },
+        "tab_93ngW8": {
+          "type": "tab",
+          "settings": {
+            "title": "2 Year Warranty",
+            "content": "<p>At Rebel Nell, our jewelry is handmade by real people. That means that each and every piece has been created with intention and purpose by one of the amazing women we serve. Under our two year warranty, if we created a piece that is damaged or defective, we'll gladly fix it for you. The warranty does not cover issues from general wear and tear (like tarnishing and scratches), improper use, or any modifications from a third-party. </p><p>To initiate a repair, send us an email at rebelnell@rebelnell.com. Please be sure to include your name, order number, shipping address, and a brief description of the required repair.</p>",
+            "page": ""
+          }
+        },
+        "klaviyo_reviews_average_rating_UW9Hnk": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/average-rating/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "description_3KCJkV",
+        "tab_UxkVzT",
+        "tab_ciANkK",
+        "tab_93ngW8",
+        "klaviyo_reviews_average_rating_UW9Hnk"
+      ],
+      "custom_css": [
+        "button.add-to-cart {background: #00c49a; color: #ffffff !important ; border: none !important;}"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": false,
+        "thumbnail_position": "below",
+        "thumbnail_height": "flexible",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "blocks": {
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
+        }
+      },
+      "block_order": [
+        "contact"
+      ],
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 4,
+        "products_per_row": 4
+      }
+    },
+    "more-products-vendor": {
+      "type": "more-products-vendor",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "more-products-collection": {
+      "type": "more-products-collection",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {}
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {
+        "color_scheme": "2"
+      }
+    },
+    "171863023765d2cd69": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_reviews_product_reviews_cpKLrK": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/product-reviews/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_product_reviews_cpKLrK"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "recommendations",
+    "more-products-vendor",
+    "more-products-collection",
+    "recently-viewed",
+    "collection-return",
+    "171863023765d2cd69"
+  ]
+}

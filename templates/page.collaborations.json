@@ -1,0 +1,363 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_Nfg9Di": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_DfLKbM": {
+          "type": "heading",
+          "settings": {
+            "title": "Team Pride",
+            "heading_size": "h2"
+          }
+        },
+        "text_4qGQwB": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Made from players' jackets, stadium seats, fan art, and more. Our team pride collections are a unique way to celebrate your team!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DfLKbM",
+        "text_4qGQwB"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "featured_collections_VCTJ9D": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_bghjRt": {
+          "type": "collection",
+          "settings": {
+            "collection": "detroit-roller-derby-collaboration",
+            "title": ""
+          }
+        },
+        "collection_zDW4kx": {
+          "type": "collection",
+          "settings": {
+            "collection": "detroit-lions-collection",
+            "title": ""
+          }
+        },
+        "collection_pF4trV": {
+          "type": "collection",
+          "settings": {
+            "collection": "comerica-park-dugout",
+            "title": ""
+          }
+        },
+        "collection_RwN3En": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "dcfc-collection",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_bghjRt",
+        "collection_zDW4kx",
+        "collection_pF4trV",
+        "collection_RwN3En"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    },
+    "rich_text_NezEbx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jMjR9a": {
+          "type": "heading",
+          "settings": {
+            "title": "Artist Series",
+            "heading_size": "h2"
+          }
+        },
+        "text_yVamMx": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>We've partnered with artists to create our artist series collaborations. Each piece is created from a hand-painted mural made by the artist and deconstructed to make your individual piece. Comes complete with a canvas reprint ready to hang.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jMjR9a",
+        "text_yVamMx"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "featured_collections_FRjmUh": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_PWBwMw": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-lady-pink",
+            "title": ""
+          }
+        },
+        "collection_qiJd6r": {
+          "type": "collection",
+          "settings": {
+            "collection": "ouizi-collection",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_PWBwMw",
+        "collection_qiJd6r"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    },
+    "rich_text_pmPXrW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CPDfyT": {
+          "type": "heading",
+          "settings": {
+            "title": "Campus Rocks",
+            "heading_size": "h2"
+          }
+        },
+        "text_W8ggLA": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Our campus rock collections are a piece of history, a layer of protest and a simple reminder that a splatter of paint can provide hope, support, and a platform for  social action. Made from paint from each university's campus rock.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CPDfyT",
+        "text_W8ggLA"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "featured_collections_xMqyQn": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_BUtGHT": {
+          "type": "collection",
+          "settings": {
+            "collection": "albion-college-campus-rock",
+            "title": ""
+          }
+        },
+        "collection_dwQVTr": {
+          "type": "collection",
+          "settings": {
+            "collection": "michigan-state-campus-rock",
+            "title": ""
+          }
+        },
+        "collection_jfFUcG": {
+          "type": "collection",
+          "settings": {
+            "collection": "u-of-m-campus-rock",
+            "title": ""
+          }
+        },
+        "collection_g9bbKk": {
+          "type": "collection",
+          "settings": {
+            "collection": "wayne-state-campus-rock",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_BUtGHT",
+        "collection_dwQVTr",
+        "collection_jfFUcG",
+        "collection_g9bbKk"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    },
+    "rich_text_pB3TQA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_EEHGD8": {
+          "type": "heading",
+          "settings": {
+            "title": "Historic",
+            "heading_size": "h2"
+          }
+        },
+        "text_aeg6tG": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Using repurposed materials, our historic collections tell a story of what once was and connect life's important moments to your personal journey.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_EEHGD8",
+        "text_aeg6tG"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "featured_collections_MekgB3": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_BMDW4R": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "title": "Rocket Classic"
+          }
+        },
+        "collection_8trhAW": {
+          "type": "collection",
+          "settings": {
+            "collection": "joe-louis-collaboration-all",
+            "title": "Joe Louis"
+          }
+        },
+        "collection_kpUyQj": {
+          "type": "collection",
+          "settings": {
+            "collection": "grand-hotel-collaboration",
+            "title": "Grand Hotel"
+          }
+        },
+        "collection_9PJ3FB": {
+          "type": "collection",
+          "settings": {
+            "collection": "packard-plant-collaboration-all",
+            "title": "Packard Plant"
+          }
+        },
+        "collection_7RDUaU": {
+          "type": "collection",
+          "settings": {
+            "collection": "fox-theatre-collaboration-all",
+            "title": "Fox Theatre"
+          }
+        },
+        "collection_GDUW7W": {
+          "type": "collection",
+          "settings": {
+            "collection": "hudsons-collab",
+            "title": "Hudson's"
+          }
+        },
+        "collection_FBwG7T": {
+          "type": "collection",
+          "settings": {
+            "collection": "michigan-central-station",
+            "title": ""
+          }
+        },
+        "collection_mepTWH": {
+          "type": "collection",
+          "settings": {
+            "collection": "belle-isle-zoo-collections",
+            "title": "Belle Isle Zoo"
+          }
+        },
+        "collection_GPAE7A": {
+          "type": "collection",
+          "settings": {
+            "collection": "detroit-zoo-all",
+            "title": "Detroit Zoo"
+          }
+        },
+        "collection_UM6tNL": {
+          "type": "collection",
+          "settings": {
+            "collection": "parade-company-collection",
+            "title": "The Parade Company"
+          }
+        }
+      },
+      "block_order": [
+        "collection_BMDW4R",
+        "collection_8trhAW",
+        "collection_kpUyQj",
+        "collection_9PJ3FB",
+        "collection_7RDUaU",
+        "collection_GDUW7W",
+        "collection_FBwG7T",
+        "collection_mepTWH",
+        "collection_GPAE7A",
+        "collection_UM6tNL"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_Nfg9Di",
+    "featured_collections_VCTJ9D",
+    "rich_text_NezEbx",
+    "featured_collections_FRjmUh",
+    "rich_text_pmPXrW",
+    "featured_collections_xMqyQn",
+    "rich_text_pB3TQA",
+    "featured_collections_MekgB3"
+  ]
+}

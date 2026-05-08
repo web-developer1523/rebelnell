@@ -1,0 +1,121 @@
+{%- render 'section-contact-form',
+    section: section,
+    color_scheme: section.settings.color_scheme,
+    narrow_column: section.settings.narrow_column,
+    title: section.settings.title,
+    text: section.settings.text,
+    heading_position: section.settings.heading_position,
+    heading_size: section.settings.heading_size,
+    customer: customer,
+    show_phone: section.settings.show_phone,
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.contact-form.name",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.contact-form.settings.content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.contact-form.settings.title.label",
+      "default": "Contact us"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:common.heading_size.label",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:common.heading_size.options.small.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:common.heading_size.options.medium.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:common.heading_size.options.large.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:common.heading_size.options.extra_large.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "t:common.heading_position.label",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:common.heading_position.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:common.heading_position.options.center.label"
+        },
+        {
+          "value": "right",
+          "label": "t:common.heading_position.options.right.label"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.contact-form.settings.text.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "t:sections.contact-form.settings.show_phone.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "narrow_column",
+      "label": "t:sections.contact-form.settings.narrow_column.label",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:sections.contact-form.settings.color_scheme.label",
+      "default": "1",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.contact-form.settings.color_scheme.options.none.label"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.contact-form.presets.contact_form.name"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

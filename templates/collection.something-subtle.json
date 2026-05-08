@@ -1,0 +1,176 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_k9x89N": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_wJ3gXr": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/Shop_by_metal_meta_mobile.png",
+            "image_mobile": "shopify://shop_images/Shop_by_metal_meta_mobile.png",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_wJ3gXr"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slides.name",
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": false,
+        "autoplay_speed": 7
+      }
+    },
+    "rich_text_zAbLD6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GjkEnE": {
+          "type": "heading",
+          "settings": {
+            "title": "Something Subtle that Speaks Volumes",
+            "heading_size": "h2"
+          }
+        },
+        "text_k4KExE": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Sometimes the softest stories speak the loudest. These delicate, meaningful designs are perfect for the minimalist with heart. Crafted from reclaimed materials, each piece carries quiet confidence, timeless style, and the unmistakable power of purpose.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GjkEnE",
+        "text_k4KExE"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "featured_collections_dmwpgU": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_cxambM": {
+          "type": "collection",
+          "settings": {
+            "collection": "birthstone-collection",
+            "title": "Birthstone Collection"
+          }
+        },
+        "collection_fWGbUw": {
+          "type": "collection",
+          "settings": {
+            "collection": "detroit-necklaces",
+            "title": ""
+          }
+        },
+        "collection_MYGbyN": {
+          "type": "collection",
+          "settings": {
+            "collection": "everyday-essentials",
+            "title": ""
+          }
+        },
+        "collection_xBbwxE": {
+          "type": "collection",
+          "settings": {
+            "collection": "megan-earrings",
+            "title": ""
+          }
+        },
+        "collection_QyPCBe": {
+          "type": "collection",
+          "settings": {
+            "collection": "nicole-necklace",
+            "title": ""
+          }
+        },
+        "collection_DD48MW": {
+          "type": "collection",
+          "settings": {
+            "collection": "protection-collection",
+            "title": "Protection Collection"
+          }
+        }
+      },
+      "block_order": [
+        "collection_cxambM",
+        "collection_fWGbUw",
+        "collection_MYGbyN",
+        "collection_xBbwxE",
+        "collection_QyPCBe",
+        "collection_DD48MW"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {}
+        },
+        "subcollections": {
+          "type": "subcollections",
+          "settings": {}
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "grid_style": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "collection_description",
+        "subcollections",
+        "product_grid"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sidebar": true,
+        "collapse_filters": true,
+        "enable_color_swatches": false,
+        "enable_sort": true
+      }
+    }
+  },
+  "order": [
+    "slideshow_k9x89N",
+    "rich_text_zAbLD6",
+    "featured_collections_dmwpgU",
+    "main-collection"
+  ]
+}

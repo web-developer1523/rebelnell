@@ -1,0 +1,25 @@
+{% comment %}
+  /**
+    * @param {object} section - section object
+    * @param {boolean} space_around - enable space around section
+    * @param {boolean} full_width - enable full width
+  */
+{% endcomment %}
+
+{%- if space_around -%}
+  <div class="index-section">
+{%- endif -%}
+{%- unless full_width -%}
+  <div class="page-width">
+{%- endunless -%}
+
+{%- for block in section.blocks -%}
+  {% render block %}
+{%- endfor -%}
+
+{%- unless full_width -%}
+  </div>
+{%- endunless -%}
+{%- if space_around -%}
+  </div>
+{%- endif -%}

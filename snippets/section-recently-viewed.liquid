@@ -1,0 +1,38 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {number} recently_viewed_max_products - max number of products to show
+   * @param {object} product - product
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- assign hydration = hydration | default: 'on:idle' -%}
+
+<is-land {{ hydration }}>
+  <recently-viewed
+    data-subsection
+    data-section-id="{{ section.id }}"
+    data-section-type="recently-viewed"
+    data-product-id="{{ product.id }}"
+    data-max-products="{{ recently_viewed_max_products }}"
+  >
+    <div class="index-section index-section--sub-product">
+      <div class="page-width">
+        <header class="section-header">
+          <div class="h3 section-header__title">{{ 'products.general.recent_products' | t }}</div>
+        </header>
+      </div>
+
+      <div class="page-width page-width--flush-small">
+        <div id="RecentlyViewed-{{ section.id }}"></div>
+      </div>
+    </div>
+  </recently-viewed>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-recently-viewed';
+    </script>
+  </template>
+</is-land>

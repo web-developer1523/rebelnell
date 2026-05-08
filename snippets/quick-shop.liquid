@@ -1,0 +1,19 @@
+{% comment %}
+  /**
+   * @param {string} content - content to be rendered
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- assign hydration = hydration | default: 'on:idle' -%}
+
+<is-land {{ hydration }}>
+  <quick-shop>
+    {{ content }}
+  </quick-shop>
+  <template data-island>
+    <script type="module">
+      import 'components/quick-shop';
+    </script>
+  </template>
+</is-land>

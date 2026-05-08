@@ -1,0 +1,63 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {object} collection - collection object
+   * @param {number} products_per_row - number of products per row
+   * @param {number} max_products - maximum number of products to show
+   * @param {boolean} quick_add_enable - whether quick add is enabled
+   * @param {boolean} quick_shop_enable - whether quick shop is enabled
+   * @param {string} product_grid_image_size - the image size to use for the grid item
+   * @param {boolean} product_grid_image_fill - whether the image should fill the grid item
+   * @param {boolean} product_hover_image - whether second image will be shown on hover
+   * @param {boolean} enable_swatches - whether swatches are enabled
+   * @param {boolean} vendor_enable - whether to show the vendor
+   * @param {boolean} product_save_amount - show save amount
+   * @param {string} product_save_type - dollar or percent
+   * @param {boolean} enable_product_reviews - whether to show product reviews
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   */
+{% endcomment %}
+
+{%- liquid
+  if collection
+    assign collection_handle = collection.handle
+  else
+    for col in product.collections limit: 1
+      assign collection_handle = col.handle
+    endfor
+  endif
+
+  assign collection = collections[collection_handle]
+
+  capture gridView
+    render 'products-per-row', products_per_row: products_per_row
+  endcapture
+-%}
+
+{%- if collection and collection.handle != blank -%}
+  {%- capture collection_link -%}
+    <a href="{{ collection.url }}">{{ collection.title }}</a>
+  {%- endcapture -%}
+  <div
+    data-subsection
+    data-section-id="{{ section.id }}"
+    data-section-type="collection-template">
+    <div class="index-section index-section--sub-product">
+      <div class="page-width">
+        <header class="section-header">
+          <div class="h3 section-header__title">{{ 'products.general.more_from_html' | t: link: collection_link }}</div>
+        </header>
+      </div>
+
+      <div class="page-width page-width--flush-small">
+        <div class="new-grid product-grid scrollable-grid--small" data-view="{{ gridView }}">
+          {%- liquid
+            for product in collection.products limit: max_products
+              render 'product-grid-item', product: product, collection: collection, sizeVariable: products_per_row, fallback: '45vw', quick_add_enable: quick_add_enable, quick_shop_enable: quick_shop_enable, product_grid_image_size: product_grid_image_size, product_grid_image_fill: product_grid_image_fill, product_hover_image: product_hover_image, enable_swatches: enable_swatches, vendor_enable: vendor_enable, product_save_amount: product_save_amount, product_save_type: product_save_type, enable_product_reviews: enable_product_reviews, superscript_decimals: superscript_decimals
+            endfor
+          -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

@@ -1,0 +1,185 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "174851793536affd86": {
+      "type": "apps",
+      "blocks": {
+        "hitsy_progress_bar_hitsy_block_rB7ViD": {
+          "type": "shopify://apps/hitsy-progress-bar/blocks/hitsy-block/0e2f6173-7277-4c61-a4df-2e70602cd303",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "hitsy_progress_bar_hitsy_block_rB7ViD"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "main": {
+      "type": "main-cart",
+      "blocks": {
+        "text_block_8g6WfG": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/1_495d3f2f-f4f4-45cf-b704-9d59f63e5a29.jpg",
+            "image_mask": "none",
+            "image_width": 150,
+            "title": "Handmade in Detroit",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_VRaBNp": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Custom_Gifting_1.webp",
+            "image_mask": "none",
+            "image_width": 200,
+            "title": "Women-Owned Business",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_d6DgBF": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/1706895042943.jpg",
+            "image_mask": "none",
+            "image_width": 160,
+            "title": "Social Enterprise",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_8g6WfG",
+        "text_block_VRaBNp",
+        "text_block_d6DgBF"
+      ],
+      "settings": {
+        "custom-css": "cst-text-col-section cart-page",
+        "title": "",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {}
+    },
+    "text_columns_EE6daf": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_rgkh7B": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/MysteryBoxGraphic.jpg",
+            "image_mask": "none",
+            "image_width": 130,
+            "title": "Mystery Box",
+            "text": "<p>$55</p>",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.rebelnell.com/products/mystery-box"
+          }
+        },
+        "text_block_RJr7KK": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/PhotoRoom_000_20230510_103945_9f3e0bd0-230d-4e30-a113-3d284ed2fbf7.jpg",
+            "image_mask": "none",
+            "image_width": 130,
+            "title": "Gift Message",
+            "text": "<p>$2</p>",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.rebelnell.com/products/note-for-seller"
+          }
+        },
+        "text_block_Wk6cQe": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Website_ProductListings-2020-11-28T140459.399.png",
+            "image_mask": "none",
+            "image_width": 130,
+            "title": "Gift Box | One Per Item",
+            "text": "<p>$5</p>",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.rebelnell.com/products/gift-packaging"
+          }
+        },
+        "text_block_9JpxEB": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/PhotoRoom_20220816_101115.png",
+            "image_mask": "none",
+            "image_width": 130,
+            "title": "Jewelry Cleaning Cloth",
+            "text": "<p>$5</p>",
+            "button_label": "SHOP NOW",
+            "button_link": "https://www.rebelnell.com/products/jewelry-cleaning-cloth"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_rgkh7B",
+        "text_block_RJr7KK",
+        "text_block_Wk6cQe",
+        "text_block_9JpxEB"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom-css": "",
+        "title": "Add-ons and Gift Options",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "1748585813fa4e22d9": {
+      "type": "apps",
+      "blocks": {
+        "selleasy_lb_upsell_fbt_block_g6WDND": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-fbt-block/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "selleasy_lb_upsell_fbt_block_g6WDND"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "174851793536affd86",
+    "main",
+    "recently-viewed",
+    "text_columns_EE6daf",
+    "1748585813fa4e22d9"
+  ]
+}

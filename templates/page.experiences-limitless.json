@@ -1,0 +1,149 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_Dn6Aic": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_mk3bjx": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Permanent Jewelry</p>",
+            "title_size": 58,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/Limitless_Party_Image.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_mk3bjx"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -50,
+        "mobile_size": -20,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        "h1 {display: none;}"
+      ],
+      "settings": {}
+    },
+    "rich_text_VGgpzi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NhJDa3": {
+          "type": "heading",
+          "settings": {
+            "title": "Book Your Experience Today!",
+            "heading_size": "h2"
+          }
+        },
+        "text_WMj6Pb": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Enter your information below and a team member will reach out as soon as possible.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NhJDa3",
+        "text_WMj6Pb"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "171588055990939024": {
+      "type": "apps",
+      "blocks": {
+        "acerill_form_builder_custom_form_w3FQJx": {
+          "type": "shopify://apps/acerill-form-builder/blocks/custom-form/830f910d-3579-44cb-9d18-92197bb5bd98",
+          "settings": {
+            "formId": "be0589ca-d66b-4fca-9d3f-d31f42b05a5f",
+            "behavior": "standard"
+          }
+        }
+      },
+      "block_order": [
+        "acerill_form_builder_custom_form_w3FQJx"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "text_columns_Gb4gPQ": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_9x44mR": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Website_Experiences_Individual_Pages_1000_x_700_px_5_-min.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_M3cMLb": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Website_Experiences_Individual_Pages_1000_x_700_px_6_-min.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_9x44mR",
+        "text_block_M3cMLb"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    }
+  },
+  "order": [
+    "slideshow_Dn6Aic",
+    "main",
+    "rich_text_VGgpzi",
+    "171588055990939024",
+    "text_columns_Gb4gPQ"
+  ]
+}

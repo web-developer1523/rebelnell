@@ -1,0 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "advanced_content_xrHtd9": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_Q3EDjH": {
+          "type": "liquid",
+          "settings": {
+            "code": "<iframe src=\"https://forms.monday.com/forms/embed/320c12be77053eba473834e44aa74c52?r=use1\" width=\"100%\" height=\"1000\" style=\"border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);\"></iframe>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_Q3EDjH"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "advanced_content_xrHtd9"
+  ]
+}

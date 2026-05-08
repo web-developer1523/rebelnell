@@ -1,0 +1,80 @@
+{%- render 'section-blog-template',
+    section: section,
+    blog: blog,
+    blog_show_tag_filter: section.settings.blog_show_tag_filter,
+    blog_show_rss: section.settings.blog_show_rss,
+    shop: shop,
+    blog_show_tags: section.settings.blog_show_tags,
+    blog_show_date: section.settings.blog_show_date,
+    blog_show_comments: section.settings.blog_show_comments,
+    blog_show_author: section.settings.blog_show_author,
+    blog_image_size: section.settings.blog_image_size,
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.blog-template.name",
+  "class": "blog-layout__main",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "blog_show_rss",
+      "label": "t:sections.blog-template.settings.blog_show_rss.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_tags",
+      "label": "t:sections.blog-template.settings.blog_show_tags.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "t:sections.blog-template.settings.blog_show_date.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_comments",
+      "label": "t:sections.blog-template.settings.blog_show_comments.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "t:sections.blog-template.settings.blog_show_author.label"
+    },
+    {
+      "type": "select",
+      "id": "blog_image_size",
+      "label": "t:sections.blog-template.settings.blog_image_size.label",
+      "default": "wide",
+      "options": [
+        {
+          "value": "natural",
+          "label": "t:sections.blog-template.settings.blog_image_size.options.natural.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.blog-template.settings.blog_image_size.options.square.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:sections.blog-template.settings.blog_image_size.options.landscape.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.blog-template.settings.blog_image_size.options.portrait.label"
+        },
+        {
+          "value": "wide",
+          "label": "t:sections.blog-template.settings.blog_image_size.options.wide.label"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

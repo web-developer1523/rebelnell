@@ -1,0 +1,20 @@
+{% comment %}
+  /**
+   * @param {string} location - location of the collapsible trigger
+   * @param {string} id - id of the collapsible trigger
+   * @param {string} title - title of the collapsible trigger
+   * @param {index} index - index of the collapsible trigger
+   * @param {boolean} collapsed_state - whether the collapsible trigger starts collapsed
+   */
+{% endcomment %}
+
+<button
+  type="button"
+  class="collapsible-trigger collapsible-trigger-btn collapsible--auto-height{% unless collapsed_state %} is-open{% endunless %} tag-list__header"
+  data-controls="{{ location }}-{{ index }}"
+  data-collapsible-id="{{ id }}">
+  <span class="collapsible-trigger__layout collapsible-trigger__layout--inline">
+    <span>{{ title | escape }}</span>
+    {%- render 'collapsible-icons' -%}
+  </span>
+</button>

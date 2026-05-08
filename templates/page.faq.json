@@ -1,0 +1,138 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq-1": {
+          "type": "question",
+          "settings": {
+            "title": "An item I purchased is now on sale. Can I get a price adjustment?",
+            "text": "<p> If you purchased an item and paid full-price, we will gladly provide a price adjustment within two weeks of your item being marked on sale. To request a price adjustment for eligible orders, email us at <strong>rebelnell@rebelnell.com</strong> with your name and order number.  </p><p>Please note, if you purchased an item using a discount code we are unable to provide a price adjustment. Additionally, we do not do price adjustments for full-price items on promotional discount.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "question",
+          "settings": {
+            "title": "The discount code didn't apply to my order.",
+            "text": "<p>We too love a good bargain! </p><p>If you're looking for the 15% off discount, please check your email after signing up for our emails. This code won't automatically apply.</p><p>If you're trying to use two discount codes, please note that <strong>only one discount</strong> is valid at a time. Unfortunately we are unable to apply a discount after an order has been placed. </p>"
+          }
+        },
+        "faq-4": {
+          "type": "question",
+          "settings": {
+            "title": "Lost or damaged items:",
+            "text": "<p>Dog ate your earring? (Yes, this has happened.) Don’t worry, you have options. If you lose your piece of Rebel Nell jewelry, we can make an item that looks as close to your original order as possible. However, we are not responsible for the cost of your lost item, and replacement pieces will cost the original price of your piece. If you need to replace a single earring, it will be half the price of the original pair.</p><p>If your piece is damaged or broken due to a quality issue, we are happy to fix the piece. To initiate a repair, send us an email detailing the issue and we will provide further instructions from there. Unfortunately, we are unable to repair items that have become damaged from normal wear and tear.</p>"
+          }
+        },
+        "question_WppjAe": {
+          "type": "question",
+          "settings": {
+            "title": "How much goes back to the women employed at Rebel Nell?",
+            "text": "<p>Rebel Nell is fully sustained from the sales of our jewelry - meaning all of the proceeds go back to the women we employ in the form of livable wages, education, and support resources to ensure these women successfully transition to sustainable and independent lives. *High Five*</p>"
+          }
+        },
+        "question_3w7U4m": {
+          "type": "question",
+          "settings": {
+            "title": "Do you scrape the graffiti off walls?",
+            "text": "<p>No! We only collect the paint after it has fallen. However, when organizations like The Detroit Riverfront, Eastern Market, and The Alley Project need to clean a wall for a new mural, they scrape the paint and bring it to us.  </p>"
+          }
+        },
+        "question_jVynVF": {
+          "type": "question",
+          "settings": {
+            "title": "How is the graffiti repurposed?",
+            "text": "<p>Through a super secret process to expose the colors beneath the surface layer.</p>"
+          }
+        },
+        "question_rpVzYe": {
+          "type": "question",
+          "settings": {
+            "title": "Where do you source the graffiti?",
+            "text": "<p>We like to call the graffiti an abundant local resource. We collect our fallen paint from various locations in Detroit, Atlanta, and Miami. Stay tuned for more collections from more cities!</p>"
+          }
+        },
+        "question_CnBYKe": {
+          "type": "question",
+          "settings": {
+            "title": "How can I care for my jewelry?",
+            "text": "<p>To keep your jewelry clean, we recommend wiping it down with a polishing cloth or gentle fabric. Avoid using harsh cleaning agents, as your Rebel Nell jewelry is delicate!</p><p>We recommend removing your jewelry before excessive exposure to sun, water, and various chemicals. Avoid wearing jewelry for a day to the beach, excessive dish washing, long showers, etc. When getting ready, we would encourage you to put your jewelry on after your perfume and hairspray as the chemicals can dull the resin.</p><p>If your piece is tarnishing we are happy to give it a fresh polish, but please note that Rebel Nell will not be held responsible for any damages that may occur by foregoing the above recommendations.</p>"
+          }
+        },
+        "question_eTDrgr": {
+          "type": "question",
+          "settings": {
+            "title": "I have sensitive skin/ I’m allergic to nickel, what should I get?",
+            "text": "<p>All of our jewelry is nickel free and is safe for most people with sensitive skin. </p>"
+          }
+        },
+        "question_XtJeij": {
+          "type": "question",
+          "settings": {
+            "title": "Is there lead in this paint?",
+            "text": "<p>No. Our graffiti is sourced from newer sources composed of acrylic based paints. </p>"
+          }
+        },
+        "question_JzPGEF": {
+          "type": "question",
+          "settings": {
+            "title": "Do you do custom orders?",
+            "text": "<p>Yes! For custom or bulk orders, please fill out the form found <a href=\"https://www.rebelnell.com/pages/contact-us-revised\">here</a>.</p>"
+          }
+        },
+        "question_383mp7": {
+          "type": "question",
+          "settings": {
+            "title": "Who do I contact for wholesale orders?",
+            "text": "<p>For inquiries on wholesale orders please contact our team at sales@rebelnell.com. </p>"
+          }
+        },
+        "question_b3Jeqc": {
+          "type": "question",
+          "settings": {
+            "title": "How long will you hold onto my online or pick-up in-store order?",
+            "text": "<p>We’ve got your back! We’ll hold onto your sparkly treasures for up to a year. After that, they’ll head back to our inventory to find a new home—don’t leave them hanging too long!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-4",
+        "question_WppjAe",
+        "question_3w7U4m",
+        "question_jVynVF",
+        "question_rpVzYe",
+        "question_CnBYKe",
+        "question_eTDrgr",
+        "question_XtJeij",
+        "question_JzPGEF",
+        "question_383mp7",
+        "question_b3Jeqc"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq"
+  ]
+}

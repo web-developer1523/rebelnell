@@ -1,0 +1,117 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_8AMtXH": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_Ji4bzY": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Mother's Day Gift Guide</p>",
+            "title_size": 54,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/Mother_s_Day_2024.png",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_Ji4bzY"
+      ],
+      "settings": {
+        "full_width": false,
+        "desktop_size": -10,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": false,
+        "autoplay_speed": 7
+      }
+    },
+    "featured_collections_EgHprM": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_wAxART": {
+          "type": "collection",
+          "settings": {
+            "collection": "mothers-day",
+            "title": ""
+          }
+        },
+        "collection_qH6bdD": {
+          "type": "collection",
+          "settings": {
+            "collection": "power-all",
+            "title": ""
+          }
+        },
+        "collection_jb7FCV": {
+          "type": "collection",
+          "settings": {
+            "collection": "sensual",
+            "title": ""
+          }
+        },
+        "collection_xmTw8N": {
+          "type": "collection",
+          "settings": {
+            "collection": "transforming-collection",
+            "title": ""
+          }
+        },
+        "collection_QjzJCF": {
+          "type": "collection",
+          "settings": {
+            "collection": "conquering-collection",
+            "title": ""
+          }
+        },
+        "collection_A3hYh3": {
+          "type": "collection",
+          "settings": {
+            "collection": "custom-gifting",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_wAxART",
+        "collection_qH6bdD",
+        "collection_jb7FCV",
+        "collection_xmTw8N",
+        "collection_QjzJCF",
+        "collection_A3hYh3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_8AMtXH",
+    "featured_collections_EgHprM"
+  ]
+}

@@ -1,0 +1,284 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "promo-grid": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced": {
+          "type": "advanced",
+          "settings": {
+            "custom_class_promo": "",
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Mother_s_Day_Gift_Guide_Desktop.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff",
+            "color_accent_hover": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "advanced"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {}
+        },
+        "subcollections": {
+          "type": "subcollections",
+          "settings": {}
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "grid_style": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "collection_description",
+        "subcollections",
+        "product_grid"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sidebar": true,
+        "collapse_filters": true,
+        "enable_color_swatches": false,
+        "enable_sort": true
+      }
+    },
+    "featured_collection_FrhMEV": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "custom-class": "",
+        "title": "BEST SELLERS",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "home_featured_products": "mothers-day-gift-guide",
+        "count": 10,
+        "products_per_row": 5,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "blocks_aYE4Eh": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b6c4a57_7YpcTd": {
+          "type": "ai_gen_block_b6c4a57",
+          "settings": {
+            "heading": "Shop by Price",
+            "subheading": "",
+            "heading_font": "arial_n4",
+            "heading_size": 36,
+            "heading_alignment": "center",
+            "heading_color": "#000000",
+            "heading_bold": true,
+            "subheading_size": 16,
+            "subheading_color": "#666666",
+            "link_1_title": "Gifts Under $75",
+            "link_1_url": "shopify://collections/gifts-under-76",
+            "link_1_image": "shopify://shop_images/Gifts_under_75_meta_cover.png",
+            "link_1_description": "",
+            "link_2_title": "Gifts Under $150",
+            "link_2_url": "shopify://collections/gifts-under-151",
+            "link_2_image": "shopify://shop_images/Two_women_gifting.png",
+            "link_2_description": "",
+            "link_3_title": "Gifts Under $200",
+            "link_3_url": "shopify://collections/gift-under-200",
+            "link_3_image": "shopify://shop_images/Gifts_under_200_meta_cover.png",
+            "link_3_description": "",
+            "link_4_title": "Link 4",
+            "link_4_url": "",
+            "link_4_description": "",
+            "card_background": "#ffffff",
+            "card_border_radius": 8,
+            "card_title_size": 20,
+            "card_title_color": "#000000",
+            "card_description_size": 14,
+            "card_description_color": "#666666",
+            "nav_button_color": "#000000",
+            "nav_button_hover_color": "#ffffff",
+            "dot_color": "#000000",
+            "background_color": "#f9f9f9"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b6c4a57_7YpcTd"
+      ],
+      "name": "Page carousel",
+      "settings": {}
+    },
+    "blocks_zHnwbT": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c5413ce_iJcgLD": {
+          "type": "ai_gen_block_c5413ce",
+          "settings": {
+            "collection": "charm-collection",
+            "products_limit": 12,
+            "hero_image": "shopify://shop_images/Charms_as_a_gift.jpg",
+            "hero_height": 350,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "title": "Give Her a Charm to Start the Story",
+            "description": "One meaningful piece now, more to collect later.",
+            "button_text": "Shop All",
+            "hero_text_bottom_spacing": 40,
+            "text_color": "#ffffff",
+            "title_size": 48,
+            "description_size": 18,
+            "text_spacing": 20,
+            "button_bg_color": "#c81688",
+            "button_hover_bg_color": "#a01270",
+            "button_text_color": "#ffffff",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 0,
+            "products_bg_color": "#ffffff",
+            "products_padding_top": 40,
+            "products_padding_bottom": 40,
+            "product_width": 280,
+            "product_gap": 20,
+            "scrollbar_color": "#cccccc",
+            "card_bg_color": "#ffffff",
+            "card_border_radius": 8,
+            "card_padding": 16,
+            "product_text_color": "#000000",
+            "product_title_size": 16,
+            "product_price_size": 16,
+            "add_to_cart_text": "Add to Cart",
+            "add_to_cart_bg_color": "#c81688",
+            "add_to_cart_hover_bg_color": "#a01270",
+            "add_to_cart_text_color": "#ffffff",
+            "add_to_cart_font_size": 14,
+            "add_to_cart_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c5413ce_iJcgLD"
+      ],
+      "name": "Featured collection",
+      "settings": {}
+    },
+    "text_with_icons_6CLJtM": {
+      "type": "text-with-icons",
+      "blocks": {
+        "text_block_JpGDLL": {
+          "type": "text_block",
+          "settings": {
+            "icon": "truck",
+            "title": "Free Shipping On All Orders",
+            "text": "<p>till May 5th</p>"
+          }
+        },
+        "text_block_yMUw6w": {
+          "type": "text_block",
+          "settings": {
+            "icon": "charity",
+            "title": "Made in Detroit",
+            "text": "<p>Handcrafted locally by women with purpose</p>"
+          }
+        },
+        "text_block_DFGmNL": {
+          "type": "text_block",
+          "settings": {
+            "icon": "gift",
+            "title": "One of a Kind, Always",
+            "text": "<p>No two pieces are exactly alike</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_JpGDLL",
+        "text_block_yMUw6w",
+        "text_block_DFGmNL"
+      ],
+      "name": "t:common.text_with_icons.presets.text_with_icons.name",
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "desktop_columns_per_row": 3,
+        "icon_color": "#c81688",
+        "button_label": "",
+        "button_link": "",
+        "divider": false
+      }
+    },
+    "rich_text_T3DKg4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_y3UX8G": {
+          "type": "heading",
+          "settings": {
+            "title": "Mother's Day Shipping Deadline",
+            "heading_size": "h2"
+          }
+        },
+        "text_iMEKqz": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Standard Shipping </strong>cut off May 5th at 12 PM EST<br/><strong>Priority Shipping </strong>cut off May 6th at 12 PM EST</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_y3UX8G",
+        "text_iMEKqz"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "promo-grid",
+    "main-collection",
+    "featured_collection_FrhMEV",
+    "blocks_aYE4Eh",
+    "blocks_zHnwbT",
+    "text_with_icons_6CLJtM",
+    "rich_text_T3DKg4"
+  ]
+}

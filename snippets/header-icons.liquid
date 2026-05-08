@@ -1,0 +1,79 @@
+{% comment %}
+  /**
+    * @param {string} cart_icon - The icon to use for the cart
+    * @param {string} nav_position - The position of the navigation
+  */
+{% endcomment %}
+
+{%- liquid
+  assign hide_icon_labels = true
+  if nav_position == 'below'
+    assign hide_icon_labels = false
+  endif
+-%}
+
+<div class="site-nav">
+  <div class="site-nav__icons">
+    <a
+      href="{{ routes.search_url }}"
+      class="site-nav__link site-nav__link--icon js-search-header{% if nav_position == 'below' %} medium-up--hide{% endif %} js-no-transition"
+    >
+      {% render 'icon-search' %}
+      <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+    </a>
+
+    {%- if shop.customer_accounts_enabled -%}
+      <a class="site-nav__link site-nav__link--icon small--hide" href="{{ routes.account_url }}">
+        {% render 'icon-user' %}
+        {% comment %}
+          <span class="site-nav__icon-label small--hide{% if hide_icon_labels %} icon__fallback-text{% endif %}">
+              {{ 'layout.customer.account' | t }}
+            </span>
+        {% endcomment %}
+      </a>
+    {%- endif -%}
+
+    <a
+      href="{{ routes.cart_url }}"
+      id="HeaderCartTrigger"
+      aria-controls="HeaderCart"
+      class="site-nav__link site-nav__link--icon js-no-transition cst-cart-btn"
+      data-icon="{{ cart_icon }}"
+      aria-label="{{ 'layout.cart.title' | t }}"
+    >
+      <span class="cart-link">
+        {%- if cart_icon == 'cart' -%}
+          {% render 'icon-cart' %}
+        {%- elsif cart_icon == 'bag-minimal' -%}
+          {% render 'icon-bag-minimal' %}
+        {%- else -%}
+          {% render 'icon-bag' %}
+        {%- endif -%}
+        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">
+          <span class="cart-link__bubble-num">{{ cart.item_count }}</span>
+        </span>
+      </span>
+      {% comment %}
+        <span class="site-nav__icon-label small--hide{% if hide_icon_labels %} icon__fallback-text{% endif %}">
+          {{ 'layout.cart.title' | t }}
+        </span>
+      {% endcomment %}
+    </a>
+
+    <button
+      type="button"
+      aria-controls="MobileNav"
+      class="site-nav__link site-nav__link--icon medium-up--hide mobile-nav-trigger"
+    >
+      {% render 'icon-hamburger' %}
+      <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+    </button>
+  </div>
+
+  <div class="site-nav__close-cart">
+    <button type="button" class="site-nav__link site-nav__link--icon js-close-header-cart">
+      <span>{{ 'general.accessibility.close' | t }}</span>
+      {% render 'icon-close' %}
+    </button>
+  </div>
+</div>

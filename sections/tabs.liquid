@@ -1,0 +1,149 @@
+<div class="tabs-wrapper page-width">
+  <ul class="tabs">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {%- when 'tab' -%}
+          {% if block.settings['tab-description'] != blank %}
+            <li data-tab="tab{{ forloop.index }}" class="{% if forloop.first %}active{% endif %}">
+              {{ block.settings['tab-btn'] }}
+            </li>
+          {% endif %}
+      {% endcase %}
+    {% endfor %}
+  </ul>
+
+  <div class="tab-content-wrapper">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {%- when 'tab' -%}
+          <div id="tab{{ forloop.index }}" class="tab-content">
+            {% if block.settings['tab-heading'] != blank %}
+              <h2>{{ block.settings['tab-heading'] }}</h2>
+            {% endif %}
+            {% if block.settings['tab-description'] != blank %}
+              <p>{{ block.settings['tab-description'] }}</p>
+            {% endif %}
+            {% if block.settings.page != blank %}
+              <p>{{ block.settings.page.content }}</p>
+            {% endif %}
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .tabs-wrapper {
+    /*max-width: 500px;*/
+    width: 100%;
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+
+  .tabs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #dddddd;
+    li {
+      cursor: pointer;
+      padding: 10px 0 0;
+      border-top: 2px solid #fff;
+      background-color: #FFF;
+      transition: .25s;
+      color: #000;
+      transition: .25s;
+      &:hover {
+        color: #c81688;
+              background-color: transparent;
+              padding: 10px 0 0;
+        transition:all 0.2s linear;
+      }
+            &.active {
+            color: #c81688;
+            background-color: transparent;
+            padding: 10px 0 0;
+            border-top: 3px solid #c81688;
+        }
+    }
+  }
+
+  .tab-content {
+    display: none;
+    padding: 15px 20px;
+    /*border: 1px solid #DDD;*/
+    margin-top: 10px;
+    border-radius: 5px;
+      h2 {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
+</style>
+<script>
+  const tabs = document.querySelectorAll(".tabs li");
+const contents = document.querySelectorAll(".tab-content");
+
+function showTab(tabId) {
+  contents.forEach((content) => (content.style.display = "none"));
+  document.getElementById(tabId).style.display = "block";
+
+  tabs.forEach((tab) => tab.classList.remove("active"));
+  document.querySelector(`[data-tab="${tabId}"]`).classList.add("active");
+}
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", function () {
+    showTab(this.getAttribute("data-tab"));
+  });
+});
+
+// Hiển thị tab đầu tiên khi tải trang
+showTab("tab1");
+</script>
+
+{% schema %}
+{
+  "name": "Tabs",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab-btn",
+          "label": "Tab Name"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "tab-heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "tab-description",
+          "label": "Description"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "t:product_block.tab.settings.page.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"Tabs"
+    }
+  ]
+}
+{% endschema %}

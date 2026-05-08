@@ -1,0 +1,197 @@
+.boot-strap .card {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-title-color: ;
+    --bs-card-subtitle-color: ;
+    --bs-card-border-width: var(--bs-border-width);
+    --bs-card-border-color: var(--bs-border-color-translucent);
+    --bs-card-border-radius: var(--bs-border-radius);
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: var(--bs-body-bg);
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+  }
+  .boot-strap .card > hr {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .boot-strap .card > .list-group {
+    border-top: inherit;
+    border-bottom: inherit;
+  }
+  .boot-strap .card > .list-group:first-child {
+    border-top-width: 0;
+    border-top-left-radius: var(--bs-card-inner-border-radius);
+    border-top-right-radius: var(--bs-card-inner-border-radius);
+  }
+  .boot-strap .card > .list-group:last-child {
+    border-bottom-width: 0;
+    border-bottom-right-radius: var(--bs-card-inner-border-radius);
+    border-bottom-left-radius: var(--bs-card-inner-border-radius);
+  }
+  .boot-strap .card > .card-header + .list-group,
+  .boot-strap .card > .list-group + .card-footer {
+    border-top: 0;
+  }
+  
+  .boot-strap .card-body {
+    flex: 1 1 auto;
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    color: var(--bs-card-color);
+  }
+  
+  .boot-strap .card-title {
+    margin-bottom: var(--bs-card-title-spacer-y);
+    color: var(--bs-card-title-color);
+  }
+  
+  .boot-strap .card-subtitle {
+    margin-top: calc(-0.5 * var(--bs-card-title-spacer-y));
+    margin-bottom: 0;
+    color: var(--bs-card-subtitle-color);
+  }
+  
+  .boot-strap .card-text:last-child {
+    margin-bottom: 0;
+  }
+  
+  .boot-strap .card-link + .card-link {
+    margin-left: var(--bs-card-spacer-x);
+  }
+  
+  .boot-strap .card-header {
+    padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+    margin-bottom: 0;
+    color: var(--bs-card-cap-color);
+    background-color: var(--bs-card-cap-bg);
+    border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  }
+  .boot-strap .card-header:first-child {
+    border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
+  }
+  
+  .boot-strap .card-footer {
+    padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+    color: var(--bs-card-cap-color);
+    background-color: var(--bs-card-cap-bg);
+    border-top: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  }
+  .boot-strap .card-footer:last-child {
+    border-radius: 0 0 var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius);
+  }
+  
+  .boot-strap  .card-header-tabs {
+    margin-right: calc(-0.5 * var(--bs-card-cap-padding-x));
+    margin-bottom: calc(-1 * var(--bs-card-cap-padding-y));
+    margin-left: calc(-0.5 * var(--bs-card-cap-padding-x));
+    border-bottom: 0;
+  }
+  .boot-strap .card-header-tabs .nav-link.active {
+    background-color: var(--bs-card-bg);
+    border-bottom-color: var(--bs-card-bg);
+  }
+  
+  .boot-strap .card-header-pills {
+    margin-right: calc(-0.5 * var(--bs-card-cap-padding-x));
+    margin-left: calc(-0.5 * var(--bs-card-cap-padding-x));
+  }
+  
+  .boot-strap .card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: var(--bs-card-img-overlay-padding);
+    border-radius: var(--bs-card-inner-border-radius);
+  }
+  
+  .boot-strap .card-img,
+  .boot-strap .card-img-top,
+  .boot-strap .card-img-bottom {
+    width: 100%;
+  }
+  
+  .boot-strap .card-img,
+  .boot-strap .card-img-top {
+    border-top-left-radius: var(--bs-card-inner-border-radius);
+    border-top-right-radius: var(--bs-card-inner-border-radius);
+  }
+  
+  .boot-strap .card-img,
+  .boot-strap .card-img-bottom {
+    border-bottom-right-radius: var(--bs-card-inner-border-radius);
+    border-bottom-left-radius: var(--bs-card-inner-border-radius);
+  }
+  
+  .boot-strap .card-group > .card {
+    margin-bottom: var(--bs-card-group-margin);
+  }
+  @media (min-width: 576px) {
+    .boot-strap  .card-group {
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .boot-strap .card-group > .card {
+      flex: 1 0 0%;
+      margin-bottom: 0;
+    }
+    .boot-strap .card-group > .card + .card {
+      margin-left: 0;
+      border-left: 0;
+    }
+    .boot-strap .card-group > .card:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .boot-strap .card-group > .card:not(:last-child) .card-img-top,
+    .card-group > .card:not(:last-child) .card-header {
+      border-top-right-radius: 0;
+    }
+    .boot-strap .card-group > .card:not(:last-child) .card-img-bottom,
+    .card-group > .card:not(:last-child) .card-footer {
+      border-bottom-right-radius: 0;
+    }
+    .boot-strap .card-group > .card:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .boot-strap .card-group > .card:not(:first-child) .card-img-top,
+    .boot-strap .card-group > .card:not(:first-child) .card-header {
+      border-top-left-radius: 0;
+    }
+    .boot-strap .card-group > .card:not(:first-child) .card-img-bottom,
+    .boot-strap .card-group > .card:not(:first-child) .card-footer {
+      border-bottom-left-radius: 0;
+    }
+  }
+
+#er_img {
+  position: absolute;
+  right: 0;
+  top: -260px;
+  max-width: 360px;
+}
+
+#er_mb {
+  max-width: 50%;
+  margin: 0 auto;
+}

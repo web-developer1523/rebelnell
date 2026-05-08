@@ -1,0 +1,79 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "17400820792745ebce": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_email_marketing_sms_form_embed_block_cBFrde": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": "<div class=\"klaviyo-form-VNXPi3\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "klaviyo_email_marketing_sms_form_embed_block_cBFrde"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    },
+    "rich_text_YRaKfF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Xn9n93": {
+          "type": "heading",
+          "settings": {
+            "title": "Learn About Rebel Nell",
+            "heading_size": "h2"
+          }
+        },
+        "text_FMPWPH": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>At Rebel Nell, we believe in turning barriers into opportunities. Named after trailblazer <a href=\"https://www.rebelnell.com/pages/our-story\" target=\"_blank\" title=\"https://www.rebelnell.com/pages/our-story\">Eleanor Roosevelt</a>, we empower women facing barriers to employment by providing equitable opportunities, wraparound support, and a pathway to self-sufficiency.<br/><br/>We repurpose Detroit’s fallen graffiti and meaningful materials into One Of No Other Kind jewelry and accessories, ensuring that each piece is as unique as the woman who made it. More than art, every piece carries a piece of Detroit history—a testament to resilience, creativity, and community.<br/><br/>When you wear Rebel Nell, you’re not just making a statement—you’re making a difference.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Xn9n93",
+        "text_FMPWPH"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "featured_video_WiC7UG": {
+      "type": "featured-video",
+      "settings": {
+        "title": "",
+        "video_url": "https://youtu.be/yKX2NvgxWNA?si=rd_8RUaT7loz0Epz",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17400820792745ebce",
+    "rich_text_YRaKfF",
+    "featured_video_WiC7UG"
+  ]
+}

@@ -1,0 +1,28 @@
+{% comment %}
+  /**
+   * @param {string} title - string to be displayed as part of the trigger
+   * @param {string} content - content gets displayed in the tool tip or modal
+   * @param {string} context - string of component using this trigger
+   * @param {string} button - HTML for a button to be displayed as part of the trigger
+   * @param {string} tool-tip-classes - string of classes to be added to the tool tip
+   */
+{% endcomment %}
+
+<tool-tip-trigger
+  class="tool-tip-trigger"
+  data-tool-tip="{{ context }}"
+  data-tool-tip-classes="{{ tool-tip-classes }}"
+>
+  {% if title != blank %}
+    <div class="tool-tip-trigger__title">{{ title }}</div>
+  {% endif %}
+  <span
+    class="tool-tip-trigger__content"
+    data-tool-tip-trigger-content=""
+  >
+    {{ content }}
+  </span>
+  {% if button != blank %}
+    {{ button }}
+  {% endif %}
+</tool-tip-trigger>

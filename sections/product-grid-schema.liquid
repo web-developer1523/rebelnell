@@ -1,0 +1,77 @@
+{% schema %}
+{
+  "name": "Product settings",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Quick Add Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "quick_add_enable",
+      "label": "Enable Quick Add",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Quantity Selector"
+    },
+    {
+      "type": "checkbox",
+      "id": "quick_add_quantity",
+      "label": "Show quantity selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "quick_add_quantity_default_open",
+      "label": "Show quantity by default",
+      "default": false,
+      "info": "If disabled, quantity shows after clicking Add to Cart"
+    },
+    {
+      "type": "header",
+      "content": "Cart Button"
+    },
+    {
+      "type": "select",
+      "id": "quick_add_button_style",
+      "label": "Button style",
+      "options": [
+        { "value": "btn--primary", "label": "Primary" },
+        { "value": "btn--secondary", "label": "Secondary" },
+        { "value": "btn--text", "label": "Text link" }
+      ],
+      "default": "btn--primary"
+    },
+    {
+      "type": "text",
+      "id": "quick_add_button_text",
+      "label": "Button text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "quick_add_button_full",
+      "label": "Full width button",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "quick_add_button_icon",
+      "label": "Show cart icon",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "quick_add_button_icon_pos",
+      "label": "Icon position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    }
+  ]
+}
+{% endschema %}

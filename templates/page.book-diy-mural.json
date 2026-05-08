@@ -1,0 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "1715891176382e9a32": {
+      "type": "apps",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "17158912282bf96d5f": {
+      "type": "apps",
+      "blocks": {
+        "acerill_form_builder_custom_form_MwUBPa": {
+          "type": "shopify://apps/acerill-form-builder/blocks/custom-form/830f910d-3579-44cb-9d18-92197bb5bd98",
+          "settings": {
+            "formId": "e5f5b5fb-6741-4301-b4b2-7821286a79e7",
+            "behavior": "standard"
+          }
+        }
+      },
+      "block_order": [
+        "acerill_form_builder_custom_form_MwUBPa"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1715891176382e9a32",
+    "17158912282bf96d5f"
+  ]
+}

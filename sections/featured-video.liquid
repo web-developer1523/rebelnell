@@ -1,0 +1,45 @@
+{%- render 'section-featured-video',
+    section: section,
+    divider: section.settings.divider,
+    title: section.settings.title,
+    video_url: section.settings.video_url,
+    color_button: settings.color_button
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.featured-video.name",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.featured-video.settings.title.label"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "t:sections.featured-video.settings.video_url.label",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.featured-video.settings.divider.label",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-video.presets.video.name"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

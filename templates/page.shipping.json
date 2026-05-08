@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_UrfF8j": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8J4zi6": {
+          "type": "heading",
+          "settings": {
+            "title": "Shipping",
+            "heading_size": "h2"
+          }
+        },
+        "text_pWHbdq": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>How/when will my order ship?</strong></p><p>All orders are shipped via USPS. We offer Standard, Expedited, Overnight, and International shipping options with tracking included. Free standard shipping is included on orders of $100 and over.</p><p>It is important to note that it will take 1-2 business days for us to process your order. If you order overnight shipping after 12pm on Friday, your overnight order should be delivered on Tuesday.</p><p><strong>Do you ship internationally?</strong></p><p>We do! When you find a piece you love simply add it to your cart and proceed to checkout. There will be an option to switch your address to an international address. The shipping and handling fee will also display while in the checkout process. Depending on where you're located, shipping could take up to three weeks. Please note that we are not responsible for any customs fees that may be incurred. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8J4zi6",
+        "text_pWHbdq"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "left",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "rich_text_nhGczt": {
+      "type": "rich-text",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_UrfF8j",
+    "rich_text_nhGczt"
+  ]
+}

@@ -1,0 +1,109 @@
+{% render 'section-toolbar',
+  section: section,
+  show_currency_selector: section.settings.show_currency_selector,
+  show_locale_selector: section.settings.show_locale_selector,
+  show_currency_flags: section.settings.show_currency_flags,
+  toolbar_social: section.settings.toolbar_social,
+  announcement_center: section.settings.announcement_center,
+  social_instagram_link: settings.social_instagram_link,
+  social_facebook_link: settings.social_facebook_link,
+  social_twitter_link: settings.social_twitter_link,
+  social_youtube_link: settings.social_youtube_link,
+  social_pinterest_link: settings.social_pinterest_link,
+  social_linkedin_link: settings.social_linkedin_link,
+  social_snapchat_link: settings.social_snapchat_link,
+  social_vimeo_link: settings.social_vimeo_link,
+  social_tiktok_link: settings.social_tiktok_link,
+  social_tumblr_link: settings.social_tumblr_link
+  shop: shop,
+  hydration: 'on:idle'
+%}
+
+{% schema %}
+{
+"name": "t:sections.toolbar.name",
+"class": "toolbar-section",
+"settings": [
+  {
+    "type": "checkbox",
+    "id": "announcement_center",
+    "label": "t:sections.toolbar.settings.announcement_center.label"
+  },
+  {
+    "type": "checkbox",
+    "id": "toolbar_social",
+    "label": "t:sections.toolbar.settings.toolbar_social.label"
+  },
+  {
+    "type": "header",
+    "content": "t:sections.toolbar.settings.header_language_selector",
+    "info": "t:sections.toolbar.settings.header_language_selector"
+  },
+  {
+    "type": "checkbox",
+    "id": "show_locale_selector",
+    "label": "t:sections.toolbar.settings.show_locale_selector.label",
+    "default": true
+  },
+  {
+    "type": "header",
+    "content": "t:sections.toolbar.settings.header_currency_selector",
+    "info": "t:sections.toolbar.settings.header_currency_selector"
+  },
+  {
+    "type": "checkbox",
+    "id": "show_currency_selector",
+    "label": "t:sections.toolbar.settings.show_currency_selector.label",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "id": "show_currency_flags",
+    "label": "t:sections.toolbar.settings.show_currency_flags.label",
+    "default": true
+  }
+],
+"blocks": [
+  {
+    "type": "@app"
+  },
+  {
+    "type": "announcement",
+    "name": "t:sections.toolbar.blocks.announcement.name",
+    "limit": 3,
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "richtext",
+        "label": "t:sections.toolbar.blocks.announcement.settings.richtext.label",
+        "default": "<p>Hassle-free returns. 30-day postage paid returns</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "richtext_mobile",
+        "label": "t:sections.toolbar.blocks.announcement.settings.richtext_mobile.label"
+      }
+    ]
+  }
+],
+"default": {
+  "blocks": [
+    {
+      "type": "announcement",
+      "settings": {
+        "richtext": "<p>Free shipping on all orders over $100</p>"
+      }
+    },
+    {
+      "type": "announcement",
+      "settings": {
+        "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>"
+      }
+    }
+  ]
+},
+"disabled_on": {
+  "groups": ["footer", "custom.popups"]
+}
+}
+{% endschema %}

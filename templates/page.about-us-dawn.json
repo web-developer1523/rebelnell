@@ -1,0 +1,175 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_jn8qMG": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_FT6AhF": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Our Story</p>",
+            "title_size": 70,
+            "subheading": "Our company and our jewelry, just like each of us, are comprised of layers. we highlight the layers in all of us that make us unique.",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/YOU_ARE_MAKING_AN_IMPACT_2.webp",
+            "overlay_opacity": 16
+          }
+        }
+      },
+      "block_order": [
+        "hero_FT6AhF"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "rich_text_4Tb3Tp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hWeJAX": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Mission",
+            "heading_size": "h2"
+          }
+        },
+        "text_cwzAhf": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Rebel Nell is a social enterprise that provides employment, equitable access, and holistic support to women navigating barriers to work—whether due to housing insecurity, incarceration, displacement, disability, or other systemic obstacles</p><p><br/>Through the transformation of reclaimed materials into meaningful keepsakes and gifts, or through our unique interactive events, we create powerful symbols of strength, resilience, and progress—meant to inspire and empower the person who experiences them.</p><p><br/>Our pieces serve as a reminder that there is power in being </p><p><strong>ONE OF NO OTHER KIND.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hWeJAX",
+        "text_cwzAhf"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "text_columns_B9GnWM": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_WXGyCM": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Our_Why_1.svg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Our Why",
+            "text": "<p>We believe that by building a community - a sisterhood we can liberate women from those societal expectatons and uplift each other, together.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_WbUrg3": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/What_We_Do_1.svg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "What We Do",
+            "text": "<p>We provide employment, equitable opportunity, and the tools and resources for women to actualize their potential, to build confidence, and become self-sufficient through creativity and community.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_qtbzXt": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/How_We_Do_It.svg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "How We Do It",
+            "text": "<p>By creating distinctive jewelry made from repurposed graffiti and materials, we create one-of-a-kind pieces of wearable art. We liberate art from rubble and women from the confines.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_WXGyCM",
+        "text_block_WbUrg3",
+        "text_block_qtbzXt"
+      ],
+      "settings": {
+        "custom-css": "",
+        "title": "Our Ethos",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "advanced_content_m7CgWR": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_BxTpzt": {
+          "type": "liquid",
+          "settings": {
+            "code": "<div class=\"boot-strap mt-5\">\n\n        <div class=\"row mb-5 text-center\">\n            <div class=\"col-12 col-md-6\">\n                <div class=\"card \">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0558/7937/files/We_Build_a_Community.svg?v=1679499378\" class=\"card-img\" alt=\"We Build a Community - A Sisterhood\">\n                    <div class=\"card-img-overlay\">\n                        <h5 class=\"card-title onhover\">We Build a Community <br>- A Sisterhood</h5>\n                        <p class=\"card-title hover\">We believe in developing a strong sisterhood of people who empower, celebrate, and drive independence - of their own expectations, of history's expectations, and society's expectations. </p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-6\">\n                <div class=\"card \">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0558/7937/files/We_Are_Disruptors.svg?v=1679499375\" class=\"card-img\" alt=\"We Are Disruptors\">\n                    <div class=\"card-img-overlay\">\n                        <h5 class=\"card-title onhover\">We Are Disruptors</h5>\n                        <p class=\"card-title hover\">From our aspirational business model to the artistic discovery set inside each and every Rebel Nell piece, we set out to make progress for our people and our product.</p>  \n\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"row mb-5 text-center\">\n            <div class=\"col-12 col-md-6\">\n                <div class=\"card \">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0558/7937/files/We_Are_Intentional.svg?v=1679499375\" class=\"card-img\" alt=\"We Are Intentional\">\n                    <div class=\"card-img-overlay\">\n                        <h5 class=\"card-title onhover\">We Are Intentional</h5>\n                        <p class=\"card-title hover\">Each and every piece we create is founded in intention and belief. We believe greatly in the physical power of blending history and carrying it into the future both literally (with our jewelry) and systemically in our mission work. \n                        </p> \n\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-md-6\">\n                <div class=\"card \">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0558/7937/files/We_Have_Purpose.svg?v=1679499376\" class=\"card-img\" alt=\"We Have Purpose\">\n                    <div class=\"card-img-overlay\">\n                        <h5 class=\"card-title onhover\">We Have Purpose</h5>\n                        <p class=\"card-title hover\">Our purpose has depth and meaning. Beyond our jewelry, we aim to embolden all women to see their own worth. This purpose drives our interactions with those we employ through our mission and our customers through our service.\n                        </p>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n</div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_BxTpzt"
+      ],
+      "custom_css": [
+        ".card {border: none;}",
+        ".card-img-overlay {height: 100%; display: inline-block;}",
+        "h5.card-title {font-size: 2.8rem;}",
+        ".card-title {margin: auto; position: relative; top: 45%; text-shadow: 1px 1px 2px #000; display: inline; color: white;}",
+        ".card:hover .card-img-overlay {background: #c816877e;}",
+        ".card .card-title.hover {display: none;}",
+        ".card:hover .card-title.hover {display: inline;}",
+        ".card:hover .card-title.onhover {display: none;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    }
+  },
+  "order": [
+    "slideshow_jn8qMG",
+    "rich_text_4Tb3Tp",
+    "main",
+    "text_columns_B9GnWM",
+    "advanced_content_m7CgWR"
+  ]
+}

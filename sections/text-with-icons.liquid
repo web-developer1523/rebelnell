@@ -1,0 +1,207 @@
+{% render 'section-text-with-icons',
+  section: section,
+  divider: section.settings.divider,
+  title: section.settings.title,
+  align_text: section.settings.align_text,
+  desktop_columns_per_row: section.settings.desktop_columns_per_row,
+  button_label: section.settings.button_label,
+  button_link: section.settings.button_link,
+  icon_color: section.settings.icon_color,
+  icon_weight: settings.icon_weight
+%}
+
+{% schema %}
+{
+  "name": "t:common.text_with_icons.name.label",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:common.text_with_icons.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "t:common.text_with_icons.settings.align_text.label",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:common.text_with_icons.settings.align_text.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:common.text_with_icons.settings.align_text.options.center.label"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns_per_row",
+      "label": "t:common.text_with_icons.settings.desktop_columns_per_row.label",
+      "default": 3,
+      "min": 2,
+      "max": 4,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "t:common.text_with_icons.settings.icon_color.label",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:common.text_with_icons.settings.button_label.label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:common.text_with_icons.settings.button_link.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:common.text_with_icons.settings.divider.label",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "t:common.text_with_icons.blocks.column.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:common.text_with_icons.blocks.column.settings.icon.label",
+          "default": "chat",
+          "options": [
+            {
+              "value": "bills",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.bills.label"
+            },
+            {
+              "value": "calendar",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.calendar.label"
+            },
+            {
+              "value": "cart",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.cart.label"
+            },
+            {
+              "value": "charity",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.charity.label"
+            },
+            {
+              "value": "chat",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.chat.label"
+            },
+            {
+              "value": "envelope",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.envelope.label"
+            },
+            {
+              "value": "gears",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.gears.label"
+            },
+            {
+              "value": "gift",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.gift.label"
+            },
+            {
+              "value": "globe",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.globe.label"
+            },
+            {
+              "value": "package",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.package.label"
+            },
+            {
+              "value": "phone",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.phone.label"
+            },
+            {
+              "value": "plant",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.plant.label"
+            },
+            {
+              "value": "recycle",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.recycle.label"
+            },
+            {
+              "value": "ribbon",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.ribbon.label"
+            },
+            {
+              "value": "sales-tag",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.sales-tag.label"
+            },
+            {
+              "value": "shield",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.shield.label"
+            },
+            {
+              "value": "stopwatch",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.stopwatch.label"
+            },
+            {
+              "value": "store",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.store.label"
+            },
+            {
+              "value": "thumbs-up",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.thumbs-up.label"
+            },
+            {
+              "value": "trophy",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.trophy.label"
+            },
+            {
+              "value": "truck",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.truck.label"
+            },
+            {
+              "value": "wallet",
+              "label": "t:common.text_with_icons.blocks.column.settings.icon.options.wallet.label"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:common.text_with_icons.blocks.column.settings.title.label",
+          "default": "Example title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:common.text_with_icons.blocks.column.settings.text.label",
+          "default": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:common.text_with_icons.presets.text_with_icons.name",
+      "blocks": [
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

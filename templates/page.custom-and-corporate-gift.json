@@ -1,0 +1,159 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_LbRGrU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XqNgVn": {
+          "type": "heading",
+          "settings": {
+            "title": "One of a Kind Gifts for One of a Kind Moments",
+            "heading_size": "h2"
+          }
+        },
+        "text_EWybLm": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>From custom keepsakes to one-of-a-kind corporate gifts, these examples show how Rebel Nell helps organizations turn appreciation into something unforgettable.</p><p>Each piece is crafted from reclaimed, meaningful materials and designed to carry a story: your company’s, your community’s, or the moment you want to make last. Whether you’re celebrating employees, honoring partners, recognizing speakers, or creating a custom gift tied to a special event, <br/><br/>Rebel Nell turns gifting into connection, purpose, and impact.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XqNgVn",
+        "text_EWybLm"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "17773087558b85eacc": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b5604d2_yREjt8": {
+          "type": "ai_gen_block_b5604d2",
+          "settings": {
+            "max_width": 1400,
+            "grid_gap": 30,
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "background_color": "#ffffff",
+            "card_background": "#f4f4f4",
+            "text_color": "#000000",
+            "label_color": "#c81688",
+            "date_color": "#666666",
+            "card_padding": 25,
+            "title_size": 22,
+            "detail_size": 14,
+            "button_bg": "#c81688",
+            "button_text": "#ffffff",
+            "button_border": "#c81688",
+            "button_hover_bg": "#000000",
+            "button_hover_text": "#ffffff",
+            "button_hover_border": "#000000",
+            "button_text_size": 13,
+            "project_1_image": "shopify://shop_images/1111_Ally_Bank.png",
+            "project_1_title": "Ally Bank Lapel Pins",
+            "project_1_material": "Ally Financial and the Detroit Pistons along with their fans created a special Rebel Nell mural to recognize the importance of empowering females from all walks of life.",
+            "project_1_recipient": "The remnants of the mural were used to create custom 313 pins and gifted to members of the She-313 Program as a reminder that you are strong, powerful, and deserving.",
+            "project_1_solution": "",
+            "project_1_date": "2024",
+            "project_1_link": "shopify://blogs/young-rebels-kids-detroit-birthday-activity",
+            "project_1_button_text": "",
+            "project_2_image": "shopify://shop_images/NFL_Draft.png",
+            "project_2_title": "NFL Draft Keychains",
+            "project_2_material": "These unique gifts were made by repurposing the remnants from the renovation of the historic National Theater in Detroit, which served as the backdrop for the 2024 NFL Draft.",
+            "project_2_recipient": "Custom keychains made for the NFL Draft and Visit Detroit for the Red Carpet Gala.",
+            "project_2_solution": "",
+            "project_2_date": "2024",
+            "project_2_link": "",
+            "project_2_button_text": "",
+            "project_3_image": "shopify://shop_images/2026_WEBSITE_COLLATERAL_Updates-ZY_4.png",
+            "project_3_title": "Kresge's Centennial Pins",
+            "project_3_material": "Repurposed material from locations supported by the organization.",
+            "project_3_recipient": "Celebrating 100 years called for something more than a logo or speech — it required a symbol that carried the spirit of Detroit.",
+            "project_3_solution": "",
+            "project_3_date": "2023",
+            "project_3_link": "",
+            "project_3_button_text": "",
+            "project_4_image": "shopify://shop_images/1028_2.png",
+            "project_4_title": "SXSW Midwest House",
+            "project_4_material": "At SXSW, we wanted to showcase Michigan’s creator economy in a way that was interactive and unforgettable.",
+            "project_4_recipient": "Attendees created their own pins from repurposed Detroit graffiti — a hands-on experience that connected them to Michigan’s creativity, sustainability, and spirit.",
+            "project_4_solution": "",
+            "project_4_date": "2023",
+            "project_4_link": "",
+            "project_4_button_text": "",
+            "project_5_image": "shopify://shop_images/1030_1.png",
+            "project_5_title": "Detroit Homecoming",
+            "project_5_material": "Reclaimed Detroit materials",
+            "project_5_recipient": "Guests loved creating their own pins, sparking conversations about the city’s artistry and resilience.",
+            "project_5_solution": "",
+            "project_5_date": "2023",
+            "project_5_link": "",
+            "project_5_button_text": "",
+            "project_6_image": "shopify://shop_images/Visit_Detroit.png",
+            "project_6_title": "Visit Detroit",
+            "project_6_material": "",
+            "project_6_recipient": "",
+            "project_6_solution": "",
+            "project_6_date": "",
+            "project_6_link": "",
+            "project_6_button_text": "",
+            "project_7_image": "shopify://shop_images/DDP.png",
+            "project_7_title": "Downtown Detroit Partnership",
+            "project_7_material": "",
+            "project_7_recipient": "",
+            "project_7_solution": "",
+            "project_7_date": "",
+            "project_7_link": "",
+            "project_7_button_text": "",
+            "project_8_image": "shopify://shop_images/DTE.png",
+            "project_8_title": "DTE",
+            "project_8_material": "",
+            "project_8_recipient": "",
+            "project_8_solution": "",
+            "project_8_date": "",
+            "project_8_link": "",
+            "project_8_button_text": "",
+            "project_9_title": "",
+            "project_9_material": "",
+            "project_9_recipient": "",
+            "project_9_solution": "",
+            "project_9_date": "",
+            "project_9_link": "",
+            "project_9_button_text": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b5604d2_yREjt8"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_LbRGrU",
+    "17773087558b85eacc"
+  ]
+}

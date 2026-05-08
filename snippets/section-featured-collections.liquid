@@ -1,0 +1,153 @@
+{% comment %}
+  /**
+    * @param {object} section - section object
+    * @param {boolean} divider - show divider
+    * @param {number} section_blocks_size - number of blocks in section
+    * @param {string} title - section title
+    * @param {string} heading_position - heading position
+    * @param {string} heading_size - heading size
+    * @param {string} collection_grid_image - collection grid image
+    * @param {string} collection_grid_shape - collection grid shape
+    * @param {string} collection_grid_image_fill - collection grid image fill
+  */
+{% endcomment %}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+{%- liquid
+  capture gridView
+    render 'products-per-row', products_per_row: section_blocks_size
+  endcapture
+ -%}
+
+<div class="page-width">
+  {%- if title != blank -%}
+    <div class="section-header text-{{ heading_position }}">
+      <h2 class="section-header__title {{ heading_size }}">{{ title }}</h2>
+    </div>
+  {%- endif -%}
+
+  <div class="new-grid cst-new-grid {{ custom_class }}" data-view="{% if section_blocks_size < 6 %}{{ gridView }}{% else %}6-3{% endif %}">
+    {%- liquid
+      assign isEmpty = true
+      if section_blocks_size > 0
+        assign isEmpty = false
+      endif
+    -%}
+
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign collection = collections[block.settings.collection]
+        assign sizeVariable = section_blocks_size | at_most: 6
+        render 'collection-grid-item', collection: collection, block: block, sizeVariable: sizeVariable, fallback: 'variable', collection_grid_image: collection_grid_image, collection_grid_shape: collection_grid_shape, collection_grid_image_fill: collection_grid_image_fill
+      -%}
+    {%- endfor -%}
+
+    {%- if isEmpty -%}
+      <div class="page-width">
+        <div class="rte">
+          {{ 'home_page.onboarding.no_content' | t }}
+        </div>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{%- if divider -%}</div>{%- endif -%}
+<script>
+  function getSlidesToShow(width) {
+    if (width <= 767) {
+      return 2; // Mobile
+    } else if (width <= 991) {
+      return 3; // Tablet
+    }
+    return null; // Desktop
+  }
+
+  function initResponsiveSlider() {
+    var $grid = $('.cst-new-grid');
+    var width = window.innerWidth;
+    var slides = getSlidesToShow(width);
+
+    if (slides !== null) {
+      if (!$grid.hasClass('slick-initialized')) {
+        $grid.slick({
+          dots: true,
+          autoplay: false,
+          slidesToShow: slides,
+          slidesToScroll: 1,
+          infinite: true,
+          speed: 500,
+          arrows: false
+        });
+      } else {
+        // Update slidesToShow dynamically
+        $grid.slick('slickSetOption', 'slidesToShow', slides, true);
+      }
+    } else {
+      if ($grid.hasClass('slick-initialized')) {
+        $grid.slick('unslick');
+      }
+    }
+  }
+
+  // Debounce to avoid rapid calls on resize
+  let resizeTimeout;
+  $(window).on('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function() {
+      initResponsiveSlider();
+    }, 200);
+  });
+
+  $(document).ready(function() {
+    initResponsiveSlider();
+  });
+</script>
+
+{% comment %} <script>
+  function initResponsiveSlider() {
+    var $grid = $('.cst-new-grid');
+    var width = window.innerWidth;
+
+    if (width <= 991) {
+      if (!$grid.hasClass('slick-initialized')) {
+        $grid.slick({
+          dots: true,
+          autoplay: false,
+          slidesToScroll: 1,
+          infinite: true,
+          speed: 500,
+          arrows: false,
+          responsive: [
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1
+              }
+            },
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 2
+              }
+            }
+          ]
+        });
+      }
+    } else {
+      if ($grid.hasClass('slick-initialized')) {
+        $grid.slick('unslick');
+      }
+    }
+  }
+
+  $(document).ready(function() {
+    initResponsiveSlider();
+    $(window).on('resize', function() {
+      initResponsiveSlider();
+    });
+  });
+</script> {% endcomment %}
+

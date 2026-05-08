@@ -1,0 +1,45 @@
+{%- assign newsletter_form_id = 'newsletter-footer-' | append: section.id -%}
+<div class="footer-newsletter">
+  {%- if block.settings.heading != blank -%}
+    <h3 class="footer-newsletter__heading">{{ block.settings.heading }}</h3>
+  {%- endif -%}
+
+  {%- if block.settings.subtext != blank -%}
+    <div class="footer-newsletter__subtext">{{ block.settings.subtext }}</div>
+  {%- endif -%}
+
+  {% form 'customer', id: newsletter_form_id %}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <input type="hidden" name="contact[context]" value="footer">
+    
+    {%- if form.posted_successfully? -%}
+      <div class="footer-newsletter__success">
+        {{ 'general.newsletter_form.confirmation' | t }}
+      </div>
+    {%- else -%}
+      {%- if form.errors -%}
+        <div class="footer-newsletter__error">
+          {{ form.errors | default_errors }}
+        </div>
+      {%- endif -%}
+
+      {%- unless form.posted_successfully? -%}
+    <label for="Email-{{ section_id }}" class="hidden-label">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+    <label for="newsletter-form-submit-{{ section_id }}" class="hidden-label">{{ 'general.newsletter_form.submit' | t }}</label>
+    <input type="hidden" name="contact[tags]" value="prospect,newsletter">
+    <input type="hidden" name="contact[context]" value="{{ snippet_context }}">
+    <div class="input-group newsletter__input-group">
+      <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="contact[email]" id="Email-{{ section_id }}" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off" required>
+      <div class="input-group-btn">
+        <button type="submit" id="newsletter-form-submit-{{ section_id }}" class="btn" name="commit" aria-label="{{ 'general.newsletter_form.submit' | t }}">
+          <span class="form__submit--large">{{ 'general.newsletter_form.submit' | t }}</span>
+          <span class="form__submit--small">
+            {% render 'icon-arrow-right' %}
+          </span>
+        </button>
+      </div>
+    </div>
+  {%- endunless -%}
+    {%- endif -%}
+  {% endform %}
+</div>

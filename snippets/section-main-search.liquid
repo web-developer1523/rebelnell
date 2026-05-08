@@ -1,0 +1,122 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {object} search - search object
+   * @param {object} cart - cart object
+   * @param {string} context - context (default: 'search-page')
+   * @param {boolean} enable_sidebar - enable sidebar
+   * @param {boolean} enable_color_swatches - enable color swatches
+   * @param {string} tags_combine - tags combine (default: false)
+   * @param {boolean} enable_sort - enable sort
+   * @param {boolean} collapse_filters - collapse filters
+   * @param {number} paginate_by - paginate by (default: 40)
+   * @param {string} grid_style - grid style
+   * @param {boolean} quick_shop_enable - theme's quick shop enable setting
+   * @param {boolean} quick_add_enable - whether quick add is enabled
+   * @param {string} product_grid_image_size - image size
+   * @param {boolean} product_grid_image_fill - whether image should fill container
+   * @param {boolean} product_hover_image - whether hover image is enabled
+   * @param {boolean} enable_swatches - whether swatches are enabled
+   * @param {boolean} vendor_enable - whether vendor is enabled
+   * @param {boolean} product_save_amount - whether product save amount is enabled
+   * @param {string} product_save_type - product save type
+   * @param {boolean} enable_product_reviews - whether product reviews are enabled
+   * @param {boolean} show_breadcrumbs - whether breadcrumbs are enabled
+   * @param {string} color_header_search - color of header search
+   * @param {boolean} predictive_search_enabled - whether predictive search is enabled
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- assign hydration = hydration | default: 'on:idle' -%}
+
+<is-land {{ hydration }}>
+  <collection-template class="search-content" data-section-id="{{ section.id }}" data-section-type="collection-template" data-collection-template="true">
+    <div class="page-width page-content">
+      {%- render 'breadcrumbs',
+        show_breadcrumbs: show_breadcrumbs,
+        routes: routes,
+        template: template,
+        page_title: page_title
+      -%}
+
+      <header class="section-header">
+        <h1 class="section-header__title">
+          {{ 'general.search.title' | t }}
+        </h1>
+        <p class="medium-up--hide" data-collection-count>
+          {{ 'general.search.result_count' | t: count: search.results_count }}
+        </p>
+      </header>
+
+      {%- render 'predictive-search',
+        color_header_search: color_header_search,
+        context: context,
+        predictive_search_enabled: predictive_search_enabled,
+        routes: routes,
+        search: search,
+      -%}
+
+      {%- if search.performed -%}
+        {%- if search.results_count == 0 -%}
+          <div class="section-header">
+              <p>{{ 'general.search.no_results_html' | t: terms: search.terms | replace: '*', '' }}</p>
+          </div>
+        {%- else -%}
+          <div id="CollectionAjaxContent" class="grid collection-content">
+            <div class="grid__item medium-up--one-fifth grid__item--sidebar">
+              {%- render 'collection-grid-filters',
+                section: section,
+                collection: search,
+                enable_sidebar: enable_sidebar,
+                enable_color_swatches: enable_color_swatches,
+                tags_combine: tags_combine,
+                enable_sort: enable_sort,
+                collapse_filters: collapse_filters
+              -%}
+            </div>
+            <div class="grid__item medium-up--four-fifths grid__item--content">
+              {%- paginate search.results by paginate_by -%}
+
+              <div {{ block.shopify_attributes }}>
+                {%- render 'collection-grid'
+                  collection: search,
+                  cart: cart,
+                  items: search.results,
+                  grid_style: grid_style,
+                  quick_shop_enable: quick_shop_enable
+                  quick_add_enable: quick_add_enable,
+                  product_grid_image_size: product_grid_image_size,
+                  product_grid_image_fill: product_grid_image_fill,
+                  product_hover_image: product_hover_image,
+                  enable_swatches: enable_swatches,
+                  vendor_enable: vendor_enable,
+                  product_save_amount: product_save_amount,
+                  product_save_type: product_save_type,
+                  enable_product_reviews: enable_product_reviews,
+                  superscript_decimals: superscript_decimals
+                -%}
+              </div>
+
+              {%- liquid
+                if paginate.pages > 1
+                  render 'pagination', paginate: paginate
+                endif
+              -%}
+
+              {%- endpaginate -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+      {%- endif -%}
+    </div>
+  </collection-template>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-main-search';
+    </script>
+  </template>
+</is-land>

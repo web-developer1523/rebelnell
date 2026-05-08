@@ -1,0 +1,742 @@
+{% doc %}
+  @prompt
+    now i need two parallel sections:
+    both sections should have text boxes that alignment can be adjusted. the left section needs to have a boarder around each section. The right side should have an option or video as the background of each section.
+    Left section:  
+    Main Title center aligned: Your Goal (s)
+    - Title: Build Culture & Connection
+    sub: From offsites to all-hands, create experiences that matter—co-created artifacts that spark belonging.
+    -Title: Engage Customers & Audiences
+    Sub: Turn booths and brand moments into experiences that matter—lines people want to stand in.
+    -Title: Celebrate Milestones
+    Sub: Recognition that matters—tangible pieces people keep on their desk.
+    -Title: Build Purposeful Partnerships
+    Sub: Co-create experiences that matter—align CSR, brand, and community impact.
+    on the right side 
+    Main title: What We Offer
+    All the sections should have an image or video as the background each section 
+    - title: Fan & Community Activation's
+    sub: From murals to on-site pin-making, fans create custom keepsakes using meaningful materials. Built for stadiums, festivals, and brand moments that last. 
+    -title: Unique Branded Gifts
+    sub: Create custom accessories using materials that matter. Moments, even graffiti. One of a kind keepsakes that turn memories into something you can wear.
+    - title: Amy Peterson Speaking 
+    Sub: Available for panels, keynotes, leadership summits, and corporate events , only the right side should have a image or video background option, I should be able to change the alignment of all the text sections , the left section should have an option to have a square boarder and to change the color of the boarder
+    
+    , the sections should be the same size and add a fourth section to the right side, I want to be able to change the background color of this section
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-parallel-sections-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.section_gap }}px;
+    padding: {{ block.settings.section_padding }}px;
+    max-width: 100%;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-parallel-sections-column-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.item_gap }}px;
+  }
+
+  .ai-parallel-sections-main-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.main_title_size }}px;
+    font-weight: 600;
+    margin-bottom: {{ block.settings.main_title_margin }}px;
+    color: {{ block.settings.text_color }};
+    text-align: {{ block.settings.main_title_alignment }};
+  }
+
+  .ai-parallel-sections-item-{{ ai_gen_id }} {
+    padding: {{ block.settings.item_padding }}px;
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 150px;
+    background-color: {{ block.settings.left_item_background }};
+    {% if block.settings.show_left_border %}
+      border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+      border-radius: {{ block.settings.border_radius }}px;
+    {% endif %}
+  }
+
+  .ai-parallel-sections-item-right-{{ ai_gen_id }} {
+    padding: {{ block.settings.item_padding }}px;
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-parallel-sections-item-right-{{ ai_gen_id }}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity }});
+    z-index: 1;
+  }
+
+  .ai-parallel-sections-item-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ai-parallel-sections-item-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.item_title_size }}px;
+    font-weight: 600;
+    margin-bottom: {{ block.settings.title_margin }}px;
+    color: {{ block.settings.text_color }};
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-parallel-sections-item-title-right-{{ ai_gen_id }} {
+    font-size: {{ block.settings.item_title_size }}px;
+    font-weight: 600;
+    margin-bottom: {{ block.settings.title_margin }}px;
+    color: {{ block.settings.right_text_color }};
+    text-align: {{ block.settings.right_text_alignment }};
+  }
+
+  .ai-parallel-sections-item-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    line-height: 1.5;
+    color: {{ block.settings.text_color }};
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-parallel-sections-item-subtitle-right-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    line-height: 1.5;
+    color: {{ block.settings.right_text_color }};
+    text-align: {{ block.settings.right_text_alignment }};
+  }
+
+  .ai-parallel-sections-video-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .ai-parallel-sections-placeholder-{{ ai_gen_id }} {
+    background-color: #f4f4f4;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-parallel-sections-placeholder-{{ ai_gen_id }} svg {
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-parallel-sections-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-parallel-sections-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-parallel-sections-column-{{ ai_gen_id }}">
+    {% if block.settings.left_main_title != blank %}
+      <h2 class="ai-parallel-sections-main-title-{{ ai_gen_id }}">{{ block.settings.left_main_title }}</h2>
+    {% endif %}
+
+    <div class="ai-parallel-sections-item-{{ ai_gen_id }}">
+      <div class="ai-parallel-sections-item-content-{{ ai_gen_id }}">
+        {% if block.settings.left_item_1_title != blank %}
+          <h3 class="ai-parallel-sections-item-title-{{ ai_gen_id }}">{{ block.settings.left_item_1_title }}</h3>
+        {% endif %}
+        {% if block.settings.left_item_1_subtitle != blank %}
+          <p class="ai-parallel-sections-item-subtitle-{{ ai_gen_id }}">{{ block.settings.left_item_1_subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-parallel-sections-item-{{ ai_gen_id }}">
+      <div class="ai-parallel-sections-item-content-{{ ai_gen_id }}">
+        {% if block.settings.left_item_2_title != blank %}
+          <h3 class="ai-parallel-sections-item-title-{{ ai_gen_id }}">{{ block.settings.left_item_2_title }}</h3>
+        {% endif %}
+        {% if block.settings.left_item_2_subtitle != blank %}
+          <p class="ai-parallel-sections-item-subtitle-{{ ai_gen_id }}">{{ block.settings.left_item_2_subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-parallel-sections-item-{{ ai_gen_id }}">
+      <div class="ai-parallel-sections-item-content-{{ ai_gen_id }}">
+        {% if block.settings.left_item_3_title != blank %}
+          <h3 class="ai-parallel-sections-item-title-{{ ai_gen_id }}">{{ block.settings.left_item_3_title }}</h3>
+        {% endif %}
+        {% if block.settings.left_item_3_subtitle != blank %}
+          <p class="ai-parallel-sections-item-subtitle-{{ ai_gen_id }}">{{ block.settings.left_item_3_subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-parallel-sections-item-{{ ai_gen_id }}">
+      <div class="ai-parallel-sections-item-content-{{ ai_gen_id }}">
+        {% if block.settings.left_item_4_title != blank %}
+          <h3 class="ai-parallel-sections-item-title-{{ ai_gen_id }}">{{ block.settings.left_item_4_title }}</h3>
+        {% endif %}
+        {% if block.settings.left_item_4_subtitle != blank %}
+          <p class="ai-parallel-sections-item-subtitle-{{ ai_gen_id }}">{{ block.settings.left_item_4_subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-parallel-sections-column-{{ ai_gen_id }}">
+    {% if block.settings.right_main_title != blank %}
+      <h2 class="ai-parallel-sections-main-title-{{ ai_gen_id }}" style="text-align: {{ block.settings.right_main_title_alignment }}; color: {{ block.settings.text_color }};">{{ block.settings.right_main_title }}</h2>
+    {% endif %}
+
+    <div class="ai-parallel-sections-item-right-{{ ai_gen_id }}" 
+         {% if block.settings.right_item_1_image %}
+           style="background-image: url('{{ block.settings.right_item_1_image | image_url: width: 800 }}');"
+         {% endif %}>
+      {% if block.settings.right_item_1_video %}
+        <video class="ai-parallel-sections-video-{{ ai_gen_id }}" autoplay muted loop playsinline>
+          <source src="{{ block.settings.right_item_1_video }}" type="video/mp4">
+        </video>
+      {% endif %}
+      {% unless block.settings.right_item_1_image or block.settings.right_item_1_video %}
+        <div class="ai-parallel-sections-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endunless %}
+      <div class="ai-parallel-sections-item-content-{{ ai_gen_id }}">
+        {% if block.settings.right_item_1_title != blank %}
+          <h3 class="ai-parallel-sections-item-title-right-{{ ai_gen_id }}">{{ block.settings.right_item_1_title }}</h3>
+        {% endif %}
+        {% if block.settings.right_item_1_subtitle != blank %}
+          <p class="ai-parallel-sections-item-subtitle-right-{{ ai_gen_id }}">{{ block.settings.right_item_1_subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-parallel-sections-item-right-{{ ai_gen_id }}" 
+         {% if block.settings.right_item_2_image %}
+           style="background-image: url('{{ block.settings.right_item_2_image | image_url: width: 800 }}');"
+         {% endif %}>
+      {% if block.settings.right_item_2_video %}
+        <video class="ai-parallel-sections-video-{{ ai_gen_id }}" autoplay muted loop playsinline>
+          <source src="{{ block.settings.right_item_2_video }}" type="video/mp4">
+        </video>
+      {% endif %}
+      {% unless block.settings.right_item_2_image or block.settings.right_item_2_video %}
+        <div class="ai-parallel-sections-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endunless %}
+      <div class="ai-parallel-sections-item-content-{{ ai_gen_id }}">
+        {% if block.settings.right_item_2_title != blank %}
+          <h3 class="ai-parallel-sections-item-title-right-{{ ai_gen_id }}">{{ block.settings.right_item_2_title }}</h3>
+        {% endif %}
+        {% if block.settings.right_item_2_subtitle != blank %}
+          <p class="ai-parallel-sections-item-subtitle-right-{{ ai_gen_id }}">{{ block.settings.right_item_2_subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-parallel-sections-item-right-{{ ai_gen_id }}" 
+         {% if block.settings.right_item_3_image %}
+           style="background-image: url('{{ block.settings.right_item_3_image | image_url: width: 800 }}');"
+         {% endif %}>
+      {% if block.settings.right_item_3_video %}
+        <video class="ai-parallel-sections-video-{{ ai_gen_id }}" autoplay muted loop playsinline>
+          <source src="{{ block.settings.right_item_3_video }}" type="video/mp4">
+        </video>
+      {% endif %}
+      {% unless block.settings.right_item_3_image or block.settings.right_item_3_video %}
+        <div class="ai-parallel-sections-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endunless %}
+      <div class="ai-parallel-sections-item-content-{{ ai_gen_id }}">
+        {% if block.settings.right_item_3_title != blank %}
+          <h3 class="ai-parallel-sections-item-title-right-{{ ai_gen_id }}">{{ block.settings.right_item_3_title }}</h3>
+        {% endif %}
+        {% if block.settings.right_item_3_subtitle != blank %}
+          <p class="ai-parallel-sections-item-subtitle-right-{{ ai_gen_id }}">{{ block.settings.right_item_3_subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-parallel-sections-item-right-{{ ai_gen_id }}" 
+         {% if block.settings.right_item_4_image %}
+           style="background-image: url('{{ block.settings.right_item_4_image | image_url: width: 800 }}');"
+         {% endif %}>
+      {% if block.settings.right_item_4_video %}
+        <video class="ai-parallel-sections-video-{{ ai_gen_id }}" autoplay muted loop playsinline>
+          <source src="{{ block.settings.right_item_4_video }}" type="video/mp4">
+        </video>
+      {% endif %}
+      {% unless block.settings.right_item_4_image or block.settings.right_item_4_video %}
+        <div class="ai-parallel-sections-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endunless %}
+      <div class="ai-parallel-sections-item-content-{{ ai_gen_id }}">
+        {% if block.settings.right_item_4_title != blank %}
+          <h3 class="ai-parallel-sections-item-title-right-{{ ai_gen_id }}">{{ block.settings.right_item_4_title }}</h3>
+        {% endif %}
+        {% if block.settings.right_item_4_subtitle != blank %}
+          <p class="ai-parallel-sections-item-subtitle-right-{{ ai_gen_id }}">{{ block.settings.right_item_4_subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Parallel sections",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_gap",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Gap between columns",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap between items",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Item padding",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "min": 20,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "label": "Mobile gap",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Left section"
+    },
+    {
+      "type": "text",
+      "id": "left_main_title",
+      "label": "Main title",
+      "default": "Your Goal(s)"
+    },
+    {
+      "type": "select",
+      "id": "main_title_alignment",
+      "label": "Main title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "left_item_1_title",
+      "label": "Item 1 title",
+      "default": "Build Culture & Connection"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_1_subtitle",
+      "label": "Item 1 subtitle",
+      "default": "From offsites to all-hands, create experiences that matter—co-created artifacts that spark belonging."
+    },
+    {
+      "type": "text",
+      "id": "left_item_2_title",
+      "label": "Item 2 title",
+      "default": "Engage Customers & Audiences"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_2_subtitle",
+      "label": "Item 2 subtitle",
+      "default": "Turn booths and brand moments into experiences that matter—lines people want to stand in."
+    },
+    {
+      "type": "text",
+      "id": "left_item_3_title",
+      "label": "Item 3 title",
+      "default": "Celebrate Milestones"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_3_subtitle",
+      "label": "Item 3 subtitle",
+      "default": "Recognition that matters—tangible pieces people keep on their desk."
+    },
+    {
+      "type": "text",
+      "id": "left_item_4_title",
+      "label": "Item 4 title",
+      "default": "Build Purposeful Partnerships"
+    },
+    {
+      "type": "textarea",
+      "id": "left_item_4_subtitle",
+      "label": "Item 4 subtitle",
+      "default": "Co-create experiences that matter—align CSR, brand, and community impact."
+    },
+    {
+      "type": "header",
+      "content": "Left section style"
+    },
+    {
+      "type": "color",
+      "id": "left_item_background",
+      "label": "Item background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_left_border",
+      "label": "Show border around items",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Right section"
+    },
+    {
+      "type": "text",
+      "id": "right_main_title",
+      "label": "Main title",
+      "default": "What We Offer"
+    },
+    {
+      "type": "select",
+      "id": "right_main_title_alignment",
+      "label": "Main title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "right_item_1_title",
+      "label": "Item 1 title",
+      "default": "Fan & Community Activations"
+    },
+    {
+      "type": "textarea",
+      "id": "right_item_1_subtitle",
+      "label": "Item 1 subtitle",
+      "default": "From murals to on-site pin-making, fans create custom keepsakes using meaningful materials. Built for stadiums, festivals, and brand moments that last."
+    },
+    {
+      "type": "image_picker",
+      "id": "right_item_1_image",
+      "label": "Item 1 background image"
+    },
+    {
+      "type": "url",
+      "id": "right_item_1_video",
+      "label": "Item 1 background video URL"
+    },
+    {
+      "type": "text",
+      "id": "right_item_2_title",
+      "label": "Item 2 title",
+      "default": "Unique Branded Gifts"
+    },
+    {
+      "type": "textarea",
+      "id": "right_item_2_subtitle",
+      "label": "Item 2 subtitle",
+      "default": "Create custom accessories using materials that matter. Moments, even graffiti. One of a kind keepsakes that turn memories into something you can wear."
+    },
+    {
+      "type": "image_picker",
+      "id": "right_item_2_image",
+      "label": "Item 2 background image"
+    },
+    {
+      "type": "url",
+      "id": "right_item_2_video",
+      "label": "Item 2 background video URL"
+    },
+    {
+      "type": "text",
+      "id": "right_item_3_title",
+      "label": "Item 3 title",
+      "default": "Amy Peterson Speaking"
+    },
+    {
+      "type": "textarea",
+      "id": "right_item_3_subtitle",
+      "label": "Item 3 subtitle",
+      "default": "Available for panels, keynotes, leadership summits, and corporate events."
+    },
+    {
+      "type": "image_picker",
+      "id": "right_item_3_image",
+      "label": "Item 3 background image"
+    },
+    {
+      "type": "url",
+      "id": "right_item_3_video",
+      "label": "Item 3 background video URL"
+    },
+    {
+      "type": "text",
+      "id": "right_item_4_title",
+      "label": "Item 4 title"
+    },
+    {
+      "type": "textarea",
+      "id": "right_item_4_subtitle",
+      "label": "Item 4 subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_item_4_image",
+      "label": "Item 4 background image"
+    },
+    {
+      "type": "url",
+      "id": "right_item_4_video",
+      "label": "Item 4 background video URL"
+    },
+    {
+      "type": "header",
+      "content": "Right section style"
+    },
+    {
+      "type": "select",
+      "id": "right_text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "Background overlay opacity",
+      "default": 0.4
+    },
+    {
+      "type": "color",
+      "id": "right_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "main_title_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Main title size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "main_title_margin",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Main title margin bottom",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "item_title_size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Item title size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "title_margin",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Title margin bottom",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Parallel sections"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "advanced_content_xrHtd9": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_Q3EDjH": {
+          "type": "liquid",
+          "settings": {
+            "code": "<script src=\"https://cdn-widgetsrepository.yotpo.com/v1/loader/NJrJJk7rW1ef5VUb7MwvpA\" async></script>\n<div class=\"yotpo-widget-instance\" data-yotpo-instance-id=\"799982\"></div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_Q3EDjH"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "1746279552db7ec8c8": {
+      "type": "apps",
+      "blocks": {
+        "acerill_form_builder_custom_form_Jr8KWD": {
+          "type": "shopify://apps/acerill-form-builder/blocks/custom-form/830f910d-3579-44cb-9d18-92197bb5bd98",
+          "settings": {
+            "formId": "08ef0b44-f619-4abe-988c-c5e8b05a4ac9",
+            "behavior": "standard"
+          }
+        }
+      },
+      "block_order": [
+        "acerill_form_builder_custom_form_Jr8KWD"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "rich_text_YkBxVf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_q6nbGd": {
+          "type": "heading",
+          "settings": {
+            "title": "Get Started Now!",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_q6nbGd"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "2",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_YkBxVf",
+    "advanced_content_xrHtd9",
+    "1746279552db7ec8c8"
+  ]
+}

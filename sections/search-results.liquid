@@ -1,0 +1,15 @@
+{%- render 'section-search-results',
+  predictive_search: predictive_search,
+  predictive_search_show_vendor: settings.predictive_search_show_vendor,
+  predictive_search_show_price: settings.predictive_search_show_price,
+  product_save_amount: settings.product_save_amount,
+  product_save_type: settings.product_save_type,
+  routes: routes
+-%}
+
+{% schema %}
+{
+  "name": "search-results",
+  "tag": "section"
+}
+{% endschema %}

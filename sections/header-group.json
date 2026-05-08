@@ -1,0 +1,98 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "toolbar": {
+      "type": "toolbar",
+      "blocks": {
+        "announcement_3VwtxL": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "<p>Enjoy free standard U.S. shipping on orders over $100</p>",
+            "richtext_mobile": ""
+          }
+        },
+        "announcement_d3f4DR": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "<p><a href=\"https://www.rebelnell.com/collections/belle-isle-zoo-collections\" target=\"_blank\" title=\"https://www.rebelnell.com/collections/belle-isle-zoo-collections\">NEW COLLABORATION | Belle Isle Zoo</a></p>",
+            "richtext_mobile": "<p><a href=\"https://www.rebelnell.com/collections/belle-isle-zoo-collections\" target=\"_blank\" title=\"https://www.rebelnell.com/collections/belle-isle-zoo-collections\">NEW COLLABORATION | Belle Isle Zoo</a></p>"
+          }
+        },
+        "announcement_mgFb4U": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "<p><a href=\"https://www.rebelnell.com/pages/reviews-1\" target=\"_blank\" title=\"https://www.rebelnell.com/pages/reviews-1\">Rated 4.8 Stars</a></p>",
+            "richtext_mobile": "<p><a href=\"https://www.rebelnell.com/pages/reviews-1\" target=\"_blank\" title=\"https://www.rebelnell.com/pages/reviews-1\">Rated 4.8 Stars</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_3VwtxL",
+        "announcement_d3f4DR",
+        "announcement_mgFb4U"
+      ],
+      "custom_css": [],
+      "settings": {
+        "announcement_center": true,
+        "toolbar_social": false,
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "show_currency_flags": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "logo_3dPVDc": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/rn-website-logo.png",
+            "desktop_logo_width": 120,
+            "mobile_logo_width": 80
+          }
+        }
+      },
+      "block_order": [
+        "logo_3dPVDc"
+      ],
+      "settings": {
+        "main_menu_link_list": "updated-menu",
+        "hover_menu": true,
+        "main_menu_alignment": "center",
+        "mega_products": false,
+        "header_sticky": true,
+        "header_footer_menu": true,
+        "sticky_index": false,
+        "sticky_collection": false
+      }
+    },
+    "scrolling_text_Y4VHk7": {
+      "type": "scrolling-text",
+      "disabled": true,
+      "settings": {
+        "text": "HOLIDAY SHIPPING DEADLINES | Ground Shipping Deadline: Wednesday, December 17 and Expedited Shipping Deadline: Thursday, December 18",
+        "link": "shopify://collections/best-selling-collaborations",
+        "text_size": 20,
+        "text_spacing": true,
+        "direction": "left",
+        "speed": 290,
+        "color_scheme": "3"
+      }
+    }
+  },
+  "order": [
+    "toolbar",
+    "header",
+    "scrolling_text_Y4VHk7"
+  ]
+}

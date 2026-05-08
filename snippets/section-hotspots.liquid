@@ -1,0 +1,174 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {string} hotspot_color - hotspot color
+   * @param {string} title - title
+   * @param {string} heading_size - heading size
+   * @param {string} heading_position - heading position
+   * @param {boolean} indent_image - indent image
+   * @param {string} image_position - image position
+   * @param {object} image - image object
+   * @param {boolean} lazyload_images - lazyload images
+   * @param {string} hotspot_style - hotspot style
+   * @param {boolean} quick_add_enable - whether quick add is enabled
+   * @param {boolean} quick_shop_enable - whether quick shop is enabled
+   * @param {string} product_grid_image_size - the image size to use for the grid item
+   * @param {boolean} product_grid_image_fill - whether the image should fill the grid item
+   * @param {boolean} product_hover_image - whether second image will be shown on hover
+   * @param {boolean} enable_swatches - whether swatches are enabled
+   * @param {boolean} vendor_enable - whether to show the vendor
+   * @param {boolean} product_save_amount - show save amount
+   * @param {string} product_save_type - dollar or percent
+   * @param {boolean} enable_product_reviews - whether to show product reviews
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- assign hydration = hydration | default: 'on:idle' -%}
+{% assign bgBrightness = hotspot_color | brightness_difference: '#fff' %}
+{% style %}
+  {% for block in section.blocks %}
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 {{ hotspot_color | color_modify: 'alpha', 0.5 }}; }
+      100% { box-shadow: 0 0 0 10px {{ hotspot_color | color_modify: 'alpha', 0 }}; }
+    }
+
+    .{{ section.id }} .hotspot__button--{{ block.id }} {
+      left: {{ block.settings.horizontal }}%;
+      top: {{ block.settings.vertical }}%;
+      background-color: {{ hotspot_color }};
+      animation: pulse 2s infinite;
+    }
+
+    .{{ section.id }} .hotspot__button--{{ block.id }}:hover {
+      {% if bgBrightness < 125 %}
+        background-color: {{ hotspot_color | color_darken: 10 }};
+      {% else %}
+        background-color: {{ hotspot_color | color_lighten: 10 }};
+      {% endif %}
+    }
+  {% endfor %}
+
+  .{{ section.id }} .hotspot__button path {
+    {% if bgBrightness < 125 %}
+      stroke: #000 !important;
+    {% else %}
+      stroke: #fff !important;
+    {% endif %}
+  }
+
+  .{{ section.id }} .hotspot__button circle {
+    {% if bgBrightness < 125 %}
+      fill: #000 !important;
+    {% else %}
+      fill: #fff !important;
+    {% endif %}
+    stroke: none !important;
+  }
+{% endstyle %}
+
+<is-land {{ hydration }}>
+  <div class="index-section {{ section.id }} {{ bgBrightness }}">
+    {% if title != blank %}
+      <div class="page-width">
+        <h2 class="hotspots__title {{ heading_size }} text-{{ heading_position }}">{{ title }}</h2>
+      </div>
+    {% endif %}
+    <hot-spots class="hotspots-wrapper {% unless indent_image %}page-width{% endunless %} {% if image_position == 'right' %}is-reverse{% endif %}">
+
+      <div class="hotspots">
+        <div class="hotspots__image hotspots__image--indent-{{ indent_image }}">
+          <div class="grid__image-ratio grid__image-ratio--square">
+            {% if image != blank %}
+              {%- render 'image-element',
+                img: image,
+                img_width: 2400,
+                loading: lazyload_images,
+                sizeVariable: '70vw',
+              -%}
+            {% else %}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="hotspots__buttons">
+          {% for block in section.blocks %}
+            <a href="#" class="hotspot__button hotspot__button--{{ block.id }}" data-button="{{ block.id }}">
+              {% assign buttonStyle = hotspot_style %}
+              {% if buttonStyle == 'dot' %}
+                {% render 'icon-dot' %}
+              {% elsif buttonStyle == 'plus' %}
+                {% render 'icon-plus' %}
+              {% elsif buttonStyle == 'bag' %}
+                {% render 'icon-bag' %}
+              {% elsif buttonStyle == 'tag' %}
+                {% render 'icon-tag' %}
+              {% endif %}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="hotspots__content" data-block-container>
+        {% for block in section.blocks %}
+          <div class="hotspot-content__block {% if forloop.index0 == 0 %}is-active{% endif %}" data-block-type="{{ block.type }}" data-hotspot-block="{{ block.id }}" {{ block.shopify_attributes }}>
+            {% case block.type %}
+              {% when 'product' %}
+                {%- assign product = block.settings.featured_product -%}
+                {% if block.settings.featured_product != blank %}
+                  {%- render 'product-grid-item',
+                    product: product,
+                    sizes: '30vw',
+                    collection: collection,
+                    quick_add_enable: quick_add_enable,
+                    quick_shop_enable: quick_shop_enable,
+                    product_grid_image_size: product_grid_image_size,
+                    product_grid_image_fill: product_grid_image_fill,
+                    product_hover_image: product_hover_image,
+                    enable_swatches: enable_swatches,
+                    vendor_enable: vendor_enable,
+                    product_save_amount: product_save_amount,
+                    product_save_type: product_save_type,
+                    enable_product_reviews: enable_product_reviews,
+                    superscript_decimals: superscript_decimals,
+                  -%}
+                {% else %}
+                  {%- render 'onboarding-product-grid-item',
+                    shop: shop,
+                    product: product,
+                    collection: collection,
+                    i: forloop.index,
+                    product_save_amount: product_save_amount,
+                    product_save_type: product_save_type,
+                    superscript_decimals: superscript_decimals,
+                  -%}
+                {% endif %}
+              {% when 'paragraph' %}
+                {% if block.settings.subheading != blank %}
+                  <p class="subheading">{{ block.settings.subheading }}</p>
+                {% endif %}
+                {% if block.settings.heading != blank %}
+                  <h3>{{ block.settings.heading }}</h3>
+                {% endif %}
+
+                {% if block.settings.content != blank %}
+                  {{ block.settings.content }}
+                {% endif %}
+
+                {% if block.settings.button_text != blank %}
+                  <a href="{{ block.settings.button_link }}" class="btn">{{ block.settings.button_text }}</a>
+                {% endif %}
+            {% endcase %}
+          </div>
+        {% endfor %}
+      </div>
+    </hot-spots>
+  </div>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-hotspots';
+    </script>
+  </template>
+</is-land>

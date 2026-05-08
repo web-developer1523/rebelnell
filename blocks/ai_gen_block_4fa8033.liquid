@@ -1,0 +1,798 @@
+{% doc %}
+  @prompt
+    create a promotional grid that doesn't stack on mobile. have a slider. I should be able to edit alignment, text, font, size, , i need the ability to hide the unused  items, show the button for each item in both desktop and mobile, instead of navigation arrows I would like a sliding bar that i can edit the color of and should work on both mobile and desktop, This section also needs a title , I only need two sections, the two item sections should be centered, add the ability to center align title text, sub text and buttons, add a sub title part to the top section, I want to be able to adjust the height of the items, the items images should have text protection
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-promo-slider-{{ ai_gen_id }} {
+    padding: 40px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-promo-slider__header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.title_alignment }};
+    margin-bottom: 30px;
+  }
+
+  .ai-promo-slider__title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.title_font.family }}, {{ block.settings.title_font.fallback_families }};
+    font-weight: {{ block.settings.title_font.weight }};
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 10px 0;
+  }
+
+  .ai-promo-slider__subtitle-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subtitle_font.family }}, {{ block.settings.subtitle_font.fallback_families }};
+    font-weight: {{ block.settings.subtitle_font.weight }};
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+  }
+
+  .ai-promo-slider__container-{{ ai_gen_id }} {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-promo-slider__track-{{ ai_gen_id }} {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .ai-promo-slider__track-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-promo-slider__item-{{ ai_gen_id }} {
+    flex: 0 0 calc(50% - 10px);
+    min-width: calc(50% - 10px);
+    position: relative;
+    overflow: hidden;
+    border-radius: {{ block.settings.item_border_radius }}px;
+  }
+
+  .ai-promo-slider__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.item_height }}px;
+    overflow: hidden;
+  }
+
+  .ai-promo-slider__image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-promo-slider__image-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-promo-slider__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-promo-slider__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+    pointer-events: none;
+  }
+
+  .ai-promo-slider__content-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: {{ block.settings.content_vertical_alignment }};
+    align-items: {{ block.settings.content_horizontal_alignment }};
+    padding: 30px;
+    text-align: {{ block.settings.text_alignment }};
+    z-index: 1;
+  }
+
+  .ai-promo-slider__item-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.item_title_font.family }}, {{ block.settings.item_title_font.fallback_families }};
+    font-weight: {{ block.settings.item_title_font.weight }};
+    font-size: {{ block.settings.item_title_size }}px;
+    color: {{ block.settings.item_text_color }};
+    margin: 0 0 10px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .ai-promo-slider__item-subtitle-{{ ai_gen_id }} {
+    font-family: {{ block.settings.item_subtitle_font.family }}, {{ block.settings.item_subtitle_font.fallback_families }};
+    font-weight: {{ block.settings.item_subtitle_font.weight }};
+    font-size: {{ block.settings.item_subtitle_size }}px;
+    color: {{ block.settings.item_text_color }};
+    margin: 0 0 10px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .ai-promo-slider__item-text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.item_text_font.family }}, {{ block.settings.item_text_font.fallback_families }};
+    font-weight: {{ block.settings.item_text_font.weight }};
+    font-size: {{ block.settings.item_text_size }}px;
+    color: {{ block.settings.item_text_color }};
+    margin: 0 0 20px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .ai-promo-slider__button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-family: {{ block.settings.button_font.family }}, {{ block.settings.button_font.fallback_families }};
+    font-weight: {{ block.settings.button_font.weight }};
+    font-size: {{ block.settings.button_size }}px;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-promo-slider__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+  }
+
+  .ai-promo-slider__progress-container-{{ ai_gen_id }} {
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+
+  .ai-promo-slider__progress-bar-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.progress_bar_height }}px;
+    background-color: {{ block.settings.progress_bar_bg_color }};
+    border-radius: {{ block.settings.progress_bar_height | divided_by: 2 }}px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ai-promo-slider__progress-fill-{{ ai_gen_id }} {
+    height: 100%;
+    background-color: {{ block.settings.progress_bar_color }};
+    transition: width 0.3s ease;
+    border-radius: {{ block.settings.progress_bar_height | divided_by: 2 }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-promo-slider__item-{{ ai_gen_id }} {
+      flex: 0 0 calc(100% - 10px);
+      min-width: calc(100% - 10px);
+    }
+
+    .ai-promo-slider__image-wrapper-{{ ai_gen_id }} {
+      height: {{ block.settings.item_height_mobile }}px;
+    }
+
+    .ai-promo-slider__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+
+    .ai-promo-slider__subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.8 }}px;
+    }
+
+    .ai-promo-slider__item-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.item_title_size | times: 0.8 }}px;
+    }
+
+    .ai-promo-slider__item-subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.item_subtitle_size | times: 0.8 }}px;
+    }
+
+    .ai-promo-slider__item-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.item_text_size | times: 0.8 }}px;
+    }
+
+    .ai-promo-slider__content-{{ ai_gen_id }} {
+      padding: 20px;
+    }
+  }
+{% endstyle %}
+
+<promo-slider-{{ ai_gen_id }} class="ai-promo-slider-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.section_title != blank or block.settings.section_subtitle != blank %}
+    <div class="ai-promo-slider__header-{{ ai_gen_id }}">
+      {% if block.settings.section_title != blank %}
+        <h2 class="ai-promo-slider__title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
+      {% endif %}
+      {% if block.settings.section_subtitle != blank %}
+        <p class="ai-promo-slider__subtitle-{{ ai_gen_id }}">{{ block.settings.section_subtitle }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="ai-promo-slider__container-{{ ai_gen_id }}">
+    <div class="ai-promo-slider__track-{{ ai_gen_id }}" data-slider-track>
+      {% for i in (1..2) %}
+        {% liquid
+          assign show_key = 'show_item_' | append: i
+          assign image_key = 'item_' | append: i | append: '_image'
+          assign title_key = 'item_' | append: i | append: '_title'
+          assign subtitle_key = 'item_' | append: i | append: '_subtitle'
+          assign text_key = 'item_' | append: i | append: '_text'
+          assign button_text_key = 'item_' | append: i | append: '_button_text'
+          assign button_link_key = 'item_' | append: i | append: '_button_link'
+
+          assign show_item = block.settings[show_key]
+          assign item_image = block.settings[image_key]
+          assign item_title = block.settings[title_key]
+          assign item_subtitle = block.settings[subtitle_key]
+          assign item_text = block.settings[text_key]
+          assign button_text = block.settings[button_text_key]
+          assign button_link = block.settings[button_link_key]
+        %}
+
+        {% if show_item %}
+          <div class="ai-promo-slider__item-{{ ai_gen_id }}">
+            <div class="ai-promo-slider__image-wrapper-{{ ai_gen_id }}">
+              {% if item_image %}
+                <img
+                  src="{{ item_image | image_url: width: 800 }}"
+                  alt="{{ item_image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ item_image.width }}"
+                  height="{{ item_image.height }}"
+                  class="ai-promo-slider__image-{{ ai_gen_id }}"
+                >
+              {% else %}
+                <div class="ai-promo-slider__image-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+              <div class="ai-promo-slider__overlay-{{ ai_gen_id }}"></div>
+            </div>
+
+            <div class="ai-promo-slider__content-{{ ai_gen_id }}">
+              {% if item_title != blank %}
+                <h3 class="ai-promo-slider__item-title-{{ ai_gen_id }}">{{ item_title }}</h3>
+              {% endif %}
+              {% if item_subtitle != blank %}
+                <p class="ai-promo-slider__item-subtitle-{{ ai_gen_id }}">{{ item_subtitle }}</p>
+              {% endif %}
+              {% if item_text != blank %}
+                <p class="ai-promo-slider__item-text-{{ ai_gen_id }}">{{ item_text }}</p>
+              {% endif %}
+              {% if button_text != blank %}
+                <a href="{{ button_link }}" class="ai-promo-slider__button-{{ ai_gen_id }}">
+                  {{ button_text }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="ai-promo-slider__progress-container-{{ ai_gen_id }}">
+      <div class="ai-promo-slider__progress-bar-{{ ai_gen_id }}">
+        <div class="ai-promo-slider__progress-fill-{{ ai_gen_id }}" data-progress-fill></div>
+      </div>
+    </div>
+  </div>
+</promo-slider-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class PromoSlider{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.track = this.querySelector('[data-slider-track]');
+        this.progressFill = this.querySelector('[data-progress-fill]');
+        this.isDragging = false;
+        this.startX = 0;
+        this.scrollLeft = 0;
+      }
+
+      connectedCallback() {
+        this.updateProgress();
+        this.track.addEventListener('scroll', () => this.updateProgress());
+        
+        this.track.addEventListener('mousedown', (e) => this.startDragging(e));
+        this.track.addEventListener('touchstart', (e) => this.startDragging(e));
+        
+        this.track.addEventListener('mousemove', (e) => this.drag(e));
+        this.track.addEventListener('touchmove', (e) => this.drag(e));
+        
+        this.track.addEventListener('mouseup', () => this.stopDragging());
+        this.track.addEventListener('mouseleave', () => this.stopDragging());
+        this.track.addEventListener('touchend', () => this.stopDragging());
+      }
+
+      startDragging(e) {
+        this.isDragging = true;
+        this.track.style.cursor = 'grabbing';
+        this.startX = e.type === 'mousedown' ? e.pageX : e.touches[0].pageX;
+        this.scrollLeft = this.track.scrollLeft;
+      }
+
+      drag(e) {
+        if (!this.isDragging) return;
+        e.preventDefault();
+        const x = e.type === 'mousemove' ? e.pageX : e.touches[0].pageX;
+        const walk = (x - this.startX) * 2;
+        this.track.scrollLeft = this.scrollLeft - walk;
+      }
+
+      stopDragging() {
+        this.isDragging = false;
+        this.track.style.cursor = 'grab';
+      }
+
+      updateProgress() {
+        const scrollWidth = this.track.scrollWidth - this.track.clientWidth;
+        const scrolled = this.track.scrollLeft;
+        const progress = scrollWidth > 0 ? (scrolled / scrollWidth) * 100 : 0;
+        this.progressFill.style.width = progress + '%';
+      }
+    }
+
+    customElements.define('promo-slider-{{ ai_gen_id }}', PromoSlider{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Promotional slider",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Featured Promotions"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Subtitle",
+      "default": "Discover our latest offers"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "font_picker",
+      "id": "subtitle_font",
+      "label": "Subtitle font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Item dimensions"
+    },
+    {
+      "type": "range",
+      "id": "item_height",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Item height (desktop)",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "item_height_mobile",
+      "min": 200,
+      "max": 600,
+      "step": 50,
+      "unit": "px",
+      "label": "Item height (mobile)",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Image overlay"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Item 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_item_1",
+      "label": "Show item 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "item_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "item_1_title",
+      "label": "Title",
+      "default": "Promotion 1"
+    },
+    {
+      "type": "text",
+      "id": "item_1_subtitle",
+      "label": "Subtitle",
+      "default": "Limited time offer"
+    },
+    {
+      "type": "textarea",
+      "id": "item_1_text",
+      "label": "Text",
+      "default": "Save up to 50% on selected items"
+    },
+    {
+      "type": "text",
+      "id": "item_1_button_text",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "item_1_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Item 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_item_2",
+      "label": "Show item 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "item_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "item_2_title",
+      "label": "Title",
+      "default": "Promotion 2"
+    },
+    {
+      "type": "text",
+      "id": "item_2_subtitle",
+      "label": "Subtitle",
+      "default": "New arrivals"
+    },
+    {
+      "type": "textarea",
+      "id": "item_2_text",
+      "label": "Text",
+      "default": "Check out our latest collection"
+    },
+    {
+      "type": "text",
+      "id": "item_2_button_text",
+      "label": "Button text",
+      "default": "Discover"
+    },
+    {
+      "type": "url",
+      "id": "item_2_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Item content style"
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "content_horizontal_alignment",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "font_picker",
+      "id": "item_title_font",
+      "label": "Item title font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "item_title_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Item title size",
+      "default": 28
+    },
+    {
+      "type": "font_picker",
+      "id": "item_subtitle_font",
+      "label": "Item subtitle font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "item_subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Item subtitle size",
+      "default": 16
+    },
+    {
+      "type": "font_picker",
+      "id": "item_text_font",
+      "label": "Item text font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "item_text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Item text size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "item_text_color",
+      "label": "Item text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "font_picker",
+      "id": "button_font",
+      "label": "Button font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Progress bar"
+    },
+    {
+      "type": "range",
+      "id": "progress_bar_height",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Progress bar height",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "progress_bar_color",
+      "label": "Progress bar color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "progress_bar_bg_color",
+      "label": "Progress bar background",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "header",
+      "content": "General style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "item_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Item border radius",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotional slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,759 @@
+{% doc %}
+  @prompt
+    create a promotional grid that has the option to stack or not on mobile. have a slider. I should be able to edit alignment, text, font, size, , i need the ability to hide the unused  items, show the button for each item in both desktop and mobile, instead of navigation arrows I would like a sliding bar that i can edit the color of and should work on both mobile and desktop, This section also needs a title , I only need two sections, the two item sections should be centered, add the ability to center align title text, sub text and buttons, add a sub title part to the top section, I want to be able to adjust the height of the items, the items images should have text protection the text should be editable in font, size, and color
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-promo-grid-{{ ai_gen_id }} {
+    width: 100%;
+    display: block;
+  }
+
+  .ai-promo-grid__header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.title_alignment }};
+    margin-bottom: 30px;
+  }
+
+  .ai-promo-grid__title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.title_font.family }}, {{ block.settings.title_font.fallback_families }};
+    font-weight: {{ block.settings.title_font.weight }};
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 10px 0;
+  }
+
+  .ai-promo-grid__subtitle-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subtitle_font.family }}, {{ block.settings.subtitle_font.fallback_families }};
+    font-weight: {{ block.settings.subtitle_font.weight }};
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+  }
+
+  .ai-promo-grid__slider-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+    width: {{ block.settings.desktop_width_percent }}%;
+    margin: 0 auto;
+  }
+
+  .ai-promo-grid__track-{{ ai_gen_id }} {
+    display: flex;
+    transition: transform 0.4s ease;
+    gap: 20px;
+  }
+
+  .ai-promo-grid__item-{{ ai_gen_id }} {
+    flex: 0 0 calc(50% - 10px);
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: {{ block.settings.item_height }}px;
+  }
+
+  .ai-promo-grid__item-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-promo-grid__item-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-promo-grid__item-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .ai-promo-grid__item-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, {{ block.settings.text_protection_opacity }}) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: {{ block.settings.content_vertical_alignment }};
+    align-items: {{ block.settings.content_horizontal_alignment }};
+    padding: 30px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-promo-grid__item-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.item_title_font.family }}, {{ block.settings.item_title_font.fallback_families }};
+    font-weight: {{ block.settings.item_title_font.weight }};
+    font-size: {{ block.settings.item_title_size }}px;
+    color: {{ block.settings.item_title_color }};
+    margin: 0 0 10px 0;
+  }
+
+  .ai-promo-grid__item-text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.item_text_font.family }}, {{ block.settings.item_text_font.fallback_families }};
+    font-weight: {{ block.settings.item_text_font.weight }};
+    font-size: {{ block.settings.item_text_size }}px;
+    color: {{ block.settings.item_text_color }};
+    margin: 0 0 20px 0;
+  }
+
+  .ai-promo-grid__item-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: {{ block.settings.button_font.family }}, {{ block.settings.button_font.fallback_families }};
+    font-weight: {{ block.settings.button_font.weight }};
+    font-size: {{ block.settings.button_size }}px;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-promo-grid__item-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+  }
+
+  .ai-promo-grid__progress-{{ ai_gen_id }} {
+    margin-top: 20px;
+    width: 100%;
+    height: {{ block.settings.progress_bar_height }}px;
+    background-color: {{ block.settings.progress_bar_bg_color }};
+    border-radius: {{ block.settings.progress_bar_height | divided_by: 2 }}px;
+    overflow: hidden;
+  }
+
+  .ai-promo-grid__progress-fill-{{ ai_gen_id }} {
+    height: 100%;
+    background-color: {{ block.settings.progress_bar_color }};
+    transition: width 0.4s ease;
+    border-radius: {{ block.settings.progress_bar_height | divided_by: 2 }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-promo-grid__item-{{ ai_gen_id }} {
+      {% if block.settings.stack_on_mobile %}
+        flex: 0 0 100%;
+      {% else %}
+        flex: 0 0 calc(50% - 10px);
+      {% endif %}
+    }
+
+    .ai-promo-grid__item-overlay-{{ ai_gen_id }} {
+      padding: 20px;
+    }
+
+    .ai-promo-grid__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+
+    .ai-promo-grid__subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.8 }}px;
+    }
+
+    .ai-promo-grid__item-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.item_title_size | times: 0.8 }}px;
+    }
+
+    .ai-promo-grid__item-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.item_text_size | times: 0.8 }}px;
+    }
+
+    .ai-promo-grid__item-button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.button_size | times: 0.8 }}px;
+      padding: 10px 20px;
+    }
+  }
+{% endstyle %}
+
+<promo-grid-{{ ai_gen_id }} class="ai-promo-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.section_title != blank or block.settings.section_subtitle != blank %}
+    <div class="ai-promo-grid__header-{{ ai_gen_id }}">
+      {% if block.settings.section_title != blank %}
+        <h2 class="ai-promo-grid__title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
+      {% endif %}
+      {% if block.settings.section_subtitle != blank %}
+        <p class="ai-promo-grid__subtitle-{{ ai_gen_id }}">{{ block.settings.section_subtitle }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="ai-promo-grid__slider-{{ ai_gen_id }}">
+    <div class="ai-promo-grid__track-{{ ai_gen_id }}" data-track>
+      {% for i in (1..2) %}
+        {% liquid
+          assign enabled_key = 'item_' | append: i | append: '_enabled'
+          assign image_key = 'item_' | append: i | append: '_image'
+          assign title_key = 'item_' | append: i | append: '_title'
+          assign text_key = 'item_' | append: i | append: '_text'
+          assign button_text_key = 'item_' | append: i | append: '_button_text'
+          assign button_link_key = 'item_' | append: i | append: '_button_link'
+
+          assign enabled = block.settings[enabled_key]
+          assign image = block.settings[image_key]
+          assign title = block.settings[title_key]
+          assign text = block.settings[text_key]
+          assign button_text = block.settings[button_text_key]
+          assign button_link = block.settings[button_link_key]
+        %}
+
+        {% if enabled %}
+          <div class="ai-promo-grid__item-{{ ai_gen_id }}" data-item>
+            {% if image %}
+              <img
+                src="{{ image | image_url: width: 1000 }}"
+                alt="{{ image.alt | escape }}"
+                class="ai-promo-grid__item-image-{{ ai_gen_id }}"
+                loading="lazy"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+              >
+            {% else %}
+              <div class="ai-promo-grid__item-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+
+            <div class="ai-promo-grid__item-overlay-{{ ai_gen_id }}">
+              {% if title != blank %}
+                <h3 class="ai-promo-grid__item-title-{{ ai_gen_id }}">{{ title }}</h3>
+              {% endif %}
+              {% if text != blank %}
+                <p class="ai-promo-grid__item-text-{{ ai_gen_id }}">{{ text }}</p>
+              {% endif %}
+              {% if button_text != blank %}
+                <a
+                  href="{{ button_link | default: '#' }}"
+                  class="ai-promo-grid__item-button-{{ ai_gen_id }}"
+                >
+                  {{ button_text }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="ai-promo-grid__progress-{{ ai_gen_id }}">
+      <div class="ai-promo-grid__progress-fill-{{ ai_gen_id }}" data-progress></div>
+    </div>
+  </div>
+</promo-grid-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class PromoGrid{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentIndex = 0;
+        this.isDragging = false;
+        this.startPos = 0;
+        this.currentTranslate = 0;
+        this.prevTranslate = 0;
+        this.animationID = 0;
+      }
+
+      connectedCallback() {
+        this.track = this.querySelector('[data-track]');
+        this.items = this.querySelectorAll('[data-item]');
+        this.progress = this.querySelector('[data-progress]');
+        this.totalItems = this.items.length;
+
+        if (this.totalItems === 0) return;
+
+        this.setupEventListeners();
+        this.updateProgress();
+      }
+
+      setupEventListeners() {
+        this.track.addEventListener('mousedown', this.touchStart.bind(this));
+        this.track.addEventListener('touchstart', this.touchStart.bind(this));
+        this.track.addEventListener('mouseup', this.touchEnd.bind(this));
+        this.track.addEventListener('touchend', this.touchEnd.bind(this));
+        this.track.addEventListener('mousemove', this.touchMove.bind(this));
+        this.track.addEventListener('touchmove', this.touchMove.bind(this));
+        this.track.addEventListener('mouseleave', this.touchEnd.bind(this));
+
+        window.addEventListener('resize', this.handleResize.bind(this));
+      }
+
+      getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+      }
+
+      touchStart(event) {
+        this.isDragging = true;
+        this.startPos = this.getPositionX(event);
+        this.animationID = requestAnimationFrame(this.animation.bind(this));
+        this.track.style.cursor = 'grabbing';
+      }
+
+      touchMove(event) {
+        if (this.isDragging) {
+          const currentPosition = this.getPositionX(event);
+          this.currentTranslate = this.prevTranslate + currentPosition - this.startPos;
+        }
+      }
+
+      touchEnd() {
+        this.isDragging = false;
+        cancelAnimationFrame(this.animationID);
+
+        const movedBy = this.currentTranslate - this.prevTranslate;
+        const itemWidth = this.items[0].offsetWidth + 20;
+
+        if (movedBy < -50 && this.currentIndex < this.totalItems - this.getVisibleItems()) {
+          this.currentIndex += 1;
+        }
+
+        if (movedBy > 50 && this.currentIndex > 0) {
+          this.currentIndex -= 1;
+        }
+
+        this.setPositionByIndex();
+        this.track.style.cursor = 'grab';
+      }
+
+      animation() {
+        this.setSliderPosition();
+        if (this.isDragging) requestAnimationFrame(this.animation.bind(this));
+      }
+
+      setSliderPosition() {
+        this.track.style.transform = `translateX(${this.currentTranslate}px)`;
+      }
+
+      setPositionByIndex() {
+        const itemWidth = this.items[0].offsetWidth + 20;
+        this.currentTranslate = this.currentIndex * -itemWidth;
+        this.prevTranslate = this.currentTranslate;
+        this.setSliderPosition();
+        this.updateProgress();
+      }
+
+      getVisibleItems() {
+        const isMobile = window.innerWidth < 750;
+        const stackOnMobile = {{ block.settings.stack_on_mobile | json }};
+        return (isMobile && stackOnMobile) ? 1 : 2;
+      }
+
+      updateProgress() {
+        const maxIndex = Math.max(0, this.totalItems - this.getVisibleItems());
+        const progressPercent = maxIndex > 0 ? (this.currentIndex / maxIndex) * 100 : 100;
+        this.progress.style.width = `${progressPercent}%`;
+      }
+
+      handleResize() {
+        this.currentIndex = 0;
+        this.currentTranslate = 0;
+        this.prevTranslate = 0;
+        this.setSliderPosition();
+        this.updateProgress();
+      }
+    }
+
+    customElements.define('promo-grid-{{ ai_gen_id }}', PromoGrid{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Promotional grid",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Featured promotions"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Subtitle",
+      "default": "Discover our latest offers"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "font_picker",
+      "id": "subtitle_font",
+      "label": "Subtitle font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_on_mobile",
+      "label": "Stack items on mobile",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "item_height",
+      "label": "Item height",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Content alignment"
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "flex-end"
+    },
+    {
+      "type": "select",
+      "id": "content_horizontal_alignment",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Text protection"
+    },
+    {
+      "type": "range",
+      "id": "text_protection_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.5
+    },
+    {
+      "type": "header",
+      "content": "Item title"
+    },
+    {
+      "type": "font_picker",
+      "id": "item_title_font",
+      "label": "Font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "item_title_size",
+      "label": "Size",
+      "min": 16,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "item_title_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Item text"
+    },
+    {
+      "type": "font_picker",
+      "id": "item_text_font",
+      "label": "Font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "item_text_size",
+      "label": "Size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "item_text_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "font_picker",
+      "id": "button_font",
+      "label": "Font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Progress bar"
+    },
+    {
+      "type": "range",
+      "id": "progress_bar_height",
+      "label": "Height",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "progress_bar_color",
+      "label": "Bar color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "progress_bar_bg_color",
+      "label": "Background color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "header",
+      "content": "Item 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_1_enabled",
+      "label": "Show item 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "item_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "item_1_title",
+      "label": "Title",
+      "default": "Summer collection"
+    },
+    {
+      "type": "text",
+      "id": "item_1_text",
+      "label": "Text",
+      "default": "Shop the latest trends"
+    },
+    {
+      "type": "text",
+      "id": "item_1_button_text",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "item_1_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Item 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_2_enabled",
+      "label": "Show item 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "item_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "item_2_title",
+      "label": "Title",
+      "default": "New arrivals"
+    },
+    {
+      "type": "text",
+      "id": "item_2_text",
+      "label": "Text",
+      "default": "Discover fresh styles"
+    },
+    {
+      "type": "text",
+      "id": "item_2_button_text",
+      "label": "Button text",
+      "default": "Explore"
+    },
+    {
+      "type": "url",
+      "id": "item_2_button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotional grid"
+    }
+  ]
+}
+{% endschema %}

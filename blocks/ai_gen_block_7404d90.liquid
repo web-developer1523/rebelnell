@@ -1,0 +1,852 @@
+{% doc %}
+  @prompt
+    square image with text overlay multiple in a row that can be removed or added to and on mobile and desk top you should be about to slide to scroll through the images , this section should also have a title text that is editable , the images should have cta button
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-carousel-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-image-carousel-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    text-align: {{ block.settings.title_alignment }};
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+    font-weight: 600;
+  }
+
+  .ai-image-carousel-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-image-carousel-container-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.gap }}px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: {{ block.settings.scrollbar_color }} transparent;
+    padding-bottom: 10px;
+  }
+
+  .ai-image-carousel-container-{{ ai_gen_id }}::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .ai-image-carousel-container-{{ ai_gen_id }}::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .ai-image-carousel-container-{{ ai_gen_id }}::-webkit-scrollbar-thumb {
+    background-color: {{ block.settings.scrollbar_color }};
+    border-radius: 4px;
+  }
+
+  .ai-image-carousel-item-{{ ai_gen_id }} {
+    position: relative;
+    flex: 0 0 {{ block.settings.item_width_desktop }}%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-image-carousel-item-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-image-carousel-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-image-carousel-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+  }
+
+  .ai-image-carousel-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity }};
+    pointer-events: none;
+  }
+
+  .ai-image-carousel-content-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: {{ block.settings.text_color }};
+    text-align: center;
+    width: 90%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ai-image-carousel-text-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  .ai-image-carousel-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    line-height: 1.2;
+  }
+
+  .ai-image-carousel-subtext-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtext_size }}px;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .ai-image-carousel-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    pointer-events: auto;
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+  }
+
+  .ai-image-carousel-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  .ai-image-carousel-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-image-carousel-item-{{ ai_gen_id }} {
+      flex: 0 0 {{ block.settings.item_width_mobile }}%;
+    }
+
+    .ai-image-carousel-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.8);
+    }
+
+    .ai-image-carousel-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.8);
+    }
+
+    .ai-image-carousel-subtext-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subtext_size }}px * 0.8);
+    }
+
+    .ai-image-carousel-button-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.button_font_size }}px * 0.9);
+      padding: calc({{ block.settings.button_padding_vertical }}px * 0.8) calc({{ block.settings.button_padding_horizontal }}px * 0.8);
+    }
+  }
+{% endstyle %}
+
+<image-carousel-{{ ai_gen_id }} class="ai-image-carousel-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.section_title != blank %}
+    <h2 class="ai-image-carousel-title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
+  {% endif %}
+
+  <div class="ai-image-carousel-wrapper-{{ ai_gen_id }}">
+    <div class="ai-image-carousel-container-{{ ai_gen_id }}">
+      {% for i in (1..10) %}
+        {% liquid
+          assign image_key = 'image_' | append: i
+          assign heading_key = 'heading_' | append: i
+          assign subtext_key = 'subtext_' | append: i
+          assign button_text_key = 'button_text_' | append: i
+          assign link_key = 'link_' | append: i
+
+          assign image = block.settings[image_key]
+          assign heading = block.settings[heading_key]
+          assign subtext = block.settings[subtext_key]
+          assign button_text = block.settings[button_text_key]
+          assign link = block.settings[link_key]
+        %}
+
+        {% if image != blank or heading != blank or subtext != blank %}
+          <div class="ai-image-carousel-item-{{ ai_gen_id }}">
+            {% if image != blank %}
+              <img
+                src="{{ image | image_url: width: 800 }}"
+                alt="{{ image.alt | escape }}"
+                loading="lazy"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+              >
+            {% else %}
+              <div class="ai-image-carousel-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+                {% if i == 1 %}
+                  <div class="ai-image-carousel-empty-state-{{ ai_gen_id }}">
+                    Add images to get started
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <div class="ai-image-carousel-overlay-{{ ai_gen_id }}"></div>
+
+            {% if heading != blank or subtext != blank or button_text != blank %}
+              <div class="ai-image-carousel-content-{{ ai_gen_id }}">
+                <div class="ai-image-carousel-text-{{ ai_gen_id }}">
+                  {% if heading != blank %}
+                    <h3 class="ai-image-carousel-heading-{{ ai_gen_id }}">{{ heading }}</h3>
+                  {% endif %}
+                  {% if subtext != blank %}
+                    <p class="ai-image-carousel-subtext-{{ ai_gen_id }}">{{ subtext }}</p>
+                  {% endif %}
+                </div>
+                {% if button_text != blank and link != blank %}
+                  <a href="{{ link }}" class="ai-image-carousel-button-{{ ai_gen_id }}">
+                    {{ button_text }}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</image-carousel-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ImageCarousel{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.container = this.querySelector('.ai-image-carousel-container-{{ ai_gen_id }}');
+        this.setupDragScroll();
+      }
+
+      setupDragScroll() {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        this.container.addEventListener('mousedown', (e) => {
+          isDown = true;
+          this.container.style.cursor = 'grabbing';
+          startX = e.pageX - this.container.offsetLeft;
+          scrollLeft = this.container.scrollLeft;
+        });
+
+        this.container.addEventListener('mouseleave', () => {
+          isDown = false;
+          this.container.style.cursor = 'grab';
+        });
+
+        this.container.addEventListener('mouseup', () => {
+          isDown = false;
+          this.container.style.cursor = 'grab';
+        });
+
+        this.container.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - this.container.offsetLeft;
+          const walk = (x - startX) * 2;
+          this.container.scrollLeft = scrollLeft - walk;
+        });
+
+        this.container.style.cursor = 'grab';
+      }
+    }
+
+    customElements.define('image-carousel-{{ ai_gen_id }}', ImageCarousel{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Image carousel",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section title"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Featured Collection"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Title spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "item_width_desktop",
+      "label": "Item width on desktop",
+      "min": 20,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "item_width_mobile",
+      "label": "Item width on mobile",
+      "min": 60,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between items",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 14,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "subtext_size",
+      "label": "Subtext size",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#a01270"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 6,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Scrollbar"
+    },
+    {
+      "type": "color",
+      "id": "scrollbar_color",
+      "label": "Scrollbar color",
+      "default": "#c81688"
+    },
+    {
+      "type": "header",
+      "content": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtext_1",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text_1",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link_1",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtext_2",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text_2",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_3",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtext_3",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text_3",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link_3",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_4",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtext_4",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text_4",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link_4",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Image 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_5",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtext_5",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text_5",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link_5",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Image 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_6",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtext_6",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text_6",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link_6",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Image 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_7",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_7",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtext_7",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text_7",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link_7",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Image 8"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_8",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_8",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtext_8",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text_8",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link_8",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Image 9"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_9",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_9",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtext_9",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text_9",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link_9",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Image 10"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_10",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_10",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtext_10",
+      "label": "Subtext"
+    },
+    {
+      "type": "text",
+      "id": "button_text_10",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link_10",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image carousel"
+    }
+  ]
+}
+{% endschema %}

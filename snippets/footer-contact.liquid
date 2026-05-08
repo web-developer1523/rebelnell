@@ -1,0 +1,90 @@
+
+{% comment %}
+  /**
+   * param {object} block - block object
+   * @param {object} pages - pages object
+   * @param {string} social_instagram_link - instagram link
+   * @param {string} social_facebook_link - facebook link
+   * @param {string} social_twitter_link - twitter link
+   * @param {string} social_youtube_link - youtube link
+   * @param {string} social_pinterest_link - pinterest link
+   * @param {string} social_linkedin_link - linkedin link
+   * @param {string} social_snapchat_link - snapchat link
+   * @param {string} social_vimeo_link - vimeo link
+   * @param {string} social_tiktok_link - tiktok link
+   * @param {string} social_tumblr_link - tumblr link
+   */
+{% endcomment %}
+
+<div class="footer__mobile-section">
+  <div class="footer__blocks--mobile">
+    <div class="footer__block--mobile">
+      <h2 class="footer__title">
+        {{ 'layout.footer.contact_title' | t }}
+      </h2>
+ {% if block.settings.footer_image != blank %}
+      <div class="footer__image-container">
+   {%- if block.settings.footer_image_link != blank -%}
+      <a href="{{ block.settings.footer_image_link }}" 
+         target="{{ block.settings.image_link_target }}"
+         aria-label="{% if block.settings.footer_image.alt != blank %}{{ block.settings.footer_image.alt }}{% else %}Footer image link{% endif %}">
+    {%- endif -%}
+        {{ block.settings.footer_image | image_url: width: block.settings.image_width | image_tag:
+          loading: 'lazy',
+          alt: block.settings.footer_image.alt,
+          class: 'footer__image'
+        }}
+    {%- if block.settings.footer_image_link != blank -%}
+      </a>
+    {%- endif -%}
+      </div>
+    {% endif %}
+      <ul class="footer__menu footer__menu--underline">
+        {%- if block.settings.phone != blank -%}
+          <li><a href="tel:{{ block.settings.phone }}">
+            <span class="icon-and-text">
+              {% render 'icon-phone' %}
+              <span>{{ block.settings.phone }}</span>
+            </span>
+          </a></li>
+        {%- endif -%}
+        {%- if block.settings.contact != blank -%}
+          <li><a href="{{ pages[block.settings.contact].url }}">
+            <span class="icon-and-text">
+              {% render 'icon-email' %}
+              <span>{{ 'layout.footer.email_link' | t }}</span>
+            </span>
+          </a></li>
+        {%- endif -%}
+        {%- if block.settings.chat != blank -%}
+          <li><a href="{{ pages[block.settings.chat].url }}">
+            <span class="icon-and-text">
+              {% render 'icon-chat' %}
+              <span>{{ 'layout.footer.chat_link' | t }}</span>
+            </span>
+          </a></li>
+        {%- endif -%}
+      </ul>
+    </div>
+    {%- if block.settings.enable_social -%}
+      <div class="footer__block--mobile">
+        <div class="footer__title">
+          {{ 'layout.footer.social_title' | t }}
+        </div>
+        {% render 'social-icons',
+          additional_classes: 'footer__social',
+          social_instagram_link: social_instagram_link,
+          social_facebook_link: social_facebook_link,
+          social_twitter_link: social_twitter_link,
+          social_youtube_link: social_youtube_link,
+          social_pinterest_link: social_pinterest_link,
+          social_linkedin_link: social_linkedin_link,
+          social_snapchat_link: social_snapchat_link,
+          social_vimeo_link: social_vimeo_link,
+          social_tiktok_link: social_tiktok_link,
+          social_tumblr_link: social_tumblr_link
+        %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

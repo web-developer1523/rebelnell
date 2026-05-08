@@ -1,0 +1,72 @@
+{%- liquid
+  assign swatch_trigger = 'products.general.color_swatch_trigger' | t | downcase
+  assign swatch_file_extension = 'webp'
+  assign color_count = 0
+  assign max_colors_show = 6
+  assign more_than_max = false
+-%}
+
+{%- for option in product.options_with_values -%}
+  {%- liquid
+    assign option_name = option.name | downcase
+    assign is_color = false
+    if option_name contains swatch_trigger
+      assign is_color = true
+    elsif swatch_trigger == 'color' and option_name contains 'colour'
+      assign is_color = true
+    endif
+  -%}
+  {%- if is_color -%}
+    {%- assign option_index = forloop.index0 -%}
+    {%- assign values = '' -%}
+    <div class="grid-product__colors">
+      {%- for variant in product.variants -%}
+        {%- if variant.available -%}
+          {%- assign value = variant.options[option_index] %}
+          {%- unless values contains value -%}
+            {%- liquid
+              assign values = values | join: ',' | append: ',' | append: value | split: ','
+
+              assign color_file_name = value | handle | append: '.' | append: swatch_file_extension
+              assign color_image = color_file_name | file_img_url: '50x50' | prepend: 'https:'
+
+              assign color_count = color_count | plus: 1
+            -%}
+
+            {%- assign background_style = '' -%}
+            {%- if variant.image -%}
+              {%- assign variant_image_url = variant.image | img_url: '50x50' -%}
+              {%- assign background_style = 'background-image: url(' | append: variant_image_url | append: ');' -%}
+            {%- elsif images[color_file_name] != blank -%}
+              {%- assign background_style = 'background-image: url(' | append: color_image | append: ');' -%}
+            {%- else -%}
+              {%- assign fallback_color = value | split: ' ' | last | handle -%}
+              {%- assign background_style = 'background-color: ' | append: fallback_color | append: ';' -%}
+            {%- endif -%}
+
+            {%- if color_count <= max_colors_show -%}
+              <span
+                class="color-swatch color-swatch--small color-swatch--{{ value | handle }}{% if variant.image %} color-swatch--with-image{% endif %} cst-variant-id"
+                data-url="{{ variant.url | within: collection }}"
+                {% if variant.image %}
+                  data-variant-id="{{ variant.id }}"
+                  data-variant-image="{{ variant.image | img_url: '400x' }}"
+                {% endif %}
+                style="{{ background_style }}"
+              >
+                <span class="visually-hidden">{{ value }}</span>
+              </span>
+            {%- else -%}
+              {%- assign more_than_max = true -%}
+            {%- endif -%}
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if more_than_max -%}
+        {%- assign more_colors = color_count | minus: max_colors_show -%}
+        <small class="color-swatch__more">+{{ more_colors }}</small>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endfor -%}

@@ -1,0 +1,114 @@
+{% render 'section-slideshow-image',
+  section: section,
+  full_width: section.settings.full_width,
+  autoplay: section.settings.autoplay,
+  autoplay_speed: section.settings.autoplay_speed,
+  style: section.settings.style,
+  lazyload_images: section.settings.lazyload_images,
+  hydration: 'on:idle'
+%}
+
+{% schema %}
+{
+  "name": "t:sections.slideshow-image.name",
+  "class": "index-section--hero",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.slideshow-image.settings.full_width.label"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "t:sections.slideshow-image.settings.style.label",
+      "default": "arrows",
+      "options": [
+        {
+          "value": "minimal",
+          "label": "t:sections.slideshow-image.settings.style.options.minimal.label"
+        },
+        {
+          "value": "arrows",
+          "label": "t:sections.slideshow-image.settings.style.options.arrows.label"
+        },
+        {
+          "value": "bars",
+          "label": "t:sections.slideshow-image.settings.style.options.bars.label"
+        },
+        {
+          "value": "dots",
+          "label": "t:sections.slideshow-image.settings.style.options.dots.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "t:sections.slideshow-image.settings.autoplay.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "t:sections.slideshow-image.settings.autoplay_speed.label",
+      "default": 7,
+      "min": 5,
+      "max": 10,
+      "step": 1,
+      "unit": "s"
+    },
+    {
+      "type": "checkbox",
+      "id": "lazyload_images",
+      "label": "t:common.lazyload_images.label",
+      "info": "t:common.lazyload_images.info",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.slideshow-image.blocks.image.name",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.slideshow-image.blocks.image.settings.link.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.slideshow-image.blocks.image.settings.image.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "t:sections.slideshow-image.blocks.image.settings.image_mobile.label"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "t:sections.slideshow-image.presets.image_optional_slides.name",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": [
+      "footer",
+      "header",
+      "custom.popups"
+    ]
+  }
+}
+{% endschema %}

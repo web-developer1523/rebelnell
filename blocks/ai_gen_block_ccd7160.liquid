@@ -1,0 +1,575 @@
+{% doc %}
+  @prompt
+    how it works three part section with photo and text, beautiful design. Easy to read on mobile and desktop
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-how-it-works-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.section_padding }}px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-how-it-works-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-how-it-works-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-how-it-works-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 16px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .ai-how-it-works-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+    line-height: 1.5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ai-how-it-works-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    margin-top: {{ block.settings.grid_spacing }}px;
+  }
+
+  .ai-how-it-works-step-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+  }
+
+  .ai-how-it-works-number-{{ ai_gen_id }} {
+    position: absolute;
+    top: {{ block.settings.number_position }}px;
+    left: {{ block.settings.number_position }}px;
+    width: {{ block.settings.number_size }}px;
+    height: {{ block.settings.number_size }}px;
+    background-color: {{ block.settings.number_bg_color }};
+    color: {{ block.settings.number_text_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: {{ block.settings.number_font_size }}px;
+    font-weight: 700;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-how-it-works-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-how-it-works-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: {{ block.settings.image_aspect_ratio }};
+    object-fit: cover;
+  }
+
+  .ai-how-it-works-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: {{ block.settings.image_aspect_ratio }};
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-how-it-works-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-how-it-works-step-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.step_title_size }}px;
+    color: {{ block.settings.step_title_color }};
+    margin: 0 0 12px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .ai-how-it-works-step-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.step_text_size }}px;
+    color: {{ block.settings.step_text_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-how-it-works-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .ai-how-it-works-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+
+    .ai-how-it-works-subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.9 }}px;
+    }
+
+    .ai-how-it-works-step-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.step_title_size | times: 0.9 }}px;
+    }
+
+    .ai-how-it-works-step-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.step_text_size | times: 0.95 }}px;
+    }
+
+    .ai-how-it-works-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding | times: 0.6 }}px 16px;
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .ai-how-it-works-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.tablet_columns }}, 1fr);
+    }
+  }
+{% endstyle %}
+
+<how-it-works-{{ ai_gen_id }} class="ai-how-it-works-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-how-it-works-container-{{ ai_gen_id }}">
+    {% if block.settings.title != blank or block.settings.subtitle != blank %}
+      <div class="ai-how-it-works-header-{{ ai_gen_id }}">
+        {% if block.settings.title != blank %}
+          <h2 class="ai-how-it-works-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <div class="ai-how-it-works-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-how-it-works-grid-{{ ai_gen_id }}">
+      {% for i in (1..3) %}
+        {% liquid
+          assign step_title_key = 'step_' | append: i | append: '_title'
+          assign step_text_key = 'step_' | append: i | append: '_text'
+          assign step_image_key = 'step_' | append: i | append: '_image'
+          
+          assign step_title = block.settings[step_title_key]
+          assign step_text = block.settings[step_text_key]
+          assign step_image = block.settings[step_image_key]
+        %}
+
+        <div class="ai-how-it-works-step-{{ ai_gen_id }}">
+          {% if block.settings.show_numbers %}
+            <div class="ai-how-it-works-number-{{ ai_gen_id }}">{{ i }}</div>
+          {% endif %}
+
+          <div class="ai-how-it-works-image-wrapper-{{ ai_gen_id }}">
+            {% if step_image %}
+              <img
+                src="{{ step_image | image_url: width: 800 }}"
+                alt="{{ step_image.alt | escape }}"
+                loading="lazy"
+                width="{{ step_image.width }}"
+                height="{{ step_image.height }}"
+                class="ai-how-it-works-image-{{ ai_gen_id }}"
+              >
+            {% else %}
+              <div class="ai-how-it-works-image-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="ai-how-it-works-content-{{ ai_gen_id }}">
+            {% if step_title != blank %}
+              <h3 class="ai-how-it-works-step-title-{{ ai_gen_id }}">{{ step_title }}</h3>
+            {% endif %}
+            {% if step_text != blank %}
+              <div class="ai-how-it-works-step-text-{{ ai_gen_id }}">{{ step_text }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</how-it-works-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HowItWorks{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.style.display = 'block';
+      }
+    }
+
+    customElements.define('how-it-works-{{ ai_gen_id }}', HowItWorks{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "How it works",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "How it works"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Follow these simple steps to get started"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Header spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Step 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "step_1_title",
+      "label": "Title",
+      "default": "Choose your style"
+    },
+    {
+      "type": "richtext",
+      "id": "step_1_text",
+      "label": "Description",
+      "default": "<p>Browse our collection and select the perfect piece that speaks to you</p>"
+    },
+    {
+      "type": "header",
+      "content": "Step 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "step_2_title",
+      "label": "Title",
+      "default": "Customize it"
+    },
+    {
+      "type": "richtext",
+      "id": "step_2_text",
+      "label": "Description",
+      "default": "<p>Add your personal touch with custom options and preferences</p>"
+    },
+    {
+      "type": "header",
+      "content": "Step 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "step_3_title",
+      "label": "Title",
+      "default": "Enjoy your purchase"
+    },
+    {
+      "type": "richtext",
+      "id": "step_3_text",
+      "label": "Description",
+      "default": "<p>Receive your handcrafted item and enjoy the quality craftsmanship</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Desktop gap",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Mobile gap",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "grid_spacing",
+      "label": "Grid top spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "tablet_columns",
+      "label": "Tablet columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "header",
+      "content": "Step numbers"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_numbers",
+      "label": "Show step numbers",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "label": "Number circle size",
+      "min": 30,
+      "max": 70,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "number_font_size",
+      "label": "Number font size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "number_position",
+      "label": "Number position",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "number_bg_color",
+      "label": "Number background",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "number_text_color",
+      "label": "Number text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image aspect ratio",
+      "options": [
+        {
+          "value": "1/1",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "4/3",
+          "label": "Landscape (4:3)"
+        },
+        {
+          "value": "16/9",
+          "label": "Wide (16:9)"
+        },
+        {
+          "value": "3/4",
+          "label": "Portrait (3:4)"
+        }
+      ],
+      "default": "4/3"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "step_title_color",
+      "label": "Step title",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "step_text_color",
+      "label": "Step text",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "step_title_size",
+      "label": "Step title size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "step_text_size",
+      "label": "Step text size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "How it works"
+    }
+  ]
+}
+{% endschema %}

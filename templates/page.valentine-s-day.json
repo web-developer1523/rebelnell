@@ -1,0 +1,121 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_image_JiifY4": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_4NCFTj": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Valentines_Day_hero_5.jpg",
+            "image_mobile": "shopify://shop_images/Valentines_Day_hero_5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_4NCFTj"
+      ],
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_LgPpjG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ccnJPt": {
+          "type": "heading",
+          "settings": {
+            "title": "Valentine's Day Gift Guide",
+            "heading_size": "h1"
+          }
+        },
+        "text_JrRE6y": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>At Rebel Nell, we believe in the power of unique gifts to tell your story. Every piece is handcrafted with love, empowering women and making a positive impact. This Valentine's and Galentine's Day, be the hero of heartfelt gifting. Choose Rebel Nell to express your one-of-a-kind love and friendship. Explore our full collection and find the perfect piece that celebrates love and friendship with gifts as unique as your story.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ccnJPt",
+        "text_JrRE6y"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "featured_collections_QN7BVR": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_qirhbb": {
+          "type": "collection",
+          "settings": {
+            "collection": "valentines-gift-guide-all",
+            "title": "All"
+          }
+        },
+        "collection_JAA6Y3": {
+          "type": "collection",
+          "settings": {
+            "collection": "gifts-for-her",
+            "title": "Gifts for Her"
+          }
+        },
+        "collection_nCjt9N": {
+          "type": "collection",
+          "settings": {
+            "collection": "gifts-for-him-valentines-day-gift-guide",
+            "title": "Gifts for Him"
+          }
+        },
+        "collection_eMMFta": {
+          "type": "collection",
+          "settings": {
+            "collection": "gifts-for-your-galentines-valentines-day-gift-guide",
+            "title": "Gifts for Your Galentine's"
+          }
+        }
+      },
+      "block_order": [
+        "collection_qirhbb",
+        "collection_JAA6Y3",
+        "collection_nCjt9N",
+        "collection_eMMFta"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_image_JiifY4",
+    "rich_text_LgPpjG",
+    "featured_collections_QN7BVR"
+  ]
+}

@@ -1,0 +1,164 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "hero_video_WgmYKV": {
+      "type": "hero-video",
+      "name": "t:sections.hero-video.presets.video_hero.name",
+      "settings": {
+        "full_width": false,
+        "title": "Wear Change. Gift Impact.",
+        "title_size": 44,
+        "subheading": "Handcrafted in Detroit by women rewriting their next chapter.",
+        "link_text": "Shop Mission-Made Jewelry",
+        "link": "shopify://pages/shop-by-story",
+        "color_accent": "#a01270",
+        "text_align": "vertical-bottom horizontal-center",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/05015ddd8aa149f28ad6528cd60c616a.mp4",
+        "overlay_opacity": 0,
+        "height": 650,
+        "height_mobile": 300
+      }
+    },
+    "176290936727ed95ff": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_14f3994_XKd4ha": {
+          "type": "ai_gen_block_14f3994",
+          "settings": {
+            "heading": "<p>How Your Purchase Makes A Difference</p>",
+            "text": "",
+            "heading_size": 32,
+            "text_size": 16,
+            "header_spacing": 40,
+            "text_spacing": 16,
+            "stat_1_label": "Women hired out of shelter living",
+            "stat_1_number": "49",
+            "stat_2_label": "Hours of workforce development",
+            "stat_2_number": "180792",
+            "stat_3_label": "Lives impacted as a result of the mission",
+            "stat_3_number": "488",
+            "stat_4_label": "Pounds of material repurposed",
+            "stat_4_number": "3868",
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "number_color": "#c81688",
+            "icon_background": "#eef0f6",
+            "icon_color": "#c81688",
+            "icon_size": 72,
+            "number_size": 40,
+            "label_size": 14,
+            "section_padding": 60,
+            "column_gap": 32,
+            "icon_spacing": 20,
+            "label_spacing": 12
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_14f3994_XKd4ha"
+      ],
+      "settings": {}
+    },
+    "1762915958a62a70f8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_be535ad_PjpJwW": {
+          "type": "ai_gen_block_be535ad",
+          "settings": {
+            "heading": "Gift Impact",
+            "description": "Every Purchase Creates Opportunity in Detroit.",
+            "heading_font": "arial_n4",
+            "heading_size": 32,
+            "description_size": 16,
+            "products_per_row": 4,
+            "grid_gap": 20,
+            "show_vendor": true,
+            "product_title_size": 16,
+            "price_size": 16,
+            "card_border_radius": 8,
+            "button_text": "Add to cart",
+            "button_border_radius": 4,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "card_background": "#ffffff",
+            "card_border_color": "#eef0f6",
+            "sale_color": "#c81688",
+            "button_color": "#c81688",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#a01370",
+            "product_1": "rosie-necklace-silver-1",
+            "product_2": "everyday-latonia-pin-stainless-steel",
+            "product_3": "taylor-bracelet-gold-2",
+            "product_4": "megan-gold-everyday-detroit-cj4au",
+            "product_5": "",
+            "product_6": "",
+            "product_7": "",
+            "product_8": "",
+            "product_9": "",
+            "product_10": "",
+            "product_11": "",
+            "product_12": "",
+            "product_13": "",
+            "product_14": "",
+            "product_15": "",
+            "product_16": "",
+            "product_17": "",
+            "product_18": "",
+            "product_19": "",
+            "product_20": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_be535ad_PjpJwW"
+      ],
+      "settings": {}
+    },
+    "text_and_image_UUcPDn": {
+      "type": "text-and-image",
+      "name": "t:sections.text-and-image.presets.image_with_text.name",
+      "settings": {
+        "image": "shopify://shop_images/Website_Template_Mobile_Collection_Meta_field_Image_5.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "From Graffiti to Gold & Silver",
+        "heading_size": "h3",
+        "text": "<p>Rebel Nell exists to provide employment, equitable opportunity, and wraparound support for women with barriers to employment.By repurposing meaningful materials into wearable art,  we mark life's important moments and connect them to your personal journey.</p><p>We seek to embolden women, to embrace their infinite strength, and to define their own future. Our jewelry serves as a reminder that there is power in being </p><p><strong>ONE OF NO OTHER KIND.</strong></p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_video_WgmYKV",
+    "176290936727ed95ff",
+    "1762915958a62a70f8",
+    "text_and_image_UUcPDn"
+  ]
+}

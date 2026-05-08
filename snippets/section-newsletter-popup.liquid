@@ -1,0 +1,153 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {object} customer - customer object
+   * @param {boolean} disable_for_account_holders - disable popup for account holders
+   * @param {boolean} has_reminder - has newsletter reminder (default: false)
+   * @param {number} popup_days - days to delay popup
+   * @param {object} request - request object
+   * @param {number} popup_seconds - seconds to delay popup
+   * @param {object} popup_image - popup image object
+   * @param {string} color_scheme - color scheme
+   * @param {string} image_position - image position
+   * @param {string} popup_title - popup title
+   * @param {string} popup_text - popup text
+   * @param {boolean} enable_newsletter - enable newsletter
+   * @param {string} context - context (default: 'popup')
+   * @param {string} button_label - button label
+   * @param {string} button_link - button link
+   * @param {boolean} show_social_icons - show social icons
+   * @param {string} social_instagram_link - instagram link
+   * @param {string} social_facebook_link - facebook link
+   * @param {string} social_twitter_link - twitter link
+   * @param {string} social_youtube_link - youtube link
+   * @param {string} social_pinterest_link - pinterest link
+   * @param {string} social_linkedin_link - linkedin link
+   * @param {string} social_snapchat_link - snapchat link
+   * @param {string} social_vimeo_link - vimeo link
+   * @param {string} social_tiktok_link - tiktok link
+   * @param {string} social_tumblr_link - tumblr link
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- assign hydration = hydration | default: 'on:idle' -%}
+
+{% unless disable_for_account_holders and customer %}
+
+{% for block in section.blocks %}
+  {% if block.type == 'header' %}
+    {% assign has_reminder = true %}
+  {% endif %}
+{% endfor %}
+
+
+<is-land {{ hydration }}>
+  <newsletter-popup
+    id="NewsletterPopup-{{ section.id }}"
+    class="modal modal--square modal--mobile-friendly"
+    data-section-id="{{ section.id }}"
+    data-section-type="newsletter-popup"
+    data-has-reminder="{{ has_reminder }}"
+    data-delay-days="{{ popup_days }}"
+    data-test-mode="{{ request.design_mode }}"
+    data-delay-seconds="{{ popup_seconds }}">
+    <div class="modal__inner{% if popup_image %} modal__inner--bg-image{% endif %}">
+      <div class="modal__centered">
+        <div class="modal__centered-content modal__centered-content--padded color-scheme-{{ color_scheme }} {% if popup_image != blank %}newsletter--has-image{% endif %}">
+          {%- if color_scheme != 'none' -%}
+            {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+          {%- endif -%}
+
+          <div class="newsletter-popup {% if image_position == 'right' %}newsletter-popup--image-reversed{% endif %}">
+
+            {% if popup_image != blank %}
+              <div class="newsletter-popup__image-wrapper">
+                {%- render 'image-element',
+                  img: popup_image,
+                  img_width: 1000,
+                  sizeVariable: '400px',
+                  classes: 'newsletter-popup__image',
+                -%}
+              </div>
+            {% endif %}
+
+            <div class="newsletter-popup__content">
+              {%- if popup_title != blank -%}
+                <div class="h2">{{ popup_title }}</div>
+              {%- endif -%}
+
+              {%- if popup_text != blank -%}
+                <div class="rte">
+                  <div class="enlarge-text">
+                    {{ popup_text }}
+                  </div>
+                </div>
+              {%- endif -%}
+
+              {%- if enable_newsletter -%}
+                {%- render 'newsletter-form',
+                  section_id: section.id,
+                  snippet_context: context,
+                  customer: customer,
+                -%}
+              {%- endif -%}
+
+              {% if button_label != blank %}
+                <a href="{{ button_link }}" class="btn newsletter-button">
+                  <div class="button--text">
+                    {{ button_label }}
+                  </div>
+                </a>
+              {% endif %}
+
+              {% if show_social_icons %}
+                {% render 'social-icons',
+                  additional_classes: 'inline-list toolbar__social',
+                  social_instagram_link: social_instagram_link,
+                  social_facebook_link: social_facebook_link,
+                  social_twitter_link: social_twitter_link,
+                  social_youtube_link: social_youtube_link,
+                  social_pinterest_link: social_pinterest_link,
+                  social_linkedin_link: social_linkedin_link,
+                  social_snapchat_link: social_snapchat_link,
+                  social_vimeo_link: social_vimeo_link,
+                  social_tiktok_link: social_tiktok_link,
+                  social_tumblr_link: social_tumblr_link
+                %}
+              {% endif %}
+
+            </div>
+
+          </div>
+        </div>
+
+        <button type="button" class="btn btn--circle btn--icon modal__close js-modal-close">
+          {% render 'icon-close' %}
+          <span class="icon__fallback-text">{{ 'general.accessibility.close_modal' | t | json }}</span>
+        </button>
+      </div>
+    </div>
+  </newsletter-popup>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-newsletter-popup';
+    </script>
+  </template>
+</is-land>
+
+{% for block in section.blocks %}
+  {% if block.type == 'header' %}
+    {%- render 'newsletter-reminder',
+      section: section,
+      block: block,
+      popup_days: popup_days,
+      popup_seconds: popup_seconds,
+      color_scheme: color_scheme,
+      hydration: hydration
+    -%}
+  {% endif %}
+{% endfor %}
+
+{% endunless %}

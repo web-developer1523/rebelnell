@@ -1,0 +1,148 @@
+{% comment %}
+  /**
+   * @param {object} item - cart item object
+   * @param {object} section - section object
+   * @param {string} [sizes] - image sizes
+   * @param {string} [sizeVariable] - image size variable used in image size calculations
+   * @param {string} [fallback] - fallback used in image size calculations when first condition is not met
+   * @param {object} routes - routes object
+   * @param {object} shop - shop object
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   */
+{% endcomment %}
+
+<div class="cart__item" data-key="{{ item.key }}">
+  <div class="cart__image">
+    {% if item.image != blank %}
+      <a href="{{ item.url }}" class="image-wrap">
+        {%- render 'image-element',
+          img: item,
+          sizes: sizes,
+          sizeVariable: sizeVariable,
+          fallback: fallback,
+          alt: item.product.title,
+          widths: '180, 360, 540'
+        -%}
+      </a>
+    {% endif %}
+  </div>
+  <div class="cart__item-details">
+    <div class="cart__item-title">
+      <a href="{{ item.url }}" class="cart__item-name">
+        {{ item.product.title }}
+      </a>
+      {%- unless item.product.has_only_default_variant -%}
+        <div class="cart__item--variants">
+          {%- for option in item.options_with_values -%}
+            <div>
+              <span>{{ option.name }}:</span> {{ option.value }}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endunless -%}
+      {%- if item.selling_plan_allocation != empty -%}
+        <div class="cart__item--variants">
+          {{ item.selling_plan_allocation.selling_plan.name }}
+        </div>
+      {%- endif -%}
+      {%- assign property_size = item.properties | size -%}
+      {% if property_size > 0 %}
+        {% for p in item.properties %}
+          {%- assign first_character_in_key = p.first | truncate: 1, '' -%}
+          {% unless p.last == blank or first_character_in_key == '_' %}
+            <div class="cart__item--properties">
+              <span>{{ p.first }}:</span>
+              {% if p.last contains '/uploads/' %}
+                <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+              {% else %}
+                {{ p.last }}
+              {% endif %}
+            </div>
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+      {%- assign material_metafield = item.product.metafields.custom.estimated_delivery_date -%}
+      {%- if material_metafield != blank -%}
+        <div class="cart__item--metafield"><span>Delivered:</span> {{ material_metafield.value }}</div>
+      {%- endif -%}
+    </div>
+    <div class="cart__item-sub">
+      <div>
+        <div class="js-qty__wrapper">
+          <label for="cart_updates_{{ item.key }}" class="hidden-label">{{ 'cart.label.quantity' | t }}</label>
+          <input
+            type="text"
+            id="cart_updates_{{ item.key }}"
+            name="updates[]"
+            class="js-qty__num"
+            value="{{ item.quantity }}"
+            min="0"
+            pattern="[0-9]*"
+            data-id="{{ item.key }}"
+          >
+          <button
+            type="button"
+            class="js-qty__adjust js-qty__adjust--minus"
+            aria-label="{{ 'cart.general.reduce_quantity' | t }}"
+          >
+            {% render 'icon-minus' %}
+            <span class="icon__fallback-text" aria-hidden="true">&minus;</span>
+          </button>
+          <button
+            type="button"
+            class="js-qty__adjust js-qty__adjust--plus"
+            aria-label="{{ 'cart.general.increase_quantity' | t }}"
+          >
+            {% render 'icon-plus' %}
+            <span class="icon__fallback-text" aria-hidden="true">+</span>
+          </button>
+        </div>
+
+        <div class="cart__remove">
+          <a href="{{ routes.cart_change_url }}?id={{ item.key }}&amp;quantity=0" class="text-link">
+            {{ 'cart.general.remove' | t }}
+          </a>
+        </div>
+      </div>
+
+      <div class="cart__item-price-col text-right">
+        {% if item.original_price != item.final_price %}
+          <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+          <small class="cart__price cart__price--strikethrough">
+            {%- render 'price', price: item.original_price, shop: shop, superscript_decimals: superscript_decimals -%}
+          </small>
+          <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+          <span class="cart__price cart__discount">
+            {%- render 'price', price: item.final_price, shop: shop, superscript_decimals: superscript_decimals -%}
+          </span>
+        {% else %}
+          <span class="cart__price">
+            {%- render 'price', price: item.original_price, shop: shop, superscript_decimals: superscript_decimals -%}
+          </span>
+        {% endif %}
+
+        {%- if item.unit_price_measurement != blank -%}
+          {%- capture unit_price_base_unit -%}
+            <span class="product__unit-base--{{ section.id }}">
+              {%- if item.unit_price_measurement -%}
+                {%- if item.unit_price_measurement.reference_value != 1 -%}
+                  {{ item.unit_price_measurement.reference_value }}
+                {%- endif -%}
+                {{ item.unit_price_measurement.reference_unit }}
+              {%- endif -%}
+            </span>
+          {%- endcapture -%}
+          <span class="product__unit-price">{{ item.unit_price | money }}/{{ unit_price_base_unit }}</span>
+        {%- endif -%}
+
+        {%- if item.line_level_discount_allocations != blank -%}
+          {%- for discount_allocation in item.line_level_discount_allocations -%}
+            <small class="cart__discount">
+              {{- discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money }})</small
+            >
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_DnHRer": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UKRUyg": {
+          "type": "heading",
+          "settings": {
+            "title": "1 Year Warranty",
+            "heading_size": "h2"
+          }
+        },
+        "text_n8T7fN": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Rebel Nell One-Year Jewelry Warranty</strong><br/>Every Rebel Nell piece is handmade in Detroit from meaningful, repurposed materials—each one-of-a-kind, each telling a story. We stand behind our craftsmanship and offer a <strong>one-year jewelry warranty</strong> to make sure your piece meets our high standards.</p><p>If your Rebel Nell jewelry arrives damaged or has a defect from our making, we’ll repair or replace it at no cost within one year of purchase.</p><p><strong>What’s covered:</strong></p><ul><li><strong>Rings</strong> – If the band breaks within one year, we’ll replace the full ring.<br/></li><li><strong>Necklaces & Bracelets</strong> – If a clasp breaks within one year, we’ll replace the entire piece.<br/></li><li><strong>Earrings</strong> – Huggie styles (like Rosie or Jasmine) can’t be repaired, but we’ll replace your pair within one year.<br/></li><li><strong>Accessories & Men’s Accessories</strong> – Keychains, bottle stoppers, coasters, drink picks, cufflinks, etc.—our production team will review and repair or replace when possible.<br/></li></ul><p><strong>What’s not covered:</strong> Normal wear and tear (tarnishing, scratches), accidental damage, improper use, or any third-party alterations.</p><p>Questions? Contact us at <span style=\"text-decoration:underline\"><strong>rebelnell@rebelnell.com </strong></span>and we’ll help keep your Rebel Nell jewelry looking its best.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UKRUyg",
+        "text_n8T7fN"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "left",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_DnHRer"
+  ]
+}

@@ -1,0 +1,92 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {boolean} divider - show divider
+   * @param {string} color_scheme - color scheme
+   * @param {string} title - title
+   * @param {string} align_text - text alignment
+   */
+{% endcomment %}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="index-section color-scheme-{{ color_scheme }} {{ custom-class }}">
+  {%- if color_scheme != 'none' -%}
+    {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+  {%- endif -%}
+
+  <div class="page-width">
+    {%- if title != blank -%}
+      <div class="section-header text-{{ align_text }}">
+        <h2>{{ title }}</h2>
+      </div>
+    {%- endif -%}
+
+    <div class="grid{% unless section.blocks.size == 5 %} grid--uniform{% endunless %} grid--flush-bottom">
+      {%- liquid
+        assign grid_item_width = 'medium-up--one-third'
+        case section.blocks.size
+          when 1
+            assign grid_item_width = 'medium-up--one-half'
+          when 2
+            assign grid_item_width = 'medium-up--one-half'
+          when 4
+            assign grid_item_width = 'medium-up--one-half'
+        endcase
+      -%}
+      {%- for block in section.blocks -%}
+        {%- if section.blocks.size == 5 and forloop.index < 3 -%}
+          {%- assign column_width = 'medium-up--one-half' -%}
+        {%- else -%}
+          {%- assign column_width = grid_item_width -%}
+        {%- endif -%}
+        <div class="grid__item {{ column_width }} text-{{ align_text }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.enable_image -%}
+            <div style="{% if align_text == 'center' %}margin: 0 auto;{% endif %} max-width: {{ block.settings.image_width }}px;">
+              {%- if block.settings.button_link != blank -%}
+                <a href="{{ block.settings.button_link }}">
+              {%- endif -%}
+              {%- if block.settings.image != blank -%}
+                <div
+                  class="image-wrap text-spacing {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}"
+                  style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
+                >
+                  {%- render 'image-element',
+                    img: block.settings.image,
+                    sizeVariable: column_width,
+                    widths: '180, 360, 540, 720, 900, 1080',
+                    style: 'height: 100%;'
+                  -%}
+                </div>
+              {%- else -%}
+                <div class="image-wrap text-spacing">
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--no-padding' }}
+                </div>
+                {% assign image_file = product.metafields.custom.trust_badge %}
+
+                {% if image_file != blank %}
+                  <img src="{{ image_file | img_url: 'master' }}" alt="Custom Image">
+                {% endif %}
+              {%- endif -%}
+              {%- if block.settings.button_link != blank -%}
+                </a>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <h2 class="h3 rte--block">{{ block.settings.title }}</h2>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <div class="rte-setting rte--block text-spacing">{{ block.settings.text }}</div>
+          {%- endif -%}
+          {%- if block.settings.button_label != blank -%}
+            <a href="{{ block.settings.button_link }}" class="btn btn--secondary btn--small">
+              {{ block.settings.button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+{%- if divider -%}</div>{%- endif -%}

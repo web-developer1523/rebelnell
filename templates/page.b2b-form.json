@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_jGemGR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GA3Cpt": {
+          "type": "heading",
+          "settings": {
+            "title": "Book A Discovery Call",
+            "heading_size": "h2"
+          }
+        },
+        "text_MgQREE": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Transform recognition, events, and partnerships into moments that matter with Rebel Nell.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GA3Cpt",
+        "text_MgQREE"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "17587298708a1cb097": {
+      "type": "apps",
+      "blocks": {
+        "acerill_form_builder_custom_form_V3Bpxw": {
+          "type": "shopify://apps/acerill-form-builder/blocks/custom-form/830f910d-3579-44cb-9d18-92197bb5bd98",
+          "settings": {
+            "formId": "95a1734a-fbae-483d-bb69-c940bff5bf89",
+            "behavior": "standard"
+          }
+        }
+      },
+      "block_order": [
+        "acerill_form_builder_custom_form_V3Bpxw"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "rich_text_jGemGR",
+    "17587298708a1cb097",
+    "main"
+  ]
+}

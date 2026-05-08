@@ -1,0 +1,92 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {boolean} divider - show divider
+   * @param {boolean} top_padding - show top padding
+   * @param {boolean} bottom_padding - show bottom padding
+   * @param {string} color_scheme - color scheme
+   * @param {string} align_text - text alignment
+   * @param {string} image_position - image position
+   * @param {object} image - image object
+   * @param {string} context - context (default: 'section')
+   * @param {string} image_width - image width
+   * @param {string} image_mask - image mask
+   * @param {boolean} share_facebook - whether to show facebook share button
+   * @param {boolean} share_twitter - whether to show twitter share button
+   * @param {boolean} share_pinterest - whether to show pinterest share button
+   */
+{% endcomment %}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+{% style %}
+  {% if top_padding == false %}
+    .newsletter-{{ section.id }} .newsletter-section { padding-top: 0 !important; }
+  {% endif %}
+  {% if bottom_padding == false %}
+    .newsletter-{{ section.id }} .newsletter-section { padding-bottom: 0 !important; }
+  {% endif %}
+{% endstyle %}
+
+<div class="index-section newsletter-container newsletter-{{ section.id }} color-scheme-{{ color_scheme }}">
+  {%- if color_scheme and color_scheme != 'none' -%}
+    {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+  {%- endif -%}
+
+  <div class="page-width text-{{ align_text }}">
+    <div class="newsletter-section newsletter-section--image-{{ image_position }} {% unless image != blank %}newsletter-section--no-image{% endunless %}">
+      <div class="newsletter-section__content">
+        {%- for block in section.blocks -%}
+          <div class="theme-block" {{ block.shopify_attributes }}>
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+              {%- when 'title' -%}
+                {%- if block.settings.title != blank -%}
+                  <p class="{% if block.settings.heading_size != blank %}{{ block.settings.heading_size }}{% else %}h2{% endif %}">{{ block.settings.title | escape }}</p>
+                {%- endif -%}
+              {%- when 'text' -%}
+                {%- if block.settings.text != blank -%}
+                  <div class="rte">
+                    <div class="enlarge-text">
+                      {{ block.settings.text }}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- when 'form' -%}
+                {%- render 'newsletter-form',
+                  section_id: section.id,
+                  snippet_context: context,
+                  customer: customer,
+                -%}
+              {%- when 'share_buttons' -%}
+                {%- render 'social-sharing',
+                  share_facebook: share_facebook,
+                  share_twitter: share_twitter,
+                  share_pinterest: share_pinterest,
+                -%}
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      {% if image != blank %}
+        <div class="newsletter-section__image newsletter-section__image--{{ image_width }}">
+          <div
+            class="image-wrap {% if image_mask != 'none' %}svg-mask svg-mask--{{ image_mask }}{% endif %}"
+            style="height: 0; padding-bottom: {{ 100 | divided_by: image.aspect_ratio }}%;"
+          >
+            {%- render 'image-element',
+              img: image,
+              sizeVariable: image_width,
+              widths: '360, 540, 720, 1020',
+            -%}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+

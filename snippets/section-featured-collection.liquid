@@ -1,0 +1,225 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {object} home_featured_products - collection object
+   * @param {number} count - number of products to show
+   * @param {boolean} mobile_scrollable - scrollable on mobile
+   * @param {boolean} divider - show divider
+   * @param {string} title - section title
+   * @param {string} heading_position - heading position
+   * @param {string} text_direction - theme's text direction
+   * @param {boolean} view_all - show view all link
+   * @param {string} heading_size - heading size
+   * @param {number} products_per_row - number of products per row
+   * @param {boolean} quick_add_enable - whether quick add is enabled
+   * @param {boolean} quick_shop_enable - whether quick shop is enabled
+   * @param {string} product_grid_image_size - the image size to use for the grid item
+   * @param {boolean} product_grid_image_fill - whether the image should fill the grid item
+   * @param {boolean} product_hover_image - whether second image will be shown on hover
+   * @param {boolean} enable_swatches - whether swatches are enabled
+   * @param {boolean} vendor_enable - whether to show the vendor
+   * @param {boolean} product_save_amount - show save amount
+   * @param {string} product_save_type - dollar or percent
+   * @param {boolean} enable_product_reviews - whether to show product reviews
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- liquid
+  assign collection = collections[home_featured_products]
+  assign product_limit = count | plus: 1
+  if mobile_scrollable
+    assign product_limit = count
+  endif
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+{% style %}
+  {% unless title == blank %}
+    {% if heading_position == 'right' %}
+      #CollectionSection-{{ section.id }} .section-header__link {
+        padding-left: 20px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        #CollectionSection-{{ section.id }} .section-header__link {
+          padding-left: 10px;
+        }
+      }
+    {% elsif heading_position == 'center' %}
+      #CollectionSection-{{ section.id }} .section-header {
+        position: relative;
+      }
+
+      #CollectionSection-{{ section.id }} .section-header__link {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      {% if text_direction == 'rtl' %}
+        #CollectionSection-{{ section.id }} .section-header__link {
+          right: auto;
+          left: 0;
+        }
+      {% endif %}
+
+      @media only screen and (max-width: 768px) {
+        #CollectionSection-{{ section.id }} .section-header__link {
+          position: relative;
+        }
+      }
+    {% endif %}
+  {% endunless%}
+
+  {%- if view_all -%}
+    @media only screen and (max-width: 768px) {
+      #shopify-section-{{ section.id }} .section-header__title {
+        text-align: left;
+      }
+
+      {% if text_direction == 'rtl' %}
+        #shopify-section-{{ section.id }} .section-header__title {
+          text-align: right;
+        }
+      {% endif %}
+    }
+  {% endif %}
+{% endstyle %}
+
+<is-land {{ hydration }}>
+  <div
+    id="CollectionSection-{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="collection-template"
+  >
+    {%- if title != blank or view_all -%}
+      <div class="page-width text-{{ heading_position }}">
+        <div class="section-header{% if view_all and title != blank %} section-header--with-link{% endif %}">
+          {% if title != blank %}
+            <h2 class="section-header__title {{ heading_size }}">
+              {{ title }}
+            </h2>
+          {% endif %}
+          {%- if view_all -%}
+            <a href="{{ collections[home_featured_products].url }}" class="section-header__link">
+              {{- 'collections.general.all_of_collection' | t -}}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- liquid
+      capture gridView
+        render 'products-per-row', products_per_row: products_per_row
+      endcapture
+    -%}
+
+    {%- liquid
+      if mobile_scrollable
+        assign fallback = '45vw'
+      else
+        assign fallback = 'variable'
+      endif
+    -%}
+
+    <div class="page-width{% if mobile_scrollable %} page-width--flush-small{% endif %}">
+      <div
+        class="new-grid product-grid{% if mobile_scrollable %} scrollable-grid--small{% endif %}"
+        data-view="{{ gridView }}"
+      >
+        {%- if home_featured_products == blank
+          or collections[home_featured_products].empty?
+          or collections[home_featured_products].products_count == 0
+        -%}
+          {%- liquid
+            for i in (1..product_limit)
+              unless mobile_scrollable
+                assign item_classes = ''
+                if forloop.index > count
+                  assign item_classes = 'hide'
+                  assign mod = forloop.index | modulo: 2
+                  if mod == 0
+                    assign item_classes = 'medium-up--hide'
+                  endif
+                endif
+              endunless
+              render 'onboarding-product-grid-item', shop: shop, product: product, collection: collection, i: i, classes: item_classes, product_save_amount: product_save_amount, product_save_type: product_save_type, superscript_decimals: superscript_decimals
+            endfor
+          -%}
+
+        {%- else -%}
+          {%- liquid
+            assign available_products = collections[home_featured_products].products | where: 'available', true
+            assign soldout_products = collections[home_featured_products].products | where: 'available', false
+            assign sorted_products = available_products | concat: soldout_products
+          -%}
+
+          {%- for product in sorted_products limit: product_limit -%}
+            {%- liquid
+              assign item_classes = ''
+              unless mobile_scrollable
+                if forloop.index > count
+                  assign item_classes = 'hide'
+                  assign mod = forloop.index | modulo: 2
+                  if mod == 0
+                    assign item_classes = 'medium-up--hide'
+                  endif
+                endif
+              endunless
+            -%}
+
+            {%- render 'product-grid-item',
+              product: product,
+              collection: collection,
+              classes: item_classes,
+              sizeVariable: products_per_row,
+              fallback: fallback,
+              quick_add_enable: quick_add_enable,
+              quick_shop_enable: quick_shop_enable,
+              product_grid_image_size: product_grid_image_size,
+              product_grid_image_fill: product_grid_image_fill,
+              product_hover_image: product_hover_image,
+              enable_swatches: enable_swatches,
+              vendor_enable: vendor_enable,
+              product_save_amount: product_save_amount,
+              product_save_type: product_save_type,
+              enable_product_reviews: enable_product_reviews,
+              superscript_decimals: superscript_decimals
+            -%}
+          {%- endfor -%}
+          {% comment %}
+            {%- liquid
+              for product in collections[home_featured_products].products limit: product_limit
+                assign item_classes = ''
+                unless mobile_scrollable
+                  if forloop.index > count
+                    assign item_classes = 'hide'
+                    assign mod = forloop.index | modulo: 2
+                    if mod == 0
+                      assign item_classes = 'medium-up--hide'
+                    endif
+                  endif
+                endunless
+
+                render 'product-grid-item', product: product, collection: collection, classes: item_classes, sizeVariable: products_per_row, fallback: fallback, quick_add_enable: quick_add_enable, quick_shop_enable: quick_shop_enable, product_grid_image_size: product_grid_image_size, product_grid_image_fill: product_grid_image_fill, product_hover_image: product_hover_image, enable_swatches: enable_swatches, vendor_enable: vendor_enable, product_save_amount: product_save_amount, product_save_type: product_save_type, enable_product_reviews: enable_product_reviews, superscript_decimals: superscript_decimals
+              endfor
+            -%}
+          {% endcomment %}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-featured-collection';
+    </script>
+  </template>
+</is-land>
+
+{%- if divider -%}</div>{%- endif -%}

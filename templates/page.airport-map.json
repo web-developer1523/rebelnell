@@ -1,0 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_nECQjh": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tHXRCq": {
+          "type": "heading",
+          "settings": {
+            "title": "Detroit Metro Airport",
+            "heading_size": "h2"
+          }
+        },
+        "text_MrPWer": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Mon. - Sun. 7:00am - 8:00pm</strong></p><p>Stop by our new Detroit Airport store and discover a unique piece of Detroit's history to take home with you. Our selection of ready-to-wear jewelry and gifts are crafted from fallen graffiti and iconic Detroit locations like Comerica Park, Belle Isle Conservatory, and Joe Louis Arena. Perfect for last-minute gifts or a special keepsake, Rebel Nell now makes it easy to bring home a piece of the Motor City before you catch your flight!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tHXRCq",
+        "text_MrPWer"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "slideshow_image_MTciqB": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_HQVPcx": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/DTW_Store_Map.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_HQVPcx"
+      ],
+      "name": "t:sections.slideshow-image.presets.image_optional_slides.name",
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_nECQjh",
+    "slideshow_image_MTciqB"
+  ]
+}

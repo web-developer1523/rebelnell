@@ -1,0 +1,478 @@
+{% doc %}
+  @prompt
+    create a section that has one image with heading and text and stacked columns with text. I would like very little white space, eliminate the image and just keep heading with text and then I need 4 text columns with icons. Instead of stacked keep the icons as circles and in one horizontal line that is a slider on mobile. Can you add more icons including something for workforce development, skills development hours, recycle or upcycle icon and include a counter that goes up to 100000, I need another icon for lives impacted, update the items recycled icon to a normal recycle icon, work force development hours should be a heart, the icons should not be stacked on desktop or mobile, the text under the icon should be stacked, , update the items recycled to a regular reduce, reuse, recycle icon, change items recycled to An icon of a single-line, continuous, folded ribbon that forms a triangle with arrowheads on each point, indicating a constant cycle. Simple vector art, white background., change it to three icons to the following: 
+    Women hired out of shelter living | Icon: people | Number 49
+    
+    Hours of workforce development | Icon: open book | Number 180792
+    
+    Lives impacted as a result of the mission | Icon: Heart | Number: 488
+    
+    Pounds of material repurposed | Icon: Recycle symbol | Number: 3868
+    
+    , the numbers should be animated and counting till they get to their number, make the pounds of material repurposed icon into an earth symbol
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-impact-stats-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding }}px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-impact-stats__container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-impact-stats__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-impact-stats__heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.text_spacing }}px 0;
+    line-height: 1.2;
+  }
+
+  .ai-impact-stats__text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ai-impact-stats__grid-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.column_gap }}px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 20px 0;
+  }
+
+  .ai-impact-stats__grid-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-impact-stats__column-{{ ai_gen_id }} {
+    flex: 0 0 auto;
+    width: calc(25% - {{ block.settings.column_gap | times: 0.75 }}px);
+    min-width: 200px;
+    text-align: center;
+    scroll-snap-align: center;
+  }
+
+  .ai-impact-stats__icon-wrapper-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    border-radius: 50%;
+    background-color: {{ block.settings.icon_background }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto {{ block.settings.icon_spacing }}px;
+  }
+
+  .ai-impact-stats__icon-{{ ai_gen_id }} {
+    width: calc({{ block.settings.icon_size }}px * 0.5);
+    height: calc({{ block.settings.icon_size }}px * 0.5);
+    stroke: {{ block.settings.icon_color }};
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .ai-impact-stats__number-{{ ai_gen_id }} {
+    font-size: {{ block.settings.number_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.number_color }};
+    margin: 0 0 {{ block.settings.label_spacing }}px 0;
+    line-height: 1.2;
+  }
+
+  .ai-impact-stats__label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.label_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-impact-stats__grid-{{ ai_gen_id }} {
+      overflow-x: visible;
+      justify-content: center;
+    }
+
+    .ai-impact-stats__column-{{ ai_gen_id }} {
+      width: auto;
+      min-width: auto;
+      flex: 1;
+      max-width: 250px;
+    }
+  }
+{% endstyle %}
+
+<impact-stats-{{ ai_gen_id }}
+  class="ai-impact-stats-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-impact-stats__container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank or block.settings.text != blank %}
+      <div class="ai-impact-stats__header-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-impact-stats__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <div class="ai-impact-stats__text-{{ ai_gen_id }}">{{ block.settings.text }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-impact-stats__grid-{{ ai_gen_id }}">
+      <div class="ai-impact-stats__column-{{ ai_gen_id }}">
+        <div class="ai-impact-stats__icon-wrapper-{{ ai_gen_id }}">
+          <svg class="ai-impact-stats__icon-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div class="ai-impact-stats__number-{{ ai_gen_id }}" data-target="{{ block.settings.stat_1_number }}">0</div>
+        <p class="ai-impact-stats__label-{{ ai_gen_id }}">{{ block.settings.stat_1_label }}</p>
+      </div>
+
+      <div class="ai-impact-stats__column-{{ ai_gen_id }}">
+        <div class="ai-impact-stats__icon-wrapper-{{ ai_gen_id }}">
+          <svg class="ai-impact-stats__icon-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </div>
+        <div class="ai-impact-stats__number-{{ ai_gen_id }}" data-target="{{ block.settings.stat_2_number }}">0</div>
+        <p class="ai-impact-stats__label-{{ ai_gen_id }}">{{ block.settings.stat_2_label }}</p>
+      </div>
+
+      <div class="ai-impact-stats__column-{{ ai_gen_id }}">
+        <div class="ai-impact-stats__icon-wrapper-{{ ai_gen_id }}">
+          <svg class="ai-impact-stats__icon-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </div>
+        <div class="ai-impact-stats__number-{{ ai_gen_id }}" data-target="{{ block.settings.stat_3_number }}">0</div>
+        <p class="ai-impact-stats__label-{{ ai_gen_id }}">{{ block.settings.stat_3_label }}</p>
+      </div>
+
+      <div class="ai-impact-stats__column-{{ ai_gen_id }}">
+        <div class="ai-impact-stats__icon-wrapper-{{ ai_gen_id }}">
+          <svg class="ai-impact-stats__icon-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <div class="ai-impact-stats__number-{{ ai_gen_id }}" data-target="{{ block.settings.stat_4_number }}">0</div>
+        <p class="ai-impact-stats__label-{{ ai_gen_id }}">{{ block.settings.stat_4_label }}</p>
+      </div>
+    </div>
+  </div>
+</impact-stats-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ImpactStats{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.animated = false;
+      }
+
+      connectedCallback() {
+        this.setupIntersectionObserver();
+      }
+
+      setupIntersectionObserver() {
+        const options = {
+          threshold: 0.5,
+          rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !this.animated) {
+              this.animateCounters();
+              this.animated = true;
+            }
+          });
+        }, options);
+
+        observer.observe(this);
+      }
+
+      animateCounters() {
+        const counters = this.querySelectorAll('.ai-impact-stats__number-{{ ai_gen_id }}');
+        const duration = 2000;
+
+        counters.forEach(counter => {
+          const target = parseInt(counter.getAttribute('data-target'));
+          const increment = target / (duration / 16);
+          let current = 0;
+
+          const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+              counter.textContent = Math.floor(current).toLocaleString();
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target.toLocaleString();
+            }
+          };
+
+          updateCounter();
+        });
+      }
+    }
+
+    customElements.define('impact-stats-{{ ai_gen_id }}', ImpactStats{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Impact statistics",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Our Impact</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Making a difference in our community</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Header spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "text_spacing",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Text spacing",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Statistic 1"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Label",
+      "default": "Women hired out of shelter living"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_number",
+      "label": "Number",
+      "default": "49"
+    },
+    {
+      "type": "header",
+      "content": "Statistic 2"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Label",
+      "default": "Hours of workforce development"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_number",
+      "label": "Number",
+      "default": "180792"
+    },
+    {
+      "type": "header",
+      "content": "Statistic 3"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Label",
+      "default": "Lives impacted as a result of the mission"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_number",
+      "label": "Number",
+      "default": "488"
+    },
+    {
+      "type": "header",
+      "content": "Statistic 4"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_label",
+      "label": "Label",
+      "default": "Pounds of material repurposed"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_number",
+      "label": "Number",
+      "default": "3868"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Number color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "Icon background",
+      "default": "#eef0f6"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#c81688"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 60,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Number size",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "icon_spacing",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "label_spacing",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Label spacing",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Impact statistics"
+    }
+  ]
+}
+{% endschema %}

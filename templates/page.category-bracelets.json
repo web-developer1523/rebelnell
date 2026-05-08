@@ -1,0 +1,133 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_fMFFVh": {
+      "type": "featured-collection",
+      "settings": {
+        "custom-class": "",
+        "title": "Featured Bracelets",
+        "heading_size": "h3",
+        "heading_position": "left",
+        "home_featured_products": "bracelets",
+        "count": 5,
+        "products_per_row": 5,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "featured_collections_wiNFEq": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_8mddpw": {
+          "type": "collection",
+          "settings": {
+            "collection": "bracelets",
+            "title": "All Bracelets"
+          }
+        },
+        "collection_6qFtdD": {
+          "type": "collection",
+          "settings": {
+            "collection": "carl-bracelet",
+            "title": ""
+          }
+        },
+        "collection_xM3d8c": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "chloe-pearl-bracelets",
+            "title": ""
+          }
+        },
+        "collection_6dPkEY": {
+          "type": "collection",
+          "settings": {
+            "collection": "danielle-open-cuff",
+            "title": ""
+          }
+        },
+        "collection_6pLyPK": {
+          "type": "collection",
+          "settings": {
+            "collection": "delores-bracelet",
+            "title": ""
+          }
+        },
+        "collection_FhG3V4": {
+          "type": "collection",
+          "settings": {
+            "collection": "denae-bracelets",
+            "title": ""
+          }
+        },
+        "collection_iDBQ4x": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "kids-taylor-bracelet",
+            "title": ""
+          }
+        },
+        "collection_LqBzey": {
+          "type": "collection",
+          "settings": {
+            "collection": "mae-bracelet",
+            "title": "Mae Bracelets"
+          }
+        },
+        "collection_A87xha": {
+          "type": "collection",
+          "settings": {
+            "collection": "rhanna-bracelet",
+            "title": ""
+          }
+        },
+        "collection_4F6pzD": {
+          "type": "collection",
+          "settings": {
+            "collection": "taylor-bracelets",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_8mddpw",
+        "collection_6qFtdD",
+        "collection_xM3d8c",
+        "collection_6dPkEY",
+        "collection_6pLyPK",
+        "collection_FhG3V4",
+        "collection_iDBQ4x",
+        "collection_LqBzey",
+        "collection_A87xha",
+        "collection_4F6pzD"
+      ],
+      "settings": {
+        "title": "Bracelet Collections",
+        "heading_size": "h3",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_collection_fMFFVh",
+    "featured_collections_wiNFEq"
+  ]
+}

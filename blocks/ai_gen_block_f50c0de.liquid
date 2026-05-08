@@ -1,0 +1,637 @@
+{% doc %}
+  @prompt
+    Build 3 horizontal custom SVG icons for “How We Work With You”
+    Global rules (apply to all three)
+    
+    Format: inline SVG, not PNG.
+    
+    Palette: black #000000 and Rebel Nell pink #C81688 only. Background transparent.
+    
+    Style: bold outline, square corners (no rounded ends), simple geometry.
+    
+    Size box: each icon fits in a 160×160 viewBox and uses the same stroke width so they look identical in weight at any size.
+    
+    Accessibility: role="img" with accurate aria-label.
+    
+    Motion: animations must pause for prefers-reduced-motion: reduce.
+    
+    Layout: place all three icons side-by-side in a single row; on mobile keep them horizontal using a scroll container (display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory;) with each icon wrapped in a scroll-snap-align:start item. Do not stack vertically on mobile., Icon 1 — “1. Discover Together” (Magnifying glass)
+    
+    Must look like a real magnifying glass. No extra circles.
+    
+    Lens
+    
+    One circle stroke only, no fill.
+    
+    Stroke: black, 8–10 px (so it reads at small sizes).
+    
+    Pink sparkles live inside the lens (top-left quadrant). They must be clipped to the circle using clipPath so nothing bleeds outside.
+    
+    Handle
+    
+    A solid black rectangle rotated 40–45°, emerging from the lens at ~4 o’clock.
+    
+    Square edges (no rounding), thickness visually proportional to the bezel (not a hairline).
+    
+    Connect the handle to the lens with a short rectangular connector if needed—no rings, no extra open circles.
+    
+    Animation (sparkles)
+    
+    2–3 small pink stars/diamonds that twinkle (scale 0.8→1.1 and fade 0.2→1.0) on staggered loops (2–3s).
+    
+    Respect prefers-reduced-motion: reduce (disable animation).
+    
+    Accessibility
+    
+    aria-label="Magnifying glass with pink sparkles"
+    
+    Acceptance checks
+    
+    Only one circle (the lens).
+    
+    Handle is a solid rotated rectangle at 40–45°, aligned to the lens rim.
+    
+    Pink sparkles are visible and entirely inside the lens., the rectangle show come out of the circle  , fix the discover together icon to look like a realistic magnifying glass currently the hand is not come out from the side of the circle , Icon 2 — “2. Co-Create Options” (Two chat boxes)
+    
+    Shapes
+    
+    Two square-corner chat boxes, equal size, slightly overlapping.
+    
+    Box A: left, tail on bottom-left edge.
+    
+    Box B: right, mirrored horizontally, tail on bottom-right edge.
+    
+    Lines & fill
+    
+    Boxes: black outline, no fill.
+    
+    Inner message lines in pink #C81688 (3 lines per box, short-medium-short).
+    
+    Animation
+    
+    Subtle “conversation” effect: alternate opacity or y-nudges of the pink lines (A speaks, then B speaks), 1.8–2.2s loop, out-of-phase.
+    
+    Respect reduced motion.
+    
+    Accessibility
+    
+    aria-label="Two overlapping chat boxes exchanging messages"
+    
+    Acceptance checks
+    
+    Tails are exactly bottom-left (Box A) and bottom-right (Box B).
+    
+    Pink lines appear inside each box; no fills.
+    
+    Both boxes are same size and perfectly aligned/overlapped., Do not draw any small open circle near the handle. The magnifying glass has one circle (the lens) only and one rectangular handle rotated 40–45°., Icon 3 — “3. Activate & Amplify” (Fireworks)
+    
+    Concept
+    
+    Replace plant/flower with multiple fireworks bursts to represent activation/amplification.
+    
+    Shapes & color
+    
+    2–3 radial bursts: one pink main burst in front, 1–2 black secondary bursts behind.
+    
+    Use straight line segments (no circles), square caps to match the square aesthetic.
+    
+    Animation
+    
+    Staggered scale + radial stroke-draw or opacity so bursts “pop.”
+    
+    Loop 2.5–3s; ensure nothing exceeds the 160×160 viewBox.
+    
+    Respect reduced motion.
+    
+    Accessibility
+    
+    aria-label="Animated fireworks bursts representing activation and amplification"
+    
+    Acceptance checks
+    
+    At least two bursts visible at all times.
+    
+    The pink burst is prominent; others provide depth.
+    
+    No curves or rounded caps; straight segments only.
+    
+    Row content (under each icon)
+    
+    Title and subheader text to render under each icon (same typographic scale across the three).
+    
+    1. Discover Together — sub: “Start with your goals and challenges.”
+    
+    2. Co-Create Options — sub: “Tailored experiences and branded takeaways that matter.”
+    
+    3. Activate & Amplify — sub: “Bring it to life and extend your impact.”, the activate and amplify should be fireworks
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-how-we-work-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding_top }}px 0 {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-how-we-work-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-how-we-work-title-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.title_margin_bottom }}px;
+    color: {{ block.settings.title_color }};
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 600;
+  }
+
+  .ai-how-we-work-icons-{{ ai_gen_id }} {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .ai-how-we-work-icons-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-how-we-work-icon-item-{{ ai_gen_id }} {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    text-align: center;
+    min-width: 200px;
+  }
+
+  .ai-how-we-work-icon-wrapper-{{ ai_gen_id }} {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto {{ block.settings.icon_margin_bottom }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-how-we-work-icon-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    max-width: 160px;
+    max-height: 160px;
+  }
+
+  .ai-how-we-work-icon-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.icon_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.icon_title_color }};
+    margin-bottom: {{ block.settings.icon_title_margin_bottom }}px;
+  }
+
+  .ai-how-we-work-icon-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.icon_description_size }}px;
+    color: {{ block.settings.icon_description_color }};
+    line-height: 1.5;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ai-how-we-work-icon-{{ ai_gen_id }} * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-how-we-work-icons-{{ ai_gen_id }} {
+      justify-content: center;
+      overflow-x: visible;
+      scroll-snap-type: none;
+    }
+
+    .ai-how-we-work-icon-item-{{ ai_gen_id }} {
+      flex: 1;
+      max-width: 300px;
+      min-width: auto;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-how-we-work-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-how-we-work-container-{{ ai_gen_id }}">
+    {% if block.settings.title != blank %}
+      <h2 class="ai-how-we-work-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    {% endif %}
+
+    <div class="ai-how-we-work-icons-{{ ai_gen_id }}">
+      <div class="ai-how-we-work-icon-item-{{ ai_gen_id }}">
+        <div class="ai-how-we-work-icon-wrapper-{{ ai_gen_id }}">
+          <svg
+            class="ai-how-we-work-icon-{{ ai_gen_id }}"
+            viewBox="0 0 160 160"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Magnifying glass with pink sparkles"
+          >
+            <defs>
+              <clipPath id="lens-clip-{{ ai_gen_id }}">
+                <circle cx="80" cy="60" r="35"/>
+              </clipPath>
+            </defs>
+            <g stroke-linecap="square" stroke-linejoin="miter">
+              <circle cx="80" cy="60" r="35" stroke="#000000" stroke-width="9" fill="none"/>
+              <rect x="105" y="85" width="12" height="40" fill="#000000" transform="rotate(45 111 105)"/>
+              <g clip-path="url(#lens-clip-{{ ai_gen_id }})">
+                <polygon points="65,35 70,45 60,45" fill="#C81688">
+                  <animateTransform attributeName="transform" type="scale" values="0.8;1.1;0.8" dur="2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+                </polygon>
+                <polygon points="75,40 80,50 70,50" fill="#C81688">
+                  <animateTransform attributeName="transform" type="scale" values="0.8;1.1;0.8" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.2;1;0.2" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+                </polygon>
+                <polygon points="85,30 90,40 80,40" fill="#C81688">
+                  <animateTransform attributeName="transform" type="scale" values="0.8;1.1;0.8" dur="3s" begin="1s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" begin="1s" repeatCount="indefinite"/>
+                </polygon>
+              </g>
+            </g>
+          </svg>
+        </div>
+        {% if block.settings.icon_1_title != blank %}
+          <h3 class="ai-how-we-work-icon-title-{{ ai_gen_id }}">{{ block.settings.icon_1_title }}</h3>
+        {% endif %}
+        {% if block.settings.icon_1_description != blank %}
+          <p class="ai-how-we-work-icon-description-{{ ai_gen_id }}">{{ block.settings.icon_1_description }}</p>
+        {% endif %}
+      </div>
+
+      <div class="ai-how-we-work-icon-item-{{ ai_gen_id }}">
+        <div class="ai-how-we-work-icon-wrapper-{{ ai_gen_id }}">
+          <svg
+            class="ai-how-we-work-icon-{{ ai_gen_id }}"
+            viewBox="0 0 160 160"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Two overlapping chat boxes exchanging messages"
+          >
+            <g stroke-linecap="square" stroke-linejoin="miter">
+              <g stroke="#000000" stroke-width="6" fill="none">
+                <rect x="30" y="40" width="60" height="50"/>
+                <polygon points="30,90 30,100 40,90"/>
+                <rect x="70" y="60" width="60" height="50"/>
+                <polygon points="130,110 130,120 120,110"/>
+              </g>
+              <g stroke="#C81688" stroke-width="4">
+                <line x1="40" y1="50" x2="55" y2="50">
+                  <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+                </line>
+                <line x1="40" y1="60" x2="70" y2="60">
+                  <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+                </line>
+                <line x1="40" y1="70" x2="60" y2="70">
+                  <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="70" x2="95" y2="70">
+                  <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="80" x2="110" y2="80">
+                  <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="90" x2="100" y2="90">
+                  <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.4s" repeatCount="indefinite"/>
+                </line>
+              </g>
+            </g>
+          </svg>
+        </div>
+        {% if block.settings.icon_2_title != blank %}
+          <h3 class="ai-how-we-work-icon-title-{{ ai_gen_id }}">{{ block.settings.icon_2_title }}</h3>
+        {% endif %}
+        {% if block.settings.icon_2_description != blank %}
+          <p class="ai-how-we-work-icon-description-{{ ai_gen_id }}">{{ block.settings.icon_2_description }}</p>
+        {% endif %}
+      </div>
+
+      <div class="ai-how-we-work-icon-item-{{ ai_gen_id }}">
+        <div class="ai-how-we-work-icon-wrapper-{{ ai_gen_id }}">
+          <svg
+            class="ai-how-we-work-icon-{{ ai_gen_id }}"
+            viewBox="0 0 160 160"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Animated fireworks bursts representing activation and amplification"
+          >
+            <g stroke-linecap="square" stroke-linejoin="miter">
+              <g stroke="#C81688" stroke-width="8">
+                <line x1="80" y1="60" x2="50" y2="30">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="110" y2="30">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="0.1s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.1s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="50" y2="90">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="0.2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.2s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="110" y2="90">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="0.3s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.3s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="45" y2="60">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="0.4s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.4s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="115" y2="60">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="80" y2="25">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="0.6s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.6s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="80" y2="95">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="0.7s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.7s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="60" y2="40">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="100" y2="40">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.9s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="60" y2="80">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="1s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="1s" repeatCount="indefinite"/>
+                </line>
+                <line x1="80" y1="60" x2="100" y2="80">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.5s" begin="1.1s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="1.1s" repeatCount="indefinite"/>
+                </line>
+              </g>
+              <g stroke="#000000" stroke-width="6">
+                <line x1="40" y1="100" x2="25" y2="85">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="1.2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="1.2s" repeatCount="indefinite"/>
+                </line>
+                <line x1="40" y1="100" x2="55" y2="85">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="1.3s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="1.3s" repeatCount="indefinite"/>
+                </line>
+                <line x1="40" y1="100" x2="25" y2="115">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="1.4s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="1.4s" repeatCount="indefinite"/>
+                </line>
+                <line x1="40" y1="100" x2="55" y2="115">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="1.5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="1.5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="40" y1="100" x2="20" y2="100">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="1.6s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="1.6s" repeatCount="indefinite"/>
+                </line>
+                <line x1="40" y1="100" x2="60" y2="100">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="1.7s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="1.7s" repeatCount="indefinite"/>
+                </line>
+                <line x1="40" y1="100" x2="40" y2="80">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="1.8s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="1.8s" repeatCount="indefinite"/>
+                </line>
+                <line x1="40" y1="100" x2="40" y2="120">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="1.9s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="1.9s" repeatCount="indefinite"/>
+                </line>
+              </g>
+              <g stroke="#000000" stroke-width="6">
+                <line x1="120" y1="110" x2="110" y2="100">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+                </line>
+                <line x1="120" y1="110" x2="130" y2="100">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="2.1s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="2.1s" repeatCount="indefinite"/>
+                </line>
+                <line x1="120" y1="110" x2="110" y2="120">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="2.2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="2.2s" repeatCount="indefinite"/>
+                </line>
+                <line x1="120" y1="110" x2="130" y2="120">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="2.3s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="2.3s" repeatCount="indefinite"/>
+                </line>
+                <line x1="120" y1="110" x2="105" y2="110">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="2.4s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="2.4s" repeatCount="indefinite"/>
+                </line>
+                <line x1="120" y1="110" x2="135" y2="110">
+                  <animateTransform attributeName="transform" type="scale" values="0;1;0" dur="2.8s" begin="2.5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="2.5s" repeatCount="indefinite"/>
+                </line>
+              </g>
+            </g>
+          </svg>
+        </div>
+        {% if block.settings.icon_3_title != blank %}
+          <h3 class="ai-how-we-work-icon-title-{{ ai_gen_id }}">{{ block.settings.icon_3_title }}</h3>
+        {% endif %}
+        {% if block.settings.icon_3_description != blank %}
+          <p class="ai-how-we-work-icon-description-{{ ai_gen_id }}">{{ block.settings.icon_3_description }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "How We Work With You",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "How We Work With You"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Title style"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Title bottom margin",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Icon style"
+    },
+    {
+      "type": "range",
+      "id": "icon_margin_bottom",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Icon bottom margin",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "icon_title_color",
+      "label": "Icon title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "icon_title_size",
+      "min": 14,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon title size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "icon_title_margin_bottom",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon title bottom margin",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "icon_description_color",
+      "label": "Icon description color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "icon_description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon description size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Icon 1 - Discover Together"
+    },
+    {
+      "type": "text",
+      "id": "icon_1_title",
+      "label": "Title",
+      "default": "1. Discover Together"
+    },
+    {
+      "type": "textarea",
+      "id": "icon_1_description",
+      "label": "Description",
+      "default": "Start with your goals and challenges."
+    },
+    {
+      "type": "header",
+      "content": "Icon 2 - Co-Create Options"
+    },
+    {
+      "type": "text",
+      "id": "icon_2_title",
+      "label": "Title",
+      "default": "2. Co-Create Options"
+    },
+    {
+      "type": "textarea",
+      "id": "icon_2_description",
+      "label": "Description",
+      "default": "Tailored experiences and branded takeaways that matter."
+    },
+    {
+      "type": "header",
+      "content": "Icon 3 - Activate & Amplify"
+    },
+    {
+      "type": "text",
+      "id": "icon_3_title",
+      "label": "Title",
+      "default": "3. Activate & Amplify"
+    },
+    {
+      "type": "textarea",
+      "id": "icon_3_description",
+      "label": "Description",
+      "default": "Bring it to life and extend your impact."
+    }
+  ],
+  "presets": [
+    {
+      "name": "How We Work With You"
+    }
+  ]
+}
+{% endschema %}

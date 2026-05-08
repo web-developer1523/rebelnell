@@ -1,0 +1,19 @@
+<div class="cst-trust-badge">
+  {% assign image = product.metafields.custom.trust %}
+
+  {% if image %}
+    <img src="{{ image | file_url }}" alt="Custom Image">
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Trust badge",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Trust badge"
+    }
+  ]
+}
+{% endschema %}

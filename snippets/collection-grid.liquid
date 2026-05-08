@@ -1,0 +1,135 @@
+{% comment %}
+  /**
+   * @param {object} collection - collection object
+   * @param {object} cart - cart object
+   * @param {object[]} items - paginated list of items to render
+   * @param {string} grid_style - grid style
+   * @param {boolean} quick_shop_enable - whether quick shop is enabled
+   * @param {boolean} quick_add_enable - whether quick add is enabled
+   * @param {string} product_grid_image_size - image size
+   * @param {boolean} product_grid_image_fill - whether image should fill container
+   * @param {boolean} product_hover_image - whether hover image is enabled
+   * @param {boolean} enable_swatches - whether swatches are enabled
+   * @param {boolean} vendor_enable - whether vendor is enabled
+   * @param {boolean} product_save_amount - whether product save amount is enabled
+   * @param {string} product_save_type - product save type
+   * @param {boolean} enable_product_reviews - whether product reviews are enabled
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   */
+{% endcomment %}
+
+{% liquid
+  if collection.products
+      assign count = collection.products_count
+      assign count_label = 'collections.general.items_with_count'
+  endif
+
+  if collection.results
+      assign count = collection.results_count
+      assign count_label = 'general.search.result_count'
+  endif
+
+  assign current_filter_size = 0
+  for filter in filters
+    assign current_filter_size = current_filter_size | plus: filter.active_values.size
+  endfor
+%}
+
+<div class="collection-grid__wrapper">
+
+  <div class="collection-filter">
+    <div class="collection-filter__inner">
+      <div class="collection-filter__item collection-filter__item--drawer">
+        <button
+          type="button"
+          class="collection-filter__btn text-link"
+        >
+          {% render 'icon-filter' %}
+          {{ 'collections.filters.title_tags' | t }}
+          {%- if current_filter_size > 0 -%}
+            ({{ current_filter_size }})
+          {%- endif -%}
+        </button>
+      </div>
+
+      <div class="collection-filter__item collection-filter__item--count small--hide">
+        {{ count_label | t: count: count }}
+      </div>
+
+      <div class="collection-filter__item collection-filter__item--right">
+        {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+        <div class="collection-filter__sort small--hide">
+          <label for="SortBy" class="hidden-label">{{ 'collections.sorting.title' | t }}</label>
+          <select name="SortBy" id="SortBy" data-default-sortby="{{ collection.default_sort_by }}">
+            <option value="title-ascending"{% if sort_by == collection.default_sort_by %} selected="selected"{% endif %}>{{ 'collections.sorting.title' | t }}</option>
+            {%- for option in collection.sort_options -%}
+              <option value="{{ option.value }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name }}</option>
+            {%- endfor -%}
+          </select>
+        </div>
+
+        {%- liquid
+          assign productGridView = grid_style
+          if cart.attributes.product_view != blank
+            assign productGridView = cart.attributes.product_view
+          endif
+        -%}
+
+        <ul class="no-bullets inline-list text-right">
+          <li><button type="button" class="grid-view-btn{% if productGridView == 'large' %} is-active{% endif %}" data-view="large" title="{{ 'collections.general.large' | t }}">
+            {% render 'icon-view-large' %}
+            <span class="icon__fallback-text">{{ 'collections.general.large' | t }}</span>
+          </button></li>
+          <li><button type="button" class="grid-view-btn{% if productGridView == 'medium' %} is-active{% endif %}" data-view="medium" title="{{ 'collections.general.small' | t }}">
+            {% render 'icon-view-small' %}
+            <span class="icon__fallback-text">{{ 'collections.general.small' | t }}</span>
+          </button></li>
+          <li><button type="button" class="grid-view-btn{% if productGridView == 'list' %} is-active{% endif %}" data-view="list" title="{{ 'collections.general.list' | t }}">
+            {% render 'icon-view-list' %}
+            <span class="icon__fallback-text">{{ 'collections.general.list' | t }}</span>
+          </button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="collection-mobile-filters medium-up--hide">
+      <div class="collection-mobile-filters__holder" id="CollectionInlineFilterWrap"></div>
+    </div>
+
+  </div>
+
+  {%- if items == blank -%}
+    <div class="index-section">{{ 'collections.general.no_matches' | t }}</div>
+  {%- endif -%}
+
+  <div
+    class="new-grid product-grid collection-grid"
+    data-view="{{ productGridView }}"
+    data-scroll-to
+  >
+    {% assign available_products = items | where: "available", true %}
+{% assign soldout_products = items | where: "available", false %}
+{% assign sorted_items = available_products | concat: soldout_products %}
+    {%- for item in sorted_items -%}
+      {%- if item.object_type == 'product' -%}
+        {%- render 'product-grid-item',
+          product: item,
+          collection: collection,
+          quick_add_enable: quick_add_enable,
+          quick_shop_enable: quick_shop_enable,
+          product_grid_image_size: product_grid_image_size,
+          product_grid_image_fill: product_grid_image_fill,
+          product_hover_image: product_hover_image,
+          enable_swatches: enable_swatches,
+          vendor_enable: vendor_enable,
+          product_save_amount: product_save_amount,
+          product_save_type: product_save_type,
+          enable_product_reviews: enable_product_reviews,
+          superscript_decimals: superscript_decimals,
+        -%}
+      {%- else -%}
+        {%- render 'search-grid-item', item: item -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>

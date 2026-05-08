@@ -1,0 +1,42 @@
+{% comment %}
+  /**
+   * @param {object} collections - collections object
+   * @param {string} cart_collection_handle - handle of the collection to use for recommendations
+   * @param {string} location - context of the cart
+   * @param {boolean} quick_add_enable - whether quick add is enabled
+   * @param {boolean} quick_shop_enable - whether quick shop is enabled
+   * @param {string} product_grid_image_size - the image size to use for the grid item
+   * @param {boolean} product_grid_image_fill - whether the image should fill the grid item
+   * @param {boolean} product_hover_image - whether second image will be shown on hover
+   * @param {boolean} enable_swatches - whether swatches are enabled
+   * @param {boolean} vendor_enable - whether to show the vendor
+   * @param {boolean} product_save_amount - show save amount
+   * @param {string} product_save_type - dollar or percent
+   * @param {boolean} enable_product_reviews - whether to show product reviews
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   */
+{% endcomment %}
+
+{%- liquid
+  assign cart_collection = collections[cart_collection_handle]
+  assign mobileScrollOnly = true
+  if location == 'drawer'
+    assign mobileScrollOnly = false
+  endif
+-%}
+
+{%- if cart_collection != blank -%}
+  <div class="cart__item-row cart-recommendations" data-location="{{ location }}">
+    <div class="h3 h3--mobile cart__recommended-title">Complete the Look</div>
+    <div
+      class="new-grid product-grid{% if mobileScrollOnly %} scrollable-grid--small{% else %} scrollable-grid{% endif %}"
+      data-view="small"
+    >
+      {%- liquid
+        for product in cart_collection.products limit: 4
+          render 'product-grid-item', product: product, collection: cart_collection, sizes: '150px', quick_add_enable: quick_add_enable, quick_shop_enable: quick_shop_enable, product_grid_image_size: product_grid_image_size, product_grid_image_fill: product_grid_image_fill, product_hover_image: product_hover_image, enable_swatches: enable_swatches, vendor_enable: vendor_enable, product_save_amount: product_save_amount, product_save_type: product_save_type, enable_product_reviews: enable_product_reviews, superscript_decimals: superscript_decimals
+        endfor
+      -%}
+    </div>
+  </div>
+{%- endif -%}

@@ -1,0 +1,435 @@
+{% doc %}
+  @prompt
+    three horizontal upload able icons with text columns 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-icon-columns-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding }}px 0;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-icon-columns-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-icon-columns-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.column_gap }}px;
+    align-items: start;
+  }
+
+  .ai-icon-column-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    padding: {{ block.settings.column_padding }}px;
+    background-color: {{ block.settings.column_background_color }};
+    border-radius: {{ block.settings.column_border_radius }}px;
+  }
+
+  .ai-icon-wrapper-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.icon_spacing }}px;
+    display: flex;
+    {% if block.settings.text_alignment == 'center' %}
+      justify-content: center;
+    {% elsif block.settings.text_alignment == 'right' %}
+      justify-content: flex-end;
+    {% else %}
+      justify-content: flex-start;
+    {% endif %}
+  }
+
+  .ai-icon-placeholder-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    background-color: {{ block.settings.icon_background_color }};
+    border-radius: {{ block.settings.icon_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-icon-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: {{ block.settings.icon_size }}px;
+    max-height: {{ block.settings.icon_size }}px;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-icon-placeholder-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: {{ block.settings.icon_border_radius }}px;
+  }
+
+  .ai-icon-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #999;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .ai-icon-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+    line-height: 1.3;
+  }
+
+  .ai-icon-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-icon-columns-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
+      gap: {{ block.settings.column_gap | times: 0.7 }}px;
+    }
+
+    .ai-icon-column-{{ ai_gen_id }} {
+      padding: {{ block.settings.column_padding | times: 0.8 }}px;
+    }
+
+    .ai-icon-placeholder-{{ ai_gen_id }} {
+      width: {{ block.settings.icon_size | times: 0.8 }}px;
+      height: {{ block.settings.icon_size | times: 0.8 }}px;
+    }
+
+    .ai-icon-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+
+    .ai-icon-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-icon-columns-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-icon-columns-container-{{ ai_gen_id }}">
+    <div class="ai-icon-columns-grid-{{ ai_gen_id }}">
+      {% for i in (1..3) %}
+        {% liquid
+          assign icon_key = 'icon_' | append: i
+          assign title_key = 'title_' | append: i
+          assign text_key = 'text_' | append: i
+          
+          assign icon = block.settings[icon_key]
+          assign title = block.settings[title_key]
+          assign text = block.settings[text_key]
+        %}
+        
+        <div class="ai-icon-column-{{ ai_gen_id }}">
+          <div class="ai-icon-wrapper-{{ ai_gen_id }}">
+            <div class="ai-icon-placeholder-{{ ai_gen_id }}">
+              {% if icon %}
+                <img
+                  src="{{ icon | image_url: width: block.settings.icon_size | times: 2 }}"
+                  alt="{{ title | escape }}"
+                  width="{{ block.settings.icon_size }}"
+                  height="{{ block.settings.icon_size }}"
+                  loading="lazy"
+                >
+              {% else %}
+                {{ 'image' | placeholder_svg_tag }}
+                <div class="ai-icon-empty-state-{{ ai_gen_id }}">
+                  Add icon {{ i }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          
+          {% if title != blank %}
+            <h3 class="ai-icon-title-{{ ai_gen_id }}">{{ title }}</h3>
+          {% endif %}
+          
+          {% if text != blank %}
+            <div class="ai-icon-text-{{ ai_gen_id }}">{{ text }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Icon columns",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "column_padding",
+      "label": "Column padding",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "column_background_color",
+      "label": "Column background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 40,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "icon_spacing",
+      "label": "Icon spacing",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon background color",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon placeholder color",
+      "default": "#cccccc"
+    },
+    {
+      "type": "range",
+      "id": "icon_border_radius",
+      "label": "Icon border radius",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "column_border_radius",
+      "label": "Column border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Title spacing",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_1",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title",
+      "default": "Feature title"
+    },
+    {
+      "type": "textarea",
+      "id": "text_1",
+      "label": "Text",
+      "default": "Share details about your shipping policies, item returns, or customer service."
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_2",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title",
+      "default": "Feature title"
+    },
+    {
+      "type": "textarea",
+      "id": "text_2",
+      "label": "Text",
+      "default": "Share details about your shipping policies, item returns, or customer service."
+    },
+    {
+      "type": "header",
+      "content": "Column 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_3",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Title",
+      "default": "Feature title"
+    },
+    {
+      "type": "textarea",
+      "id": "text_3",
+      "label": "Text",
+      "default": "Share details about your shipping policies, item returns, or customer service."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon columns"
+    }
+  ]
+}
+{% endschema %}

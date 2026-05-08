@@ -1,0 +1,139 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_fMFFVh": {
+      "type": "featured-collection",
+      "settings": {
+        "custom-class": "",
+        "title": "Featured Rings",
+        "heading_size": "h3",
+        "heading_position": "left",
+        "home_featured_products": "ring",
+        "count": 5,
+        "products_per_row": 5,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "featured_collections_wiNFEq": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_8mddpw": {
+          "type": "collection",
+          "settings": {
+            "collection": "ring",
+            "title": "All Rings"
+          }
+        },
+        "collection_ngUhAG": {
+          "type": "collection",
+          "settings": {
+            "collection": "alexandra-open-ring",
+            "title": ""
+          }
+        },
+        "collection_6qFtdD": {
+          "type": "collection",
+          "settings": {
+            "collection": "ashley-ring",
+            "title": ""
+          }
+        },
+        "collection_FNc3Bh": {
+          "type": "collection",
+          "settings": {
+            "collection": "dani-ring",
+            "title": ""
+          }
+        },
+        "collection_TkcptC": {
+          "type": "collection",
+          "settings": {
+            "collection": "hattie-cage-ring",
+            "title": "Hattie Cage Rings"
+          }
+        },
+        "collection_6pLyPK": {
+          "type": "collection",
+          "settings": {
+            "collection": "kim-ring",
+            "title": ""
+          }
+        },
+        "collection_iDBQ4x": {
+          "type": "collection",
+          "settings": {
+            "collection": "lauren-ring",
+            "title": ""
+          }
+        },
+        "collection_A87xha": {
+          "type": "collection",
+          "settings": {
+            "collection": "miccael-ring",
+            "title": ""
+          }
+        },
+        "collection_4F6pzD": {
+          "type": "collection",
+          "settings": {
+            "collection": "natalie-ring",
+            "title": ""
+          }
+        },
+        "collection_mwX8Xx": {
+          "type": "collection",
+          "settings": {
+            "collection": "power-nikila-ring",
+            "title": ""
+          }
+        },
+        "collection_Hqk9kq": {
+          "type": "collection",
+          "settings": {
+            "collection": "nyx-open-ring",
+            "title": "Nyx Open Rings"
+          }
+        }
+      },
+      "block_order": [
+        "collection_8mddpw",
+        "collection_ngUhAG",
+        "collection_6qFtdD",
+        "collection_FNc3Bh",
+        "collection_TkcptC",
+        "collection_6pLyPK",
+        "collection_iDBQ4x",
+        "collection_A87xha",
+        "collection_4F6pzD",
+        "collection_mwX8Xx",
+        "collection_Hqk9kq"
+      ],
+      "settings": {
+        "title": "Ring Collections",
+        "heading_size": "h3",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_collection_fMFFVh",
+    "featured_collections_wiNFEq"
+  ]
+}

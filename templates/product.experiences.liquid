@@ -1,0 +1,212 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+{%- assign metadata = product.metafields.experiences -%}
+{%- assign durationHours = metadata.duration | divided_by: 60 -%}
+{%- assign durationMinutes = metadata.duration | modulo: 60 -%}
+{%- assign durationMinHours = metadata.durationMin | divided_by: 60 -%}
+{%- assign durationMinMinutes = metadata.durationMin | modulo: 60 -%}
+{%- assign durationMaxHours = metadata.durationMax | divided_by: 60 -%}
+{%- assign durationMaxMinutes = metadata.durationMax | modulo: 60 -%}
+{%- assign costLabel = metadata.costLabel | default: "Cost" -%}
+{%- assign costPerUnitLabel = metadata.costPerUnitLabel | default: "per person" -%}
+{%- assign durationLabel = metadata.durationLabel | default: "Duration" -%}
+
+<link href="https://prod-v2.experiencesapp.services/storefront/embedded.css" rel="stylesheet" />
+<link href="https://widgets.production.experiencesapp.services/widgets/style.css" rel="stylesheet" />
+<style>
+  /* Page element variable styles. These do not affect the new booking widget. */
+  :root {
+    --experiences-primary-background: #fff;
+    --experiences-secondary-background: #f5f5f5;
+    --experiences-primary-action: #505dbf;
+    --experiences-secondary-text: #637381;
+    --experiences-placeholder-color: #a0acb7;
+    --experiences-disabled-background: #ccc;
+    --experiences-disabled-text: #888;
+  }
+
+  /* Common corrective styles we need to apply (depending on the theme). */
+
+  #exp__carousel img {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  #hostDetails {
+    padding-bottom: 2rem;
+  }
+
+ .product__section-container {
+    /**
+     * Most themes set a max-width on the content body area and our width
+     * is often narrower than most modern sites. Enable this if the theme
+     * constrains the width of the content body area and the page content
+	 * is too narrow.
+     */
+    /* max-width: 98vw; */
+  }
+
+  /* New booking widget style overrides. */
+  #expapp-book-now-button {
+    --expapp-primary-color: #000; /** Used for button backgrounds. */
+    --expapp-on-primary-color: #fff; /** Used for button text color. */
+    --expapp-error-color: #d04f51; /** Used for the background of error messages. */
+    --expapp-on-error-color: #fff; /** Used for the text color of error messages. */
+    --expapp-border-color: #ccc; /** Used for borders. */
+    --expapp-border-radius: 0.25em; /** Used for rounded corners. Set to `0` to disable. */
+    /* color: #000; */ /** When using a light text color, uncomment this rule. */
+  }
+</style>
+
+<div
+  class="product__section-container"
+  data-section-id="{{ section.id }}"
+  data-section-type="product"
+  data-enable-history-state="true"
+  itemscope itemtype="http://schema.org/Product"
+>
+
+  <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
+  <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
+  <meta itemprop="brand" content="{{ product.vendor }}">
+  <meta itemprop="image" content="{{ featured_image }}">
+  <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="{{ current_variant.price | divided_by: 100 }}">
+    <meta itemprop="priceCurrency" content="USD">
+    <meta itemprop="availability" content="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
+    <meta itemprop="priceValidUntil" content="{{ 'now' | date: '%Y-%m-%d' | plus: 365 }}">
+  </div>
+
+  <div class="product__title-container">
+    <h1 class="product__title-container__title" tabindex="0" aria-label="{{ product.title }}">
+      {{ product.title }}
+    </h1>
+    <span class="product__title-container__tagline" tabindex="0">
+      {{ metadata.summary }}
+    </span>
+  </div>
+
+  <div class="product__display-grid">
+    <div class="product__display-grid__col1">
+
+      <div id="expapp-book-now-button"></div>
+
+      {%- capture snippet_content -%}
+        {%- include 'social-sharing' -%}
+      {%- endcapture -%}
+
+      {%- unless snippet_content contains "Liquid error" -%}
+        {{ snippet_content }}
+      {%- endunless -%}
+
+    </div>
+
+    <div class="product__display-grid__col2">
+
+      {% if featured_image != blank %}
+        <div id="exp__carousel" class="product__carousel-container"></div>
+      {% endif %}
+
+      {% comment %}
+        NOTE: metadata.description is deprecated; please use product.description instead.
+      {% endcomment %}
+      {% if metadata.description != blank or product.description != blank %}
+        <div class="product__display-grid__detailsbox" tabindex="0">
+          <h3 class="product__display-grid__header bottom-spacer-small exp__header-label">
+            About this experience
+          </h3>
+          <p class="product__display-grid__text">
+            {% if metadata.description != blank %}
+              {{ metadata.description }}
+            {% elsif product.description != blank %}
+              {{ product.description }}
+            {% endif %}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if metadata.hostImage != blank or metadata.hostDescription != blank %}
+        <div id="hostDetails" tabindex="0">
+          <h3 class="exp__header-label">Your Host</h3>
+          <div class="exp__host-details-container">
+            {% if metadata.hostImage != blank %}
+              <div class="exp__host-image-container exp__host-details__container">
+                <img
+                  alt="Host image"
+                  class="product__display-grid__host-image isShowing exp__host-image"
+                  src="{{ metadata.hostImage }}"
+                />
+              </div>
+            {% endif %}
+            {% if metadata.hostDescription != blank %}
+              {% if metadata.hostImage == empty %}
+                <div class="exp__host-desc-container exp__host-details__container exp__as-without-padding">
+              {% elsif metadata.hostImage != blank %}
+                <div class="exp__host-desc-container exp__host-details__container">
+              {% endif %}
+                <p>{{ metadata.hostDescription  | newline_to_br }}</p>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+<script src="https://prod-v2.experiencesapp.services/storefront/embedded.js"></script>
+<script>
+  function redirectToExperiences() {
+    const queryString = window.location.search;
+    const urlSearchParamFull = new URLSearchParams(queryString);
+    const selectValue = urlSearchParamFull.get('select');
+    const languageCode = '{{metadata.languageCode | default: "en-US"}}';
+    const productId = '{{product.id}}';
+    const shopDomain = '{{shop.permanent_domain}}';
+    let url = '/a/experiences/' + languageCode + '/' + productId + '?shop=' + shopDomain;
+    if (selectValue) {
+      url += '&select=' + selectValue;
+    }
+    location.href = url;
+  }
+</script>
+
+<script defer>
+  let imageUrls = [];
+  {% for image in product.images %}
+    imageUrls.push({
+      featured: "{{image}}" === "{{product.featured_image}}",
+      url: "https:{{image | img_url: "master" }}"
+    });
+  {% endfor %}
+
+  ExperiencesApp.enableCarousel({
+    rootSelector: "#exp__carousel",
+    imageUrls,
+  });
+</script>
+
+<script src="https://widgets.production.experiencesapp.services/widgets/book-now-button.iife.js"></script>
+<script defer>
+  document.addEventListener("DOMContentLoaded", function() {
+    var target = document.getElementById("expapp-book-now-button");
+    if (!target || target.dataset.expappMounted) {
+        console.warn("Skipping ExperiencesShopify.mountBookNowButton because the target element is missing or already mounted.");
+        return;
+    }
+
+    target.dataset.expappMounted = true;
+
+    ExperiencesShopify.mountBookNowButton({
+      target: target,
+      id: "expapp-book-now-button",
+      productId: {{ product.id }},
+      previewFetchCount: 0,
+    });
+  });
+</script>

@@ -1,0 +1,273 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_rmnfNW": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_6AFcKt": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Birthstone Collection</p>",
+            "title_size": 56,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/Birthstone_Collection_31cd47f9-564c-489c-8e22-18240cf09250.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_6AFcKt"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -10,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "rich_text_jy3Vkh": {
+      "type": "rich-text",
+      "blocks": {
+        "text_YniVxR": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Legend has it that birthstones have the power to protect their wearer and bring protection and good fortune. Our modern, birth\"stones\" are made from repurposed graffiti providing a sustainable and fashionable way to celebrate being you.</p><p><strong>\"Precious jewel, you glow, you shine, reflecting all the good things in the world.\"</strong></p><p>- Maya Angelou</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_YniVxR"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "text_columns_nQQG4q": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_qVhTHx": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/9.28_Top_Right-min_72366582-4bbf-4c6f-b1e3-51aba2b69046.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "All",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/birthstone-collection"
+          }
+        },
+        "text_block_LzxHzY": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/January_b3357f6e-0dd9-42fa-b78f-c5ebf47104c4.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "January",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/january"
+          }
+        },
+        "text_block_k9YDBj": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Brittany_Earrings___Silver___February-min.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "February",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/february"
+          }
+        },
+        "text_block_BrijtC": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/March.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "March",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/march"
+          }
+        },
+        "text_block_yEQXzk": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Brittany_Earrings___Silver___April-min.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "April",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/april"
+          }
+        },
+        "text_block_F6YrMx": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/May.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "May",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/may"
+          }
+        },
+        "text_block_BHLqDB": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Brittany_Earrings___Gold___June-min.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "June",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/june"
+          }
+        },
+        "text_block_nWDP4F": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/July_5a118cb0-2617-4aca-8887-4bd180e71973.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "July",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/july"
+          }
+        },
+        "text_block_MczneM": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Brittany_Earrings___Gold___August-min.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "August",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/august"
+          }
+        },
+        "text_block_ggiKT3": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/September.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "September",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/september"
+          }
+        },
+        "text_block_dixbDC": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Brittany_Earrings___Gold___October-min.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "October",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/october"
+          }
+        },
+        "text_block_J3Xd9W": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/November.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "November",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/november"
+          }
+        },
+        "text_block_wnVKXb": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Brittany_Earrings___Gold___December-min.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "December",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "/collections/birthstone-collection/december"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_qVhTHx",
+        "text_block_LzxHzY",
+        "text_block_k9YDBj",
+        "text_block_BrijtC",
+        "text_block_yEQXzk",
+        "text_block_F6YrMx",
+        "text_block_BHLqDB",
+        "text_block_nWDP4F",
+        "text_block_MczneM",
+        "text_block_ggiKT3",
+        "text_block_dixbDC",
+        "text_block_J3Xd9W",
+        "text_block_wnVKXb"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_rmnfNW",
+    "rich_text_jy3Vkh",
+    "text_columns_nQQG4q"
+  ]
+}

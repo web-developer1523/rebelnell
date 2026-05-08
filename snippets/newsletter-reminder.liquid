@@ -1,0 +1,43 @@
+{% comment %}
+  /**
+   * @param {object} block - the block object
+   * @param {object} section - the section object
+   * @param {number} popup_days - days to delay popup
+   * @param {number} popup_seconds - seconds to delay popup
+   * @param {string} color_scheme - color scheme for the popup
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- assign hydration = hydration | default: 'on:idle' -%}
+
+{% if block.settings.reminder_label != blank %}
+  <is-land {{ hydration }}>
+    <newsletter-reminder
+      data-section-id="{{ section.id }}"
+      data-enabled="false"
+      data-delay-days="{{ popup_days }}"
+      data-delay-seconds="{{ popup_seconds }}"
+      {{ block.shopify_attributes }}
+    >
+      <div class="newsletter-reminder__content color-scheme-{{ color_scheme }}">
+        {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+
+        <div class="newsletter-reminder__message h3" data-message>
+          {{ block.settings.reminder_label }}
+        </div>
+      </div>
+
+      <button type="button" data-close-button class="btn btn--circle btn--icon modal__close js-modal-close">
+        {% render 'icon-close' %}
+        <span class="icon__fallback-text">{{ 'general.accessibility.close_modal' | t | json }}</span>
+      </button>
+    </newsletter-reminder>
+
+    <template data-island>
+      <script type="module">
+        import 'components/newsletter-reminder';
+      </script>
+    </template>
+  </is-land>
+{% endif %}

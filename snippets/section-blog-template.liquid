@@ -1,0 +1,59 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {object} blog - blog object
+   * @param {boolean} blog_show_tag_filter - show tag filter
+   * @param {boolean} blog_show_rss - show rss link
+   * @param {object} shop - shop object
+   * @param {boolean} blog_show_tags - show tags
+   * @param {boolean} blog_show_date - show date
+   * @param {boolean} blog_show_comments - show comments
+   * @param {boolean} blog_show_author - show author
+   * @param {string} blog_image_size - image size
+   */
+{% endcomment %}
+
+{%- paginate blog.articles by 9 -%}
+
+<div data-section-id="{{ section.id }}" data-section-type="blog">
+  <header class="section-header{% if blog_show_tag_filter and blog.tags.size > 0 %} section-header--with-link{% endif %}">
+    <h1 class="section-header__title">
+      {{ blog.title }}
+
+      {%- if blog_show_rss -%}
+        <a href="{{ shop.url }}{{ blog.url }}.atom" class="rss-link">
+          {% render 'icon-rss' %}
+          <span class="icon__fallback-text">RSS</span>
+        </a>
+      {%- endif -%}
+    </h1>
+  </header>
+
+  <div class="new-grid">
+    {%- for article in blog.articles -%}
+      {%- liquid
+        assign style = 'medium'
+        if forloop.first
+          assign style = 'large'
+        endif
+      -%}
+      {%- render 'article-grid-item',
+        blog: blog,
+        article: article,
+        style: style,
+        show_tags: blog_show_tags,
+        show_date: blog_show_date,
+        show_comments: blog_show_comments,
+        show_author: blog_show_author,
+        image_size: blog_image_size -%}
+    {%- endfor -%}
+  </div>
+
+  {%- liquid
+    if paginate.pages > 1
+      render 'pagination', paginate: paginate
+    endif
+  -%}
+</div>
+
+{%- endpaginate -%}

@@ -1,0 +1,114 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {boolean} show_newsletter - show newsletter
+   * @param {string} newsletter_richtext - newsletter richtext
+   * @param {string} context - context (default: 'footer')
+   * @param {boolean} footer_main_menu - footer main menu
+   * @param {boolean} show_copyright - show copyright
+   * @param {string} copyright_text - copyright text
+   * @param {object} shop - shop object
+   * @param {object} policies_menu - policies menu object
+   * @param {string} social_instagram_link - instagram link
+   * @param {string} social_facebook_link - facebook link
+   * @param {string} social_twitter_link - twitter link
+   * @param {string} social_youtube_link - youtube link
+   * @param {string} social_pinterest_link - pinterest link
+   * @param {string} social_linkedin_link - linkedin link
+   * @param {string} social_snapchat_link - snapchat link
+   * @param {string} social_vimeo_link - vimeo link
+   * @param {string} social_tiktok_link - tiktok link
+   * @param {string} social_tumblr_link - tumblr link
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- assign hydration = hydration | default: 'on:idle' -%}
+
+{%- if show_newsletter -%}
+  <div class="footer__section footer__section--border">
+    <div class="page-width">
+      <div class="footer__newsletter">
+        {%- if newsletter_richtext != blank -%}
+          <div class="footer__subscribe rte rte--nomargin">
+            {{ newsletter_richtext }}
+          </div>
+        {%- endif -%}
+
+        {%- render 'newsletter-form', section_id: section.id, snippet_context: context, customer: customer -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% comment %}
+  Main navigation is copied here with JS for mobile users
+{% endcomment %}
+{%- if footer_main_menu -%}
+  <div id="FooterMobileNavWrap" class="footer__section footer__section--border medium-up--hide hide">
+    <div id="FooterMobileNav" class="page-width"></div>
+  </div>
+{%- endif -%}
+
+<is-land {{ hydration }}>
+  <footer-section class="site-footer" data-section-id="{{ section.id }}" data-section-type="footer-section">
+    <div id="FooterMenus" class="footer__section footer__section--menus">
+      <div class="page-width">
+        <div class="footer__blocks">
+          {%- for block in section.blocks -%}
+            <div {{ block.shopify_attributes }} class="footer__block" data-type="{{ block.type }}">
+              {%- liquid
+                case block.type
+                  when 'menu'
+                    render 'footer-menu', block: block, linklists: linklists, routes: routes
+                  when 'payment'
+                    assign show_currency_flags = block.settings.show_currency_flags
+                    render 'footer-payments', block: block, show_currency_flags: show_currency_flags, shop: shop
+                  when 'contact'
+                    render 'footer-contact', block: block, pages: pages, social_instagram_link: social_instagram_link, social_facebook_link: social_facebook_link, social_twitter_link: social_twitter_link, social_youtube_link: social_youtube_link, social_pinterest_link: social_pinterest_link, social_linkedin_link: social_linkedin_link, social_snapchat_link: social_snapchat_link, social_vimeo_link: social_vimeo_link, social_tiktok_link: social_tiktok_link, social_tumblr_link: social_tumblr_link
+                  when 'image'
+                    render 'footer-image', block: block
+                  when 'follow_shop_cta'
+                    render 'follow-shop-cta'
+                  when 'newsletter'
+                    render 'footer-newsletter', block: block, section: section
+                endcase
+              -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__section">
+      <div class="page-width text-center small--text-left">
+        <div class="footer__base-links">
+          {%- if show_copyright -%}
+            <span>
+              &copy; {{ 'now' | date: '%Y' }}
+              {{ shop.name }}
+              {%- if copyright_text != blank -%}
+                {{ copyright_text }}
+              {%- endif -%}
+            </span>
+          {%- endif -%}
+          {%- if linklists[policies_menu].links.size > 0 -%}
+            {%- for link in linklists[policies_menu].links -%}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {%- endfor -%}
+          {%- endif -%}
+
+          {{ powered_by_link }}
+        </div>
+      </div>
+    </div>
+    <!-- yotpo container -->
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="787073"></div>
+  </footer-section>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-footer';
+    </script>
+  </template>
+</is-land>

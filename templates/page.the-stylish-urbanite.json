@@ -1,0 +1,131 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "17629217025d5f9a3f": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17629196982748273b": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "slideshow_8m9P83": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_RayKVN": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Style That Speaks Volumes</p>",
+            "title_size": 40,
+            "subheading": "Timeless design. Detroit soul.",
+            "link": "shopify://pages/shop-by-story",
+            "link_text": "Shop Holiday Favorites",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/A_piece_of_Detroit_history_meta_mobile.png",
+            "image_mobile": "shopify://shop_images/A_piece_of_Detroit_history_meta_mobile.png",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_RayKVN"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slides.name",
+      "settings": {
+        "full_width": false,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "blocks_cUeXea": {
+      "type": "_blocks",
+      "name": "Product showcase",
+      "settings": {}
+    },
+    "blocks_9cRgCj": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_be535ad_kx7fJr": {
+          "type": "ai_gen_block_be535ad",
+          "settings": {
+            "heading": "Best Sellers",
+            "description": "",
+            "heading_font": "arial_n4",
+            "heading_size": 32,
+            "description_size": 16,
+            "products_per_row": 4,
+            "grid_gap": 20,
+            "show_vendor": true,
+            "product_title_size": 16,
+            "price_size": 16,
+            "card_border_radius": 0,
+            "button_text": "Add to cart",
+            "button_border_radius": 0,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "card_background": "#ffffff",
+            "card_border_color": "#eef0f6",
+            "sale_color": "#c81688",
+            "button_color": "#c81688",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#a01370",
+            "product_1": "rosie-necklace-silver-1",
+            "product_2": "rhanna-gold-protection-detroit-fl15w",
+            "product_3": "diana-gold-strong-detroit-mu50g",
+            "product_4": "dani-ring-silver-1",
+            "product_5": "arnisha-ear-jackets-gold-1",
+            "product_6": "spider-necklace-gold",
+            "product_7": "taylor-bracelet-gold-2",
+            "product_8": "detroit-necklace-silver",
+            "product_9": "",
+            "product_10": "",
+            "product_11": "",
+            "product_12": "",
+            "product_13": "",
+            "product_14": "",
+            "product_15": "",
+            "product_16": "",
+            "product_17": "",
+            "product_18": "",
+            "product_19": "",
+            "product_20": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_be535ad_kx7fJr"
+      ],
+      "name": "Product showcase",
+      "settings": {}
+    }
+  },
+  "order": [
+    "17629217025d5f9a3f",
+    "17629196982748273b",
+    "slideshow_8m9P83",
+    "main",
+    "blocks_cUeXea",
+    "blocks_9cRgCj"
+  ]
+}

@@ -1,0 +1,845 @@
+{% doc %}
+  @prompt
+    Page structure:
+    1. HERO SECTION
+    Headline:
+    Custom Gifts, Made to Mean Something
+    
+    Subheadline:
+    From corporate milestones to community activations, Rebel Nell transforms meaningful materials into one-of-a-kind gifts, keepsakes, and experiences that carry your story forward.
+    
+    CTA button:
+    Start a Custom Project
+    
+    Secondary CTA:
+    View Past Projects
+    
+    Design direction:
+    Use a bold full-width hero image or image collage showing finished custom jewelry, hands-on experiences, and reclaimed materials. Keep the design clean, editorial, and premium. Use Rebel Nell brand colors, especially pink, black, white, and light gray. Buttons should have square corners.
+    
+    2. INTRO SECTION
+    Add a short paragraph:
+    Whether you’re celebrating employees, honoring donors, creating VIP gifts, or bringing an unforgettable activation to life, Rebel Nell helps organizations turn meaningful materials into lasting impact. Every project blends storytelling, sustainability, and handcrafted design — because the best gifts do more than check a box.
+    
+    3. PORTFOLIO GRID
+    Create a responsive grid of project cards. Each card should include:
+    - Image
+    - Project title
+    - Material / Story
+    - Recipient / Use Case
+    - Product Solution
+    - Optional date or launch year
+    - Optional “View Project” or “Inquire About Similar Project” button
+    
+    Use a clean 3-column desktop grid, 2-column tablet grid, and 1-column mobile grid.
+    
+    Card style:
+    - White or light gray background
+    - Square corners
+    - Strong photography
+    - Clear hierarchy
+    - Short, skimmable copy
+    - No rounded bubbly shapes
+    - Avoid overly delicate or overly feminine styling
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-portfolio-grid-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.padding_top }}px 20px {{ block.settings.padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-portfolio-grid-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-portfolio-grid-items-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+  }
+
+  .ai-portfolio-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-portfolio-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-portfolio-card-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-portfolio-card-image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-portfolio-card-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+  }
+
+  .ai-portfolio-card-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+  }
+
+  .ai-portfolio-card-content-{{ ai_gen_id }} {
+    padding: {{ block.settings.card_padding }}px;
+  }
+
+  .ai-portfolio-card-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-portfolio-card-detail-{{ ai_gen_id }} {
+    font-size: {{ block.settings.detail_size }}px;
+    line-height: 1.5;
+    margin: 0 0 8px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-portfolio-card-label-{{ ai_gen_id }} {
+    font-weight: 600;
+    color: {{ block.settings.label_color }};
+  }
+
+  .ai-portfolio-card-date-{{ ai_gen_id }} {
+    font-size: {{ block.settings.detail_size | minus: 2 }}px;
+    color: {{ block.settings.date_color }};
+    margin: 12px 0 0;
+  }
+
+  .ai-portfolio-card-button-{{ ai_gen_id }} {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: {{ block.settings.button_bg }};
+    color: {{ block.settings.button_text }};
+    text-decoration: none;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid {{ block.settings.button_border }};
+  }
+
+  .ai-portfolio-card-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg }};
+    color: {{ block.settings.button_hover_text }};
+    border-color: {{ block.settings.button_hover_border }};
+  }
+
+  @media screen and (max-width: 990px) {
+    .ai-portfolio-grid-items-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-portfolio-grid-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_top | times: 0.7 }}px 20px {{ block.settings.padding_bottom | times: 0.7 }}px;
+    }
+
+    .ai-portfolio-grid-items-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.grid_gap | times: 0.7 }}px;
+    }
+
+    .ai-portfolio-card-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<portfolio-grid-{{ ai_gen_id }} class="ai-portfolio-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-portfolio-grid-container-{{ ai_gen_id }}">
+    <div class="ai-portfolio-grid-items-{{ ai_gen_id }}">
+      {% for i in (1..9) %}
+        {% liquid
+          assign image_key = 'project_' | append: i | append: '_image'
+          assign title_key = 'project_' | append: i | append: '_title'
+          assign material_key = 'project_' | append: i | append: '_material'
+          assign recipient_key = 'project_' | append: i | append: '_recipient'
+          assign solution_key = 'project_' | append: i | append: '_solution'
+          assign date_key = 'project_' | append: i | append: '_date'
+          assign link_key = 'project_' | append: i | append: '_link'
+          assign button_key = 'project_' | append: i | append: '_button_text'
+
+          assign project_image = block.settings[image_key]
+          assign project_title = block.settings[title_key]
+          assign project_material = block.settings[material_key]
+          assign project_recipient = block.settings[recipient_key]
+          assign project_solution = block.settings[solution_key]
+          assign project_date = block.settings[date_key]
+          assign project_link = block.settings[link_key]
+          assign project_button = block.settings[button_key]
+        %}
+
+        {% if project_title != blank or project_image %}
+          <div class="ai-portfolio-card-{{ ai_gen_id }}">
+            <div class="ai-portfolio-card-image-wrapper-{{ ai_gen_id }}">
+              {% if project_image %}
+                <img
+                  src="{{ project_image | image_url: width: 800 }}"
+                  alt="{{ project_image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ project_image.width }}"
+                  height="{{ project_image.height }}"
+                  class="ai-portfolio-card-image-{{ ai_gen_id }}"
+                >
+              {% else %}
+                <div class="ai-portfolio-card-placeholder-{{ ai_gen_id }}">
+                  {{ 'product-apparel-1' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="ai-portfolio-card-content-{{ ai_gen_id }}">
+              {% if project_title != blank %}
+                <h3 class="ai-portfolio-card-title-{{ ai_gen_id }}">{{ project_title }}</h3>
+              {% endif %}
+
+              {% if project_material != blank %}
+                <div class="ai-portfolio-card-detail-{{ ai_gen_id }}">
+                  <span class="ai-portfolio-card-label-{{ ai_gen_id }}">Material:</span> {{ project_material }}
+                </div>
+              {% endif %}
+
+              {% if project_recipient != blank %}
+                <div class="ai-portfolio-card-detail-{{ ai_gen_id }}">
+                  <span class="ai-portfolio-card-label-{{ ai_gen_id }}">Recipient:</span> {{ project_recipient }}
+                </div>
+              {% endif %}
+
+              {% if project_solution != blank %}
+                <div class="ai-portfolio-card-detail-{{ ai_gen_id }}">
+                  <span class="ai-portfolio-card-label-{{ ai_gen_id }}">Solution:</span> {{ project_solution }}
+                </div>
+              {% endif %}
+
+              {% if project_date != blank %}
+                <div class="ai-portfolio-card-date-{{ ai_gen_id }}">{{ project_date }}</div>
+              {% endif %}
+
+              {% if project_link != blank and project_button != blank %}
+                <a href="{{ project_link }}" class="ai-portfolio-card-button-{{ ai_gen_id }}">
+                  {{ project_button }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</portfolio-grid-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class PortfolioGrid{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('portfolio-grid-{{ ai_gen_id }}', PortfolioGrid{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Portfolio grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "date_color",
+      "label": "Date color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Card padding",
+      "min": 15,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "detail_size",
+      "label": "Detail text size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Background color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_border",
+      "label": "Border color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Hover background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border",
+      "label": "Hover border color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Project 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "project_1_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "project_1_material",
+      "label": "Material / Story"
+    },
+    {
+      "type": "text",
+      "id": "project_1_recipient",
+      "label": "Recipient / Use case"
+    },
+    {
+      "type": "text",
+      "id": "project_1_solution",
+      "label": "Product solution"
+    },
+    {
+      "type": "text",
+      "id": "project_1_date",
+      "label": "Date or year"
+    },
+    {
+      "type": "url",
+      "id": "project_1_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "project_1_button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "header",
+      "content": "Project 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "project_2_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "project_2_material",
+      "label": "Material / Story"
+    },
+    {
+      "type": "text",
+      "id": "project_2_recipient",
+      "label": "Recipient / Use case"
+    },
+    {
+      "type": "text",
+      "id": "project_2_solution",
+      "label": "Product solution"
+    },
+    {
+      "type": "text",
+      "id": "project_2_date",
+      "label": "Date or year"
+    },
+    {
+      "type": "url",
+      "id": "project_2_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "project_2_button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "header",
+      "content": "Project 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "project_3_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "project_3_material",
+      "label": "Material / Story"
+    },
+    {
+      "type": "text",
+      "id": "project_3_recipient",
+      "label": "Recipient / Use case"
+    },
+    {
+      "type": "text",
+      "id": "project_3_solution",
+      "label": "Product solution"
+    },
+    {
+      "type": "text",
+      "id": "project_3_date",
+      "label": "Date or year"
+    },
+    {
+      "type": "url",
+      "id": "project_3_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "project_3_button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "header",
+      "content": "Project 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_4_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "project_4_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "project_4_material",
+      "label": "Material / Story"
+    },
+    {
+      "type": "text",
+      "id": "project_4_recipient",
+      "label": "Recipient / Use case"
+    },
+    {
+      "type": "text",
+      "id": "project_4_solution",
+      "label": "Product solution"
+    },
+    {
+      "type": "text",
+      "id": "project_4_date",
+      "label": "Date or year"
+    },
+    {
+      "type": "url",
+      "id": "project_4_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "project_4_button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "header",
+      "content": "Project 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_5_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "project_5_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "project_5_material",
+      "label": "Material / Story"
+    },
+    {
+      "type": "text",
+      "id": "project_5_recipient",
+      "label": "Recipient / Use case"
+    },
+    {
+      "type": "text",
+      "id": "project_5_solution",
+      "label": "Product solution"
+    },
+    {
+      "type": "text",
+      "id": "project_5_date",
+      "label": "Date or year"
+    },
+    {
+      "type": "url",
+      "id": "project_5_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "project_5_button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "header",
+      "content": "Project 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_6_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "project_6_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "project_6_material",
+      "label": "Material / Story"
+    },
+    {
+      "type": "text",
+      "id": "project_6_recipient",
+      "label": "Recipient / Use case"
+    },
+    {
+      "type": "text",
+      "id": "project_6_solution",
+      "label": "Product solution"
+    },
+    {
+      "type": "text",
+      "id": "project_6_date",
+      "label": "Date or year"
+    },
+    {
+      "type": "url",
+      "id": "project_6_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "project_6_button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "header",
+      "content": "Project 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_7_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "project_7_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "project_7_material",
+      "label": "Material / Story"
+    },
+    {
+      "type": "text",
+      "id": "project_7_recipient",
+      "label": "Recipient / Use case"
+    },
+    {
+      "type": "text",
+      "id": "project_7_solution",
+      "label": "Product solution"
+    },
+    {
+      "type": "text",
+      "id": "project_7_date",
+      "label": "Date or year"
+    },
+    {
+      "type": "url",
+      "id": "project_7_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "project_7_button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "header",
+      "content": "Project 8"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_8_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "project_8_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "project_8_material",
+      "label": "Material / Story"
+    },
+    {
+      "type": "text",
+      "id": "project_8_recipient",
+      "label": "Recipient / Use case"
+    },
+    {
+      "type": "text",
+      "id": "project_8_solution",
+      "label": "Product solution"
+    },
+    {
+      "type": "text",
+      "id": "project_8_date",
+      "label": "Date or year"
+    },
+    {
+      "type": "url",
+      "id": "project_8_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "project_8_button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "header",
+      "content": "Project 9"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_9_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "project_9_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "project_9_material",
+      "label": "Material / Story"
+    },
+    {
+      "type": "text",
+      "id": "project_9_recipient",
+      "label": "Recipient / Use case"
+    },
+    {
+      "type": "text",
+      "id": "project_9_solution",
+      "label": "Product solution"
+    },
+    {
+      "type": "text",
+      "id": "project_9_date",
+      "label": "Date or year"
+    },
+    {
+      "type": "url",
+      "id": "project_9_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "project_9_button_text",
+      "label": "Button text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Portfolio grid"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,117 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_ApBpwh": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_JzU9PX": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Story",
+            "heading_size": "h1"
+          }
+        },
+        "text_rrmr6N": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>In 2013, Amy Peterson was working for the Detroit Tigers and living next door to a women's shelter, fueled by a deep appreciation for Detroit's resilience, a passion for empowering women and love of the city's vibrant street art, co-founded Rebel Nell with Diana Roginson. Drawn to the idea of repurposing fallen graffiti into unique jewelry, Peterson saw an opportunity to not only create beautiful pieces but also to address social issues. Rebel Nell, under Peterson's leadership, has become a beacon of creativity and empowerment. By providing employment and skill development to women facing barriers, she has woven together art and social impact, turning discarded materials into symbols of resilience and strength. Amy Peterson's vision has not only transformed graffiti into wearable art but has also touched the lives of the women at the heart of Rebel Nell's mission, making a lasting impact on the Detroit community. </p><p>Now, 10+ years a 40+ hired out of shelter living and 36 graduates later, what started as a business helping women in Detroit is a nationally-recognized symbol of what we are all capable of and the power within all people to create change for the future. </p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JzU9PX",
+        "text_rrmr6N"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "advanced_content_zdbeag": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_r6CUcV": {
+          "type": "liquid",
+          "settings": {
+            "code": "<div class=\"container-fluid mb-5 pb-0\" style=\"background:#eef0f6;padding-top:1rem;\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-12 col-md-4\">\n                    <img src=\"https://cdn.shopify.com/s/files/1/0558/7937/files/Amy_Quote.svg?v=1679503158\" class=\"img-fluid\" alt=\"We Have Purpose\">\n                </div>\n                <div class=\"col-12 col-md-8 text-center d-flex align-items-center\">\n                    <div class=\"align-self-center\" style=\"width:100%;\">\n                        <h3>“The beauty in our jewelry is as important as the mission behind our craft.”  </h3>\n                        <p>-Amy Peterson, Co-Founder + CEO</p>\n                    </div>\n                </div>\n            </div>\n\n        </div>\n    </div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_r6CUcV"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": false,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_6MiGqp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AAxpLN": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Name",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AAxpLN"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "advanced_content_864HFx": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_ErpakA": {
+          "type": "liquid",
+          "settings": {
+            "code": "<div class=\"container\">\n        <div class=\"row mb-5\">\n            <div class=\"col-12 col-md-8\">\n                <img id=\"er_mb\" class=\"d-block d-md-none\" src=\"https://cdn.shopify.com/s/files/1/0558/7937/files/roosevelt_updated_web.png?v=1679575553\" alt=\"We Have Purpose\">\n                <p>Former First Lady Eleanor Roosevelt serves as Rebel Nell’s day-in and day-out inspiration for her tireless devotion to women’s rights and civil rights activism.</p>\n\n                    <p>Known as ‘Little Nell’, in her younger years, we put a more badass spin on her nickname and hence Rebel Nell was born.</p>\n                    \n                   <p> The women employed by Rebel Nell are rebelling against what society has handed them and forging a new future for themselves and their families.\n                    </p>\n            </div>\n            <div class=\"col-12 col-md-4\">\n            </div>\n        </div>\n    </div>\n    <div class=\"container-fluid py-4 mb-5\" style=\"background:#eef0f6;padding-top:1rem;\">\n        <div class=\"container er_section\">\n            <div class=\"row\">\n                <div class=\"col-12 col-md-8 text-center d-flex align-items-center\">\n                    <div class=\"align-self-center\" style=\"width:100%;\">\n                        <h2>\"FOR OUR SUCCESS TO BE REAL, IT MUST <br class=\"d-xs-none d-sm-none d-md-inline\"> CONTRIBUTE TO THE SUCCESS OF OTHERS.\"</h2>\n                        <p>-Eleanor Roosevelt</p>\n                    </div>\n                </div>\n                <div class=\"col-12 col-md-4 position-relative\">\n                    <img id=\"er_img\" class=\"d-none d-md-block\" src=\"https://cdn.shopify.com/s/files/1/0558/7937/files/roosevelt_updated_web.png?v=1679575553\" alt=\"We Have Purpose\">\n                </div>\n            </div>\n        </div>\n    </div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_ErpakA"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_ApBpwh",
+    "advanced_content_zdbeag",
+    "rich_text_6MiGqp",
+    "advanced_content_864HFx"
+  ]
+}

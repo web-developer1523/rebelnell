@@ -1,0 +1,346 @@
+{% doc %}
+  @prompt
+    Four horizontal upload able icons with text columns, the text columns should be below the uploaded image , the text section should be fully editable (it should have the ability to link, bold, and add bullet points. The image size should be bigger, Icon size should be up to 600 px
+    
+    
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-icon-columns-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-icon-columns-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: {{ block.settings.column_gap }}px;
+    width: 100%;
+  }
+
+  .ai-icon-column-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ai-icon-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: {{ block.settings.icon_size }}px;
+    margin-bottom: {{ block.settings.image_text_spacing }}px;
+  }
+
+  .ai-icon-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-icon-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-icon-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-icon-text-{{ ai_gen_id }} {
+    width: 100%;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.5;
+  }
+
+  .ai-icon-text-{{ ai_gen_id }} p {
+    margin: 0 0 12px 0;
+  }
+
+  .ai-icon-text-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-icon-text-{{ ai_gen_id }} a {
+    color: {{ block.settings.link_color }};
+    text-decoration: underline;
+  }
+
+  .ai-icon-text-{{ ai_gen_id }} a:hover {
+    opacity: 0.8;
+  }
+
+  .ai-icon-text-{{ ai_gen_id }} strong {
+    font-weight: 600;
+  }
+
+  .ai-icon-text-{{ ai_gen_id }} ul,
+  .ai-icon-text-{{ ai_gen_id }} ol {
+    text-align: left;
+    margin: 0 0 12px 0;
+    padding-left: 20px;
+  }
+
+  .ai-icon-text-{{ ai_gen_id }} li {
+    margin-bottom: 6px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-icon-columns-container-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: {{ block.settings.column_gap | times: 0.75 }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-icon-columns-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-icon-columns-container-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
+      gap: {{ block.settings.column_gap | times: 0.5 }}px;
+    }
+
+    .ai-icon-image-wrapper-{{ ai_gen_id }} {
+      max-width: {{ block.settings.icon_size | times: 0.8 }}px;
+    }
+
+    .ai-icon-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-icon-columns-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-icon-columns-container-{{ ai_gen_id }}">
+    {% for i in (1..4) %}
+      {% liquid
+        assign image_key = 'icon_' | append: i
+        assign text_key = 'text_' | append: i
+        assign image = block.settings[image_key]
+        assign text = block.settings[text_key]
+      %}
+      
+      <div class="ai-icon-column-{{ ai_gen_id }}">
+        <div class="ai-icon-image-wrapper-{{ ai_gen_id }}">
+          {% if image %}
+            <img
+              src="{{ image | image_url: width: 1200 }}"
+              alt="{{ image.alt | escape }}"
+              loading="lazy"
+              width="{{ image.width }}"
+              height="{{ image.height }}"
+              class="ai-icon-image-{{ ai_gen_id }}"
+              style="border-radius: {{ block.settings.image_border_radius }}px;"
+            >
+          {% else %}
+            <div class="ai-icon-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+        
+        {% if text != blank %}
+          <div class="ai-icon-text-{{ ai_gen_id }}">
+            {{ text }}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Icon columns",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column spacing",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Maximum image size",
+      "min": 100,
+      "max": 600,
+      "step": 50,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_text_spacing",
+      "label": "Space between image and text",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#c81688"
+    },
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_1",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "text_1",
+      "label": "Text",
+      "default": "<p>Add your text here. You can <strong>bold</strong>, add links, and create lists.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_2",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "text_2",
+      "label": "Text",
+      "default": "<p>Add your text here. You can <strong>bold</strong>, add links, and create lists.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Column 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_3",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "text_3",
+      "label": "Text",
+      "default": "<p>Add your text here. You can <strong>bold</strong>, add links, and create lists.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Column 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_4",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "text_4",
+      "label": "Text",
+      "default": "<p>Add your text here. You can <strong>bold</strong>, add links, and create lists.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon columns"
+    }
+  ]
+}
+{% endschema %}

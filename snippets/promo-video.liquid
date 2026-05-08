@@ -1,0 +1,59 @@
+{% comment %}
+  /**
+   * @param {string} block - block id
+   * @param {string} url - video url
+   */
+{% endcomment %}
+
+<video-section
+  data-subsection
+  data-section-id="{{ id }}"
+  data-section-type="video-section"
+  class="promo-video video-parent-section">
+    <div class="background-media-text__video">
+      {%- assign section_id = id -%}
+      {%- assign url = url -%}
+
+      {%- if url contains 'youtube.com/watch' -%}
+        {%- assign video_id = url | split: 'v=' -%}
+        {%- assign video_id = video_id[1] | split: '&' | first -%}
+        <div
+          id="YouTubeVideo-{{ section_id }}"
+          class="video-div"
+          data-type="youtube"
+          data-video-id="{{ video_id }}"></div>
+      {%- endif -%}
+
+      {%- if url contains 'youtu.be/' -%}
+        {%- assign video_id = url | split: '.be/' -%}
+        {%- assign video_id = video_id[1] | split: '&' | first -%}
+        <div
+          id="YouTubeVideo-{{ section_id }}"
+          class="video-div"
+          data-type="youtube"
+          data-video-id="{{ video_id }}"></div>
+      {%- endif -%}
+
+      {%- if url contains 'vimeo.com' -%}
+        {%- assign video_id = url | split: '.com/' -%}
+        {%- assign video_id = video_id[1] | split: '/' | first -%}
+        <button type="button" id="VimeoTrigger-{{ section_id }}" class="vimeo-mobile-trigger medium-up--hide">
+          {% render 'icon-play' %}
+        </button>
+        <div
+          id="Vimeo-{{ section_id }}"
+          class="video-div"
+          data-type="vimeo"
+          data-video-id="{{ video_id }}"></div>
+      {%- endif -%}
+
+      {%- if url contains '.mp4' or url contains '.MP4' -%}
+        <video
+          id="Mp4Video-{{ section_id }}"
+          class="video-div"
+          data-type="mp4"
+          src="{{ url }}"
+          loop muted playsinline autoplay></video>
+      {%- endif -%}
+    </div>
+</video-section>

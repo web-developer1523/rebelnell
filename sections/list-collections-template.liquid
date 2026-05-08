@@ -1,0 +1,94 @@
+{%- render 'section-list-collections-template',
+    section: section,
+    collections: collections,
+    title_enable: section.settings.title_enable,
+    display_type: section.settings.display_type,
+    section_blocks_size: section.blocks.size,
+    sort: section.settings.sort,
+    collection_grid_image: settings.collection_grid_image,
+    collection_grid_shape: settings.collection_grid_shape,
+    collection_grid_image_fill: settings.collection_grid_image_fill
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.list-collections-template.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "title_enable",
+      "label": "t:sections.list-collections-template.settings.title_enable.label",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.list-collections-template.settings.content"
+    },
+    {
+      "type": "radio",
+      "id": "display_type",
+      "label": "t:sections.list-collections-template.settings.display_type.label",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "t:sections.list-collections-template.settings.display_type.options.all.label"
+        },
+        {
+          "value": "selected",
+          "label": "t:sections.list-collections-template.settings.display_type.options.selected.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "sort",
+      "label": "t:sections.list-collections-template.settings.sort.label",
+      "info": "t:sections.list-collections-template.settings.sort.info",
+      "default": "alphabetical",
+      "options": [
+        {
+          "value": "products_high",
+          "label": "t:sections.list-collections-template.settings.sort.options.products_high.label"
+        },
+        {
+          "value": "products_low",
+          "label": "t:sections.list-collections-template.settings.sort.options.products_low.label"
+        },
+        {
+          "value": "alphabetical",
+          "label": "t:sections.list-collections-template.settings.sort.options.alphabetical.label"
+        },
+        {
+          "value": "alphabetical_reversed",
+          "label": "t:sections.list-collections-template.settings.sort.options.alphabetical_reversed.label"
+        },
+        {
+          "value": "date",
+          "label": "t:sections.list-collections-template.settings.sort.options.date.label"
+        },
+        {
+          "value": "date_reversed",
+          "label": "t:sections.list-collections-template.settings.sort.options.date_reversed.label"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:sections.list-collections-template.blocks.collection.name",
+      "settings": [
+        {
+          "label": "t:sections.list-collections-template.blocks.collection.settings.collection.label",
+          "id": "collection",
+          "type": "collection"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

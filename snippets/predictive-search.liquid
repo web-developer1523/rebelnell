@@ -1,0 +1,129 @@
+{% comment %}
+  /**
+   * @param {string} color_header_search - header search color
+   * @param {string} context - search context
+   * @param {object} predictive_search_enabled - whether predictive search is enabled
+   * @param {object} routes - routes object
+   * @param {object} search - search object
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- liquid
+  assign dark_search_bg = false
+  assign lightness = color_header_search | color_brightness
+
+  if lightness <= 100
+    assign dark_search_bg = true
+  endif
+  assign hydration = hydration | default: 'on:idle'
+-%}
+<is-land {{ hydration }}>
+  <predictive-search
+    data-context="{{ context }}"
+    data-enabled="{{ predictive_search_enabled }}"
+    data-dark="{{ dark_search_bg }}"
+  >
+    <div class="predictive__screen" data-screen></div>
+    <form action="{{ routes.search_url }}" method="get" role="search">
+      <label for="Search" class="hidden-label">Search</label>
+      <div class="search__input-wrap">
+        <input
+          class="search__input"
+          id="Search"
+          type="search"
+          name="q"
+          value="{{ search.terms | escape }}"
+          role="combobox"
+          aria-expanded="false"
+          aria-owns="predictive-search-results"
+          aria-controls="predictive-search-results"
+          aria-haspopup="listbox"
+          aria-autocomplete="list"
+          autocorrect="off"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="{{ 'general.search.placeholder' | t }}"
+          tabindex="0"
+        >
+        <input name="options[prefix]" type="hidden" value="last">
+        <button class="btn--search" type="submit">
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64">
+            <defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/>
+          </svg>
+          <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+        </button>
+      </div>
+
+      <button class="btn--close-search">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64">
+          <defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"/>
+        </svg>
+      </button>
+      {% comment %} custom auto search code {% endcomment %}
+      <div id="default-suggestions" style="display:none;" class="search__results">
+        {%- assign selected_collection_handles = '' -%}
+
+        {%- for collection in settings.collection_list -%}
+          {%- assign selected_collection_handles = selected_collection_handles | append: collection.handle -%}
+          {%- unless forloop.last -%}
+            {%- assign selected_collection_handles = selected_collection_handles | append: ',' -%}
+          {%- endunless -%}
+        {%- endfor -%}
+
+        <!-- Debug Output (optional, remove in production) -->
+        <!-- {{ selected_collection_handles }} -->
+
+        <h6>Suggested search terms</h6>
+
+        {%- assign collection_handles = selected_collection_handles | split: ',' -%}
+        <ul class="specific-collections">
+          {% for handle in collection_handles %}
+            {% assign collection = collections[handle] %}
+            {% if collection %}
+              <li>
+                <a href="{{ collection.url }}">
+                  {{ collection.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div id="predictive-search" class="search__results" tabindex="-1"></div>
+    </form>
+  </predictive-search>
+
+  <template data-island>
+    <script type="module">
+      import 'components/predictive-search';
+    </script>
+  </template>
+</is-land>
+<script>
+  $(document).ready(function(){
+    $('.search__input').click(function(event){
+      $('#default-suggestions').css('display','block');
+      console.log('hello');
+      event.stopPropagation(); // Prevent the click from bubbling up to the document
+    });
+
+    $('.search__input').on('input', function(){
+      $('#default-suggestions').css('display','none');
+    });
+
+    $(document).click(function(event){
+      // If the clicked element is not the input or the suggestions container
+      if (!$(event.target).closest('.search__input, #default-suggestions').length) {
+        $('#default-suggestions').css('display','none');
+      }
+    });
+
+    // Optional: Prevent clicks inside the suggestions container from bubbling to the document
+    $('#default-suggestions').click(function(event){
+      event.stopPropagation();
+    });
+  });
+</script>

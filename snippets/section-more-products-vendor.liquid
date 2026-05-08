@@ -1,0 +1,86 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {object} product - product object
+   * @param {number} products_per_row - number of products per row
+   * @param {number} max_products - maximum number of products to show
+   * @param {boolean} quick_add_enable - whether quick add is enabled
+   * @param {boolean} quick_shop_enable - whether quick shop is enabled
+   * @param {string} product_grid_image_size - the image size to use for the grid item
+   * @param {boolean} product_grid_image_fill - whether the image should fill the grid item
+   * @param {boolean} product_hover_image - whether second image will be shown on hover
+   * @param {boolean} enable_swatches - whether swatches are enabled
+   * @param {boolean} vendor_enable - whether to show the vendor
+   * @param {boolean} product_save_amount - show save amount
+   * @param {string} product_save_type - dollar or percent
+   * @param {boolean} enable_product_reviews - whether to show product reviews
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- liquid
+  capture gridView
+    render 'products-per-row', products_per_row: products_per_row
+  endcapture
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+{%- if product.vendor -%}
+  {%- capture vendor_link -%}
+    {{ product.vendor | link_to_vendor }}
+  {%- endcapture -%}
+
+  <is-land {{ hydration }}>
+    <vendor-products
+      data-subsection
+      data-section-id="{{ section.id }}"
+      data-section-type="vendor-products"
+      data-product-id="{{ product.id }}"
+      data-vendor="{{ product.vendor }}"
+      data-max-products="{{ max_products }}"
+    >
+      <div class="index-section index-section--sub-product">
+        <div class="page-width">
+          <header class="section-header">
+            <div class="h3 section-header__title">{{ 'products.general.more_from_html' | t: link: vendor_link }}</div>
+          </header>
+        </div>
+
+        <div class="page-width page-width--flush-small">
+          <div id="VendorProducts-{{ section.id }}"
+            class="new-grid product-grid scrollable-grid--small" data-view="{{ gridView }}">
+            {% comment %}
+              This content is visually hidden and replaced when recommended
+              products show up
+            {% endcomment %}
+            <div class="visually-invisible">
+              {%- render 'product-grid-item',
+                product: product,
+                no_actions: true ,
+                collection: collection,
+                quick_add_enable: quick_add_enable,
+                quick_shop_enable: quick_shop_enable,
+                product_grid_image_size: product_grid_image_size,
+                product_grid_image_fill: product_grid_image_fill,
+                product_hover_image: product_hover_image,
+                enable_swatches: enable_swatches,
+                vendor_enable: vendor_enable,
+                product_save_amount: product_save_amount,
+                product_save_type: product_save_type,
+                enable_product_reviews: enable_product_reviews,
+                superscript_decimals: superscript_decimals,
+              -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </vendor-products>
+
+    <template data-island>
+      <script type="module">
+        import 'components/section-more-products-vendor';
+      </script>
+    </template>
+  </is-land>
+{%- endif -%}

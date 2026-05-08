@@ -1,0 +1,668 @@
+{% doc %}
+  @prompt
+    Create a sleek FAQ drop down with questions and answer for the following:
+    Can we choose custom colors to match our brand?
+    
+    Yes. Every Rebel Nell mural-making experience is fully customizable to your brand, event theme, or company colors. Whether you're planning a corporate event, conference activation, or team building experience in Detroit, Grand Rapids, or nationwide, we design the mural to reflect your identity and message.
+    
+    What do you mean by “remnants”? Do you take the mural apart or can we keep it?
+    
+    Great question — and one we get often.
+    
+    You always keep your mural. After your team building or corporate event experience, the mural is revealed as a complete piece that you can display in your office or space.
+    
+    If you choose, we can also transform portions of the mural into custom jewelry or keepsakes. These “remnants” allow your team or attendees to take a piece of the experience home — turning a shared moment into something you can hold, wear, and remember.
+    
+    Is this a mural on a wall?
+    
+    No — this is not painted directly on a wall.
+    
+    Our mural-making experience is a mobile, self-contained installation designed for corporate events, conferences, and team building activities. It can be set up in your office, event venue, or conference space in Detroit, Grand Rapids, or anywhere in the U.S. — with no permanent installation required.
+    
+    What is the mural reveal?
+    
+    The mural reveal is one of the most powerful parts of the experience.
+    
+    Throughout the event, participants contribute to the mural without seeing the full picture. At a key moment, we remove the overlay to reveal the completed artwork — bringing together everyone’s contributions into one unified piece.
+    
+    This creates a memorable, high-impact moment that’s perfect for corporate events, conferences, and team building experiences.
+    
+    Do participants really get to take something home?
+    
+    Yes — and this is what makes the experience truly unique.
+    
+    After your event, you can choose to transform the mural into custom keepsakes or jewelry, allowing each participant to take home a piece of the experience. It’s a meaningful alternative to traditional corporate gifts and a powerful way to extend the impact of your event.
+    
+    How long does the experience take?
+    
+    Most mural-making experiences range from 1 to 3 hours, making them easy to integrate into corporate events, conferences, networking events, and team building activities. We can customize timing based on your schedule and group size.
+    
+    What does facilitation include?
+    
+    Our team fully facilitates the experience from start to finish.
+    
+    This includes setup, guidance during the activity, prompting participation, managing flow, and leading the mural reveal. Whether it’s a corporate event, conference activation, or team building experience, we ensure everything runs smoothly so you can focus on your guests.
+    
+    Can you come to our space or do we need to come to you?
+    
+    We do both.
+    
+    We can host your team building activity or corporate event at your office, conference venue, or event space in Detroit, Grand Rapids, or nationwide. We also offer experiences at our space in Eastern Market in Detroit for groups looking for an offsite location.
+    
+    🌍 LOCATION + “NEAR ME” SEO (Keep these as-is — already strong)
+    Do you offer team building activities near me?
+    
+    Yes. Rebel Nell provides mural-making experiences in Detroit, Grand Rapids, and nationwide. If you're searching for a team building activity near you, we can bring this experience directly to your office, venue, or event space.
+    
+    Do you host corporate events in Detroit and Grand Rapids?
+    
+    Yes. We regularly host corporate event experiences, team building activities, and conference activations in Detroit and Grand Rapids, and we also travel nationwide for events of all sizes.
+    
+    Can you travel for conferences and corporate events across the U.S.?
+    
+    Absolutely. While we are based in Detroit and Grand Rapids, our team travels nationwide to deliver mural-making experiences for conferences, corporate retreats, and large-scale activations.
+    
+    What makes this different from other team building activities in Detroit or Grand Rapids?
+    
+    Unlike traditional team building activities, this experience creates a lasting, physical outcome. Your team collaborates on a mural that is revealed in a powerful moment and can then be displayed or transformed into keepsakes — making it one of the most meaningful corporate event experiences available.
+    
+    Is this a good option for corporate retreats or offsite team building?
+    
+    Yes. Our mural-making experience is a perfect fit for corporate retreats, offsite team building, and conference experiences in Detroit, Grand Rapids, or any destination. It creates a shared moment that strengthens connection, engagement, and memory.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-faq-container-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-faq-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+    text-align: {{ block.settings.title_alignment }};
+  }
+
+  .ai-faq-list-{{ ai_gen_id }} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ai-faq-item-{{ ai_gen_id }} {
+    border-bottom: {{ block.settings.divider_width }}px solid {{ block.settings.divider_color }};
+  }
+
+  .ai-faq-item-{{ ai_gen_id }}:last-child {
+    border-bottom: none;
+  }
+
+  .ai-faq-question-{{ ai_gen_id }} {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: {{ block.settings.item_padding }}px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 16px;
+  }
+
+  .ai-faq-question-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.question_size }}px;
+    color: {{ block.settings.question_color }};
+    font-weight: {{ block.settings.question_weight }};
+    margin: 0;
+    flex: 1;
+  }
+
+  .ai-faq-icon-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-faq-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    stroke: {{ block.settings.icon_color }};
+  }
+
+  .ai-faq-item-{{ ai_gen_id }}.active .ai-faq-icon-{{ ai_gen_id }} {
+    transform: rotate(180deg);
+  }
+
+  .ai-faq-answer-{{ ai_gen_id }} {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .ai-faq-answer-content-{{ ai_gen_id }} {
+    padding: 0 0 {{ block.settings.item_padding }}px 0;
+    font-size: {{ block.settings.answer_size }}px;
+    color: {{ block.settings.answer_color }};
+    line-height: 1.6;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-faq-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.8);
+    }
+
+    .ai-faq-question-text-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.question_size }}px * 0.9);
+    }
+
+    .ai-faq-answer-content-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.answer_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<faq-accordion-{{ ai_gen_id }} class="ai-faq-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.title != blank %}
+    <h2 class="ai-faq-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+  {% endif %}
+
+  <ul class="ai-faq-list-{{ ai_gen_id }}">
+    {% for i in (1..13) %}
+      {% liquid
+        assign question_key = 'question_' | append: i
+        assign answer_key = 'answer_' | append: i
+        assign question = block.settings[question_key]
+        assign answer = block.settings[answer_key]
+      %}
+
+      {% if question != blank and answer != blank %}
+        <li class="ai-faq-item-{{ ai_gen_id }}" data-faq-item>
+          <button
+            class="ai-faq-question-{{ ai_gen_id }}"
+            aria-expanded="false"
+            aria-controls="ai-faq-answer-{{ ai_gen_id }}-{{ i }}"
+          >
+            <h3 class="ai-faq-question-text-{{ ai_gen_id }}">{{ question }}</h3>
+            <span class="ai-faq-icon-{{ ai_gen_id }}" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="ai-faq-answer-{{ ai_gen_id }}" id="ai-faq-answer-{{ ai_gen_id }}-{{ i }}">
+            <div class="ai-faq-answer-content-{{ ai_gen_id }}">{{ answer }}</div>
+          </div>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</faq-accordion-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FaqAccordion{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.items = this.querySelectorAll('[data-faq-item]');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.items.forEach((item) => {
+          const button = item.querySelector('.ai-faq-question-{{ ai_gen_id }}');
+          const answer = item.querySelector('.ai-faq-answer-{{ ai_gen_id }}');
+          const content = answer.querySelector('.ai-faq-answer-content-{{ ai_gen_id }}');
+
+          button.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            if (isActive) {
+              this.closeItem(item, button, answer);
+            } else {
+              this.openItem(item, button, answer, content);
+            }
+          });
+        });
+      }
+
+      openItem(item, button, answer, content) {
+        item.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = content.scrollHeight + 'px';
+      }
+
+      closeItem(item, button, answer) {
+        item.classList.remove('active');
+        button.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = '0';
+      }
+    }
+
+    customElements.define('faq-accordion-{{ ai_gen_id }}', FaqAccordion{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ accordion",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Title style"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Title spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Question style"
+    },
+    {
+      "type": "range",
+      "id": "question_size",
+      "label": "Question size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "question_color",
+      "label": "Question color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "question_weight",
+      "label": "Question weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "header",
+      "content": "Answer style"
+    },
+    {
+      "type": "range",
+      "id": "answer_size",
+      "label": "Answer size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "answer_color",
+      "label": "Answer color",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "label": "Item padding",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "divider_width",
+      "label": "Divider width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Question 1"
+    },
+    {
+      "type": "text",
+      "id": "question_1",
+      "label": "Question",
+      "default": "Can we choose custom colors to match our brand?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_1",
+      "label": "Answer",
+      "default": "Yes. Every Rebel Nell mural-making experience is fully customizable to your brand, event theme, or company colors. Whether you're planning a corporate event, conference activation, or team building experience in Detroit, Grand Rapids, or nationwide, we design the mural to reflect your identity and message."
+    },
+    {
+      "type": "header",
+      "content": "Question 2"
+    },
+    {
+      "type": "text",
+      "id": "question_2",
+      "label": "Question",
+      "default": "What do you mean by \"remnants\"? Do you take the mural apart or can we keep it?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_2",
+      "label": "Answer",
+      "default": "Great question — and one we get often. You always keep your mural. After your team building or corporate event experience, the mural is revealed as a complete piece that you can display in your office or space. If you choose, we can also transform portions of the mural into custom jewelry or keepsakes. These \"remnants\" allow your team or attendees to take a piece of the experience home — turning a shared moment into something you can hold, wear, and remember."
+    },
+    {
+      "type": "header",
+      "content": "Question 3"
+    },
+    {
+      "type": "text",
+      "id": "question_3",
+      "label": "Question",
+      "default": "Is this a mural on a wall?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_3",
+      "label": "Answer",
+      "default": "No — this is not painted directly on a wall. Our mural-making experience is a mobile, self-contained installation designed for corporate events, conferences, and team building activities. It can be set up in your office, event venue, or conference space in Detroit, Grand Rapids, or anywhere in the U.S. — with no permanent installation required."
+    },
+    {
+      "type": "header",
+      "content": "Question 4"
+    },
+    {
+      "type": "text",
+      "id": "question_4",
+      "label": "Question",
+      "default": "What is the mural reveal?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_4",
+      "label": "Answer",
+      "default": "The mural reveal is one of the most powerful parts of the experience. Throughout the event, participants contribute to the mural without seeing the full picture. At a key moment, we remove the overlay to reveal the completed artwork — bringing together everyone's contributions into one unified piece. This creates a memorable, high-impact moment that's perfect for corporate events, conferences, and team building experiences."
+    },
+    {
+      "type": "header",
+      "content": "Question 5"
+    },
+    {
+      "type": "text",
+      "id": "question_5",
+      "label": "Question",
+      "default": "Do participants really get to take something home?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_5",
+      "label": "Answer",
+      "default": "Yes — and this is what makes the experience truly unique. After your event, you can choose to transform the mural into custom keepsakes or jewelry, allowing each participant to take home a piece of the experience. It's a meaningful alternative to traditional corporate gifts and a powerful way to extend the impact of your event."
+    },
+    {
+      "type": "header",
+      "content": "Question 6"
+    },
+    {
+      "type": "text",
+      "id": "question_6",
+      "label": "Question",
+      "default": "How long does the experience take?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_6",
+      "label": "Answer",
+      "default": "Most mural-making experiences range from 1 to 3 hours, making them easy to integrate into corporate events, conferences, networking events, and team building activities. We can customize timing based on your schedule and group size."
+    },
+    {
+      "type": "header",
+      "content": "Question 7"
+    },
+    {
+      "type": "text",
+      "id": "question_7",
+      "label": "Question",
+      "default": "What does facilitation include?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_7",
+      "label": "Answer",
+      "default": "Our team fully facilitates the experience from start to finish. This includes setup, guidance during the activity, prompting participation, managing flow, and leading the mural reveal. Whether it's a corporate event, conference activation, or team building experience, we ensure everything runs smoothly so you can focus on your guests."
+    },
+    {
+      "type": "header",
+      "content": "Question 8"
+    },
+    {
+      "type": "text",
+      "id": "question_8",
+      "label": "Question",
+      "default": "Can you come to our space or do we need to come to you?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_8",
+      "label": "Answer",
+      "default": "We do both. We can host your team building activity or corporate event at your office, conference venue, or event space in Detroit, Grand Rapids, or nationwide. We also offer experiences at our space in Eastern Market in Detroit for groups looking for an offsite location."
+    },
+    {
+      "type": "header",
+      "content": "Question 9"
+    },
+    {
+      "type": "text",
+      "id": "question_9",
+      "label": "Question",
+      "default": "Do you offer team building activities near me?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_9",
+      "label": "Answer",
+      "default": "Yes. Rebel Nell provides mural-making experiences in Detroit, Grand Rapids, and nationwide. If you're searching for a team building activity near you, we can bring this experience directly to your office, venue, or event space."
+    },
+    {
+      "type": "header",
+      "content": "Question 10"
+    },
+    {
+      "type": "text",
+      "id": "question_10",
+      "label": "Question",
+      "default": "Do you host corporate events in Detroit and Grand Rapids?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_10",
+      "label": "Answer",
+      "default": "Yes. We regularly host corporate event experiences, team building activities, and conference activations in Detroit and Grand Rapids, and we also travel nationwide for events of all sizes."
+    },
+    {
+      "type": "header",
+      "content": "Question 11"
+    },
+    {
+      "type": "text",
+      "id": "question_11",
+      "label": "Question",
+      "default": "Can you travel for conferences and corporate events across the U.S.?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_11",
+      "label": "Answer",
+      "default": "Absolutely. While we are based in Detroit and Grand Rapids, our team travels nationwide to deliver mural-making experiences for conferences, corporate retreats, and large-scale activations."
+    },
+    {
+      "type": "header",
+      "content": "Question 12"
+    },
+    {
+      "type": "text",
+      "id": "question_12",
+      "label": "Question",
+      "default": "What makes this different from other team building activities in Detroit or Grand Rapids?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_12",
+      "label": "Answer",
+      "default": "Unlike traditional team building activities, this experience creates a lasting, physical outcome. Your team collaborates on a mural that is revealed in a powerful moment and can then be displayed or transformed into keepsakes — making it one of the most meaningful corporate event experiences available."
+    },
+    {
+      "type": "header",
+      "content": "Question 13"
+    },
+    {
+      "type": "text",
+      "id": "question_13",
+      "label": "Question",
+      "default": "Is this a good option for corporate retreats or offsite team building?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_13",
+      "label": "Answer",
+      "default": "Yes. Our mural-making experience is a perfect fit for corporate retreats, offsite team building, and conference experiences in Detroit, Grand Rapids, or any destination. It creates a shared moment that strengthens connection, engagement, and memory."
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ accordion"
+    }
+  ]
+}
+{% endschema %}

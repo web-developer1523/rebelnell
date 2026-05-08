@@ -1,0 +1,213 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": false,
+            "color_swatches": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description_3KCJkV": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "description_3KCJkV"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": false,
+        "thumbnail_position": "below",
+        "thumbnail_height": "flexible",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "faq_eWjb3c": {
+      "type": "faq",
+      "blocks": {
+        "rich_text_wKA7ng": {
+          "type": "rich-text",
+          "settings": {
+            "title": "Event Details",
+            "text": "<p>Networking begins at 4:30 p.m<strong>.,</strong>with the event kicking off at 5:45 p.m. and wrapping up by 9:30 p.m<strong>.</strong>Let’s celebrate the power of women and create something meaningful together! This event will sell out so buy your tickets today.  </p>",
+            "align_text": "left"
+          }
+        },
+        "question_9egfA8": {
+          "type": "question",
+          "settings": {
+            "title": "Date",
+            "text": "<p>Wednesday, March 19th 2025 </p>"
+          }
+        },
+        "question_UdrAJV": {
+          "type": "question",
+          "settings": {
+            "title": "Location",
+            "text": "<p>Jam Handy, 2900 East Grand Blvd,Detroit, MI</p>"
+          }
+        },
+        "question_z4BwxV": {
+          "type": "question",
+          "settings": {
+            "title": "Guest Speakers",
+            "text": "<p><strong>Valerie Mayen | CEO and Founder of Yellowcake Shop Clothing |</strong><a href=\"https://www.linkedin.com/in/valeriemayen/\" target=\"_blank\"><strong> LinkedIn</strong></a></p><p>Valerie Mayén is the founder of Yellowcake Shop Clothing and the Valerie Mayén collection, socially conscious fashion brands headquartered in Cleveland, Ohio. As a Latinx entrepreneur, Valerie leads a diverse team focused on creating high-quality, handmade garments designed for everyone. The Yellowcake Shop Clothing company mission is rooted in sustainability and inclusivity with a buyback program and lifetime garment repair initiative to further support their commitment.</p><p>Valerie’s enthusiasm for fashion began despite a conservative upbringing and financialchallenges. She studied illustration at the Cleveland Institute of Art and Otis College of Art and Design, eventually teaching herself garment construction. Her innovative designs gained international recognition during her time as a front running competitor on the Emmy award-winning reality design competition Project Runway (season 8) and Project Runway All-Stars (season 5).</p><p>Beyond the basics of fashion, Valerie‘s work further promotes environmental responsibility and the emboldening of individuals to express their most authentic selves. Her continued dedication has earned much acclaim, positioning Valerie as a well sought-after speaker and thought leader who inspires diverse audiences with uniquely vibrant, transparent and engaging presentations</p><p><strong>Karin Kusano | Trailblazer | </strong><a href=\"https://www.linkedin.com/in/karin-kusano-5b986311/\" target=\"_blank\"><strong>LinkedIn</strong></a><br/><br/>Karin Kusano is a leader, trailblazer, and advocate for innovation in the blockchain and the cryptocurrency industry. Rising from the challenges of overcoming severe financial abuse, Karin has transformed her experiences into a foundation for empowering others and driving success in the Web3 and crypto space. She is a firm believer that anyone, regardless of their past or circumstances, can rebuild their lives and create a thriving future by leveraging education, blockchain and digital assets. Her own journey—beginning with humble roots and no formal background in financial technology—exemplifies this philosophy. As a self-taught technologist and crypto trader, Karin has broken barriers and achieved remarkable success in a highly competitive field.</p><p>Karin was the first woman crypto trader honored at the NASDAQ closing ceremony and she exemplifies resilience and achievement in male-dominated spaces. Her trading acumen has earned her recognition as a top trader on leading platforms and an advisor to institutional-grade hedge funds. She has consulted for crypto exchanges, emerging technology startups and hedge funds which combined had a total of 1 Billion dollars inmarket valuation. Her dedication to empowering women in emerging technology is reflected in her role as an angel investor and advisor supporting women-led startups and driving meaningful change in the industry.<br/><br/>As a thought leader, Karin has educated diverse audiences on Web3 advancements,decentralized finance, and blockchain technology at forums such as the North American Blockchain Council and major universities. She is an advocate for financial literacy and inclusion and is a passionate advocate to fix the current economic system that encourages financial abuse.</p><p>Karin’s belief in the power of technology and education to transform lives is deeply personal. Grateful for the mentors, advocates, and organizations like Rebel Nell that have supported her along the way, she attributes her success to the unwavering encouragement of her friends, family, and children, who have been her foundation and inspiration throughout her journey. She uses her platform to inspire others, demonstrating that resilience, curiosity, and determination can pave the way to success in even the most challenging circumstances. Karin believes that anyone from any circumstance can start from nothing, rebuild and make a lasting impact.</p><p><strong>Berhenda Williams | Soul Coach |</strong><a href=\"https://www.linkedin.com/in/berhenda/\" target=\"_blank\"><strong> LinkedIn </strong></a><strong><br/></strong></p><p>Ber-Henda Williams, a femolutionary and passionate advocate for multiculturalism, art, and womanhood, wears the name's Germanic-Greek meaning, \"The Bear Hearted Protector.\" </p><p>As a poet, teacher, author, TV and film producer, public speaker, and youth advocate, she founded Culture Shift(Hers) Unite and Un-Networking: am ecosystem for feminine empathic leaders who desire to create social change through their work and natural gifts. She is also the host of the podcast: Soul of a Lead(Her) for she who lives and works from the soul. </p><p>With a focus on culture and community, Ber-Henda has been a host, coordinator, and marketing professional for numerous cultural events. Such as Biz Bash Bamboo as a featured presenter on Empathic Leadership and the Kindling Project’s women’s summit in 2023. </p><p>She served as a poetry programming consultant and Mistress of Ceremonies for FORD UAW Women’s Expo 2018. She's been a guest lecturer for Detroit Creative Mornings and a keynote speaker/moderator for women-centric events. Fluent in two languages for over 20 years, Ber-Henda has contributed to panels like Academia del Pueblo for Wayne State University.</p><p> She was a Featured Presenter at SXSW 2016 Interactive Track and a featured poet for United Way’s Financial Well-Being Innovation Challenge Launch Event. She's also been a Keynote speaker and poet for Toyota Motor Company.</p><p> With media credits including CW 50 Community Correspondent and co-producer for the monthly poetry series Poetry, Pages, and Scribes, Ber-Henda is an alumni for The Secret Society of Twisted Storytellers, The Vagina Monologues, and Listen to Your Mother.</p><p> Inspired by poets like Federico Garcia Lorca, Pablo Neruda, Ursula Rucker, Prince, Saul Williams, Nikki Giovanni, Rumi, and Khalil Gibran, Ber-Henda is an ambassador of the arts. She nurtures youth poetry with organizations like Inside Out Literary Arts, Figure Skating Detroit, and Harrison High School's Dance Department. </p><p>A graduate of Wayne State University with a BA in Spanish and a minor in International Marketing, Ber-Henda lives her life in color. Explore more about her at <a href=\"http://www.ber-hendawilliams.com/\">www.ber-hendawilliams.com</a> and listen to her podcast at <a href=\"https://www.ber-hendawilliams.com/s-projects-basic\">www.ber-hendawilliams.com/s-projects-basic</a>.</p><p><strong>Amanda Sweet | Creative Fairy Godmother | </strong><a href=\"https://   https://www.linkedin.com/in/amandasweet106/\" target=\"_blank\" title=\"https://   https://www.linkedin.com/in/amandasweet106/\"><strong>LinkedIn</strong></a><br/><br/>Amanda Sweet, affectionately known as the Creative Fairy Godmother, is an immersive and experiential global speaker, community leader, event curator, and fashion junkie. Amanda Sweet’s goal is <strong>to help people make friends, get fly, and save the world through sustainable community events.</strong></p><p>As the Founder of “The ReVamp”, Sweet is on a mission to teach people how local impact creates<br/>global impact, she's able to teach and practice sustainable fashion that impacts her peers and<br/>Homeless and Domestic Violence shelters in Detroit. So far, The ReVamp Community has swapped<br/>and shared over Thirty Thousand Pounds of clothing. Amanda is currently the Community Director<br/>with Bamboo Royal Oak and gets to work with and develop professionals, small business owners,<br/>and entrepreneurs in their workflow and growing their networks, through events and consulting. She<br/>is the Host of The Let’s Glow Show, where she interviews Creative Entrepreneurs every week to<br/>share their inspiring story and help motivate professionals to grow and glow. Sweet is the recent<br/>recipient of the Facilitator’s Choice Award for Tech Town’s Retail Bootcamp Program, where she worked on building ReVamp The Community - an Activation and Event Agency she’s in the process of bringing to life. Amanda Sweet is the Inaugural and Former crowned Miss Voluptuous America, on a Global Pageant Stage celebrating and empowering plus-size, and all size, women and girls all over the world. Through her platform, Party with Purpose, Amanda Sweet lives and breathes the mission of bringing joy to the world and leaving it better than she found it.</p>"
+          }
+        },
+        "question_GJAdBV": {
+          "type": "question",
+          "settings": {
+            "title": "Vendors",
+            "text": "<ul><li><a href=\"https://bonbonbon.com\" target=\"_blank\" title=\"https://bonbonbon.com\">Bon Bon Bon</a></li><li><a href=\"https://detroithives.org/\" target=\"_blank\" title=\"https://detroithives.org/\">Detroit Hives</a></li><li><a href=\"https://rebelstrengthandfitness.com/\" target=\"_blank\" title=\"https://rebelstrengthandfitness.com/\">Rebel Strength + Fitness</a></li><li><a href=\"https://www.lovetravelsimports.com/\" target=\"_blank\" title=\"https://www.lovetravelsimports.com/\">Love Travels.Imports.</a></li><li><a href=\"https://www.hekimaskincare.com/\" target=\"_blank\" title=\"https://www.hekimaskincare.com/\">Hekima Skin Care</a></li></ul>"
+          }
+        },
+        "question_T843x9": {
+          "type": "question",
+          "settings": {
+            "title": "Attire",
+            "text": "<p>Business casual (Rosie attire encouraged!).</p>"
+          }
+        },
+        "question_YLLKDt": {
+          "type": "question",
+          "settings": {
+            "title": "Run of Show",
+            "text": "<p><strong>4:30 PM </strong>– Doors Open: Food, Drinks, Shopping & Activities</p><p><strong>6:00 PM</strong> – Program Begins</p><p><strong>6:05 PM</strong> – Remarks fromAmyPeterson</p><p><strong>6:15 PM </strong>– Spoken Word by Ber-Henda Williams</p><p><strong>6:30 PM</strong> – Rosie the Riveter Spotlight</p><p><strong>6:45 PM</strong> – Movement Break</p><p><strong>6:55 PM</strong> – Fireside Chat + Q&A: Valerie Mayen & Karin Kusano</p><p><strong>7:50 PM </strong>– Style & Empowerment with Amanda Sweet</p><p><strong>8:25 PM</strong> – Closing Remarks: Mural Reveal, Group Photo. Shopping, Activities and Giveaway Announced</p><p><strong>9:30 PM</strong> – Event Ends</p>"
+          }
+        }
+      },
+      "block_order": [
+        "rich_text_wKA7ng",
+        "question_9egfA8",
+        "question_UdrAJV",
+        "question_z4BwxV",
+        "question_GJAdBV",
+        "question_T843x9",
+        "question_YLLKDt"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left"
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "blocks": {
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
+        }
+      },
+      "block_order": [
+        "contact"
+      ],
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 4,
+        "products_per_row": 4
+      }
+    },
+    "more-products-vendor": {
+      "type": "more-products-vendor",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "more-products-collection": {
+      "type": "more-products-collection",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {}
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {
+        "color_scheme": "2"
+      }
+    },
+    "171863023765d2cd69": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_reviews_product_reviews_cpKLrK": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/product-reviews/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_product_reviews_cpKLrK"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq_eWjb3c",
+    "sub",
+    "recommendations",
+    "more-products-vendor",
+    "more-products-collection",
+    "recently-viewed",
+    "collection-return",
+    "171863023765d2cd69"
+  ]
+}

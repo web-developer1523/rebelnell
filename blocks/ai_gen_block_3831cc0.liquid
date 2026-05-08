@@ -1,0 +1,942 @@
+{% doc %}
+  @prompt
+    a wall of fame carousel of small images, customer name, text and review, Add headline of Wall of Fame. Include ability to add and delete reviews for future use, include ability to add and delete reviews, make it scrollable in addition to scrolling, make images square small, larger square images to fit the review, continuous scrolling but with option to scroll manually
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-wall-of-fame-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: 40px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-wall-of-fame-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ai-wall-of-fame-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .ai-wall-of-fame-carousel-container-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .ai-wall-of-fame-carousel-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.card_spacing }}px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: {{ block.settings.scrollbar_color }} transparent;
+    padding-bottom: 20px;
+  }
+
+  .ai-wall-of-fame-carousel-{{ ai_gen_id }}::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .ai-wall-of-fame-carousel-{{ ai_gen_id }}::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .ai-wall-of-fame-carousel-{{ ai_gen_id }}::-webkit-scrollbar-thumb {
+    background-color: {{ block.settings.scrollbar_color }};
+    border-radius: 4px;
+  }
+
+  .ai-wall-of-fame-track-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.card_spacing }}px;
+  }
+
+  .ai-wall-of-fame-card-{{ ai_gen_id }} {
+    flex: 0 0 {{ block.settings.card_width }}px;
+    background-color: {{ block.settings.card_background }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-wall-of-fame-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+  }
+
+  .ai-wall-of-fame-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1;
+    margin: 0 auto;
+    border-radius: 0;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-wall-of-fame-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-wall-of-fame-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+  }
+
+  .ai-wall-of-fame-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-wall-of-fame-customer-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.name_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    text-align: center;
+    margin: 0;
+  }
+
+  .ai-wall-of-fame-review-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.review_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+  }
+
+  .ai-wall-of-fame-stars-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .ai-wall-of-fame-star-{{ ai_gen_id }} {
+    width: 16px;
+    height: 16px;
+    fill: {{ block.settings.star_color }};
+  }
+
+  .ai-wall-of-fame-nav-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .ai-wall-of-fame-nav-button-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-wall-of-fame-nav-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-wall-of-fame-nav-button-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+  }
+
+  .ai-wall-of-fame-empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-wall-of-fame-card-{{ ai_gen_id }} {
+      flex: 0 0 {{ block.settings.card_width | times: 0.85 }}px;
+    }
+
+    .ai-wall-of-fame-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<wall-of-fame-{{ ai_gen_id }} class="ai-wall-of-fame-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-wall-of-fame-header-{{ ai_gen_id }}">
+    <h2 class="ai-wall-of-fame-title-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+  </div>
+
+  {% assign has_reviews = false %}
+  {% for i in (1..10) %}
+    {% liquid
+      assign review_enabled_key = 'review_' | append: i | append: '_enabled'
+      assign review_enabled = block.settings[review_enabled_key]
+      if review_enabled
+        assign has_reviews = true
+        break
+      endif
+    %}
+  {% endfor %}
+
+  {% if has_reviews %}
+    <div class="ai-wall-of-fame-carousel-container-{{ ai_gen_id }}">
+      <div class="ai-wall-of-fame-carousel-{{ ai_gen_id }}" data-carousel>
+        <div class="ai-wall-of-fame-track-{{ ai_gen_id }}" data-track>
+          {% for i in (1..10) %}
+            {% liquid
+              assign review_enabled_key = 'review_' | append: i | append: '_enabled'
+              assign image_key = 'review_' | append: i | append: '_image'
+              assign name_key = 'review_' | append: i | append: '_name'
+              assign text_key = 'review_' | append: i | append: '_text'
+              assign rating_key = 'review_' | append: i | append: '_rating'
+
+              assign review_enabled = block.settings[review_enabled_key]
+              assign review_image = block.settings[image_key]
+              assign review_name = block.settings[name_key]
+              assign review_text = block.settings[text_key]
+              assign review_rating = block.settings[rating_key]
+            %}
+
+            {% if review_enabled %}
+              <div class="ai-wall-of-fame-card-{{ ai_gen_id }}" data-card>
+                <div class="ai-wall-of-fame-image-wrapper-{{ ai_gen_id }}">
+                  {% if review_image %}
+                    <img
+                      src="{{ review_image | image_url: width: 400 }}"
+                      alt="{{ review_name | escape }}"
+                      class="ai-wall-of-fame-image-{{ ai_gen_id }}"
+                      loading="lazy"
+                      width="400"
+                      height="400"
+                    >
+                  {% else %}
+                    <div class="ai-wall-of-fame-image-placeholder-{{ ai_gen_id }}">
+                      {{ 'image' | placeholder_svg_tag }}
+                    </div>
+                  {% endif %}
+                </div>
+
+                {% if review_name != blank %}
+                  <h3 class="ai-wall-of-fame-customer-name-{{ ai_gen_id }}">{{ review_name }}</h3>
+                {% endif %}
+
+                {% if block.settings.show_stars %}
+                  <div class="ai-wall-of-fame-stars-{{ ai_gen_id }}">
+                    {% for star in (1..5) %}
+                      <svg class="ai-wall-of-fame-star-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        {% if star <= review_rating %}
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        {% else %}
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="currentColor" stroke-width="2"/>
+                        {% endif %}
+                      </svg>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                {% if review_text != blank %}
+                  <p class="ai-wall-of-fame-review-text-{{ ai_gen_id }}">{{ review_text }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="ai-wall-of-fame-nav-{{ ai_gen_id }}">
+        <button class="ai-wall-of-fame-nav-button-{{ ai_gen_id }}" data-prev aria-label="Previous reviews">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18l-6-6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="ai-wall-of-fame-nav-button-{{ ai_gen_id }}" data-next aria-label="Next reviews">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  {% else %}
+    <div class="ai-wall-of-fame-empty-state-{{ ai_gen_id }}">
+      Enable and add your first customer review to get started
+    </div>
+  {% endif %}
+</wall-of-fame-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class WallOfFame{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.autoScrollInterval = null;
+        this.isUserInteracting = false;
+      }
+
+      connectedCallback() {
+        this.carousel = this.querySelector('[data-carousel]');
+        this.track = this.querySelector('[data-track]');
+        this.prevButton = this.querySelector('[data-prev]');
+        this.nextButton = this.querySelector('[data-next]');
+
+        if (!this.carousel || !this.track) return;
+
+        this.setupEventListeners();
+        this.cloneCards();
+        this.startAutoScroll();
+      }
+
+      disconnectedCallback() {
+        this.stopAutoScroll();
+      }
+
+      cloneCards() {
+        const cards = this.track.querySelectorAll('[data-card]');
+        if (cards.length === 0) return;
+
+        cards.forEach((card) => {
+          const clone = card.cloneNode(true);
+          this.track.appendChild(clone);
+        });
+      }
+
+      setupEventListeners() {
+        if (this.prevButton) {
+          this.prevButton.addEventListener('click', () => {
+            this.stopAutoScroll();
+            this.scroll('prev');
+            this.isUserInteracting = true;
+            setTimeout(() => {
+              this.isUserInteracting = false;
+              this.startAutoScroll();
+            }, 5000);
+          });
+        }
+
+        if (this.nextButton) {
+          this.nextButton.addEventListener('click', () => {
+            this.stopAutoScroll();
+            this.scroll('next');
+            this.isUserInteracting = true;
+            setTimeout(() => {
+              this.isUserInteracting = false;
+              this.startAutoScroll();
+            }, 5000);
+          });
+        }
+
+        this.carousel.addEventListener('mouseenter', () => {
+          this.stopAutoScroll();
+        });
+
+        this.carousel.addEventListener('mouseleave', () => {
+          if (!this.isUserInteracting) {
+            this.startAutoScroll();
+          }
+        });
+
+        this.carousel.addEventListener('touchstart', () => {
+          this.stopAutoScroll();
+          this.isUserInteracting = true;
+        });
+
+        this.carousel.addEventListener('touchend', () => {
+          setTimeout(() => {
+            this.isUserInteracting = false;
+            this.startAutoScroll();
+          }, 5000);
+        });
+
+        this.carousel.addEventListener('scroll', () => {
+          this.handleInfiniteScroll();
+        });
+      }
+
+      startAutoScroll() {
+        this.stopAutoScroll();
+        this.autoScrollInterval = setInterval(() => {
+          this.autoScroll();
+        }, 3000);
+      }
+
+      stopAutoScroll() {
+        if (this.autoScrollInterval) {
+          clearInterval(this.autoScrollInterval);
+          this.autoScrollInterval = null;
+        }
+      }
+
+      autoScroll() {
+        const scrollAmount = this.carousel.offsetWidth * 0.5;
+        this.carousel.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+
+      scroll(direction) {
+        const scrollAmount = this.carousel.offsetWidth * 0.8;
+        const currentScroll = this.carousel.scrollLeft;
+
+        if (direction === 'next') {
+          this.carousel.scrollTo({
+            left: currentScroll + scrollAmount,
+            behavior: 'smooth'
+          });
+        } else {
+          this.carousel.scrollTo({
+            left: currentScroll - scrollAmount,
+            behavior: 'smooth'
+          });
+        }
+      }
+
+      handleInfiniteScroll() {
+        const maxScroll = this.carousel.scrollWidth - this.carousel.offsetWidth;
+        const currentScroll = this.carousel.scrollLeft;
+
+        if (currentScroll >= maxScroll - 10) {
+          this.carousel.scrollLeft = currentScroll - (maxScroll / 2);
+        }
+
+        if (currentScroll <= 10) {
+          this.carousel.scrollLeft = (maxScroll / 2) + currentScroll;
+        }
+      }
+    }
+
+    customElements.define('wall-of-fame-{{ ai_gen_id }}', WallOfFame{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Wall of fame",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Wall of Fame"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_width",
+      "label": "Card width",
+      "min": 200,
+      "max": 400,
+      "step": 20,
+      "unit": "px",
+      "default": 280
+    },
+    {
+      "type": "range",
+      "id": "card_spacing",
+      "label": "Card spacing",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Review style"
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "label": "Name size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "review_size",
+      "label": "Review text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stars",
+      "label": "Show star ratings",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star color",
+      "default": "#FFD700"
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "scrollbar_color",
+      "label": "Scrollbar color",
+      "default": "#c81688"
+    },
+    {
+      "type": "header",
+      "content": "Review 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_1_enabled",
+      "label": "Enable review 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "review_1_image",
+      "label": "Customer image"
+    },
+    {
+      "type": "text",
+      "id": "review_1_name",
+      "label": "Customer name",
+      "default": "Sarah M."
+    },
+    {
+      "type": "textarea",
+      "id": "review_1_text",
+      "label": "Review text",
+      "default": "Absolutely love my purchase! The quality is outstanding and it exceeded my expectations."
+    },
+    {
+      "type": "range",
+      "id": "review_1_rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_2_enabled",
+      "label": "Enable review 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "review_2_image",
+      "label": "Customer image"
+    },
+    {
+      "type": "text",
+      "id": "review_2_name",
+      "label": "Customer name",
+      "default": "Jessica L."
+    },
+    {
+      "type": "textarea",
+      "id": "review_2_text",
+      "label": "Review text",
+      "default": "Beautiful craftsmanship and fast shipping. Will definitely order again!"
+    },
+    {
+      "type": "range",
+      "id": "review_2_rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_3_enabled",
+      "label": "Enable review 3",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "review_3_image",
+      "label": "Customer image"
+    },
+    {
+      "type": "text",
+      "id": "review_3_name",
+      "label": "Customer name",
+      "default": "Emily R."
+    },
+    {
+      "type": "textarea",
+      "id": "review_3_text",
+      "label": "Review text",
+      "default": "This is my third purchase and I'm never disappointed. Highly recommend!"
+    },
+    {
+      "type": "range",
+      "id": "review_3_rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_4_enabled",
+      "label": "Enable review 4",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "review_4_image",
+      "label": "Customer image"
+    },
+    {
+      "type": "text",
+      "id": "review_4_name",
+      "label": "Customer name"
+    },
+    {
+      "type": "textarea",
+      "id": "review_4_text",
+      "label": "Review text"
+    },
+    {
+      "type": "range",
+      "id": "review_4_rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_5_enabled",
+      "label": "Enable review 5",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "review_5_image",
+      "label": "Customer image"
+    },
+    {
+      "type": "text",
+      "id": "review_5_name",
+      "label": "Customer name"
+    },
+    {
+      "type": "textarea",
+      "id": "review_5_text",
+      "label": "Review text"
+    },
+    {
+      "type": "range",
+      "id": "review_5_rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_6_enabled",
+      "label": "Enable review 6",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "review_6_image",
+      "label": "Customer image"
+    },
+    {
+      "type": "text",
+      "id": "review_6_name",
+      "label": "Customer name"
+    },
+    {
+      "type": "textarea",
+      "id": "review_6_text",
+      "label": "Review text"
+    },
+    {
+      "type": "range",
+      "id": "review_6_rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 7"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_7_enabled",
+      "label": "Enable review 7",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "review_7_image",
+      "label": "Customer image"
+    },
+    {
+      "type": "text",
+      "id": "review_7_name",
+      "label": "Customer name"
+    },
+    {
+      "type": "textarea",
+      "id": "review_7_text",
+      "label": "Review text"
+    },
+    {
+      "type": "range",
+      "id": "review_7_rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 8"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_8_enabled",
+      "label": "Enable review 8",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "review_8_image",
+      "label": "Customer image"
+    },
+    {
+      "type": "text",
+      "id": "review_8_name",
+      "label": "Customer name"
+    },
+    {
+      "type": "textarea",
+      "id": "review_8_text",
+      "label": "Review text"
+    },
+    {
+      "type": "range",
+      "id": "review_8_rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 9"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_9_enabled",
+      "label": "Enable review 9",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "review_9_image",
+      "label": "Customer image"
+    },
+    {
+      "type": "text",
+      "id": "review_9_name",
+      "label": "Customer name"
+    },
+    {
+      "type": "textarea",
+      "id": "review_9_text",
+      "label": "Review text"
+    },
+    {
+      "type": "range",
+      "id": "review_9_rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Review 10"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_10_enabled",
+      "label": "Enable review 10",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "review_10_image",
+      "label": "Customer image"
+    },
+    {
+      "type": "text",
+      "id": "review_10_name",
+      "label": "Customer name"
+    },
+    {
+      "type": "textarea",
+      "id": "review_10_text",
+      "label": "Review text"
+    },
+    {
+      "type": "range",
+      "id": "review_10_rating",
+      "label": "Star rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wall of fame"
+    }
+  ]
+}
+{% endschema %}

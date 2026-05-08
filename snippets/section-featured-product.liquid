@@ -1,0 +1,68 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {boolean} divider - show divider
+   * @param {object} featured_product - featured_product object
+   * @param {string} image_position - image position
+   * @param {string} image_container_size - image container size
+   * @param {string} product_image_size - product image size
+   * @param {boolean} product_zoom_enable - product zoom enable
+   * @param {boolean} sku_enable - sku enable
+   * @param {string} thumbnail_position - thumbnail position
+   * @param {string} thumbnail_height - thumbnail height
+   * @param {boolean} thumbnail_arrows - thumbnail arrows
+   * @param {string} mobile_layout - mobile layout
+   * @param {boolean} enable_video_looping - enable video looping
+   * @param {string} product_video_style - product video style
+   * @param {string} context - context (default: 'featured-product')
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   * @param {boolean} share_facebook - whether to show facebook share button
+   * @param {boolean} share_twitter - whether to show twitter share button
+   * @param {boolean} share_pinterest - whether to show pinterest share button
+   * @param {boolean} show_breadcrumbs - whether to show breadcrumbs or not
+   * @param {boolean} show_breadcrumbs_collection_link - whether to show the link to the collections page or not
+   * @param {boolean} vendor_enable - whether to show the vendor
+   * @param {boolean} product_save_amount - show save amount
+   * @param {string} product_save_type - dollar or percent
+   * @param {object} recommendations - recommendations object
+   */
+{% endcomment %}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+{%- assign product = all_products[featured_product] -%}
+{%- render 'product-template',
+  section: section,
+  product: product,
+  thumbnail_position: thumbnail_position,
+  enableHistory: true,
+  image_container_width: image_container_size,
+  connect_to_sizechart: false,
+  show_breadcrumbs: show_breadcrumbs,
+  show_breadcrumbs_collection_link: show_breadcrumbs_collection_link,
+  vendor_enable: vendor_enable,
+  sku_enable: sku_enable,
+  collections: collections,
+  routes: routes,
+  image_position: image_position,
+  mobile_layout: mobile_layout,
+  section_id: section.id,
+  image_size: product_image_size,
+  product_zoom_enable: product_zoom_enable,
+  thumbnail_arrows: thumbnail_arrows,
+  thumbnail_height: thumbnail_height,
+  video_looping: enable_video_looping,
+  video_style: product_video_style,
+  context: context,
+  shop: shop,
+  product_save_amount: product_save_amount,
+  product_save_type: product_save_type,
+  superscript_decimals: superscript_decimals,
+  share_facebook: share_facebook,
+  share_twitter: share_twitter,
+  share_pinterest: share_pinterest,
+  isModal: false,
+  recommendations: recommendations,
+-%}
+
+{%- if divider -%}</div>{%- endif -%}

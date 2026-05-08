@@ -1,0 +1,208 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "17629217025d5f9a3f": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "slideshow_8m9P83": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_RayKVN": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 40,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/MCS_Meta_Desktop.jpg",
+            "image_mobile": "shopify://shop_images/MCS_Meta_mobile.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_RayKVN"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slides.name",
+      "settings": {
+        "full_width": false,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "rich_text_J6xeAM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RhwArq": {
+          "type": "heading",
+          "settings": {
+            "title": "Michigan Central Station",
+            "heading_size": "h2"
+          }
+        },
+        "text_CwMeFr": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><em>Honoring the Past. Celebrating the Rebirth. Carrying Detroit Forward.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RhwArq",
+        "text_CwMeFr"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "text_columns_6yjghy": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_VUJRzg": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/MCS_Cover.jpg",
+            "image_mask": "none",
+            "image_width": 450,
+            "title": "Full Collaboration",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/michigan-central-station"
+          }
+        },
+        "text_block_f8Bk87": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Bottel_Stopper_model_MCS.png",
+            "image_mask": "none",
+            "image_width": 450,
+            "title": "Accessories",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/mcs-accessories"
+          }
+        },
+        "text_block_zzhthA": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Carl_Bracelet_close_up_MCS.png",
+            "image_mask": "none",
+            "image_width": 450,
+            "title": "Bracelets",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/mcs-bracelets"
+          }
+        },
+        "text_block_TawD8k": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Bottel_Stopper_model_MCS.png",
+            "image_mask": "none",
+            "image_width": 450,
+            "title": "Earrings",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/mcs-earrings"
+          }
+        },
+        "text_block_VmrFEn": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Cuff_links_up_close_shot_MCS.png",
+            "image_mask": "none",
+            "image_width": 450,
+            "title": "Men's",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/mcs-mens"
+          }
+        },
+        "text_block_mqHBxX": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Nicole_Necklace_Gold_model_shots__MCS.png",
+            "image_mask": "none",
+            "image_width": 450,
+            "title": "Necklaces",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/msc-collab-necklaces"
+          }
+        },
+        "text_block_8MLqFf": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Lauren_Ring_Silver_model_MCS.png",
+            "image_mask": "none",
+            "image_width": 450,
+            "title": "Rings",
+            "text": "",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/mcs-rings"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_VUJRzg",
+        "text_block_f8Bk87",
+        "text_block_zzhthA",
+        "text_block_TawD8k",
+        "text_block_VmrFEn",
+        "text_block_mqHBxX",
+        "text_block_8MLqFf"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "custom-css": "",
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    }
+  },
+  "order": [
+    "17629217025d5f9a3f",
+    "slideshow_8m9P83",
+    "rich_text_J6xeAM",
+    "main",
+    "text_columns_6yjghy"
+  ]
+}

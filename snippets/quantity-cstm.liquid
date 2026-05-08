@@ -1,0 +1,114 @@
+
+  <style>
+    .custom-quantity-selector {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .custom-qty-adjust {
+      width: 32px;
+      height: 32px;
+      background: #f5f5f5;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      user-select: none;
+    }
+    
+    .custom-qty-adjust:hover {
+      background: #e0e0e0;
+    }
+    
+    .custom-qty-input {
+      width: 40px;
+      height: 32px;
+      text-align: center;
+      border: none;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      -moz-appearance: textfield;
+      background: white;
+      pointer-events: none; /* keep pointer-events none if you want prevent manual typing */
+    }
+    
+    .custom-qty-input::-webkit-outer-spin-button,
+    .custom-qty-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+
+
+<div class="quick-add-form">
+  <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form">
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    
+    <div class="custom-quantity-selector" aria-label="Product quantity selector" role="group">
+      <button type="button" class="custom-qty-adjust minus" data-action="decrease" aria-label="Decrease quantity">−</button>
+      <input type="number" 
+             class="custom-qty-input"
+             name="quantity"
+             value="1"
+             min="1"
+             max="999"
+             data-default-value="1"
+             readonly>
+      <button type="button" class="custom-qty-adjust plus" data-action="increase" aria-label="Increase quantity">+</button>
+    </div>
+    
+    <button type="submit" name="add" class="btn quick-add-btn" {% unless product.available %}disabled{% endunless %}>
+      Add to Cart
+    </button>
+  </form>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function handleQtyAdjustment(event) {
+      event.preventDefault();
+      // Don't stop immediate propagation here so other handlers can work if needed
+      
+      const button = event.currentTarget;
+      const action = button.getAttribute('data-action');
+      const container = button.closest('.custom-quantity-selector');
+      const input = container.querySelector('.custom-qty-input');
+      
+      let currentValue = parseInt(input.value) || parseInt(input.getAttribute('data-default-value')) || 1;
+      const min = parseInt(input.min) || 1;
+      const max = parseInt(input.max) || 999;
+      
+      if (action === 'decrease') {
+        currentValue = Math.max(currentValue - 1, min);
+      } else if (action === 'increase') {
+        currentValue = Math.min(currentValue + 1, max);
+      }
+      
+      input.value = currentValue;
+      
+      const changeEvent = new Event('change', {
+        bubbles: true,
+        cancelable: true
+      });
+      input.dispatchEvent(changeEvent);
+    }
+    
+    // Attach event listeners directly without cloning buttons
+    const buttons = document.querySelectorAll('.custom-qty-adjust');
+    buttons.forEach(button => {
+      button.addEventListener('click', handleQtyAdjustment);
+    });
+    
+    // Optionally prevent manual focus/interaction on input if readonly
+    // No need to stopImmediatePropagation on change, let other listeners work if needed
+  });
+</script>
+
+

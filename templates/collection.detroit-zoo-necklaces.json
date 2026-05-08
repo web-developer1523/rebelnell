@@ -1,0 +1,101 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-header",
+      "disabled": true,
+      "settings": {
+        "enable": true,
+        "collection_image_enable": true,
+        "parallax": false,
+        "parallax_direction": "left"
+      }
+    },
+    "background_image_text_tnLVKt": {
+      "type": "background-image-text",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/Detroit_Zoo_Necklaces.jpg",
+        "layout": "left",
+        "height": 550,
+        "parallax": false,
+        "parallax_direction": "top",
+        "lazyload_images": false
+      }
+    },
+    "rich_text_gJFd6z": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Y7BXX9": {
+          "type": "heading",
+          "settings": {
+            "title": "Detroit Zoo Collaboration | Necklaces",
+            "heading_size": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Y7BXX9"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "subcollections": {
+          "type": "subcollections",
+          "settings": {}
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "grid_style": "medium"
+          }
+        },
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "subcollections",
+        "product_grid",
+        "collection_description"
+      ],
+      "settings": {
+        "enable_sidebar": true,
+        "collapse_filters": true,
+        "enable_color_swatches": false,
+        "enable_sort": true
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "collection-header",
+    "background_image_text_tnLVKt",
+    "rich_text_gJFd6z",
+    "main-collection",
+    "recently-viewed"
+  ]
+}

@@ -1,0 +1,52 @@
+{%- comment -%}
+  /**
+   * @param {object} current_tags - current tags object
+   * @param {object} menu - menu object
+   * @param {string} collection_grid_image - collection grid image
+   * @param {string} collection_grid_shape - collection grid shape
+   * @param {string} collection_grid_image_fill - collection grid image fill
+   */
+{%- endcomment -%}
+
+{%- comment -%}
+  Generate a list of collection tiles if the main menu item is
+  active and its children are also collection links
+{%- endcomment -%}
+
+{%- liquid
+  unless current_tags
+    assign current_items = ''
+
+    echo '<div class="new-grid scrollable-grid--small" data-view="custom-grid-item-width" data-type="subcollections">'
+    for link in menu.links
+      if link.active and link.levels > 0 and link.child_active == false
+        unless current_items contains link.title
+          render 'sub-collections', sub_collection_links: link.links, collection_grid_image: collection_grid_image, collection_grid_shape: collection_grid_shape, collection_grid_image_fill: collection_grid_image_fill
+          assign current_items = current_items | append: link.title
+        endunless
+      endif
+      for sub_link in link.links
+        if sub_link.active and sub_link.levels > 0 and sub_link.child_active == false
+          unless current_items contains sub_link.title
+            render 'sub-collections', sub_collection_links: sub_link.links, collection_grid_image: collection_grid_image, collection_grid_shape: collection_grid_shape, collection_grid_image_fill: collection_grid_image_fill
+            assign current_items = current_items | append: sub_link.title
+          endunless
+        endif
+        for sub_sub_link in sub_link.links
+          if sub_sub_link.active and sub_sub_link.url == sub_link.url
+            unless current_items contains sub_sub_link.title
+              render 'sub-collections', parent_url: sub_link.url, sub_collection_links: sub_link.links, collection_grid_image: collection_grid_image, collection_grid_shape: collection_grid_shape, collection_grid_image_fill: collection_grid_image_fill
+              assign current_items = current_items | append: sub_sub_link.title
+            endunless
+          elsif sub_sub_link.active and sub_sub_link.levels > 0
+            unless current_items contains sub_sub_link.title
+              render 'sub-collections', sub_collection_links: sub_sub_link.links, collection_grid_image: collection_grid_image, collection_grid_shape: collection_grid_shape, collection_grid_image_fill: collection_grid_image_fill
+              assign current_items = current_items | append: sub_sub_link.title
+            endunless
+          endif
+        endfor
+      endfor
+    endfor
+    echo '</div>'
+  endunless
+-%}

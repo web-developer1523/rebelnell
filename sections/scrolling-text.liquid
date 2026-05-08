@@ -1,0 +1,108 @@
+{% render 'section-scrolling-text',
+  section: section,
+  text: section.settings.text,
+  link: section.settings.link,
+  text_size: section.settings.text_size,
+  text_spacing: section.settings.text_spacing,
+  direction: section.settings.direction,
+  speed: section.settings.speed,
+  color_scheme: section.settings.color_scheme,
+  color_button: settings.color_button,
+  color_button_text: settings.color_button_text,
+%}
+
+{% schema %}
+{
+  "name": "t:sections.scrolling-text.name",
+  "class": "index-section--flush",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:sections.scrolling-text.settings.text.label",
+      "default": "Free shipping and returns"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:sections.scrolling-text.settings.link.label"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "t:sections.scrolling-text.settings.text_size.label",
+      "default": 70,
+      "min": 20,
+      "max": 150,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "text_spacing",
+      "label": "t:sections.scrolling-text.settings.text_spacing.label",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "t:sections.scrolling-text.settings.direction.label",
+      "default": "left",
+      "options": [
+        {
+          "label": "t:sections.scrolling-text.settings.direction.options.left.label",
+          "value": "left"
+        },
+        {
+          "label": "t:sections.scrolling-text.settings.direction.options.right.label",
+          "value": "right"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "t:sections.scrolling-text.settings.speed.label",
+      "default": 200,
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "unit": "s"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:sections.scrolling-text.settings.color_scheme.label",
+      "default": "1",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.scrolling-text.settings.color_scheme.options.none.label"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.scrolling-text.presets.scrolling_text.name"
+    }
+  ],
+  "disabled_on": {
+    "groups": [
+      "custom.popups"
+    ]
+  }
+}
+{% endschema %}

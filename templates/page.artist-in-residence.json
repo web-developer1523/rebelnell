@@ -1,0 +1,397 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_cB7mC8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_34FXkz": {
+          "type": "heading",
+          "settings": {
+            "title": "DELICIOUS GOLD",
+            "heading_size": "h2"
+          }
+        },
+        "heading_TpemLK": {
+          "type": "heading",
+          "settings": {
+            "title": "AKA Quinn Faylor",
+            "heading_size": "h3"
+          }
+        },
+        "text_A3WYyf": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Rebel Nell's Artist in Residence</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_34FXkz",
+        "heading_TpemLK",
+        "text_A3WYyf"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "3",
+        "divider": false
+      }
+    },
+    "text_and_image_N7JkyF": {
+      "type": "text-and-image",
+      "settings": {
+        "image_mask": "portrait",
+        "image2": "shopify://shop_images/Screen_Shot_2024-10-08_at_10.31.36_AM.png",
+        "image2_mask": "splat-2",
+        "subtitle": "",
+        "title": "Quinn Faylor",
+        "heading_size": "h2",
+        "text": "<p>is a queer non-binary multidisciplinary maker based in Detroit, Michigan. They were born and raised in Petoskey, MI and have a Bachelor of Arts and Ideas in the Humanities from University of Michigan (2016). In the Fall of 2016, they moved to Detroit and began their practice.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "color_scheme": "none",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": false,
+        "lazyload_images": false
+      }
+    },
+    "rich_text_tRpEfN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_V7ycX3": {
+          "type": "heading",
+          "settings": {
+            "title": "Custom Murals",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_V7ycX3"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "text_and_image_Nrmd4i": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/Holden_St_Mural.jpg",
+        "image_mask": "splat-1",
+        "image2": "shopify://shop_images/Holden_Street_Location.jpg",
+        "image2_mask": "square",
+        "subtitle": "",
+        "title": "Holden St Mural",
+        "heading_size": "h2",
+        "text": "<p>Here’s where the magic began! Quinn’s first mural for Rebel Nell brightened up our Holden St. HQ with a burst of color and creativity. This stunning piece didn’t just change our space—it sparked a mural movement that celebrates the power of art, empowerment, and Rebel Nell’s bold Detroit roots</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "3",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": true,
+        "lazyload_images": false
+      }
+    },
+    "rich_text_eKMKNE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Tg4cfG": {
+          "type": "heading",
+          "settings": {
+            "title": "Impact 100 Mural",
+            "heading_size": "h2"
+          }
+        },
+        "text_Qnxr8h": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>On May 26th, 2022, Quinn Faylor brought the Big Give event by Impact 100 Metro Detroit to life! With $252,000 awarded to local nonprofits, Quinn’s painting beautifully captured 'the joy of collective giving.' Our Rebel Nell Creative Designers then repurposed it into stunning jewelry—pieces that embody the spirit of community wherever you wear them!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Tg4cfG",
+        "text_Qnxr8h"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "promo_grid_7Y9kPP": {
+      "type": "promo-grid",
+      "blocks": {
+        "image_HgyekL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Impact_100.jpg",
+            "link": "",
+            "width": "50"
+          }
+        },
+        "image_67XYdw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ca421c54-feb6-4e65-8c71-6c4df0213676.jpg",
+            "link": "",
+            "width": "33"
+          }
+        }
+      },
+      "block_order": [
+        "image_HgyekL",
+        "image_67XYdw"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 22,
+        "space_above": false,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    },
+    "text_and_image_irVcbj": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/Artist_Series_Mural_Delious_Gold.jpg",
+        "image_mask": "square",
+        "image2": "shopify://shop_images/Delicious_Gold_-min.png",
+        "image2_mask": "splat-3",
+        "subtitle": "",
+        "title": "Artist Series Mural",
+        "heading_size": "h2",
+        "text": "<p>Rebel Nell is proud to partner with Delicious Gold for our second annual collection in our Artist Series. Each piece of this exclusive collection is created from a hand-painted mural made by the artist that was deconstructed to make your individual piece</p>",
+        "button_label": "SHOP COLLECTION",
+        "button_link": "https://www.rebelnell.com/collections/delicious-gold",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "color_scheme": "3",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": true,
+        "lazyload_images": false
+      }
+    },
+    "rich_text_aXDyqq": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wjKwyn": {
+          "type": "heading",
+          "settings": {
+            "title": "Twelve Oaks Store Mural",
+            "heading_size": "h2"
+          }
+        },
+        "text_BMr43n": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Our Twelve Oaks pop-up got the full <em>Delicious Gold</em> treatment! We commissioned these murals to turn our Novi, MI, location into a bold, art-filled wonderland. It’s Rebel Nell at its best—vibrant, fearless, and unapologetically unique!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wjKwyn",
+        "text_BMr43n"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "promo_grid_BU7jy9": {
+      "type": "promo-grid",
+      "blocks": {
+        "image_ypBATz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Twelve_Oaks_Store_3.png",
+            "link": "",
+            "width": "33"
+          }
+        },
+        "image_FMTDWz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Twelve_Oaks_Store.png",
+            "link": "",
+            "width": "33"
+          }
+        },
+        "image_XYdDMQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Twelve_Oaks_Store_2.png",
+            "link": "",
+            "width": "33"
+          }
+        }
+      },
+      "block_order": [
+        "image_ypBATz",
+        "image_FMTDWz",
+        "image_XYdDMQ"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    },
+    "text_and_image_jf66Dg": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/Parker_s_Alley_Rebel_Nell_Location.jpg",
+        "image_mask": "square",
+        "image2": "shopify://shop_images/Downtown_Store.jpg",
+        "image2_mask": "splat-3",
+        "subtitle": "",
+        "title": "Parker's Alley Store Mural",
+        "heading_size": "h2",
+        "text": "<p>In 2022, we commissioned this stunning mural for our Downtown Detroit store. It perfectly captures Rebel Nell's uniqueness while elevating the atmosphere of our store! This mural serves as a reminder of the creativity flowing through our brand and city. It not only enhances our space but also invites customers to connect with the heart and soul of Rebel Nell and the artistry of Detroit.</p>",
+        "button_label": "VISIT OUR STORE",
+        "button_link": "https://maps.app.goo.gl/BEqhAwSwWpN8MArGA",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "3",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": true,
+        "lazyload_images": false
+      }
+    },
+    "rich_text_6wgWwJ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MVJMjL": {
+          "type": "heading",
+          "settings": {
+            "title": "DTW Evans Terminal Store Mural",
+            "heading_size": "h2"
+          }
+        },
+        "text_LnkBX6": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>We're excited to have opened our DTW Airport store in July 2024! This mural was specially commissioned to capture our new location's vibrant Rebel Nell spirit. Come visit our Airport Store and take home a piece of Detroit, Michigan!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MVJMjL",
+        "text_LnkBX6"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "promo_grid_UmMVjn": {
+      "type": "promo-grid",
+      "blocks": {
+        "image_fLFcKD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Website_Secondary_Hero_Images_1.png",
+            "link": "",
+            "width": "100"
+          }
+        }
+      },
+      "block_order": [
+        "image_fLFcKD"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 0,
+        "space_above": false,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    },
+    "rich_text_akQqYh": {
+      "type": "rich-text",
+      "blocks": {
+        "text_tNDkH6": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Quinn has various public and private murals across Michigan, as well as in San Francisco and Tokyo. Faylor is a 2024 recipient of the Emerging Artist Fellowship from PLAYGROUND DETROIT. In 2022-23 they were an artist in residence with City Walls (Detroit, MI). In 2022, they were an artist-in-residence with the Glen Arbor Arts Center (Glen Arbor, MI) and the Salt Spring Arts Council (Salt Spring Island, BC).</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_tNDkH6"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_cB7mC8",
+    "text_and_image_N7JkyF",
+    "rich_text_tRpEfN",
+    "text_and_image_Nrmd4i",
+    "rich_text_eKMKNE",
+    "promo_grid_7Y9kPP",
+    "text_and_image_irVcbj",
+    "rich_text_aXDyqq",
+    "promo_grid_BU7jy9",
+    "text_and_image_jf66Dg",
+    "rich_text_6wgWwJ",
+    "promo_grid_UmMVjn",
+    "rich_text_akQqYh"
+  ]
+}

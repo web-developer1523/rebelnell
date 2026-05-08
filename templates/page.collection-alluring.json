@@ -1,0 +1,201 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_edJ8j7": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_eNh6UY": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 70,
+            "subheading": "",
+            "link": "shopify://collections/affirmation-collection",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/Alluring.svg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_eNh6UY"
+      ],
+      "settings": {
+        "full_width": false,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "hotspots_4Vf469": {
+      "type": "hotspots",
+      "blocks": {
+        "product_hD6GYz": {
+          "type": "product",
+          "settings": {
+            "featured_product": "ashley-gold-alluring-detroit-yzqsy",
+            "vertical": 25,
+            "horizontal": 25
+          }
+        },
+        "product_x9BKt9": {
+          "type": "product",
+          "settings": {
+            "featured_product": "",
+            "vertical": 75,
+            "horizontal": 65
+          }
+        },
+        "product_C6eXn8": {
+          "type": "product",
+          "settings": {
+            "featured_product": "",
+            "vertical": 50,
+            "horizontal": 50
+          }
+        }
+      },
+      "block_order": [
+        "product_hD6GYz",
+        "product_x9BKt9",
+        "product_C6eXn8"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "image": "shopify://shop_images/Alluring_7c5e947b-fabe-4e5a-8758-216e10563410.svg",
+        "indent_image": false,
+        "image_position": "left",
+        "hotspot_style": "bag",
+        "hotspot_color": "#c81688",
+        "lazyload_images": true
+      }
+    },
+    "rich_text_44eLeD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_JyQRN6": {
+          "type": "heading",
+          "settings": {
+            "title": "Alluring Collection",
+            "heading_size": "h2"
+          }
+        },
+        "text_xfFTqH": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>What people find most alluring about you is that you are unapologetically yourself and that is beautiful. This collection is for the woman that never wants to be part of the crowd but stands out in it.</p><p><strong>“Style is a way to say who you are without having to speak.”</strong></p>"
+          }
+        },
+        "text_yMVkji": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>- Rachel Zoe</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JyQRN6",
+        "text_xfFTqH",
+        "text_yMVkji"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "featured_collections_YhLDTq": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_dMraTC": {
+          "type": "collection",
+          "settings": {
+            "collection": "alluring-collection",
+            "title": "All"
+          }
+        },
+        "collection_FfYzBg": {
+          "type": "collection",
+          "settings": {
+            "collection": "ashley-ring",
+            "title": ""
+          }
+        },
+        "collection_CPxhRN": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection_cWByJT": {
+          "type": "collection",
+          "settings": {
+            "collection": "jasmine-earrings",
+            "title": "Jasmine Huggies (SOLD OUT)"
+          }
+        },
+        "collection_ABaPV8": {
+          "type": "collection",
+          "settings": {
+            "collection": "sam-necklace",
+            "title": ""
+          }
+        },
+        "collection_PJNdnt": {
+          "type": "collection",
+          "settings": {
+            "collection": "isabella-bracelet",
+            "title": "Isabella Bracelets (SOLD OUT)"
+          }
+        }
+      },
+      "block_order": [
+        "collection_dMraTC",
+        "collection_FfYzBg",
+        "collection_CPxhRN",
+        "collection_cWByJT",
+        "collection_ABaPV8",
+        "collection_PJNdnt"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_edJ8j7",
+    "hotspots_4Vf469",
+    "rich_text_44eLeD",
+    "featured_collections_YhLDTq"
+  ]
+}

@@ -1,0 +1,780 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_zKFEVx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_q4ignc": {
+          "type": "heading",
+          "settings": {
+            "title": "Wear the Story. Keep the Memory.",
+            "heading_size": "h2"
+          }
+        },
+        "text_BGjYbR": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Crafted from real historic materials, each piece holds a connection to the moments and places that matter.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_q4ignc",
+        "text_BGjYbR"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "1762836249fda50795": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c5413ce_8XURCB": {
+          "type": "ai_gen_block_c5413ce",
+          "disabled": true,
+          "settings": {
+            "collection": "ashlyn-harris-collaboration",
+            "products_limit": 4,
+            "hero_image": "shopify://shop_images/Website_Secondary_Blog_Images_6.png",
+            "hero_height": 300,
+            "overlay_color": "#000000",
+            "overlay_opacity": 25,
+            "title": "Not Luck. All Grit.Ashlyn Harris Collab",
+            "description": "Made from repurposed World Cup soccer balls.",
+            "button_text": "SHOP NOW",
+            "hero_text_bottom_spacing": 40,
+            "text_color": "#ffffff",
+            "title_size": 32,
+            "description_size": 15,
+            "text_spacing": 10,
+            "button_bg_color": "#c81688",
+            "button_hover_bg_color": "#a01270",
+            "button_text_color": "#ffffff",
+            "button_font_size": 14,
+            "button_padding_vertical": 10,
+            "button_padding_horizontal": 20,
+            "button_border_radius": 0,
+            "products_bg_color": "#ffffff",
+            "products_padding_top": 20,
+            "products_padding_bottom": 25,
+            "product_width": 280,
+            "product_gap": 20,
+            "scrollbar_color": "#cccccc",
+            "card_bg_color": "#ffffff",
+            "card_border_radius": 0,
+            "card_padding": 16,
+            "product_text_color": "#000000",
+            "product_title_size": 16,
+            "product_price_size": 16,
+            "add_to_cart_text": "Add to Cart",
+            "add_to_cart_bg_color": "#c81688",
+            "add_to_cart_hover_bg_color": "#a01270",
+            "add_to_cart_text_color": "#ffffff",
+            "add_to_cart_font_size": 14,
+            "add_to_cart_border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_c5413ce_HDmDHJ": {
+          "type": "ai_gen_block_c5413ce",
+          "disabled": true,
+          "settings": {
+            "collection": "belle-isle-zoo-collections",
+            "products_limit": 20,
+            "hero_image": "shopify://shop_images/Website_Secondary_Hero_Images_1_bd19595b-17ce-41d6-a08a-e8f71834f738.png",
+            "hero_height": 300,
+            "overlay_color": "#000000",
+            "overlay_opacity": 25,
+            "title": "Belle Isle Zoo Collaboration",
+            "description": "Transforming Historic Zoo Tickets\n into Wearable Stories",
+            "button_text": "SHOP NOW",
+            "hero_text_bottom_spacing": 40,
+            "text_color": "#ffffff",
+            "title_size": 32,
+            "description_size": 15,
+            "text_spacing": 10,
+            "button_bg_color": "#c81688",
+            "button_hover_bg_color": "#a01270",
+            "button_text_color": "#ffffff",
+            "button_font_size": 14,
+            "button_padding_vertical": 10,
+            "button_padding_horizontal": 20,
+            "button_border_radius": 0,
+            "products_bg_color": "#ffffff",
+            "products_padding_top": 20,
+            "products_padding_bottom": 25,
+            "product_width": 360,
+            "product_gap": 20,
+            "scrollbar_color": "#cccccc",
+            "card_bg_color": "#ffffff",
+            "card_border_radius": 0,
+            "card_padding": 16,
+            "product_text_color": "#000000",
+            "product_title_size": 16,
+            "product_price_size": 16,
+            "add_to_cart_text": "Add to Cart",
+            "add_to_cart_bg_color": "#c81688",
+            "add_to_cart_hover_bg_color": "#a01270",
+            "add_to_cart_text_color": "#ffffff",
+            "add_to_cart_font_size": 14,
+            "add_to_cart_border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_5d001c5_tVUGnz": {
+          "type": "ai_gen_block_5d001c5",
+          "settings": {
+            "collection": "belle-isle-zoo-collections",
+            "products_limit": 20,
+            "desktop_width_percent": 100,
+            "hero_image": "shopify://shop_images/Website_Secondary_Hero_Images_0f6287e6-7f21-4fb1-ae35-9d6ba0dfdec6.jpg",
+            "title": "Belle Isle Zoo Collaboration",
+            "description": "Transforming Historic Zoo Tickets into Wearable Stories",
+            "button_text": "Shop all",
+            "text_alignment": "center",
+            "text_vertical_position": 5,
+            "text_vertical_position_mobile": 5,
+            "text_color": "#ffffff",
+            "title_size": 32,
+            "description_size": 14,
+            "button_bg_color": "#c81688",
+            "button_hover_bg_color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_text_size": 16,
+            "button_border_radius": 4,
+            "product_text_color": "#000000",
+            "product_title_size": 14,
+            "product_price_size": 14,
+            "product_image_border_radius": 8,
+            "add_to_cart_text": "Add to cart",
+            "add_to_cart_bg_color": "#c81688",
+            "add_to_cart_hover_bg_color": "#333333",
+            "add_to_cart_text_color": "#ffffff",
+            "add_to_cart_text_size": 14,
+            "add_to_cart_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c5413ce_8XURCB",
+        "ai_gen_block_c5413ce_HDmDHJ",
+        "ai_gen_block_5d001c5_tVUGnz"
+      ],
+      "settings": {}
+    },
+    "rich_text_j8hRAV": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UrnHPJ": {
+          "type": "heading",
+          "settings": {
+            "title": "Loved by Customers, Rated 4.8 Stars",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UrnHPJ"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "2",
+        "divider": false
+      }
+    },
+    "slideshow_P8iWN6": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_EpJdKy": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p><strong>Not Your Basic Mother’s Day Gift</strong></p>",
+            "title_size": 40,
+            "subheading": "Meaningful pieces made from reclaimed materials and crafted to carry story, memory, and impact.",
+            "link": "shopify://collections/mothers-day-gift-guide",
+            "link_text": "SHOP GIFT GUIDE",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/Website_Secondary_Blog_Images_3_7fc8a6b8-8adf-4c0c-9fec-a5245b8cebf0.jpg",
+            "overlay_opacity": 4
+          }
+        }
+      },
+      "block_order": [
+        "hero_EpJdKy"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slides.name",
+      "settings": {
+        "full_width": false,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": false,
+        "autoplay_speed": 7
+      }
+    },
+    "featured_collection_MwJccC": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "custom-class": "",
+        "title": "",
+        "heading_size": "h3",
+        "heading_position": "left",
+        "home_featured_products": "mothers-day-gift-guide",
+        "count": 5,
+        "products_per_row": 5,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "1772645181be3b1f9f": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "promo_grid_ECmCq8": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_nG6UCG": {
+          "type": "advanced",
+          "disabled": true,
+          "settings": {
+            "custom_class_promo": "",
+            "subheading": "",
+            "heading": "New Year, New You Experience",
+            "textarea": "The Mind Alchemy with Shawna Lockhart",
+            "cta_text1": "GET YOUR TICKET",
+            "cta_link1": "shopify://products/new-year-new-you-the-mind-alchemy",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/2026_WEBSITE_COLLATERAL_Updates-ZY_3.png",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff",
+            "color_accent_hover": "#000000"
+          }
+        },
+        "advanced_8wnJqm": {
+          "type": "advanced",
+          "disabled": true,
+          "settings": {
+            "custom_class_promo": "",
+            "subheading": "",
+            "heading": "6th Annual IWD Event",
+            "textarea": "With Keynote Speaker: Ashlyn Harris Wednesday March 18th",
+            "cta_text1": "GET YOUR TICKET",
+            "cta_link1": "shopify://products/6th-annual-international-womens-day-experience",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/2026_IWD_Cover_1.png",
+            "video_url": "",
+            "width": "100",
+            "height": 600,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff",
+            "color_accent_hover": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_nG6UCG",
+        "advanced_8wnJqm"
+      ],
+      "disabled": true,
+      "name": "t:sections.promo-grid.presets.promotional_grid.name",
+      "settings": {
+        "full_width": false,
+        "gutter_size": 24,
+        "space_above": true,
+        "space_below": true,
+        "lazyload_images": false
+      }
+    },
+    "17628352665f0c32be": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4fa8033_ceQxtx": {
+          "type": "ai_gen_block_4fa8033",
+          "settings": {
+            "section_title": "Upcoming Events",
+            "section_subtitle": "From creative workshops to transformative gatherings, each event is a celebration of our shared strengthand a chance to be part of something unforgettable.",
+            "title_alignment": "center",
+            "title_font": "arial_n4",
+            "title_size": 36,
+            "title_color": "#000000",
+            "subtitle_font": "arial_n4",
+            "subtitle_size": 16,
+            "subtitle_color": "#666666",
+            "item_height": 500,
+            "item_height_mobile": 250,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "show_item_1": true,
+            "item_1_image": "shopify://shop_images/2026_WEBSITE_COLLATERAL_Updates-ZY_2.png",
+            "item_1_title": "New Year, New You",
+            "item_1_subtitle": "The Mind Alchemy",
+            "item_1_text": "",
+            "item_1_button_text": "GET YOUR TICKET",
+            "item_1_button_link": "shopify://products/new-year-new-you-the-mind-alchemy",
+            "show_item_2": true,
+            "item_2_image": "shopify://shop_images/2_a978892d-0dea-4d84-999a-712e5d90cd6b.png",
+            "item_2_title": "6th Annual IWD Event",
+            "item_2_subtitle": "Wednesday, March 18th",
+            "item_2_text": "",
+            "item_2_button_text": "GET YOUR TICKET",
+            "item_2_button_link": "https://www.rebelnell.com/products/6th-annual-international-womens-day-experience",
+            "content_vertical_alignment": "flex-end",
+            "content_horizontal_alignment": "center",
+            "text_alignment": "center",
+            "item_title_font": "arial_n4",
+            "item_title_size": 28,
+            "item_subtitle_font": "arial_n4",
+            "item_subtitle_size": 16,
+            "item_text_font": "arial_n4",
+            "item_text_size": 14,
+            "item_text_color": "#ffffff",
+            "button_font": "assistant_n4",
+            "button_size": 14,
+            "button_bg_color": "#c81688",
+            "button_hover_bg_color": "#c81688",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 0,
+            "progress_bar_height": 3,
+            "progress_bar_color": "#000000",
+            "progress_bar_bg_color": "#e0e0e0",
+            "background_color": "#ffffff",
+            "item_border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4fa8033_ceQxtx"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_iPhM9X": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "custom-class": "",
+        "title": "Build Your Charm Necklace",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "home_featured_products": "charm-collection",
+        "count": 5,
+        "products_per_row": 5,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "featured_collections_UCdg8m": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_HDgDcA": {
+          "type": "collection",
+          "settings": {
+            "collection": "necklaces",
+            "title": ""
+          }
+        },
+        "collection_zexJeb": {
+          "type": "collection",
+          "settings": {
+            "collection": "earrings",
+            "title": ""
+          }
+        },
+        "collection_JjXtXH": {
+          "type": "collection",
+          "settings": {
+            "collection": "ring",
+            "title": ""
+          }
+        },
+        "collection_z8MpJx": {
+          "type": "collection",
+          "settings": {
+            "collection": "bracelets",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_HDgDcA",
+        "collection_zexJeb",
+        "collection_JjXtXH",
+        "collection_z8MpJx"
+      ],
+      "settings": {
+        "title": "Shop Favorites",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "divider": false
+      }
+    },
+    "1762834639d86ee8fb": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1762837445b2f4f525": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_dc7cbbb_qWNya7": {
+          "type": "ai_gen_block_dc7cbbb",
+          "settings": {
+            "heading": "Make it.",
+            "subheading": "You create and keep the moment through our experiences, we make every moment memorable by creating something special together.",
+            "heading_size": 32,
+            "subheading_size": 16,
+            "image_1": "shopify://shop_images/Copy_of_3_x_3_Mural_Vinyl_Design_10.png",
+            "title_1": "Mural Making",
+            "text_1": "<p>The perfect team outing or group event—board retreat, fundraiser, or celebration.</p>",
+            "button_1_text": "Learn More",
+            "button_1_link": "https://www.rebelnell.com/pages/diy-mural-making",
+            "image_2": "shopify://shop_images/Copy_of_3_x_3_Mural_Vinyl_Design_12.png",
+            "title_2": "Design Your Own Gift",
+            "text_2": "<p>Visit our retail stores in Downtown Detroit or Grand Rapids to design your own Rebel Nell gift.</p>",
+            "button_2_text": "Book Detroit",
+            "button_2_link": "https://www.rebelnell.com/products/jewelry-designing-experience",
+            "button_2_secondary_text": "Book Grand Rapids",
+            "button_2_secondary_link": "shopify://products/grand-rapids-design-your-own-experience",
+            "section_padding": 15,
+            "column_gap": 20,
+            "column_gap_mobile": 15,
+            "image_border_radius": 0,
+            "heading_font": "arial_n4",
+            "subheading_font": "arial_n4",
+            "title_font": "arial_n4",
+            "body_font": "arial_n4",
+            "button_font": "arial_n4",
+            "title_size": 24,
+            "text_size": 16,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "button_bg_color": "#c81688",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#a01270",
+            "button_secondary_bg_color": "#c81688",
+            "button_secondary_text_color": "#ffffff",
+            "button_secondary_hover_bg_color": "#a01270",
+            "button_border_radius": 0,
+            "button_text_size": 14
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_dc7cbbb_qWNya7"
+      ],
+      "settings": {}
+    },
+    "17623274401cb0a0f4": {
+      "type": "apps",
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    },
+    "176284224273e94b61": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6383f6d_VPMPjV": {
+          "type": "ai_gen_block_6383f6d",
+          "settings": {
+            "heading": "Together, We Make An Impact",
+            "text": "The power of your purchase goes beyond jewelry. Rebel Nell, a women-owned social enterprise, offers employment, equitable opportunities, and wraparound support to women facing barriers. Since 2013, your purchases have funded...",
+            "stat_1_enabled": true,
+            "stat_1_number": "50",
+            "stat_1_label": "Women hired out of shelter living",
+            "stat_2_enabled": true,
+            "stat_2_number": "180792",
+            "stat_2_label": "Hours of workforce development",
+            "stat_3_enabled": true,
+            "stat_3_number": "490",
+            "stat_3_label": "Lives impacted as a result of the mission",
+            "stat_4_enabled": true,
+            "stat_4_number": "3868",
+            "stat_4_label": "Pounds of material repurposed",
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "text_color": "#000000",
+            "icon_bg_color": "#c81688",
+            "icon_color": "#ffffff",
+            "counter_color": "#000000",
+            "label_color": "#000000",
+            "heading_font": "arial_n4",
+            "heading_size": 36,
+            "text_size": 18,
+            "counter_size": 36,
+            "label_size": 14,
+            "icon_size": 80,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "spacing": 30,
+            "text_spacing": 10,
+            "column_gap": 30,
+            "icon_spacing": 15,
+            "label_spacing": 10
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6383f6d_VPMPjV"
+      ],
+      "settings": {}
+    },
+    "rich_text_WrwaBk": {
+      "type": "rich-text",
+      "blocks": {
+        "button_rPK3qg": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/our-impact",
+            "link_text": "Learn More About Our Impact"
+          }
+        }
+      },
+      "block_order": [
+        "button_rPK3qg"
+      ],
+      "custom_css": [
+        ".index-section {padding-top: 0;}"
+      ],
+      "settings": {
+        "custom_class_btn": "pink_bg_btn",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "text_and_image_zFbAxb": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/1_56fe543a-95c8-4aba-83d3-c4386d74652e.png",
+        "image_mask": "square",
+        "image2": "shopify://shop_images/2_310eb4e3-803a-48f0-8be7-e5fb35499618.png",
+        "image2_mask": "square",
+        "subtitle": "",
+        "title": "Where Shopping Gets Personal",
+        "heading_size": "h2",
+        "text": "<p>Visit us in person to find a gift worth keeping or design your own. Pop into one of our stores and find the perfect one of a kind item or design your own unique piece at our Design Your Own Experience. </p><p>Shop Women-Owned. Shop Local. <br/>Shop Rebel Nell.</p>",
+        "button_label": "VISIT OUR STORES",
+        "button_link": "https://www.rebelnell.com/pages/detroit",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "color_scheme": "none",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "17704044102fd5e64d": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_reviews_featured_reviews_carousel_jKRAGq": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/featured-reviews-carousel/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_featured_reviews_carousel_jKRAGq"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    },
+    "advanced_content_jReyd8": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_y4MpmK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Website_Template_Collection_Page_Meta_Field_Images_1445_x_400_px.png",
+            "link": "https://www.youtube.com/watch?v=UWkr8uj-sVw",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_y4MpmK"
+      ],
+      "name": "t:sections.advanced-content.presets.custom_content.name",
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "hero_video_gJyVxF": {
+      "type": "hero-video",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "title": "Did You Know?",
+        "title_size": 70,
+        "subheading": "We are a sustainable and women-owned jewelry brand. We exist to provide employment and support to women transitioning out of shelter living. Our handmade jewelry incorporates repurposed material such as fallen graffiti. Just like you, each piece is ONE OF NO OTHER KIND",
+        "link_text": "Learn More",
+        "link": "shopify://pages/our-mission",
+        "color_accent": "#ffffff",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/643b63de0907417bae086f602682a722.mp4",
+        "overlay_opacity": 12,
+        "height": 500,
+        "height_mobile": 300
+      }
+    },
+    "1748233194c272fd8c": {
+      "type": "apps",
+      "custom_css": [
+        "section {background-color: #c81688;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    },
+    "1772646054447f31b1": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "rich_text_yhRJ9r": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BkqPiB": {
+          "type": "heading",
+          "settings": {
+            "title": "",
+            "heading_size": "h2"
+          }
+        },
+        "text_Mty8ie": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Made from real materials. Not just designed.<br/><br/>We start with materials that carry history, graffiti, stadiums, and meaningful places.<br/>We transform them by hand into one-of-a-kind pieces.<br/></p><p>You carry the story forward.</p><p>ONE OF NO OTHER KIND</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BkqPiB",
+        "text_Mty8ie"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "text_with_icons_9EjQmP": {
+      "type": "text-with-icons",
+      "blocks": {
+        "text_block_d4Vnr8": {
+          "type": "text_block",
+          "settings": {
+            "icon": "charity",
+            "title": "WOMEN-OWNED",
+            "text": ""
+          }
+        },
+        "text_block_iXVfHc": {
+          "type": "text_block",
+          "settings": {
+            "icon": "globe",
+            "title": "SOCIAL ENTERPRISE",
+            "text": ""
+          }
+        },
+        "text_block_K3HYUz": {
+          "type": "text_block",
+          "settings": {
+            "icon": "truck",
+            "title": "$100+ ORDERS SHIP FREE",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_d4Vnr8",
+        "text_block_iXVfHc",
+        "text_block_K3HYUz"
+      ],
+      "name": "t:common.text_with_icons.presets.text_with_icons.name",
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "desktop_columns_per_row": 3,
+        "icon_color": "#c81688",
+        "button_label": "",
+        "button_link": "",
+        "divider": false
+      }
+    },
+    "17763640212b3d889f": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "rich_text_zKFEVx",
+    "1762836249fda50795",
+    "rich_text_j8hRAV",
+    "slideshow_P8iWN6",
+    "featured_collection_MwJccC",
+    "1772645181be3b1f9f",
+    "promo_grid_ECmCq8",
+    "17628352665f0c32be",
+    "featured_collection_iPhM9X",
+    "featured_collections_UCdg8m",
+    "1762834639d86ee8fb",
+    "1762837445b2f4f525",
+    "17623274401cb0a0f4",
+    "176284224273e94b61",
+    "rich_text_WrwaBk",
+    "text_and_image_zFbAxb",
+    "17704044102fd5e64d",
+    "advanced_content_jReyd8",
+    "hero_video_gJyVxF",
+    "1748233194c272fd8c",
+    "1772646054447f31b1",
+    "rich_text_yhRJ9r",
+    "text_with_icons_9EjQmP",
+    "17763640212b3d889f"
+  ]
+}

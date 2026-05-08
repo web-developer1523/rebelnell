@@ -1,0 +1,125 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {boolean} divider - show divider
+   * @param {string} title - title
+   * @param {string} align_text - text alignment
+   * @param {number} desktop_columns_per_row - columns per row on desktop
+   * @param {string} button_label - button label
+   * @param {string} button_link - button link
+   * @param {string} icon_color - Color of icons
+   * @param {number} icon_weight - weight of icons
+   */
+{% endcomment %}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<div
+  class="text-with-icons"
+  data-section-id="{{ section.id }}"
+  data-section-type="text-with-icons"
+>
+  <div class="page-width">
+    {%- if title != blank -%}
+      <div
+        class="
+          text-with-icons__title
+          section-header"
+      >
+        <h2 class="text-{{ align_text }}">{{ title }}</h2>
+      </div>
+    {%- endif -%}
+    <div
+      class="
+        text-with-icons__blocks
+        has-{{ desktop_columns_per_row }}-per-row"
+      data-block-count="{{ section.blocks.size }}"
+      >
+      {% for block in section.blocks %}
+        <div class="text-with-icons__block text-{{ align_text }}" {{ block.shopify_attributes }}>
+          <div class="text-with-icons__block-icon">
+            {% case block.settings.icon %}
+              {% when 'bills'%}
+                {% render 'icon-tcwi-bills' %}
+              {% when 'calendar'%}
+                {% render 'icon-tcwi-calendar' %}
+              {% when 'cart'%}
+                {% render 'icon-tcwi-cart' %}
+              {% when 'charity'%}
+                {% render 'icon-tcwi-charity' %}
+              {% when 'chat'%}
+                {% render 'icon-tcwi-chat' %}
+              {% when 'envelope'%}
+                {% render 'icon-tcwi-open-envelope' %}
+              {% when 'gears'%}
+                {% render 'icon-tcwi-gears' %}
+              {% when 'gift'%}
+                {% render 'icon-tcwi-gift' %}
+              {% when 'globe'%}
+                {% render 'icon-tcwi-globe' %}
+              {% when 'package'%}
+                {% render 'icon-tcwi-package' %}
+              {% when 'phone'%}
+                {% render 'icon-tcwi-phone' %}
+              {% when 'plant'%}
+                {% render 'icon-tcwi-plant' %}
+              {% when 'recycle'%}
+                {% render 'icon-tcwi-recycle' %}
+              {% when 'ribbon'%}
+                {% render 'icon-tcwi-ribbon' %}
+              {% when 'sales-tag'%}
+                {% render 'icon-tcwi-sales-tag' %}
+              {% when 'shield'%}
+                {% render 'icon-tcwi-shield' %}
+              {% when 'stopwatch'%}
+                {% render 'icon-tcwi-stopwatch' %}
+              {% when 'store'%}
+                {% render 'icon-tcwi-store' %}
+              {% when 'thumbs-up'%}
+                {% render 'icon-tcwi-thumbs-up' %}
+              {% when 'trophy'%}
+                {% render 'icon-tcwi-trophy' %}
+              {% when 'truck'%}
+                {% render 'icon-tcwi-truck' %}
+              {% when 'wallet'%}
+                {% render 'icon-tcwi-wallet' %}
+            {% endcase %}
+          </div>
+          <div class="text-with-icons__block-title">
+            <h3>{{ block.settings.title }}</h3>
+          </div>
+          <div class="text-with-icons__block-text">
+            {{ block.settings.text }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {%- if button_label != blank -%}
+      <div class="text-with-icons__button">
+        <a href="{{ button_link }}" class="btn btn--secondary">
+          {{ button_label }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- if divider -%}</div>{%- endif -%}
+
+{% style %}
+  #shopify-section-{{ section.id }} .icon {
+    color: {{ icon_color }};
+  }
+
+  #shopify-section-{{ section.id }} .icon path,
+  #shopify-section-{{ section.id }} .icon polygon,
+  #shopify-section-{{ section.id }} .icon rect,
+  #shopify-section-{{ section.id }} .icon circle,
+  #shopify-section-{{ section.id }} .icon ellipse,
+  #shopify-section-{{ section.id }} .icon line,
+  #shopify-section-{{ section.id }} .icon polyline,
+  #shopify-section-{{ section.id }} .icon g {
+    stroke-width: {{ icon_weight | replace: 'px', '' | minus: 1 }}px;
+  }
+{% endstyle %}
+

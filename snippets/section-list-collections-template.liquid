@@ -1,0 +1,90 @@
+{% comment %}
+  /**
+    * @param {object} section - section object
+    * @param {object} collections - collections object
+    * @param {boolean} title_enable - enable title
+    * @param {string} display_type - display type
+    * @param {number} section_blocks_size - section blocks size
+    * @param {string} sort - sort by
+    * @param {string} collection_grid_image - collection grid image
+    * @param {string} collection_grid_shape - collection grid shape
+    * @param {string} collection_grid_image_fill - collection grid image fill
+  */
+{% endcomment %}
+
+{%- paginate collections by 20 -%}
+
+  <div class="page-width page-content">
+
+    {%- if title_enable -%}
+      <header class="section-header">
+        <h1 class="section-header__title">{{ 'collections.general.catalog_title' | t }}</h1>
+      </header>
+    {%- endif -%}
+
+    {%- liquid
+      capture gridView
+        if display_type == 'all'
+          render 'products-per-row', products_per_row: collections.size
+          assign sizeVariable = collections.size | at_most: 5
+        else
+          render 'products-per-row', products_per_row: section_blocks_size
+          assign sizeVariable = section_blocks_size | at_most: 5
+        endif
+      endcapture
+    -%}
+
+    <div class="new-grid" data-view="{{ gridView }}">
+      {%- if display_type == 'all' -%}
+        {%- liquid
+          case sort
+            when 'products_high' or 'products_low'
+              assign collections = collections | sort: 'all_products_count'
+            when 'date' or 'date_reversed'
+              assign collections = collections | sort: 'published_at'
+          endcase
+        -%}
+        {%- if sort == 'products_low' or sort == 'date' or sort == 'alphabetical' -%}
+          {%- for collection in collections -%}
+            {%- render 'collection-grid-item',
+              collection: collection,
+              sizeVariable: sizeVariable,
+              fallback: 'variable',
+              collection_grid_image: collection_grid_image,
+              collection_grid_shape: collection_grid_shape,
+              collection_grid_image_fill: collection_grid_image_fill
+            -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- for collection in collections reversed -%}
+            {%- render 'collection-grid-item',
+              collection: collection,
+              sizeVariable: sizeVariable,
+              fallback: 'variable',
+              collection_grid_image: collection_grid_image,
+              collection_grid_shape: collection_grid_shape,
+              collection_grid_image_fill: collection_grid_image_fill
+            -%}
+          {%- endfor -%}
+        {%- endif -%}
+      {%- else -%}
+        {%- for block in section.blocks -%}
+          {%- assign collection = collections[block.settings.collection] -%}
+          {%- render 'collection-grid-item',
+            collection: collection,
+            block: block,
+            sizeVariable: sizeVariable,
+            fallback: 'variable',
+            collection_grid_shape: collection_grid_shape,
+            collection_grid_image_fill: collection_grid_image_fill
+          -%}
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
+    {%- if paginate.pages > 1 and display_type == 'all' -%}
+      {%- render 'pagination', paginate: paginate -%}
+    {%- endif -%}
+  </div>
+
+{%- endpaginate -%}

@@ -1,0 +1,15 @@
+{% render 'section-store-availability',
+  section: section,
+  product_variant: product_variant,
+  context: 'store-availability'
+%}
+
+{% schema %}
+{
+"name": "t:sections.store-availability.name",
+"settings": [],
+"disabled_on": {
+  "groups": ["footer", "header", "custom.popups"]
+}
+}
+{% endschema %}

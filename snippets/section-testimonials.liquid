@@ -1,0 +1,107 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {string} align_text - text alignment
+   * @param {string} color_scheme - color scheme
+   * @param {string} title - section title
+   * @param {boolean} round_images - round images
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- assign hydration = hydration | default: 'on:idle' -%}
+
+<is-land {{ hydration }}>
+  <testimonials-component
+    class="testimonials-section testimonials-{{ section.id }} text-{{ align_text }} color-scheme-{{ color_scheme }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="testimonials">
+    {%- if color_scheme != 'none' -%}
+      {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+    {%- endif -%}
+
+    {%- if title != blank -%}
+      <div class="page-width">
+        <div class="section-header">
+          <h2>{{ title | escape }}</h2>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="slideshow-wrapper">
+        <div
+          class="testimonials-slider"
+          id="Testimonials-{{ section.id }}"
+          data-dots="true"
+          data-count="{{ section.blocks.size }}">
+          {%- for block in section.blocks -%}
+            <div
+              class="testimonials-slide testimonials-slide--{{ block.id }}"
+              data-index="{{ forloop.index0 }}"
+              {{ block.shopify_attributes }}>
+              <blockquote class="testimonials-slider__text">
+                {%- if block.settings.icon == 'quote' -%}
+                  <span class="quote-icon">{% render 'icon-quote' %}</span>
+                {%- elsif block.settings.icon == '5-stars' -%}
+                  <span class="testimonial-stars">★★★★★</span>
+                {%- elsif block.settings.icon == '4-stars' -%}
+                  <span class="testimonial-stars">★★★★</span>
+                {%- elsif block.settings.icon == '3-stars' -%}
+                  <span class="testimonial-stars">★★★</span>
+                {%- elsif block.settings.icon == '2-stars' -%}
+                  <span class="testimonial-stars">★★</span>
+                {%- elsif block.settings.icon == '1-star' -%}
+                  <span class="testimonial-stars">★</span>
+                {%- endif -%}
+
+                {%- if block.settings.testimonial != blank -%}
+                  <div class="rte-setting text-spacing">{{ block.settings.testimonial }}</div>
+                {%- endif -%}
+
+                {%- if block.settings.image != blank -%}
+                  <div class="testimonial-image{% if round_images %} testimonial-image--round{% endif %}">
+                    <div class="image-wrap text-spacing"
+                      {% if round_images == false %}
+                        style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
+                      {% endif %}
+                    >
+                      {%- liquid
+                        if round_images
+                          assign sizeVariable = '65px'
+                        else
+                          assign sizeVariable = '142px'
+                        endif
+
+                        assign fallback = sizeVariable
+                      -%}
+                      {%- render 'image-element',
+                        img: block.settings.image,
+                        sizeVariable: sizeVariable,
+                        fallback: fallback,
+                        widths: '180, 360, 540, 720'
+                      -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+
+                {%- if block.settings.author != blank -%}
+                  <cite>{{ block.settings.author | escape }}</cite>
+                {%- endif -%}
+                {%- if block.settings.author_info != blank -%}
+                  <div class="testimonials__info">{{ block.settings.author_info | escape }}</div>
+                {%- endif -%}
+              </blockquote>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </testimonials-component>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-testimonials';
+    </script>
+  </template>
+</is-land>

@@ -1,0 +1,194 @@
+{%- render 'section-newsletter-popup',
+    section: section,
+    customer: customer,
+    disable_for_account_holders: section.settings.disable_for_account_holders,
+    has_reminder: false,
+    popup_days: section.settings.popup_days,
+    request: request,
+    popup_seconds: section.settings.popup_seconds,
+    popup_image: section.settings.popup_image,
+    color_scheme: section.settings.color_scheme,
+    image_position: section.settings.image_position,
+    popup_title: section.settings.popup_title,
+    popup_text: section.settings.popup_text,
+    enable_newsletter: section.settings.enable_newsletter,
+    context: 'popup',
+    button_label: section.settings.button_label,
+    button_link: section.settings.button_link,
+    show_social_icons: section.settings.show_social_icons,
+    social_instagram_link: settings.social_instagram_link,
+    social_facebook_link: settings.social_facebook_link,
+    social_twitter_link: settings.social_twitter_link,
+    social_youtube_link: settings.social_youtube_link,
+    social_pinterest_link: settings.social_pinterest_link,
+    social_linkedin_link: settings.social_linkedin_link,
+    social_snapchat_link: settings.social_snapchat_link,
+    social_vimeo_link: settings.social_vimeo_link,
+    social_tiktok_link: settings.social_tiktok_link,
+    social_tumblr_link: settings.social_tumblr_link,
+    hydration: 'on:idle'
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.newsletter-popup.name",
+  "max_blocks": 1,
+  "class": "index-section--hidden",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "disable_for_account_holders",
+      "label": "t:sections.newsletter-popup.settings.disable_for_account_holders.label",
+      "default": true,
+      "info": "t:sections.newsletter-popup.settings.disable_for_account_holders.info"
+    },
+    {
+      "type": "range",
+      "id": "popup_seconds",
+      "label": "t:sections.newsletter-popup.settings.popup_seconds.label",
+      "default": 30,
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "unit": "sec",
+      "info": "t:sections.newsletter-popup.settings.popup_seconds.info"
+    },
+    {
+      "type": "range",
+      "id": "popup_days",
+      "label": "t:sections.newsletter-popup.settings.popup_days.label",
+      "default": 30,
+      "info": "t:sections.newsletter-popup.settings.popup_days.info",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "unit": "day"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.newsletter-popup.settings.header_content"
+    },
+    {
+      "type": "text",
+      "id": "popup_title",
+      "label": "t:sections.newsletter-popup.settings.popup_title.label",
+      "default": "Sign up and save"
+    },
+    {
+      "type": "richtext",
+      "id": "popup_text",
+      "label": "t:sections.newsletter-popup.settings.popup_text.label",
+      "default": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "popup_image",
+      "label": "t:sections.newsletter-popup.settings.popup_image.label",
+      "info": "t:sections.newsletter-popup.settings.popup_image.info"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:sections.newsletter-popup.settings.image_position.label",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.newsletter-popup.settings.image_position.options.left.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.newsletter-popup.settings.image_position.options.right.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:sections.newsletter-popup.settings.color_scheme.label",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.newsletter-popup.settings.color_scheme.options.none.label"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_icons",
+      "label": "Show social icons",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.newsletter-popup.settings.header_newsletter"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.newsletter-popup.settings.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_newsletter",
+      "label": "t:sections.newsletter-popup.settings.enable_newsletter.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.newsletter-popup.settings.header_button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:sections.newsletter-popup.settings.button_label.label",
+      "default": "Optional button"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.newsletter-popup.settings.button_link.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "header",
+      "name": "t:sections.newsletter-popup.blocks.header.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "reminder_label",
+          "label": "t:sections.newsletter-popup.blocks.header.settings.text.label",
+          "default": "Get 10% off",
+          "info": "t:sections.newsletter-popup.blocks.header.settings.text.info"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {},
+    "blocks": [
+      {
+        "type": "header",
+        "settings": {}
+      }
+    ]
+  },
+  "disabled_on": {
+    "groups": ["footer", "header"]
+  }
+}
+{% endschema %}

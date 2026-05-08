@@ -1,0 +1,166 @@
+{% render 'section-testimonials',
+  section: section,
+  align_text: section.settings.align_text,
+  color_scheme: section.settings.color_scheme,
+  round_images: section.settings.round_images,
+  title: section.settings.title,
+  hydration: 'on:visible'
+%}
+
+{% schema %}
+{
+"name": "t:sections.testimonials.name",
+"max_blocks": 9,
+"settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "t:sections.testimonials.settings.title.label",
+    "default": "From our customers"
+  },
+  {
+    "type": "select",
+    "id": "align_text",
+    "label": "t:sections.testimonials.settings.align_text.label",
+    "default": "center",
+    "options": [
+      {
+        "value": "left",
+        "label": "t:sections.testimonials.settings.align_text.options.left.label"
+      },
+      {
+        "value": "center",
+        "label": "t:sections.testimonials.settings.align_text.options.center.label"
+      },
+      {
+        "value": "right",
+        "label": "t:sections.testimonials.settings.align_text.options.right.label"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "round_images",
+    "label": "t:sections.testimonials.settings.round_images.label",
+    "info": "t:sections.testimonials.settings.round_images.info",
+    "default": true
+  },
+  {
+    "type": "select",
+    "id": "color_scheme",
+    "label": "t:sections.testimonials.settings.color_scheme.label",
+    "default": "none",
+    "options": [
+      {
+        "value": "none",
+        "label": "t:sections.testimonials.settings.color_scheme.options.none.label"
+      },
+      {
+        "value": "1",
+        "label": "1"
+      },
+      {
+        "value": "2",
+        "label": "2"
+      },
+      {
+        "value": "3",
+        "label": "3"
+      }
+    ]
+  }
+],
+"blocks": [
+  {
+    "type": "testimonial",
+    "name": "t:sections.testimonials.blocks.testimonial.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "icon",
+        "label": "t:sections.testimonials.blocks.testimonial.settings.icon.label",
+        "default": "5-stars",
+        "options": [
+          {
+            "value": "none",
+            "label": "t:sections.testimonials.blocks.testimonial.settings.icon.options.none.label"
+          },
+          {
+            "value": "quote",
+            "label": "t:sections.testimonials.blocks.testimonial.settings.icon.options.quote.label"
+          },
+          {
+            "value": "5-stars",
+            "label": "t:sections.testimonials.blocks.testimonial.settings.icon.options.5-stars.label"
+          },
+          {
+            "value": "4-stars",
+            "label": "t:sections.testimonials.blocks.testimonial.settings.icon.options.4-stars.label"
+          },
+          {
+            "value": "3-stars",
+            "label": "t:sections.testimonials.blocks.testimonial.settings.icon.options.3-stars.label"
+          },
+          {
+            "value": "2-stars",
+            "label": "t:sections.testimonials.blocks.testimonial.settings.icon.options.2-stars.label"
+          },
+          {
+            "value": "1-star",
+            "label": "t:sections.testimonials.blocks.testimonial.settings.icon.options.1-star.label"
+          }
+        ]
+      },
+      {
+        "type": "richtext",
+        "id": "testimonial",
+        "label": "t:sections.testimonials.blocks.testimonial.settings.testimonial.label",
+        "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.testimonials.blocks.testimonial.settings.image.label"
+      },
+      {
+        "type": "text",
+        "id": "author",
+        "label": "t:sections.testimonials.blocks.testimonial.settings.author.label",
+        "default": "Author's name"
+      },
+      {
+        "type": "text",
+        "id": "author_info",
+        "label": "t:sections.testimonials.blocks.testimonial.settings.author_info.label",
+        "default": "Los Angeles, CA"
+      }
+    ]
+  }
+],
+"presets": [
+  {
+    "name": "t:sections.testimonials.presets.testimonials.name",
+    "blocks": [
+      {
+        "type": "testimonial"
+      },
+      {
+        "type": "testimonial"
+      },
+      {
+        "type": "testimonial"
+      },
+      {
+        "type": "testimonial"
+      },
+      {
+        "type": "testimonial"
+      }
+    ]
+  }
+],
+"disabled_on": {
+  "groups": ["footer", "header", "custom.popups"]
+}
+}
+{% endschema %}

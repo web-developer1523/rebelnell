@@ -1,0 +1,911 @@
+{% doc %}
+  @prompt
+    create a  section with three buttons align vertically on both desktop and mobile. the buttons should have a slider to move through the buttons. under the buttons I need a hero image, the buttons shouldn't stack, the buttons should be smaller and not stacked, add a fourth button, I want to be able to adjust the height and width of the image , add text and a button to the hero, I want the hero to have a black overlay that is adjustable
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-button-slider-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-button-slider-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-button-slider-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    margin-bottom: {{ block.settings.spacing_below_buttons }}px;
+  }
+
+  .ai-button-slider-track-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.button_gap }}px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px 0;
+  }
+
+  .ai-button-slider-track-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-button-slider-item-{{ ai_gen_id }} {
+    flex: 0 0 auto;
+    width: calc(100% - 40px);
+  }
+
+  .ai-button-slider-btn-{{ ai_gen_id }} {
+    width: 100%;
+    padding: {{ block.settings.button_padding }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .ai-button-slider-btn-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+  }
+
+  .ai-button-slider-nav-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .ai-button-slider-nav-btn-{{ ai_gen_id }} {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: {{ block.settings.nav_button_color }};
+    color: {{ block.settings.nav_button_icon_color }};
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .ai-button-slider-nav-btn-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.nav_button_hover_color }};
+  }
+
+  .ai-button-slider-nav-btn-{{ ai_gen_id }}:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .ai-button-slider-nav-btn-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ai-button-slider-hero-{{ ai_gen_id }} {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ai-button-slider-hero-inner-{{ ai_gen_id }} {
+    width: {{ block.settings.image_width }}%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .ai-button-slider-hero-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.image_height }}px;
+    display: block;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    object-fit: {{ block.settings.image_fit }};
+  }
+
+  .ai-button-slider-hero-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.image_height }}px;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-button-slider-hero-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-button-slider-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-button-slider-hero-overlay-bg-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+    border-radius: {{ block.settings.image_border_radius }}px;
+    pointer-events: none;
+  }
+
+  .ai-button-slider-hero-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: {{ block.settings.content_alignment }};
+    justify-content: {{ block.settings.content_vertical_alignment }};
+    padding: 40px;
+    text-align: {{ block.settings.text_alignment }};
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-button-slider-hero-content-{{ ai_gen_id }} {
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-button-slider-hero-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .ai-button-slider-hero-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 24px;
+    line-height: 1.5;
+  }
+
+  .ai-button-slider-hero-cta-{{ ai_gen_id }} {
+    display: inline-flex;
+    padding: {{ block.settings.cta_padding }}px {{ block.settings.cta_padding | times: 2 }}px;
+    background-color: {{ block.settings.cta_bg_color }};
+    color: {{ block.settings.cta_text_color }};
+    border: {{ block.settings.cta_border_width }}px solid {{ block.settings.cta_border_color }};
+    border-radius: {{ block.settings.cta_border_radius }}px;
+    font-size: {{ block.settings.cta_font_size }}px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ai-button-slider-hero-cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.cta_hover_bg_color }};
+    color: {{ block.settings.cta_hover_text_color }};
+    border-color: {{ block.settings.cta_hover_border_color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-button-slider-item-{{ ai_gen_id }} {
+      width: auto;
+      min-width: {{ block.settings.button_min_width }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-button-slider-hero-overlay-{{ ai_gen_id }} {
+      padding: 20px;
+    }
+
+    .ai-button-slider-hero-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-button-slider-hero-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<button-slider-{{ ai_gen_id }} class="ai-button-slider-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-button-slider-container-{{ ai_gen_id }}">
+    <div class="ai-button-slider-wrapper-{{ ai_gen_id }}">
+      <div class="ai-button-slider-track-{{ ai_gen_id }}" data-slider-track>
+        {% for i in (1..4) %}
+          {% liquid
+            assign button_text_key = 'button_' | append: i | append: '_text'
+            assign button_url_key = 'button_' | append: i | append: '_url'
+            assign button_text = block.settings[button_text_key]
+            assign button_url = block.settings[button_url_key]
+          %}
+          
+          {% if button_text != blank %}
+            <div class="ai-button-slider-item-{{ ai_gen_id }}">
+              {% if button_url != blank %}
+                <a href="{{ button_url }}" class="ai-button-slider-btn-{{ ai_gen_id }}">
+                  {{ button_text }}
+                </a>
+              {% else %}
+                <button class="ai-button-slider-btn-{{ ai_gen_id }}">
+                  {{ button_text }}
+                </button>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="ai-button-slider-nav-{{ ai_gen_id }}">
+        <button 
+          class="ai-button-slider-nav-btn-{{ ai_gen_id }}" 
+          data-slider-prev
+          aria-label="Previous button"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button 
+          class="ai-button-slider-nav-btn-{{ ai_gen_id }}" 
+          data-slider-next
+          aria-label="Next button"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="ai-button-slider-hero-{{ ai_gen_id }}">
+      <div class="ai-button-slider-hero-inner-{{ ai_gen_id }}">
+        {% if block.settings.hero_image %}
+          <img
+            src="{{ block.settings.hero_image | image_url: width: 2000 }}"
+            alt="{{ block.settings.hero_image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.hero_image.width }}"
+            height="{{ block.settings.hero_image.height }}"
+            class="ai-button-slider-hero-image-{{ ai_gen_id }}"
+          >
+        {% else %}
+          <div class="ai-button-slider-hero-placeholder-{{ ai_gen_id }}">
+            {{ 'hero-apparel-1' | placeholder_svg_tag }}
+            <div class="ai-button-slider-empty-state-{{ ai_gen_id }}">
+              Add a hero image
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="ai-button-slider-hero-overlay-bg-{{ ai_gen_id }}"></div>
+
+        <div class="ai-button-slider-hero-overlay-{{ ai_gen_id }}">
+          <div class="ai-button-slider-hero-content-{{ ai_gen_id }}">
+            {% if block.settings.hero_heading != blank %}
+              <h2 class="ai-button-slider-hero-heading-{{ ai_gen_id }}">
+                {{ block.settings.hero_heading }}
+              </h2>
+            {% endif %}
+
+            {% if block.settings.hero_text != blank %}
+              <div class="ai-button-slider-hero-text-{{ ai_gen_id }}">
+                {{ block.settings.hero_text }}
+              </div>
+            {% endif %}
+
+            {% if block.settings.hero_cta_text != blank %}
+              {% if block.settings.hero_cta_url != blank %}
+                <a href="{{ block.settings.hero_cta_url }}" class="ai-button-slider-hero-cta-{{ ai_gen_id }}">
+                  {{ block.settings.hero_cta_text }}
+                </a>
+              {% else %}
+                <button class="ai-button-slider-hero-cta-{{ ai_gen_id }}">
+                  {{ block.settings.hero_cta_text }}
+                </button>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</button-slider-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ButtonSlider{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.track = this.querySelector('[data-slider-track]');
+        this.prevBtn = this.querySelector('[data-slider-prev]');
+        this.nextBtn = this.querySelector('[data-slider-next]');
+        this.items = this.querySelectorAll('.ai-button-slider-item-{{ ai_gen_id }}');
+        this.currentIndex = 0;
+
+        if (this.prevBtn && this.nextBtn && this.track) {
+          this.setupEventListeners();
+          this.updateButtons();
+        }
+      }
+
+      setupEventListeners() {
+        this.prevBtn.addEventListener('click', () => this.slidePrev());
+        this.nextBtn.addEventListener('click', () => this.slideNext());
+        
+        this.track.addEventListener('scroll', () => {
+          this.updateCurrentIndex();
+          this.updateButtons();
+        });
+      }
+
+      slidePrev() {
+        if (this.currentIndex > 0) {
+          this.currentIndex--;
+          this.scrollToIndex(this.currentIndex);
+        }
+      }
+
+      slideNext() {
+        if (this.currentIndex < this.items.length - 1) {
+          this.currentIndex++;
+          this.scrollToIndex(this.currentIndex);
+        }
+      }
+
+      scrollToIndex(index) {
+        const item = this.items[index];
+        if (item) {
+          item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        }
+      }
+
+      updateCurrentIndex() {
+        const scrollLeft = this.track.scrollLeft;
+        const itemWidth = this.items[0].offsetWidth;
+        this.currentIndex = Math.round(scrollLeft / itemWidth);
+      }
+
+      updateButtons() {
+        if (this.prevBtn && this.nextBtn) {
+          this.prevBtn.disabled = this.currentIndex === 0;
+          this.nextBtn.disabled = this.currentIndex === this.items.length - 1;
+        }
+      }
+    }
+
+    customElements.define('button-slider-{{ ai_gen_id }}', ButtonSlider{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Button slider with hero",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Button 1"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Text",
+      "default": "Button 1"
+    },
+    {
+      "type": "url",
+      "id": "button_1_url",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Button 2"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Text",
+      "default": "Button 2"
+    },
+    {
+      "type": "url",
+      "id": "button_2_url",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Button 3"
+    },
+    {
+      "type": "text",
+      "id": "button_3_text",
+      "label": "Text",
+      "default": "Button 3"
+    },
+    {
+      "type": "url",
+      "id": "button_3_url",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Button 4"
+    },
+    {
+      "type": "text",
+      "id": "button_4_text",
+      "label": "Text",
+      "default": "Button 4"
+    },
+    {
+      "type": "url",
+      "id": "button_4_url",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "range",
+      "id": "button_min_width",
+      "min": 150,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Minimum width",
+      "default": 200
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Hover border color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_padding",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_gap",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap between buttons",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Navigation arrows"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_color",
+      "label": "Background color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_icon_color",
+      "label": "Icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_hover_color",
+      "label": "Hover background color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Hero image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Width",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Height",
+      "default": 500
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "fill",
+          "label": "Fill"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Hero overlay"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Hero content"
+    },
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "Heading",
+      "default": "Discover Our Collection"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_text",
+      "label": "Text",
+      "default": "Explore our curated selection of products designed just for you."
+    },
+    {
+      "type": "text",
+      "id": "hero_cta_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_url",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Hero text style"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 72,
+      "step": 4,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 14,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Text size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Hero button style"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_border_color",
+      "label": "Border color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_border_color",
+      "label": "Hover border color",
+      "default": "#c81688"
+    },
+    {
+      "type": "range",
+      "id": "cta_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "cta_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "cta_padding",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "cta_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "spacing_below_buttons",
+      "min": 20,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "label": "Space below buttons",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Button slider with hero"
+    }
+  ]
+}
+{% endschema %}

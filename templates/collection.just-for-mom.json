@@ -1,0 +1,241 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-header",
+      "disabled": true,
+      "settings": {
+        "enable": true,
+        "collection_image_enable": true,
+        "parallax": false,
+        "parallax_direction": "top"
+      }
+    },
+    "rich_text_ajDE3L": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bcFwkY": {
+          "type": "heading",
+          "settings": {
+            "title": "CUSTOM JEWELRY - YOU DESIGN",
+            "heading_size": "h1"
+          }
+        },
+        "text_qEfBza": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h6>Rebel Nell can transform meaningful items into unique jewelry or gifts, such as kid's artwork, mementos from a loved one or a special occasion allowing you to honor and carry those special memories with you always. </h6>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bcFwkY",
+        "text_qEfBza"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "text_columns_chPGMf": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_ajtNXY": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Bridal_Custom_Molly_Earrings_and_Adrian_Necklace_Gold_4d6028e9-435d-43bc-9be9-17fadc256c36.jpg",
+            "image_mask": "none",
+            "image_width": 300,
+            "title": "Something Borrowed and New",
+            "text": "<p>A bride provided us with a part of her mother's veil, and we turned it into something both \"borrowed\" and \"new\" for her special day. We transformed the cherished veil into a stunning pair of Molly Earrings and an exquisite Adrian Necklace. </p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_cFVgXn": {
+          "type": "text_block",
+          "disabled": true,
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Custom_Kid_s_Paint_and_Create_Keychain.jpg",
+            "image_mask": "none",
+            "image_width": 300,
+            "title": "Kid's Artwork",
+            "text": "<p>At Lawton School, parents could participate in a unique fundraiser by encouraging their children to create original artwork. Our talented team transformed these creations into custom pieces available for purchase, with proceeds going towards Lawton School's initiative to bring a therapy dog on board.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_KyKPRp": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Custom_Money_Clip.jpg",
+            "image_mask": "none",
+            "image_width": 300,
+            "title": "Honoring A Loved One",
+            "text": "<p>In memory of a departed friend, a group honored Michael's legacy by creating custom money clips with dried flowers from his memorial service and created a custom card to honor his life.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_jdnPcU": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Custom_Kid_s_Paint_and_Create_Kid_s_Taylor_bracelet_with_Nicole_Necklace_Silver.jpg",
+            "image_mask": "none",
+            "image_width": 300,
+            "title": "Kid's Artwork",
+            "text": "<p>Rebel Nell specializes in transforming your child's artwork into beautiful, custom jewelry. Instead of struggling to keep every piece of art your kid brings home, let us turn those cherished creations into unique, wearable keepsakes. This way, you can always carry a piece of your child's creativity with you, while decluttering your home.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_N63BtE": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Custom_Order_Diana_Earrings_and_Nicole_Necklace_Gold.jpg",
+            "image_mask": "none",
+            "image_width": 300,
+            "title": "Honoring A Veteran",
+            "text": "<p>We specialize in turning cherished memories into custom keepsakes. For example, we repurposed an old Navy jacket into beautiful, personalized gifts for a family of the loved one, preserving his legacy. </p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_fjRmDa": {
+          "type": "text_block",
+          "disabled": true,
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Custom_Diana_Earrings_and_Nechelle_Necklace_Silver.jpg",
+            "image_mask": "none",
+            "image_width": 240,
+            "title": "Unleash Your Creativity",
+            "text": "<p>Zoë unleashed her creativity by crafting a vibrant graffiti slab from leftover paint cans. Inspired by her bold expression, we transformed her art into a <strong>One of No Other Kind</strong> pair of Diana Earrings and Nechelle Necklaces. Now, Zoë can carry her creativity with her wherever she goes.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_ajtNXY",
+        "text_block_cFVgXn",
+        "text_block_KyKPRp",
+        "text_block_jdnPcU",
+        "text_block_N63BtE",
+        "text_block_fjRmDa"
+      ],
+      "settings": {
+        "title": "Previous Custom Orders",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "2"
+      }
+    },
+    "rich_text_wy4NbC": {
+      "type": "rich-text",
+      "blocks": {
+        "text_BgUAwd": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>HOW IT WORKS:</strong></p><p><strong>Step 1: </strong>Choose from our curated selection of stunning jewelry pieces below and place your order online.</p><p><strong>Step 2: </strong>Mail or Drop Off the meaningful material or artwork to Rebel Nell Headquarters at 1314 Holden St Detroit, MI 48202 and <strong>include your order number</strong>.</p><p><strong>Step 3: </strong>Our team will use a the material you provide to create your item(s). Upon completion, we will ship the order to you along with the remaining material, minus the love we borrowed to make the items. </p><p><strong>NOTE</strong>: Each order takes <strong>2-3 weeks after receipt of your material </strong>for our team to create your custom items and ship it out. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_BgUAwd"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "3",
+        "divider": false
+      }
+    },
+    "promo-grid": {
+      "type": "promo-grid",
+      "blocks": {
+        "banner": {
+          "type": "banner",
+          "settings": {
+            "heading": "Banner promotion",
+            "text": "Add the details of your promotion in smaller text",
+            "link": "",
+            "label": "Shop now",
+            "color_scheme": "1"
+          }
+        }
+      },
+      "block_order": [
+        "banner"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": false,
+        "lazyload_images": true
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "subcollections": {
+          "type": "subcollections",
+          "settings": {}
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "grid_style": "medium"
+          }
+        },
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "subcollections",
+        "product_grid",
+        "collection_description"
+      ],
+      "settings": {
+        "enable_sidebar": true,
+        "collapse_filters": true,
+        "enable_color_swatches": false,
+        "enable_sort": true
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "collection-header",
+    "rich_text_ajDE3L",
+    "text_columns_chPGMf",
+    "rich_text_wy4NbC",
+    "promo-grid",
+    "main-collection",
+    "recently-viewed"
+  ]
+}

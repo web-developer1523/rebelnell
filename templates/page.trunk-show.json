@@ -1,0 +1,158 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_image_JiifY4": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_4NCFTj": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Private_Shopping_b4f05634-cd97-430a-80c4-bf2da521b7a7.jpg",
+            "image_mobile": "shopify://shop_images/Private_Shopping_Mobile.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_4NCFTj"
+      ],
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_LgPpjG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ccnJPt": {
+          "type": "heading",
+          "settings": {
+            "title": "Pop-up/Private Parties",
+            "heading_size": "h1"
+          }
+        },
+        "text_WY8YBV": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Love Rebel Nell? Host a trunk show! We'll bring the trunk to you (or you bring your friends to us). Great for Girl's Nights, a casual get-together or Sunday afternoon shopping party. And it's turnkey, pick your date, and we do the rest.</p><p><strong>BENEFITS:</strong></p><p>10% of sales or Rebel Nell jewelry for the hostess!</p><p><strong>OPTION 1:</strong></p><p>In-Person Rebel Nell Trunk Show (Onsite at our studio or in your home). We provide the jewelry, you supply the guests!</p><p><strong>OPTION 2:</strong></p><p>Online Rebel Nell Trunk Show or we'll provide you with an invitation and code for your guests, and they can shop away at their leisure! You can host your party from the comfort of your own home for as long as you like (we recommend no more than a week)!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ccnJPt",
+        "text_WY8YBV"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "rich_text_mFH6tB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gDBTAY": {
+          "type": "heading",
+          "settings": {
+            "title": "Are You Ready?",
+            "heading_size": "h2"
+          }
+        },
+        "button_F6TMBJ": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/pop-up-experience",
+            "link_text": "BOOK NOW"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gDBTAY",
+        "button_F6TMBJ"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "promo_grid_cfRWty": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_pLAbBw": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Website_Experiences_Individual_Pages_1000_x_700_px_8_-min.png",
+            "video_url": "",
+            "width": "50",
+            "height": 280,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#fff"
+          }
+        },
+        "advanced_EMPCgF": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Website_Experiences_Individual_Pages_1000_x_700_px_7_-min.png",
+            "video_url": "",
+            "width": "50",
+            "height": 420,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#fff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_pLAbBw",
+        "advanced_EMPCgF"
+      ],
+      "settings": {
+        "full_width": true,
+        "gutter_size": 6,
+        "space_above": false,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_image_JiifY4",
+    "rich_text_LgPpjG",
+    "rich_text_mFH6tB",
+    "promo_grid_cfRWty"
+  ]
+}

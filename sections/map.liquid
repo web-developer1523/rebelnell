@@ -1,0 +1,120 @@
+{%- render 'section-map',
+    section: section,
+    display_map: false
+    onboarding: false
+    bg_image: section.settings.background_image
+    api_key: section.settings.api_key,
+    map_address: section.settings.map_address,
+    map_title: section.settings.map_title,
+    address: section.settings.address,
+    heading_position: section.settings.heading_position,
+    heading_size: section.settings.heading_size,
+    show_button: section.settings.show_button,
+    lazyload_images: section.settings.lazyload_images,
+    hydration: 'on:visible'
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.map.name",
+  "class": "index-section--flush",
+  "settings": [
+    {
+      "id": "map_title",
+      "type": "text",
+      "label": "t:sections.map.settings.map_title.label",
+      "default": "Our retail store"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:common.heading_size.label",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:common.heading_size.options.small.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:common.heading_size.options.medium.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:common.heading_size.options.large.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:common.heading_size.options.extra_large.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "t:common.heading_position.label",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:common.heading_position.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:common.heading_position.options.center.label"
+        },
+        {
+          "value": "right",
+          "label": "t:common.heading_position.options.right.label"
+        }
+      ]
+    },
+    {
+      "id": "address",
+      "type": "richtext",
+      "label": "t:sections.map.settings.address.label",
+      "default": "<p>301 Front St W<br>Toronto, Canada</p><p>Mon - Fri, 8:30am - 10:30pm<br>Saturday, 8:30am - 10:30pm<br>Sunday, 8:30am - 10:30pm</p>"
+    },
+    {
+      "id": "map_address",
+      "type": "text",
+      "label": "t:sections.map.settings.map_address.label",
+      "info": "t:sections.map.settings.map_address.info",
+      "default": "301 Front St W, Toronto, ON M5V 2T6"
+    },
+    {
+      "id": "api_key",
+      "type": "text",
+      "label": "t:sections.map.settings.api_key.label",
+      "info": "t:sections.map.settings.api_key.info"
+    },
+    {
+      "id": "show_button",
+      "type": "checkbox",
+      "label": "t:sections.map.settings.show_button.label",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.map.settings.background_image.label",
+      "info": "t:sections.map.settings.background_image.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "lazyload_images",
+      "label": "t:common.lazyload_images.label",
+      "info": "t:common.lazyload_images.info",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.map.presets.map.name"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

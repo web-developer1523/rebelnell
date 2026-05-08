@@ -1,0 +1,104 @@
+{% comment %}
+  /**
+   * @param {object} section - section object
+   * @param {boolean} show_currency_selector - show currency selector dropdown
+   * @param {boolean} show_locale_selector - show locale selector dropdown
+   * @param {boolean} show_currency_flags - show currency flags
+   * @param {boolean} toolbar_social - show social icons in toolbar
+   * @param {boolean} announcement_center - center announcement bar
+   * @param {object} shop - shop object
+   * @param {string} social_instagram_link - instagram link
+   * @param {string} social_facebook_link - facebook link
+   * @param {string} social_twitter_link - twitter link
+   * @param {string} social_youtube_link - youtube link
+   * @param {string} social_pinterest_link - pinterest link
+   * @param {string} social_linkedin_link - linkedin link
+   * @param {string} social_snapchat_link - snapchat link
+   * @param {string} social_vimeo_link - vimeo link
+   * @param {string} social_tiktok_link - tiktok link
+   * @param {string} social_tumblr_link - tumblr link
+   * @param {string} [hydration] - hydration mode - (default: 'on:idle')
+   */
+{% endcomment %}
+
+{%- liquid
+  assign show_selectors = false
+  assign currency_selector = false
+  assign locale_selector = false
+
+  if show_currency_selector and shop.enabled_currencies.size > 1
+    assign currency_selector = true
+  endif
+
+  if show_locale_selector and shop.enabled_locales.size > 1
+    assign locale_selector = true
+  endif
+
+  if currency_selector or locale_selector
+    assign show_selectors = true
+  endif
+
+  assign show_announcement = false
+  assign announcement_block_count = 0
+  for block in section.blocks
+    if block.type == 'announcement' or block.type == '@app'
+      assign show_announcement = true
+      assign announcement_block_count = announcement_block_count | plus: 1
+    endif
+  endfor
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+<is-land {{ hydration }}>
+  <toolbar-section data-section-id="{{ section.id }}" data-section-type="toolbar">
+    <div class="toolbar">
+      <div class="page-width">
+        <div class="toolbar__content">
+          {%- render 'announcement-bar',
+            section: section,
+            show_announcement: show_announcement,
+            announcement_block_count: announcement_block_count,
+            announcement_center: announcement_center
+          -%}
+
+
+          {%- if toolbar_social -%}
+            <div class="toolbar__item small--hide">
+              {% render 'social-icons',
+                additional_classes: 'inline-list toolbar__social',
+                social_instagram_link: social_instagram_link,
+                social_facebook_link: social_facebook_link,
+                social_twitter_link: social_twitter_link,
+                social_youtube_link: social_youtube_link,
+                social_pinterest_link: social_pinterest_link,
+                social_linkedin_link: social_linkedin_link,
+                social_snapchat_link: social_snapchat_link,
+                social_vimeo_link: social_vimeo_link,
+                social_tiktok_link: social_tiktok_link,
+                social_tumblr_link: social_tumblr_link
+              %}
+            </div>
+          {%- endif -%}
+
+          {%- if show_selectors -%}
+            <div class="toolbar__item small--hide">
+              {%- render 'multi-selectors',
+                locale_selector: locale_selector,
+                currency_selector: currency_selector,
+                location: 'toolbar',
+                show_currency_flags: show_currency_flags
+              -%}
+            </div>
+          {%- endif -%}
+        </div>
+
+      </div>
+    </div>
+  </toolbar-section>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-toolbar';
+    </script>
+  </template>
+</is-land>

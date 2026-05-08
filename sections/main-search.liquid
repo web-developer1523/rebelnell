@@ -1,0 +1,84 @@
+{%- render 'section-main-search',
+    section: section,
+    search: search,
+    cart: cart,
+    context: 'search-page',
+    enable_sidebar: section.settings.enable_sidebar,
+    enable_color_swatches: section.settings.enable_color_swatches,
+    tags_combine: false,
+    enable_sort: section.settings.enable_sort,
+    collapse_filters: section.settings.collapse_filters,
+    paginate_by: 40,
+    grid_style: section.settings.grid_style,
+    quick_shop_enable: settings.quick_shop_enable,
+    quick_add_enable: settings.quick_add_enable,
+    product_grid_image_size: settings.product_grid_image_size,
+    product_grid_image_fill: settings.product_grid_image_fill,
+    product_hover_image: settings.product_hover_image,
+    enable_swatches: settings.enable_swatches,
+    vendor_enable: settings.vendor_enable,
+    product_save_amount: settings.product_save_amount,
+    product_save_type: settings.product_save_type,
+    enable_product_reviews: settings.enable_product_reviews
+    show_breadcrumbs: settings.show_breadcrumbs,
+    color_header_search: settings.color_header_search,
+    predictive_search_enabled: settings.predictive_search_enabled,
+    hydration: 'on:idle'
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.main-search.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main-search.settings.header_filtering_and_sorting"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sidebar",
+      "label": "t:sections.main-search.settings.enable_sidebar.label",
+      "default": true,
+      "info": "t:sections.main-search.settings.enable_sidebar.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapse_filters",
+      "label": "t:sections.main-search.settings.collapse_filters.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_color_swatches",
+      "label": "t:sections.main-search.settings.enable_color_swatches.label",
+      "info": "t:sections.main-search.settings.enable_color_swatches.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sort",
+      "label": "t:sections.main-search.settings.enable_sort.label",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "grid_style",
+      "label": "t:sections.main-search.settings.grid_style.label",
+      "default": "medium",
+      "options": [
+        {
+          "value": "large",
+          "label": "t:sections.main-search.settings.grid_style.options.large.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.main-search.settings.grid_style.options.small.label"
+        },
+        {
+          "value": "list",
+          "label": "t:sections.main-search.settings.grid_style.options.list.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

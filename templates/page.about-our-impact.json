@@ -1,0 +1,419 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_mL3Vn6": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_cgVNgp": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<h1>You Are Making an Impact</h1>",
+            "title_size": 88,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/YOU_ARE_MAKING_AN_IMPACT_15.png",
+            "overlay_opacity": 16
+          }
+        }
+      },
+      "block_order": [
+        "hero_cgVNgp"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "advanced_content_EfHrkK": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_YEWpde": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/WEBSITE_TEMPLATE_About_Us_Small_Square_550_x_550_2.png",
+            "link": "",
+            "width": "33%",
+            "alignment": "center"
+          }
+        },
+        "liquid_PpAhzc": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Who We Are</h2><p>At Rebel Nell, we exist to provide employment, equitable opportunity, and wraparound support for women with barriers to employment, this includes those who have been faced with homelessness, returning citizens, refugees seeking asylum and awaiting citizenship, LGBTQIA, women living with mental illnesses, and women with physical disabilities. The women we serve are employed as Creative Designers and educated in jewelry design, customer service, and many other transferable workforce skills.</p>",
+            "width": "66%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_YEWpde",
+        "liquid_PpAhzc"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "advanced_content_Tnmzet": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_ztgVjD": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Workforce Development & Wraparound Support</h2><p>Through our workforce program, we partner with strategic partners to create individualized support programs including financial training, life wellness, legal aid, housing resources, career education, micro-loans, and other wrap-around programs. The result is a societal impact that allows women to graduate to a life of self-sufficiency and equitable opportunity.\nAs a social enterprise, we pride ourselves on being self-sufficient, meaning the work we do is completely funded by the sales of our jewelry - your purchase has a direct impact on the lives of the women we employ. <b>YOU ARE MAKING AN IMPACT!</b></p>",
+            "width": "66%",
+            "alignment": "center"
+          }
+        },
+        "image_4TYiLU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/WEBSITE_TEMPLATE_About_Us_Small_Square_550_x_550_1.png",
+            "link": "",
+            "width": "33%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_ztgVjD",
+        "image_4TYiLU"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "text_columns_cpGTwB": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_79Hfxk": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/impact-icons-01.svg",
+            "image_mask": "square",
+            "image_width": 220,
+            "title": "41",
+            "text": "<p><strong>Creative Designers Employed</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_7FtDPB": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/impact-icons-02.svg",
+            "image_mask": "square",
+            "image_width": 220,
+            "title": "288",
+            "text": "<p><strong>Lives Impacted</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_UfrPkk": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/impact-icons-sustainability.svg",
+            "image_mask": "square",
+            "image_width": 220,
+            "title": "3363.558 lbs",
+            "text": "<p><strong>Material Re-used & upcycled</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_iz6pYR": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/impact-icons-03.svg",
+            "image_mask": "square",
+            "image_width": 220,
+            "title": "34,000+",
+            "text": "<p><strong>Skill Development Hours</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_PeMKQP": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/impact-icons-04.svg",
+            "image_mask": "square",
+            "image_width": 220,
+            "title": "130,000+",
+            "text": "<p><strong>Workforce Development Hours</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_hz9gjY": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/impact-icons-05.svg",
+            "image_mask": "square",
+            "image_width": 220,
+            "title": "$3,000",
+            "text": "<p><strong>Increase in Monthly Household Income</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_tDGF9P": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/impact-icons-06.svg",
+            "image_mask": "square",
+            "image_width": 220,
+            "title": "36",
+            "text": "<p><strong>Graduates Into the Traditional Workforce</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_6zwYxk": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/impact-icons-07.svg",
+            "image_mask": "square",
+            "image_width": 220,
+            "title": "97%",
+            "text": "<p><strong>Graduates Into the Traditional Workforce</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_VecMaq": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/impact-icons-08.svg",
+            "image_mask": "square",
+            "image_width": 220,
+            "title": "$100,000+",
+            "text": "<p><strong>Donated to Our Community Partners, Whose Work Supports Causes That Align With Our Mission</strong></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_79Hfxk",
+        "text_block_7FtDPB",
+        "text_block_UfrPkk",
+        "text_block_iz6pYR",
+        "text_block_PeMKQP",
+        "text_block_hz9gjY",
+        "text_block_tDGF9P",
+        "text_block_6zwYxk",
+        "text_block_VecMaq"
+      ],
+      "settings": {
+        "title": "Impact",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "advanced_content_faiXy7": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_zrzrAL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/T.E.A..svg",
+            "link": "",
+            "width": "33%",
+            "alignment": "center"
+          }
+        },
+        "liquid_8ktPUm": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>T.E.A. 501c3</h2><p>T.E.A. (Teach Empower Achieve) is a 501c3 workforce development organization that serves as a partner for people, primarily women, facing barriers to employment and aims to be a driver of equitable change. T.E.A. works in close collaboration with existing businesses to identify employment needs and job development solutions that support and provide resources for participants’ pathways toward self-sufficiency.\n</b></p>\n<a type=\"button\" class=\"btn btn-link mb-3\" href=\"https://www.rebelnell.com/blogs/blog/the-tea-on-teach-empower-achieve\">Learn More</a>",
+            "width": "66%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_zrzrAL",
+        "liquid_8ktPUm"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "advanced_content_U3KpaT": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_rMTGjz": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>COTS</h2><p>COTS creates opportunities for families to collaborate, thrive, and succeed in building strong and stable households, neighborhoods, and communities. Through partnerships, they are able to assist families in reaching their housing, economic, health, education, and career goals as they overcome homelessness and break the cycle of poverty for the next generation and beyond. COTS is creating opportunities to succeed.</p><a href=\"https://www.rebelnell.com/blogs/blog/creating-opportunities-to-succeed\" type=\"button\" class=\"btn btn-link\">Learn More</a>",
+            "width": "66%",
+            "alignment": "center"
+          }
+        },
+        "image_4MEgQF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/COTS.svg",
+            "link": "",
+            "width": "33%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_rMTGjz",
+        "image_4MEgQF"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": false
+      }
+    },
+    "advanced_content_U9N8kW": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_MQKKkz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/GLIMMER_IN_THE_DARK_1.png",
+            "link": "",
+            "width": "33%",
+            "alignment": "center"
+          }
+        },
+        "liquid_ydaffT": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Glimmer In The Dark</h2><p>Glimmer in the Dark is a non-profit on a mission to spread love and connection to new widows by gifting a thoughtful piece of jewelry on Valentine’s Day. Through this heartfelt gesture, we aim to remind them that they are cherished and never alone, even in the absence of their loved ones. We believe that these tokens of love can uplift their spirits, bring comfort, and foster a sense of connection during a challenging time.\n</b></p>\n</p><a href=\"https://docs.google.com/forms/d/1k-rlaCn8XLSh3D71dz5iVPhBhIcXNkYf1AAJPkGGMYc/viewform?pli=1&ts=67895503&pli=1&edit_requested=true\" type=\"button\" class=\"btn btn-link\">Nominate a Widow</a>",
+            "width": "66%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_MQKKkz",
+        "liquid_ydaffT"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_YtAGD8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dpYYPk": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Certifications",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dpYYPk"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "advanced_content_RPWUnz": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_3nYYUB": {
+          "type": "liquid",
+          "settings": {
+            "code": "<p>Rebel Nell is proud to have obtained certifications from two distinct organizations, SEWF and the Women’s Business Enterprise National Council. These certifications validate our ongoing efforts to create impact while producing quality products.\n\nThe SEWF Certified Social Enterprise is an independent guarantee that we put the interests of people and the planet above shareholder gain.\n\nWe are verified as a Women’s Business Enterprise (WBE) and Women-Owned Small Business (WOSB) through the Women’s Business Enterprise National Council, the nation’s largest third-party certifier of businesses owned and operated by women in the US.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "image_TMiAwG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SEWF_verified_logo_2_1_b1c46d65-94f4-4f40-8d80-42094925342b.png",
+            "link": "",
+            "width": "25%",
+            "alignment": "center"
+          }
+        },
+        "image_pdhBzQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/wbenc-logo_5eaa66dd-bec9-42c8-97eb-2e7b081bbdf0.png",
+            "link": "",
+            "width": "25%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_3nYYUB",
+        "image_TMiAwG",
+        "image_pdhBzQ"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false,
+        "lazyload_images": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_mL3Vn6",
+    "advanced_content_EfHrkK",
+    "advanced_content_Tnmzet",
+    "text_columns_cpGTwB",
+    "advanced_content_faiXy7",
+    "advanced_content_U3KpaT",
+    "advanced_content_U9N8kW",
+    "rich_text_YtAGD8",
+    "advanced_content_RPWUnz"
+  ]
+}

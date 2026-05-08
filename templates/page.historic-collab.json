@@ -1,0 +1,125 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_xJMqFG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kedcEk": {
+          "type": "heading",
+          "settings": {
+            "title": "Historic Collaborations",
+            "heading_size": "h2"
+          }
+        },
+        "text_PfVjhH": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Using repurposed materials, our historic collections tell a story of what once was and connect life's important moments to your personal journey.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kedcEk",
+        "text_PfVjhH"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "2",
+        "divider": false
+      }
+    },
+    "featured_collections_Qb9DXk": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_VXRV9d": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "detroit-zoo-collaboration",
+            "title": "Detroit Zoo | Last Chance"
+          }
+        },
+        "collection_WtybVa": {
+          "type": "collection",
+          "settings": {
+            "collection": "michigan-central-station",
+            "title": ""
+          }
+        },
+        "collection_nUztWK": {
+          "type": "collection",
+          "settings": {
+            "collection": "grand-hotel-landing-page",
+            "title": "Grand Hotel"
+          }
+        },
+        "collection_J3tt8c": {
+          "type": "collection",
+          "settings": {
+            "collection": "hudson-collaboration",
+            "title": "Hudson's"
+          }
+        },
+        "collection_ND7XJC": {
+          "type": "collection",
+          "settings": {
+            "collection": "packard-plant-collaboration-all",
+            "title": "Packard Plant"
+          }
+        },
+        "collection_NEMdzf": {
+          "type": "collection",
+          "settings": {
+            "collection": "fox-theatre-collaboration",
+            "title": "Fox Theatre"
+          }
+        },
+        "collection_AXMz8J": {
+          "type": "collection",
+          "settings": {
+            "collection": "parade-company-collection",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_VXRV9d",
+        "collection_WtybVa",
+        "collection_nUztWK",
+        "collection_J3tt8c",
+        "collection_ND7XJC",
+        "collection_NEMdzf",
+        "collection_AXMz8J"
+      ],
+      "name": "t:sections.featured-collections.presets.collection_list.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_xJMqFG",
+    "featured_collections_Qb9DXk"
+  ]
+}

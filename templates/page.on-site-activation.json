@@ -1,0 +1,831 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_LgPpjG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ccnJPt": {
+          "type": "heading",
+          "settings": {
+            "title": "Corporate & Community Engagement - \"Design Your Own Experience\"",
+            "heading_size": "h2"
+          }
+        },
+        "text_WY8YBV": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Organizations partner with Rebel Nell to give their constituents a one-of-a-kind experience. Some companies have materials in mind to create unique keepsake pieces, others want to bring their audience into the event and together craft the personalized elements for a take-home item. We are excited to help determine what is best for your audience!</p><p>Our \"Design Your Own\" Experience combines art, impact, and sustainability to create a truly memorable engagement opportunity. Whether using repurposed graffiti, meaningful materials from your organization, or remnants from our custom mural-making experiences, guests can craft personalized keepsakes that tell a unique story. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ccnJPt",
+        "text_WY8YBV"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "text_columns_cVEKqp": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_wrJNrz": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/sxsw.png",
+            "image_mask": "portrait",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_FBYrxg": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": false,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Experiential Activation",
+            "text": "<p>Whether a group of 10 or 10,000, your attendees participate in a interactive activity that builds community and gives people the opportunity to more deeply engage with one another or your brand.</p><h4><strong>HOW IT WORKS</strong></h4><p><strong>Step 1</strong> - Work with the Rebel Nell team to determine the \"meaningful materials\" for your organization's custom pieces. It can be anything from our signature material, graffiti, to grass from a golf course - the options are endless!</p><p><strong>Step 2 </strong>- You choose what item(s) you want for your custom keepsake pieces from our robust catalog. Examples include - golf divot tools, key chains, label pins, wine bottle stoppers, jewelry, and much more!</p><p><strong>Step 3 </strong>- On the day of your event, our team is on site to make the magic happen!</p><p></p>",
+            "button_label": "Get Started Now!",
+            "button_link": "https://www.rebelnell.com/pages/rebel-nell-experinces-contact-us-form"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_wrJNrz",
+        "text_block_FBYrxg"
+      ],
+      "settings": {
+        "custom-css": "",
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "slideshow_image_p4pQ4V": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_Rk8Dax": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Custom_notebook_Slide_4_1.jpg"
+          }
+        },
+        "image_ENA7BA": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/F90A2042-5B8D-421C-82BA-4564B044C88B_1.jpg"
+          }
+        },
+        "image_cejhM4": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/D212BDC1-6114-457B-B7D7-1132EF76A3FE.jpg"
+          }
+        },
+        "image_aEcdmL": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/IMG_7764.png"
+          }
+        },
+        "image_NhU3y7": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/PhotoRoom_000_20230417_133031.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_Rk8Dax",
+        "image_ENA7BA",
+        "image_cejhM4",
+        "image_aEcdmL",
+        "image_NhU3y7"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "advanced_content_wg6L99": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_YCEQ8f": {
+          "type": "liquid",
+          "settings": {
+            "code": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/ZG2hlqhq_uw?si=X8_3cL_p7Vm0lf5C\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_tLH8bf": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>PARTNERSHIP WITH SXSW</h2><p>Check out the activation we did with the Michigan Economic Development Corporation at Midwest House during SXSW 2025!!</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_YCEQ8f",
+        "liquid_tLH8bf"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "featured_video_Jd3e4A": {
+      "type": "featured-video",
+      "disabled": true,
+      "settings": {
+        "title": "PARTNERSHIP WITH SXSW",
+        "video_url": "https://youtube.com/watch?v=ZG2hlqhq_uw",
+        "divider": false
+      }
+    },
+    "slideshow_image_gtVLF3": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_k33WjF": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/d20b940c-a4c4-4451-804c-4277db4cbcea.jpg"
+          }
+        },
+        "image_BD4Yc4": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/DSC06836.jpg"
+          }
+        },
+        "image_4xUi98": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/OPTION_1___Company_Materials.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_k33WjF",
+        "image_BD4Yc4",
+        "image_4xUi98"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "logo_list_gxE3Bg": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_image_NVQbG6": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/D212BDC1-6114-457B-B7D7-1132EF76A3FE.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_dtdVBj": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/F90A2042-5B8D-421C-82BA-4564B044C88B_1.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_NWMy44": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/PhotoRoom_003_20230315_143446.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_icKFK9": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/export_for_website.png",
+            "link": ""
+          }
+        },
+        "logo_image_KNYcTM": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_2_b62cd6fb-482f-456c-a29a-c1b13484e3d7.png",
+            "link": ""
+          }
+        },
+        "logo_image_hbQbWT": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/chase.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_NVQbG6",
+        "logo_image_dtdVBj",
+        "logo_image_NWMy44",
+        "logo_image_icKFK9",
+        "logo_image_KNYcTM",
+        "logo_image_hbQbWT"
+      ],
+      "custom_css": [
+        ".logo-bar__item {padding: 1%;}"
+      ],
+      "settings": {
+        "title": "Sample Items to Choose for Custom Keepsakes",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    },
+    "rich_text_iTBw4q": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MQYMWX": {
+          "type": "heading",
+          "settings": {
+            "title": "STEP 1",
+            "heading_size": "h2"
+          }
+        },
+        "text_kaT8yn": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Select the meaningful material that is incorporated into your special product.</p><ul><li>Detroit graffiti in custom colors</li><li>Meaningful material from your organization i.e. material from a historic building, fabric from seats, wood from floors. </li><li>Remnants from an immersive <a href=\"https://www.rebelnell.com/pages/diy-mural-making\" title=\"Rebel Nell Mural Making\">Rebel Nell Mural Making</a> experience. </li></ul><p><strong>SEE EXAMPLES BELOW</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MQYMWX",
+        "text_kaT8yn"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "left",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": true
+      }
+    },
+    "rich_text_eYf8cD": {
+      "type": "rich-text",
+      "blocks": {
+        "button_KJBFbq": {
+          "type": "button",
+          "settings": {
+            "link": "https://www.rebelnell.com/pages/rebel-nell-experinces-contact-us-form",
+            "link_text": "Get Started Now"
+          }
+        }
+      },
+      "block_order": [
+        "button_KJBFbq"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "1716417414b6da8726": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "slideshow_split_pyHWLR": {
+      "type": "slideshow-split",
+      "blocks": {
+        "slide_ahHtBz": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "custom_class_slide": "",
+            "top_subheading": "Option 1",
+            "title": "Repurposed Graffiti",
+            "title_size": 70,
+            "subheading": "Our specialty is repurposing fallen graffiti into wearable art. We can incorporate your company colors from fallen graffiti into the pieces.",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "left",
+            "image": "shopify://shop_images/TEMPLATE_GIFTING_EXPERIENCES_CASE_STUDY_Business_Gifting_1080_x_1080_px_3.jpg",
+            "indent_image": false,
+            "color_scheme": "none"
+          }
+        },
+        "slide_qmta7U": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "custom_class_slide": "",
+            "top_subheading": "Option 2",
+            "title": "Company Materials",
+            "title_size": 70,
+            "subheading": "We will incorporate meaningful material from your organization and preserve it into your custom pieces i.e. material from a historic building, fabric from seats, wood from floors. \nYou name it, we've done it!",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "left",
+            "image": "shopify://shop_images/TEMPLATE_GIFTING_EXPERIENCES_CASE_STUDY_Business_Gifting_1080_x_1080_px.png",
+            "indent_image": false,
+            "color_scheme": "none"
+          }
+        },
+        "slide_rWyHRG": {
+          "type": "slide",
+          "settings": {
+            "custom_class_slide": "",
+            "top_subheading": "Activation Example",
+            "title": "Mural Making",
+            "title_size": 70,
+            "subheading": "We will create an immersive mural making experience with your team.  The mural will reveal a hidden message at the end that can be repurposed into the gift. Watch the video to learn more.",
+            "link": "https://www.rebelnell.com/pages/diy-mural-making",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "left",
+            "image": "shopify://shop_images/TEMPLATE_GIFTING_EXPERIENCES_CASE_STUDY_Business_Gifting_1080_x_1080_px_2.jpg",
+            "indent_image": false,
+            "color_scheme": "2"
+          }
+        }
+      },
+      "block_order": [
+        "slide_ahHtBz",
+        "slide_qmta7U",
+        "slide_rWyHRG"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "height": 580,
+        "height_mobile": 430,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "rich_text_DJY7bx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_R4haet": {
+          "type": "heading",
+          "settings": {
+            "title": "PREVIOUS COLLABORATIONS",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_R4haet"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "3",
+        "divider": false
+      }
+    },
+    "text_and_image_XpGAPg": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/DSC00392.jpg",
+        "image_mask": "landscape",
+        "image2": "shopify://shop_images/DSC00643.jpg",
+        "image2_mask": "square",
+        "subtitle": "",
+        "title": "Albion Collage Graduation",
+        "heading_size": "h2",
+        "text": "<p>The senior class could created commemorative college jewelry made from either the campus rock or the \"senior sheet\", that all seniors contribute to during the year, sharing their memories of the experience at Albion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "66",
+        "layout": "left",
+        "color_scheme": "2",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": false,
+        "lazyload_images": true
+      }
+    },
+    "text_and_image_Pf3fek": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/WEBSITE_COLLATERAL_Product_Listings_1_0878ef20-321e-4c55-b00f-81ba91fc11a4.png",
+        "image_mask": "square",
+        "image2": "shopify://shop_images/WEBSITE_COLLATERAL_Product_Listings_8c80f014-4e5f-4af8-b925-03a1ae30c462.png",
+        "image2_mask": "square",
+        "subtitle": "",
+        "title": "Ally Bank Lapel Pins",
+        "heading_size": "h2",
+        "text": "<p>Ally Financial and the Detroit Pistons along with their fans created a special Rebel Nell mural to recognize the importance of empowering females from all walks of life. The remnants of the mural were used to create custom 313 pins and gifted to members of the She-313 Program as a reminder that you are strong, powerful, and deserving.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "66",
+        "layout": "right",
+        "color_scheme": "2",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": false,
+        "lazyload_images": true
+      }
+    },
+    "text_and_image_dVYxpk": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/IMG_0984_1_1.jpg",
+        "image_mask": "square",
+        "image2": "shopify://shop_images/IMG_4619.heic",
+        "image2_mask": "square",
+        "subtitle": "",
+        "title": "NFL Draft Keychains",
+        "heading_size": "h2",
+        "text": "<p>Custom keychains made for the NFL Draft and Visit Detroit for the Red Carpet Gala. These unique gifts were made by repurposing the remnants from the renovation of the historic National Theater in Detroit, which served as the backdrop for the 2024 NFL Draft.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "66",
+        "layout": "left",
+        "color_scheme": "2",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": false,
+        "lazyload_images": true
+      }
+    },
+    "text_and_image_8CPjJc": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/IMG_1150_1.heic",
+        "image_mask": "square",
+        "image2": "shopify://shop_images/Photoroom_20240603_144019.jpg",
+        "image2_mask": "square",
+        "subtitle": "",
+        "title": "Kresge's Centennial Pins",
+        "heading_size": "h2",
+        "text": "<p>Custom pins crafted for the Kresge Foundation's Centennial Anniversary using repurposed material from locations supported by the organization</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "66",
+        "layout": "right",
+        "color_scheme": "2",
+        "divider": false,
+        "top_padding": false,
+        "bottom_padding": false,
+        "lazyload_images": true
+      }
+    },
+    "testimonials_zMmpUk": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_rMjCYG": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "testimonial": "<p>From concept to execution, Rebel Nell has been a wonderful mission-driven partner for the Detroit Red Wings and Detroit Tigers organizations in support of elevating opportunities and access for women and children in Detroit. Rebel Nell's agility and unconventional approach to jewelry-making provides our fans with unique, one-of-a-kind keepsakes they will cherish forever. More importantly, each purchase unlocks the power of potential for so many who benefit from the proceeds.<br/><br/></p>",
+            "image": "shopify://shop_images/Ilitich_Charities_Divot_Tool_Website_White_Background.png",
+            "author": "Kevin Brown",
+            "author_info": "Director, Community Impact, Detroit Red Wings & Detroit Tigers"
+          }
+        },
+        "testimonial_97Ci6J": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "testimonial": "<p>Rebel Nell is so fun and easy to work with. I always look forward to our collaboration meetings because I know I will walk away inspired, excited for our next project, and with ideas for 10 more projects! Their products are top-notch, and the collaboration process, from idea to physical product, is effortless. Working with Rebel Nell, who is doing so much good in the Detroit community, has been a great partnership for us.<br/></p>",
+            "image": "shopify://shop_images/DSC08828.jpg",
+            "author": "Kevin Brehmer",
+            "author_info": "Director of Operations & Merchandise, Detroit City Football Club"
+          }
+        },
+        "testimonial_RW8w4q": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "testimonial": "<p>S3 has worked with Rebel Nell on many customized pieces over the years and in every case, it was a great experience every time. Not only do our employees love their gifts, but everyone at S3 has gotten to know Rebel Nell and the important and impactful work they do in the community. They are true partners to S3 in every sense. We're proud to wear Rebel Nell!</p>",
+            "image": "shopify://shop_images/S3I_Jayson_2.jpg",
+            "author": "Cindy Pasky",
+            "author_info": "Founder, President & CEO Strategic Staffing Solutions"
+          }
+        },
+        "testimonial_4eV4xf": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "testimonial": "<p>Avalon Healing Center has thoroughly enjoyed partnering with Rebel Nell on our custom collection – both of our organizations share a common mission of engaging and empowering those in our community. The product that they made for Avalon is beautiful, on brand and truly unique. Our donors love it and it has also provided a great fundraising opportunity for us.<br/><br/></p>",
+            "image": "shopify://shop_images/IMG_5626.jpg",
+            "author": "Trinea Gonczar",
+            "author_info": "Director of Development, Avalon Healing Center"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_rMjCYG",
+        "testimonial_97Ci6J",
+        "testimonial_RW8w4q",
+        "testimonial_4eV4xf"
+      ],
+      "settings": {
+        "title": "From Our Customers",
+        "align_text": "center",
+        "round_images": true,
+        "color_scheme": "2"
+      }
+    },
+    "text_columns_M3czTr": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_hndXjh": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/D212BDC1-6114-457B-B7D7-1132EF76A3FE.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Bottle Stoppers",
+            "text": "<p>Custom bottle stoppers using the company colors for the graffiti and engraved on the back. This made for a perfect holiday gifts for clients. </p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_GhtybX": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/F90A2042-5B8D-421C-82BA-4564B044C88B_1.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Ornament",
+            "text": "<p>Custom ornament made for the centennial celebration for Downtown Detroit Partnership. The logo incorporated graffiti in the colors of the organization. </p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_efP3pX": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/PhotoRoom_000_20230315_143446.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Custom Bracelets",
+            "text": "<p>Created in partnership with DTE to celebrate the young women at Munger school who participated in a STEM program. The bracelets are made from DTE vests provided by the Company.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_iWnjhH": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Custom_notebook_Slide_4_1.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Custom Journals",
+            "text": "<p>Eco-friendly journals made from repurposed stone. The bezel contains remnants from a team building mural making experience.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_hndXjh",
+        "text_block_GhtybX",
+        "text_block_efP3pX",
+        "text_block_iWnjhH"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom-css": "",
+        "title": "Example Keepsakes",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "1"
+      }
+    },
+    "rich_text_d9jwP7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UPdxtf": {
+          "type": "heading",
+          "settings": {
+            "title": "Why Choose Rebel Nell for Your Corporate Gifting & Promotional Item Needs?",
+            "heading_size": "h2"
+          }
+        },
+        "text_wygjLz": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>- <strong>Sustainable and Eco-friendly:</strong> Our products are made with sustainability at heart, ensuring they don't contribute to landfill waste.<br/>- <strong>Social Impact:</strong> We empower women through employment and education, turning local materials into beautiful, one-of-a-kind pieces.<br/>- <strong>Reflect Your Values:</strong> Our gifts are a testament to your company’s commitment to social responsibility and environmental care.<br/><br/>Join us in the rebellion against bland corporate gifting. Let your company values shine through with every gift you give. Choose Rebel Nell for corporate gifts that matter. To read more about our Corporate Gifting visit our blog.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UPdxtf",
+        "text_wygjLz"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "left",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "logo_list_BLwAKP": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_image_7GqxEr": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/NFL_Draft.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_rJKN9Y": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Rocket_Mortgage_Classic_Logo.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_N8U6BT": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Rocket_Companies_Logo.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_bNBDP7": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Ford_Motor_Company_Fund_logo.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_xUxaGM": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Albion_College_logo.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_JTrCK4": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/DCFC_Logo.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_PpbJBX": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Detroit_Lions_Logo.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_Mifa6C": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/DTE_Logo.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_kVgQbA": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Detroit_Pistons_Logo.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_QdKa7G": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/s3_logo.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_JwQ6LP": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Techtown_Detroit_logo.jpg",
+            "link": ""
+          }
+        },
+        "logo_image_CBnhkV": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Red_Wings_Logo.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_7GqxEr",
+        "logo_image_rJKN9Y",
+        "logo_image_N8U6BT",
+        "logo_image_bNBDP7",
+        "logo_image_xUxaGM",
+        "logo_image_JTrCK4",
+        "logo_image_PpbJBX",
+        "logo_image_Mifa6C",
+        "logo_image_kVgQbA",
+        "logo_image_QdKa7G",
+        "logo_image_JwQ6LP",
+        "logo_image_CBnhkV"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Proud to Have Worked With",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_LgPpjG",
+    "text_columns_cVEKqp",
+    "slideshow_image_p4pQ4V",
+    "advanced_content_wg6L99",
+    "featured_video_Jd3e4A",
+    "slideshow_image_gtVLF3",
+    "logo_list_gxE3Bg",
+    "rich_text_iTBw4q",
+    "rich_text_eYf8cD",
+    "1716417414b6da8726",
+    "slideshow_split_pyHWLR",
+    "rich_text_DJY7bx",
+    "text_and_image_XpGAPg",
+    "text_and_image_Pf3fek",
+    "text_and_image_dVYxpk",
+    "text_and_image_8CPjJc",
+    "testimonials_zMmpUk",
+    "text_columns_M3czTr",
+    "rich_text_d9jwP7",
+    "logo_list_BLwAKP"
+  ]
+}

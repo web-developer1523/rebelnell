@@ -1,0 +1,56 @@
+{%- render 'section-collection-header',
+  section: section,
+  collection: collection,
+  disable_sticky_header: false,
+  enable: section.settings.enable,
+  collection_image_enable: section.settings.collection_image_enable,
+  parallax: section.settings.parallax,
+  parallax_direction: section.settings.parallax_direction,
+  show_breadcrumbs: settings.show_breadcrumbs,
+  show_breadcrumbs_collection_link: settings.show_breadcrumbs_collection_link,
+  hydration: 'on:idle'
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.collection-header.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "label": "t:sections.collection-header.settings.enable.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_image_enable",
+      "label": "t:sections.collection-header.settings.collection_image_enable.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "parallax",
+      "label": "t:sections.collection-header.settings.parallax.label"
+    },
+    {
+      "type": "select",
+      "id": "parallax_direction",
+      "label": "t:sections.background-image-text.settings.parallax_direction.label",
+      "default": "top",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.background-image-text.settings.parallax_direction.options.top.label"
+        },
+        {
+          "value": "left",
+          "label": "t:sections.background-image-text.settings.parallax_direction.options.left.label"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

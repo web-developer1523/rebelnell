@@ -1,0 +1,141 @@
+{%- render 'section-faq',
+    section: section,
+    divider: section.settings.divider,
+    title: section.settings.title,
+    heading_position: section.settings.heading_position,
+    heading_size: section.settings.heading_size,
+    section_blocks_size: section.blocks.size,
+-%}
+
+{% schema %}
+{
+  "name": "t:sections.faq.name",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.faq.settings.title.label",
+      "default": "FAQs"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:common.heading_size.label",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:common.heading_size.options.small.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:common.heading_size.options.medium.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:common.heading_size.options.large.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:common.heading_size.options.extra_large.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "t:common.heading_position.label",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:common.heading_position.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:common.heading_position.options.center.label"
+        },
+        {
+          "value": "right",
+          "label": "t:common.heading_position.options.right.label"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rich-text",
+      "name": "t:sections.faq.blocks.rich_text.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.faq.blocks.rich_text.settings.title.label",
+          "default": "Rich text"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.faq.blocks.rich_text.settings.text.label",
+          "default": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.</p>"
+        },
+        {
+          "type": "select",
+          "id": "align_text",
+          "label": "t:sections.faq.blocks.rich_text.settings.align_text.label",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:sections.faq.blocks.rich_text.settings.align_text.options.left.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.faq.blocks.rich_text.settings.align_text.options.center.label"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.faq.blocks.rich_text.settings.align_text.options.right.label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "question",
+      "name": "t:sections.faq.blocks.question.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.faq.blocks.question.settings.title.label",
+          "default": "Frequently asked question"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.faq.blocks.question.settings.text.label",
+          "default": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.faq.presets.faq.name",
+      "blocks": [
+        {
+          "type": "question"
+        },
+        {
+          "type": "question"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

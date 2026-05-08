@@ -1,0 +1,223 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "17629217025d5f9a3f": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17629196982748273b": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "slideshow_8m9P83": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_RayKVN": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>A Story Worth Sharing</p>",
+            "title_size": 40,
+            "subheading": "Every piece carries Detroit's history and heart",
+            "link": "shopify://pages/shop-by-story",
+            "link_text": "Find The Perfect Gift",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/The_Meaningful_Gifter_1.png",
+            "image_mobile": "shopify://shop_images/The_Meaningful_Gifter.png",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_RayKVN"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slides.name",
+      "settings": {
+        "full_width": false,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "main": {
+      "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "176290936727ed95ff": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "advanced_content_6PPjnA": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_YXfMkL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Graffiti_Image.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_9PPBMx": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Why It Matters</h2><p> At Rebel Nell we transform repurposed graffiti and meaningful materials into one of a kind jewelry, handcrafted by women building their next chapter.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_YXfMkL",
+        "liquid_9PPBMx"
+      ],
+      "name": "t:sections.advanced-content.presets.custom_content.name",
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": false
+      }
+    },
+    "rich_text_MmEFUz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hWUNmL": {
+          "type": "heading",
+          "settings": {
+            "title": "Every Gift Tells A Story",
+            "heading_size": "h2"
+          }
+        },
+        "text_mgBj9X": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Find the perfect gift at any price</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hWUNmL",
+        "text_mgBj9X"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "17629221482c48bbea": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b2eb277_ix7UqQ": {
+          "type": "ai_gen_block_b2eb277",
+          "settings": {
+            "button_1_text": "Stocking Stuffers",
+            "button_1_url": "shopify://collections/stocking-stuffers",
+            "button_2_text": "Gifts Under $75",
+            "button_2_url": "shopify://collections/gifts-under-76",
+            "button_3_text": "Gifts Under $150",
+            "button_3_url": "shopify://collections/gifts-under-151",
+            "button_4_text": "Gifts Over $200",
+            "button_4_url": "shopify://collections/gifts-200",
+            "button_min_width": 280,
+            "button_bg_color": "#c81688",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#000000",
+            "button_hover_text_color": "#ffffff",
+            "button_border_color": "#c81688",
+            "button_hover_border_color": "#000000",
+            "button_border_width": 0,
+            "button_border_radius": 0,
+            "button_padding": 15,
+            "button_font_size": 14,
+            "button_gap": 25,
+            "nav_button_color": "#c81688",
+            "nav_button_icon_color": "#ffffff",
+            "nav_button_hover_color": "#000000",
+            "hero_image": "shopify://shop_images/Gifts_under_75_meta_mobile.png",
+            "image_width": 100,
+            "image_height": 500,
+            "image_fit": "cover",
+            "image_border_radius": 0,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "hero_heading": "Give The Gift Of Choice",
+            "hero_text": "",
+            "hero_cta_text": "Buy a Gift Card",
+            "hero_cta_url": "shopify://products/gift-card",
+            "content_alignment": "center",
+            "content_vertical_alignment": "flex-end",
+            "text_alignment": "center",
+            "heading_size": 48,
+            "heading_color": "#ffffff",
+            "text_size": 18,
+            "text_color": "#ffffff",
+            "cta_bg_color": "#c81688",
+            "cta_text_color": "#ffffff",
+            "cta_hover_bg_color": "#c81688",
+            "cta_hover_text_color": "#ffffff",
+            "cta_border_color": "#ffffff",
+            "cta_hover_border_color": "#c81688",
+            "cta_border_width": 0,
+            "cta_border_radius": 0,
+            "cta_padding": 16,
+            "cta_font_size": 16,
+            "spacing_below_buttons": 40,
+            "background_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b2eb277_ix7UqQ"
+      ],
+      "settings": {}
+    },
+    "1762922151f3e85191": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_reviews_featured_reviews_carousel_MdLcpE": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/featured-reviews-carousel/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_featured_reviews_carousel_MdLcpE"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    }
+  },
+  "order": [
+    "17629217025d5f9a3f",
+    "17629196982748273b",
+    "slideshow_8m9P83",
+    "main",
+    "176290936727ed95ff",
+    "advanced_content_6PPjnA",
+    "rich_text_MmEFUz",
+    "17629221482c48bbea",
+    "1762922151f3e85191"
+  ]
+}

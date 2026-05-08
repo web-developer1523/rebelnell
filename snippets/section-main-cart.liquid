@@ -1,0 +1,249 @@
+{% comment %}
+  /**
+   * @param {object} template - template object
+   * @param {object} section - section object
+   * @param {object} cart - cart object
+   * @param {object} routes - routes object
+   * @param {string} context - context (default: 'page')
+   * @param {boolean} cart_notes_enable - theme's cart notes setting
+   * @param {boolean} cart_terms_conditions_enable - theme's cart terms and conditions setting
+   * @param {object} cart_terms_conditions_page - theme's cart terms and conditions page object
+   * @param {object} additional_checkout_buttons - additional checkout buttons object
+   * @param {boolean} cart_additional_buttons - theme's cart additional buttons setting
+   * @param {boolean} quick_add_enable - whether quick add is enabled
+   * @param {boolean} quick_shop_enable - whether quick shop is enabled
+   * @param {string} product_grid_image_size - the image size to use for the grid item
+   * @param {boolean} product_grid_image_fill - whether the image should fill the grid item
+   * @param {boolean} product_hover_image - whether second image will be shown on hover
+   * @param {boolean} enable_swatches - whether swatches are enabled
+   * @param {boolean} vendor_enable - whether to show the vendor
+   * @param {boolean} product_save_amount - show save amount
+   * @param {string} product_save_type - dollar or percent
+   * @param {boolean} enable_product_reviews - whether to show product reviews
+   * @param {boolean} superscript_decimals - whether to superscript decimals
+   * @param {boolean} show_breadcrumbs - whether to show breadcrumbs or not
+   * @param {string} cart_collection_handle - handle of the collection to use for recommendations
+   */
+{% endcomment %}
+<!--
+  <script>
+     $('#DonationAmount').on('input', function () {
+      var donationValue = $(this).val();
+      $.post('/cart/update.js', {
+        attributes: {
+          donation_amount: donationValue
+        }
+      });
+    });
+  </script>
+-->
+<div class="page-width page-width--cart page-content">
+  {%- render 'breadcrumbs', show_breadcrumbs: show_breadcrumbs, template: template -%}
+
+  <header class="section-header text-center{% if cart.item_count == 0 %} section-header--404{% endif %}">
+    <h1 class="section-header__title">{{ 'cart.general.title' | t }}</h1>
+    <div class="rte text-spacing">
+      {%- if cart.item_count == 0 -%}
+        <p>{{ 'cart.general.empty' | t }}</p>
+        <hr class="hr--clear hr--small">
+        <p>
+          <a href="{{ routes.root_url }}" class="btn">{{ 'cart.general.continue_shopping' | t }}</a>
+        </p>
+      {%- endif -%}
+    </div>
+  </header>
+
+  {%- if cart.item_count > 0 -%}
+    <form action="{{ routes.cart_url }}" method="post" novalidate data-location="page" id="CartPageForm">
+      <div class="cart__page">
+        <div class="cart__page-col">
+          <div data-products>
+            {% for item in cart.items %}
+              {%- render 'cart-item',
+                item: item,
+                section: section,
+                sizes: '150px',
+                routes: routes,
+                shop: shop,
+                superscript_decimals: superscript_decimals
+              -%}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="cart__page-col">
+          {% if cart_notes_enable %}
+            <div class="cart__item-row">
+              <label for="CartNote" class="add-note">
+                {{ 'cart.general.note' | t }}
+                <span class="note-icon note-icon--open" aria-hidden="true">
+                  {% render 'icon-pencil' %}
+                </span>
+                <span class="note-icon note-icon--close">
+                  {% render 'icon-close' %}
+                  <span class="icon__fallback-text">{{ 'general.accessibility.close' | t }}</span>
+                </span>
+              </label>
+              <textarea name="note" class="input-full cart__note hide" id="CartNote">{{ cart.note }}</textarea>
+            </div>
+          {% endif %}
+          {% comment %}
+            <div class="cart__item-row cart__donation">
+              <label for="DonationAmount">{{ 'Donation amount' }}</label>
+              <input
+                type="number"
+                name="attributes[donation_amount]"
+                id="DonationAmount"
+                class="input-full"
+                min="0"
+                step="0.01"
+                value="{{ cart.attributes.donation_amount | default: 0.00 }}"
+              >
+            </div>
+            {%- assign donation_amount = cart.attributes.donation_amount | default: 0 -%}
+
+            {%- assign donation_cents = donation_amount | times: 100 | round -%}
+
+            {%- assign new_price = cart.total_price | plus: donation_cents -%}
+          {% endcomment %}
+          <div class="cart__donation">
+            <label for="donation_amount">Add a donation (optional):</label>
+            <input
+              type="number"
+              id="donation_amount"
+              name="donation_amount"
+              min="0"
+              step="1"
+              placeholder="Enter amount in $"
+            >
+            <button type="button" id="add_donation_btn">Add Donation</button>
+          </div>
+
+          <div class="cart__item-sub cart__item-row cart__item--subtotal">
+            <div>{{ 'cart.general.subtotal' | t }}</div>
+            <div data-subtotal>
+              {%- render 'price', price: cart.total_price, shop: shop, superscript_decimals: superscript_decimals -%}
+            </div>
+          </div>
+
+          <div data-discounts>
+            {% if cart.cart_level_discount_applications != blank %}
+              <div class="cart__discounts text-right">
+                <div>
+                  {% for cart_discount in cart.cart_level_discount_applications %}
+                    {%- assign savings = cart_discount.total_allocated_amount | money -%}
+                    <div class="cart__discount">
+                      {{ 'cart.general.savings_html' | t: saved_amount: savings }}
+                      ({{ cart_discount.title }})
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+
+          {% if cart_terms_conditions_enable %}
+            <div class="cart__item-row cart__terms">
+              <input type="checkbox" id="CartTerms" class="cart__terms-checkbox">
+              <label for="CartTerms" class="text-label">
+                <small>
+                  {% if cart_terms_conditions_page != blank %}
+                    {{ 'cart.general.terms_html' | t: url: cart_terms_conditions_page.url }}
+                  {% else %}
+                    {{ 'cart.general.terms' | t }}
+                  {% endif %}
+                </small>
+              </label>
+            </div>
+          {% endif %}
+
+          <div class="cart__item-row cart__checkout-wrapper">
+            <button
+              type="submit"
+              name="checkout"
+              data-terms-required="{{ cart_terms_conditions_enable }}"
+              class="btn cart__checkout"
+            >
+              {{ 'cart.general.checkout' | t }}
+            </button>
+
+            {% if additional_checkout_buttons and cart_additional_buttons %}
+              <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
+            {% endif %}
+
+            <a href="{{ routes.all_products_collection_url }}" class="btn btn--secondary cart__continue">
+              {{ 'cart.general.continue_shopping' | t }}
+            </a>
+          </div>
+
+          <div class="cart__item-row text-center">
+            <small>{{ 'cart.general.shipping_at_checkout' | t }}</small>
+          </div>
+        </div>
+        {% render 'section-text-columns',
+          section: section,
+          divider: divider,
+          title: title,
+          align_text: align_text,
+          color_scheme: color_scheme,
+          custom-class: custom-class
+        %}
+        {%- render 'cart-recommendations',
+          collections: collections,
+          cart_collection_handle: cart_collection_handle,
+          location: context,
+          quick_add_enable: quick_add_enable,
+          quick_shop_enable: quick_shop_enable,
+          product_grid_image_size: product_grid_image_size,
+          product_grid_image_fill: product_grid_image_fill,
+          product_hover_image: product_hover_image,
+          enable_swatches: enable_swatches,
+          vendor_enable: vendor_enable,
+          product_save_amount: product_save_amount,
+          product_save_type: product_save_type,
+          enable_product_reviews: enable_product_reviews,
+          superscript_decimals: superscript_decimals
+        -%}
+      </div>
+    </form>
+  {%- endif -%}
+</div>
+
+<script type="module">
+  import 'components/section-main-cart';
+</script>
+<script>
+  document.getElementById('add_donation_btn').addEventListener('click', function () {
+    const amount = parseInt(document.getElementById('donation_amount').value);
+    if (!amount || amount <= 0) {
+      alert('Please enter a valid donation amount.');
+      return;
+    }
+
+    const variantId = "41770407133278"; // Replace with actual Variant ID
+
+    fetch('/cart/quick-add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: variantId,
+        quantity: amount,
+        properties: {
+          "Donation Amount": "$" + amount
+        }
+      })
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to add donation.');
+      return response.json();
+    })
+    .then(data => {
+      // Reload to reflect the donation in the cart
+      location.reload();
+    })
+    .catch(error => {
+      alert('Error: ' + error.message);
+    });
+  });
+</script>

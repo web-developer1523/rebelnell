@@ -1,0 +1,421 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_GU9N7g": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_YaTLR6": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Host Your Event With Us!",
+            "title": "<h1>Experiences Like No Other Kind</h1>",
+            "title_size": 72,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/Experiences_Hero_2.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_YaTLR6"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": false,
+        "autoplay_speed": 5
+      }
+    },
+    "hero_video_mjeWJi": {
+      "type": "hero-video",
+      "settings": {
+        "full_width": false,
+        "title": "",
+        "title_size": 70,
+        "subheading": "",
+        "link_text": "",
+        "link": "",
+        "color_accent": "#ffffff",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/c55e572fba784ae1a5a66078584ebd5f.mp4",
+        "overlay_opacity": 0,
+        "height": 650,
+        "height_mobile": 300
+      }
+    },
+    "rich_text_MRgd89": {
+      "type": "rich-text",
+      "blocks": {
+        "text_MxyxBg": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><em>Host Your Event With Rebel Nell</em></p>"
+          }
+        },
+        "heading_DtqCkB": {
+          "type": "heading",
+          "settings": {
+            "title": "Experiences Like No Other Kind",
+            "heading_size": "h2"
+          }
+        },
+        "text_8LWAxg": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Discover unforgettable experiential events with Rebel Nell's exceptional experiences, perfect for elevating any special occasion. Whether planning a creative team-building session, an engaging employee activity, a hands-on booth activation, an interactive attendee experience, a unique birthday celebration, or a memorable fundraising activity, Rebel Nell ensures a meaningful and impactful experience. </p><p>Explore our offerings and schedule your event today!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_MxyxBg",
+        "heading_DtqCkB",
+        "text_8LWAxg"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "advanced_content_xhFycE": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_jHawKx": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2 class=\"text-center py-4\" style=\"background:#c81688;color:white;\">Make It Yours: Choose Your Event</h2>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_jHawKx"
+      ],
+      "custom_css": [],
+      "settings": {
+        "full_width": true,
+        "space_around": false,
+        "lazyload_images": true
+      }
+    },
+    "text_columns_WzNRPz": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_KeGTQm": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/NSK.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Mural Making",
+            "text": "<p>One of our most popular experiences. Our mural-making is  fun and engaging. We customize to meet your vision. This is perfect for team building (in-studio or off-site), annual meetings, weddings, milestone celebrations or networking events.</p>",
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/diy-mural-making"
+          }
+        },
+        "text_block_TbLH6e": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/WEBSITE_TEMPLATES_Experiences_App_5_a116ed81-a22d-4478-bb2c-12b7f5778a5b.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Design Your Own Jewelry (Downtown Detroit)",
+            "text": "<p>Looking for a new experience for a girls’ night out, or a fun get-together? Look no further. Our Design Your Own Jewelry is the perfect creative outlet for you and your friends. Join us in-store at our Parker's Alley location in Downtown Detroit. An experience you won't forget.</p>",
+            "button_label": "Book Now",
+            "button_link": "shopify://products/jewelry-designing-experience"
+          }
+        },
+        "text_block_K9g7Dg": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Website_Experiences_Page_1_-min_25a6ac9b-c9fc-4623-b984-12bd789bc260.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Permanent Jewelry",
+            "text": "<p>Hosting a bachelorette or girls' weekend in Detroit? Book a Permanent Jewelry Party at Rebel Nell! This jewelry is permanent (well, as long as you want it on, permanent), welded to your wrist or anklet by our creative designers.</p><p>Packages start at $75 per person</p>",
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/limitless-bracelet-party"
+          }
+        },
+        "text_block_WPghz4": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Website_Experiences_Page_2_-min_dc4765bc-3365-4cf4-b73d-846231ba0ef0.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Pop-Ups/ Private Shopping",
+            "text": "<p>Love Rebel Nell? Host a pop-up at your home or office! We'll bring the goodies to you (or you bring your friends to us). Great for Girl's Nights, a casual get-together, office lunch break or Sunday afternoon shopping party. And it's turnkey, pick your date, and we do the rest.</p><p>10% of sales or Rebel Nell jewelry for the hostess</p>",
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/trunk-show"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_KeGTQm",
+        "text_block_TbLH6e",
+        "text_block_K9g7Dg",
+        "text_block_WPghz4"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "text_and_image_kTVjdN": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Website_Experiences_Page_5_-min_394399a5-9c9a-4202-a5a3-e839f93dfda3.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Young Rebels",
+        "heading_size": "h2",
+        "text": "<p>Book the best of both worlds for your child's big day - a jewelry-making experience at Rebel Nell! We supply the tools, instruction, and finished piece(s), you bring the kids! A party like never before - your children will love it! Ideal for ages 8-16. We adjust the experience to meet the age group.</p><p>Packages start at $75 per person</p>",
+        "button_label": "Learn More",
+        "button_link": "shopify://pages/young-rebels-experience",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "promo_grid_6VABnR": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_FYCmkP": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Design Your Own - On Site Activation",
+            "textarea": "",
+            "cta_text1": "BOOK NOW",
+            "cta_link1": "https://www.rebelnell.com/pages/rebel-nell-experinces-contact-us-form",
+            "cta_text2": "LEARN MORE",
+            "cta_link2": "https://www.rebelnell.com/pages/corporate-community-engagement",
+            "image": "shopify://shop_images/WEBSITE_TEMPLATES_Experiences_App_1_431073e0-33a9-4d34-b82e-0854a6a04482.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_FYCmkP"
+      ],
+      "settings": {
+        "full_width": true,
+        "gutter_size": 0,
+        "space_above": false,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    },
+    "promo_grid_H6kaYH": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_f83i7B": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Mural Making Experience",
+            "textarea": "",
+            "cta_text1": "BOOK NOW",
+            "cta_link1": "https://www.rebelnell.com/pages/rebel-nell-experinces-contact-us-form",
+            "cta_text2": "LEARN MORE",
+            "cta_link2": "https://www.rebelnell.com/pages/diy-mural-making",
+            "image": "shopify://shop_images/WEBSITE_TEMPLATES_Experiences_App_52b35342-eddd-404d-a7b3-89fbd13b3aa8.png",
+            "video_url": "",
+            "width": "100",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_f83i7B"
+      ],
+      "settings": {
+        "full_width": true,
+        "gutter_size": 0,
+        "space_above": true,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    },
+    "promo_grid_aMzEjr": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_KzHGp8": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Young Rebel Experience",
+            "textarea": "",
+            "cta_text1": "BOOK NOW",
+            "cta_link1": "https://www.rebelnell.com/pages/young-rebels-experience",
+            "cta_text2": "LEARN MORE",
+            "cta_link2": "https://www.rebelnell.com/pages/young-rebels-experience-1",
+            "image": "shopify://shop_images/Young_Rebels_1.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 520,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_KzHGp8"
+      ],
+      "settings": {
+        "full_width": true,
+        "gutter_size": 0,
+        "space_above": true,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    },
+    "promo_grid_C4LGGG": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_6nYGWh": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Speaking Engagements",
+            "textarea": "",
+            "cta_text1": "BOOK NOW",
+            "cta_link1": "https://www.rebelnell.com/pages/young-rebels-experience",
+            "cta_text2": "LEARN MORE",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Speaking_Engagments.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_incFKM": {
+          "type": "advanced",
+          "disabled": true,
+          "settings": {
+            "subheading": "",
+            "heading": "Permanent Jewelry",
+            "textarea": "",
+            "cta_text1": "BOOK NOW",
+            "cta_link1": "https://www.rebelnell.com/pages/limitless-jewelry-making-experience",
+            "cta_text2": "LEARN MORE",
+            "cta_link2": "https://www.rebelnell.com/pages/limitless-bracelet-party",
+            "image": "shopify://shop_images/permant_bracelet_1.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_6nYGWh",
+        "advanced_incFKM"
+      ],
+      "settings": {
+        "full_width": true,
+        "gutter_size": 0,
+        "space_above": true,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    },
+    "promo_grid_DcdeDf": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_3YjaBd": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Pop-Up Events",
+            "textarea": "",
+            "cta_text1": "BOOK NOW",
+            "cta_link1": "https://www.rebelnell.com/pages/young-rebels-experience",
+            "cta_text2": "LEARN MORE",
+            "cta_link2": "https://www.rebelnell.com/pages/trunk-show",
+            "image": "shopify://shop_images/Pop-up_events.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 520,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_3YjaBd"
+      ],
+      "settings": {
+        "full_width": true,
+        "gutter_size": 0,
+        "space_above": true,
+        "space_below": false,
+        "lazyload_images": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_GU9N7g",
+    "hero_video_mjeWJi",
+    "rich_text_MRgd89",
+    "advanced_content_xhFycE",
+    "text_columns_WzNRPz",
+    "text_and_image_kTVjdN",
+    "promo_grid_6VABnR",
+    "promo_grid_H6kaYH",
+    "promo_grid_aMzEjr",
+    "promo_grid_C4LGGG",
+    "promo_grid_DcdeDf"
+  ]
+}

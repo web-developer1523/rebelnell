@@ -1,0 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "17637081557569ea2a": {
+      "type": "apps",
+      "blocks": {
+        "yotpo_loyalty_rewards_rewards_module_app_block_pn9iAL": {
+          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/rewards-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+          "settings": {
+            "instance_placeholder_id": "1249045"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_loyalty_rewards_rewards_module_app_block_pn9iAL"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17637081557569ea2a"
+  ]
+}

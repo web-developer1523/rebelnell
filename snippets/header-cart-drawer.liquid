@@ -1,0 +1,100 @@
+{% comment %}
+  /**
+    * @param {object} routes - routes object
+    * @param {object} cart_notes_enable - Enable cart notes
+    * @param {object} cart_terms_conditions_enable - Enable terms and conditions
+    * @param {object} cart_terms_conditions_page - Terms and conditions page
+    * @param {object} cart_type - Cart type
+    * @param {object} cart_additional_buttons - Additional checkout buttons
+    * @param {string} cart_collection_handle - handle of the collection to use for recommendations
+    * @param {boolean} quick_add_enable - whether quick add is enabled
+    * @param {boolean} quick_shop_enable - whether quick shop is enabled
+    * @param {string} product_grid_image_size - the image size to use for the grid item
+    * @param {boolean} product_grid_image_fill - whether the image should fill the grid item
+    * @param {boolean} product_hover_image - whether second image will be shown on hover
+    * @param {boolean} enable_swatches - whether swatches are enabled
+    * @param {boolean} vendor_enable - whether to show the vendor
+    * @param {boolean} product_save_amount - show save amount
+    * @param {string} product_save_type - dollar or percent
+    * @param {boolean} enable_product_reviews - whether to show product reviews
+  */
+{% endcomment %}
+
+<form action="{{ routes.cart_url }}" method="post" novalidate data-location="header" class="cart__drawer-form">
+  <div class="cart__scrollable">
+    <div data-products></div>
+    {%- render 'cart-recommendations',
+      collections: collections,
+      cart_collection_handle: cart_collection_handle,
+      location: 'drawer',
+      quick_add_enable: quick_add_enable,
+      quick_shop_enable: quick_shop_enable,
+      product_grid_image_size: product_grid_image_size,
+      product_grid_image_fill: product_grid_image_fill,
+      product_hover_image: product_hover_image,
+      enable_swatches: enable_swatches,
+      vendor_enable: vendor_enable,
+      product_save_amount: product_save_amount,
+      product_save_type: product_save_type,
+      enable_product_reviews: enable_product_reviews,
+      superscript_decimals: superscript_decimals
+    -%}
+
+    {% if cart_notes_enable %}
+      <div class="cart__item-row">
+        <label for="CartHeaderNote" class="add-note">
+          {{ 'cart.general.note' | t }}
+          <span class="note-icon note-icon--open" aria-hidden="true">
+            {% render 'icon-pencil' %}
+          </span>
+          <span class="note-icon note-icon--close">
+            {% render 'icon-close' %}
+            <span class="icon__fallback-text">{{ 'general.accessibility.close' | t }}</span>
+          </span>
+        </label>
+        <textarea name="note" class="input-full cart__note hide" id="CartHeaderNote">{{ cart.note }}</textarea>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="cart__footer">
+    <div class="cart__item-sub cart__item-row cart__item--subtotal">
+      <div>{{ 'cart.general.subtotal' | t }}</div>
+      <div data-subtotal>{{ cart.total_price | money }}</div>
+    </div>
+
+    <div data-discounts></div>
+
+    {% if cart_terms_conditions_enable %}
+      <div class="cart__item-row cart__terms">
+        <input type="checkbox" id="CartTermsHeader" class="cart__terms-checkbox">
+        <label for="CartTermsHeader" class="text-label">
+          <small>
+            {% if cart_terms_conditions_page != blank %}
+              {{ 'cart.general.terms_html' | t: url: cart_terms_conditions_page.url }}
+            {% else %}
+              {{ 'cart.general.terms' | t }}
+            {% endif %}
+          </small>
+        </label>
+      </div>
+    {% endif %}
+
+    <div class="cart__item-row cart__checkout-wrapper payment-buttons">
+      <button type="submit" name="checkout" data-terms-required="{{ cart_terms_conditions_enable }}" class="btn cart__checkout">
+        {{ 'cart.general.checkout' | t }}
+      </button>
+
+
+      {% if cart_type == 'dropdown' and additional_checkout_buttons and cart_additional_buttons %}
+        <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
+      {% endif %}
+    </div>
+
+    <div class="cart__item-row--footer text-center">
+      <small>{{ 'cart.general.shipping_at_checkout' | t }}</small>
+    </div>
+  </div>
+</form>
+
+<div class="site-header__cart-empty">{{ 'cart.general.empty' | t }}</div>

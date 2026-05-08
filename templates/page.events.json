@@ -1,0 +1,155 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_Y98qAw": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UTfeCp": {
+          "type": "heading",
+          "settings": {
+            "title": "Rebel Nell Pop-Ups & Events",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UTfeCp"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "text_columns_wq9jGJ": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_9XmfJh": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/4_13__AAUW_Fashion_Showcase.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "AAUW Fashion Showcase",
+            "text": "<p><strong>APRIL 13th | 9:15am-1pm</strong></p><p>DiPonio Room, VisTaTech Center, 18600 Haggerty Road, Livonia, MI</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_CXdamB": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/4_14__She_Means_Business_2024_PopUp.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "She Means Business 2024 Pop-Up",
+            "text": "<p><strong>APRIL 14th | 12pm-5pm</strong></p><p>Epiphany Detroit 10103 Kercheval Ave, Detroit, MI</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_X3TXLk": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/4_17__Detroit_Yacht_Club.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Detroit Yacht Club",
+            "text": "<p><strong>APRIL 17th | 11am-2:30pm</strong></p><p>1 Riverbank Dr, Detroit, MI 48207</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_wQwLAG": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/4_24_Draft_Femology.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Femology Pop-Up",
+            "text": "<p><strong>APRIL 24th | 11am-4pm</strong></p><p>Newlab @ Michigan Central | 2050 15th St, Detroit, MI 48216</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_ChELnC": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/4_25_NFL_Draft.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "NFL Draft Pop-Up",
+            "text": "<p><strong>APRIL 25th | 11am-6pm</strong></p><p>Capital Park | Detroit, MI 48226</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_ABqcRH": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/4_25_Bayview_Yacht.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Bayview Yacht Club Pop-Up",
+            "text": "<p>APRIL 25th | 5:30pm-10pm</p><p>100 Clairpointe Street, Detroit, Ml 48215</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_R3GBk3": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/4_28__empowHER_conference.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "EmpowHER conference",
+            "text": "<p>APRIL 28th | 6-9pm</p><p>Blue Water Convention Center | 800 Harker Street Port Huron, MI 48060</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_9XmfJh",
+        "text_block_CXdamB",
+        "text_block_X3TXLk",
+        "text_block_wQwLAG",
+        "text_block_ChELnC",
+        "text_block_ABqcRH",
+        "text_block_R3GBk3"
+      ],
+      "settings": {
+        "title": "April",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_Y98qAw",
+    "text_columns_wq9jGJ"
+  ]
+}
