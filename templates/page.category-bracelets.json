@@ -11,7 +11,6 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {}
     },
     "featured_collection_fMFFVh": {
@@ -123,11 +122,35 @@
         "heading_position": "left",
         "divider": false
       }
+    },
+    "rich_text_ejnrUF": {
+      "type": "rich-text",
+      "blocks": {
+        "text_VdhF7Y": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>These pieces are made from repurposed graffiti, fragments of iconic landmarks, fan-favorite sports collaborations, and other one-of-a-kind sources, all designed to be worn solo or stacked together.</strong> While our unique bracelets for women have become some of our most-loved styles, every piece is made to be worn by anyone who connects with the story in front of them.  Browse the rest of our <a href=\"https://www.rebelnell.com/pages/products\" title=\"browse all jewelry\">unique jewelry collection</a> for more reclaimed pieces with the same craft behind them.</p><p><strong>Rebel Nell was founded in Detroit in 2013 to bring real purpose to every piece we make. </strong>Our Creative Designers, women employed through our workforce program, are the hands behind every bracelet, so each one you wear carries both a piece of reclaimed art and a story of opportunity along with it. You can read more about <a href=\"https://www.rebelnell.com/pages/our-story\" title=\"read our story\">Rebel Nell's story</a> and read <a href=\"https://www.rebelnell.com/pages/reviews-1\" title=\"read customer reviews\">our customer reviews</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_VdhF7Y"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "main",
     "featured_collection_fMFFVh",
-    "featured_collections_wiNFEq"
+    "featured_collections_wiNFEq",
+    "rich_text_ejnrUF"
   ]
 }

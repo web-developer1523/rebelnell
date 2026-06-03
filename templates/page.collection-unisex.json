@@ -96,11 +96,35 @@
         "heading_position": "left",
         "divider": false
       }
+    },
+    "rich_text_LA9fWC": {
+      "type": "rich-text",
+      "blocks": {
+        "text_WFW9eW": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>All of Rebel Nell's gender neutral jewelry is shaped by hand from reclaimed materials, then set in gold plated silver or sterling silver and finished into wearable art. Because every fragment of source material carries its own small history, no two pieces in the collection are ever quite alike</strong>, which is what makes them such meaningful gender neutral gifts for partners, parents, friends, or anyone you love. Browse the rest of our <a href=\"https://www.rebelnell.com/pages/products\" title=\"shop all jewelry\">unique jewelry collection</a> for more reclaimed pieces with the same craft behind them.</p><p>Rebel Nell was founded in Detroit in 2013, and every piece in this collection is made by one of our Creative Designers, women employed and supported through our workforce program. Each keepsake carries the story of the materials it was made from and the hands that gave them new life. Learn more <a href=\"https://www.rebelnell.com/pages/our-story\" title=\"Rebel Nell's story\">about Rebel Nell</a> and read our <a href=\"https://www.rebelnell.com/pages/reviews-1\" title=\"Read customer reviews\">customer reviews</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_WFW9eW"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "main",
     "featured_collection_fMFFVh",
-    "featured_collections_wiNFEq"
+    "featured_collections_wiNFEq",
+    "rich_text_LA9fWC"
   ]
 }

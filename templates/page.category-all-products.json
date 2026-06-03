@@ -104,11 +104,35 @@
         "heading_position": "left",
         "divider": false
       }
+    },
+    "rich_text_KhW8Kq": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Cdb4ab": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Each is a piece of unique jewelry shaped by hand from reclaimed materials, every fragment carrying a small history of its own before it is set in gold plated silver or sterling silver and finished into wearable art</strong>. Because the source materials are themselves one-of-a-kind, no two pieces are ever quite alike, which is what makes them such meaningful unique jewelry gifts for the people who matter most.</p><p>Founded in Detroit in 2013, Rebel Nell creates jewelry with story behind it, and the women employed as Creative Designers are the hands behind every piece. Through a workforce program that pairs employment with wraparound resources, each keepsake we make becomes both a beautiful object and a small reminder that there is power in being one of no other kind. Learn more <a href=\"https://www.rebelnell.com/pages/our-story\" title=\"Read our story\">about Rebel Nell</a> and <a href=\"https://www.rebelnell.com/pages/reviews-1\" title=\"Read customer reviews\">read our customer reviews</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Cdb4ab"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "main",
     "featured_collection_fMFFVh",
-    "featured_collections_wiNFEq"
+    "featured_collections_wiNFEq",
+    "rich_text_KhW8Kq"
   ]
 }

@@ -27,10 +27,34 @@
         "view_all": false,
         "divider": false
       }
+    },
+    "rich_text_HM63Mc": {
+      "type": "rich-text",
+      "blocks": {
+        "text_kNfkhF": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Rebel Nell's pet tags are available in bone, heart, and circle shapes, these engraved pet tags can be customized with your animal's name and contact info, doubling as a sentimental keepsake and a working ID. Because no two source materials are alike, no two tags are quite the same, which makes our custom pet tags meaningful gifts for dogs, cats, and any other companion who deserves something better than a plain disc. Browse the rest of our <a href=\"https://www.rebelnell.com/collections/accessories\" title=\"shop accessories\">accessories collection</a> for more reclaimed pieces that bring a story to the everyday.</p><p><strong>Rebel Nell was founded in Detroit in 2013 to put craft and meaning behind every piece.</strong> Our Creative Designers, women employed through our workforce program, are the hands behind every tag, so each purchase carries forward both the history of its materials and the futures of the women shaping them. You can <a href=\"https://www.rebelnell.com/pages/our-story\" title=\"read our story\">read our story</a> and <a href=\"https://www.rebelnell.com/pages/reviews-1\" title=\"Read customer reviews\">read our customer reviews</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_kNfkhF"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "main",
-    "featured_collection_Cx6Pqk"
+    "featured_collection_Cx6Pqk",
+    "rich_text_HM63Mc"
   ]
 }

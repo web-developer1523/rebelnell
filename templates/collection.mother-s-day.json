@@ -9,6 +9,37 @@
  */
 {
   "sections": {
+    "rich_text_L4YpWe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4hW8Bj": {
+          "type": "heading",
+          "settings": {
+            "title": "Shop Mother's Day Jewelry & Mother's Day Jewelry Gifts",
+            "heading_size": "h1"
+          }
+        },
+        "text_RmQ7FW": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Our Mother's Day jewelry collection brings together necklaces, bracelets, earrings, and rings that work for every kind of mom, whether you're shopping for your own mom, your grandma, your aunt, your stepmom, your mother-in-law, or a chosen-family figure who deserves the recognition. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4hW8Bj",
+        "text_RmQ7FW"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
     "promo-grid": {
       "type": "promo-grid",
       "blocks": {
@@ -270,15 +301,40 @@
         "color_scheme": "1",
         "divider": false
       }
+    },
+    "rich_text_Rmj8bW": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Cp8VAB": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Each piece in this collection is set with a fragment of reclaimed material, so you're giving something with a real story behind it instead of another generic chain. You'll find everything from dainty everyday styles and birthstone necklaces to statement earrings and stacking bracelets, which is what makes our Mother's Day jewelry gifts so easy to match to the woman you're shopping for. Browse our full <a href=\"https://www.rebelnell.com/pages/products\" title=\"https://www.rebelnell.com/pages/products\">unique jewelry collection</a> for more reclaimed pieces with the same craft behind them.</p><p>Rebel Nell was founded in Detroit in 2013 to put real craft and meaning behind every piece we make. Our Creative Designers, women employed through our workforce program, are the hands behind every piece, so each one carries both the history of its material and a story of opportunity along with it. Read <a href=\"https://www.rebelnell.com/pages/our-story\" title=\"https://www.rebelnell.com/pages/our-story\">Rebel Nell's story</a> and our <a href=\"https://www.rebelnell.com/pages/reviews-1\" title=\"https://www.rebelnell.com/pages/reviews-1\">customer reviews</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Cp8VAB"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
+    "rich_text_L4YpWe",
     "promo-grid",
     "main-collection",
     "featured_collection_FrhMEV",
     "blocks_aYE4Eh",
     "blocks_zHnwbT",
     "text_with_icons_6CLJtM",
-    "rich_text_T3DKg4"
+    "rich_text_T3DKg4",
+    "rich_text_Rmj8bW"
   ]
 }

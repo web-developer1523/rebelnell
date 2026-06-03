@@ -20,7 +20,7 @@
         "heading_kedcEk": {
           "type": "heading",
           "settings": {
-            "title": "Sports Collaborations",
+            "title": "Shop Unique Sports Jewelry Made from Real Game Worn Materials",
             "heading_size": "h2"
           }
         },
@@ -28,7 +28,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Made from players' jackets, stadium seats, fan art, and more. Our team pride collections are a unique way to celebrate your team!</p>"
+            "text": "<p>This sports jewelry collection is built around materials that were actually part of the game, from player jackets to stadium blocks. </p>"
           }
         }
       },
@@ -90,11 +90,35 @@
         "heading_position": "left",
         "divider": false
       }
+    },
+    "rich_text_3rUe9z": {
+      "type": "rich-text",
+      "blocks": {
+        "text_dc9NKq": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Each sports jewelry collaboration brings something different to the table, but every piece shares the same idea: that the history of a team, a season, or a moment can be carried forward in something you wear. Because the source materials are all different, every piece is genuinely one of a kind. If you're a fan looking for something that goes beyond the usual merch, this is where to start.</p><p><strong>Rebel Nell has been handcrafting meaningful jewelry in Detroit since 2013. </strong>Every piece across all of these collections is made by our Creative Designers, women employed through our workforce development program. So each purchase carries the story of the game and supports women building new futures right here in Detroit. Learn more <a href=\"https://www.rebelnell.com/pages/our-story\" title=\"https://www.rebelnell.com/pages/our-story\">about our story</a> and read <a href=\"https://www.rebelnell.com/pages/reviews-1\" title=\"https://www.rebelnell.com/pages/reviews-1\">our customer reviews.</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_dc9NKq"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "main",
     "rich_text_xJMqFG",
-    "featured_collections_Qb9DXk"
+    "featured_collections_Qb9DXk",
+    "rich_text_3rUe9z"
   ]
 }

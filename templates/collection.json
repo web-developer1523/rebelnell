@@ -77,12 +77,36 @@
     "recently-viewed": {
       "type": "recently-viewed",
       "settings": {}
+    },
+    "rich_text_9LDNJE": {
+      "type": "rich-text",
+      "blocks": {
+        "text_qT37bH": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p></p>{{ collection.metafields.custom.unique_story | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "text_qT37bH"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "collection-header",
     "promo-grid",
     "main-collection",
-    "recently-viewed"
+    "recently-viewed",
+    "rich_text_9LDNJE"
   ]
 }

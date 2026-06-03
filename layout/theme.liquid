@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
   <head>
+    {% if template contains 'collection' and collection.handle == 'private-pride-collection' %}
+  <meta name="robots" content="noindex, nofollow">
+{% endif %}
     <meta name="google-site-verification" content="kujDTKxp-FoPgfQBDuvOzSNxcNgQwAM1NNjavWSkKjQ" />
     <!-- Start of Shoplift scripts -->
     {% render 'shoplift' %}
@@ -268,5 +271,51 @@
       });
          });
     </script>
+    <style>
+      .image-element{
+        opacity:1;
+      }
+    </style>
+    {%- render 'mystery-box-gift' -%}
+
+    {% comment %} remove the 1,2 and 3 star reviews {% endcomment %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      function filterKlaviyoReviews() {
+
+        const reviews = document.querySelectorAll('.kl_reviews__review_item');
+
+        reviews.forEach(review => {
+
+          const ratingElement = review.querySelector('[aria-label*="star review"]');
+
+          if (!ratingElement) return;
+
+          const label = ratingElement.getAttribute('aria-label');
+
+          const rating = parseInt(label);
+
+          if (rating < 4) {
+            review.style.display = 'none';
+          }
+
+        });
+      }
+
+      filterKlaviyoReviews();
+
+      // Re-run because Klaviyo loads reviews dynamically
+      const observer = new MutationObserver(() => {
+        filterKlaviyoReviews();
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+
+    });
+  </script>
   </body>
 </html>

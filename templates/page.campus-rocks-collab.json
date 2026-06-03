@@ -20,7 +20,7 @@
         "heading_kedcEk": {
           "type": "heading",
           "settings": {
-            "title": "Campus Rocks",
+            "title": "Shop Campus Rock Jewelry & Accessories",
             "heading_size": "h2"
           }
         },
@@ -28,7 +28,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Our campus rock collections are a piece of history, a layer of protest and a simple reminder that a splatter of paint can provide hope, support, and a platform for  social action. Made from paint from each university's campus rock.</p>"
+            "text": "<p>This college jewelry collection is made from paint fallen directly from campus rocks at universities and colleges.  </p>"
           }
         }
       },
@@ -48,18 +48,11 @@
     "featured_collections_Qb9DXk": {
       "type": "featured-collections",
       "blocks": {
-        "collection_AXMz8J": {
-          "type": "collection",
-          "settings": {
-            "collection": "campus-rocks",
-            "title": ""
-          }
-        },
         "collection_VXRV9d": {
           "type": "collection",
           "settings": {
             "collection": "albion-college-campus-rock",
-            "title": ""
+            "title": "Shop All Albion College Jewelry & Gifts"
           }
         },
         "collection_ebnndQ": {
@@ -80,16 +73,24 @@
           "type": "collection",
           "settings": {
             "collection": "wayne-state-campus-rock",
-            "title": ""
+            "title": "Shop All Wayne State Jewelry & Gifts"
+          }
+        },
+        "collection_AXMz8J": {
+          "type": "collection",
+          "name": "Shop All Campus Rocks Collection",
+          "settings": {
+            "collection": "campus-rocks",
+            "title": "Shop All Campus Rocks"
           }
         }
       },
       "block_order": [
-        "collection_AXMz8J",
         "collection_VXRV9d",
         "collection_ebnndQ",
         "collection_467ebr",
-        "collection_bX86cX"
+        "collection_bX86cX",
+        "collection_AXMz8J"
       ],
       "name": "t:sections.featured-collections.presets.collection_list.name",
       "settings": {
@@ -98,11 +99,35 @@
         "heading_position": "left",
         "divider": false
       }
+    },
+    "rich_text_VkgyVR": {
+      "type": "rich-text",
+      "blocks": {
+        "text_deBnPd": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><br/>Campus rocks have always been a place for protest, celebration, and expression, and that history is literally layered into every piece. The colors and patterns in each item come straight from the rock itself, so what you're wearing is a small fragment of your school's story. Each university has its own collection, and because the paint builds up differently on every rock, no two pieces from any school are exactly alike. Whether you're shopping for a university item, graduation, gift for a student, alumni, or superfan, these pieces carry real meaning. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_deBnPd"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "main",
     "rich_text_xJMqFG",
-    "featured_collections_Qb9DXk"
+    "featured_collections_Qb9DXk",
+    "rich_text_VkgyVR"
   ]
 }

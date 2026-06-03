@@ -11,6 +11,10 @@
   "type": "footer",
   "name": "t:sections.footer-group.name",
   "sections": {
+    "blocks_QM9GJ7": {
+      "type": "_blocks",
+      "settings": {}
+    },
     "footer-promotions": {
       "type": "footer-promotions",
       "blocks": {
@@ -159,6 +163,7 @@
     }
   },
   "order": [
+    "blocks_QM9GJ7",
     "footer-promotions",
     "footer"
   ]

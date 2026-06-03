@@ -1,0 +1,21 @@
+{% comment %}
+  Auto-add/remove Mystery Box when cart subtotal (excluding the gift) reaches $150.
+{% endcomment %}
+{%- assign mystery_box_product = all_products['mystery-box'] -%}
+{%- if mystery_box_product != blank -%}
+  {%- assign mystery_box_variant = mystery_box_product.selected_or_first_available_variant -%}
+  {%- if mystery_box_variant != blank -%}
+    <script>
+      window.theme = window.theme || {};
+      theme.mysteryBoxGift = {
+        enabled: true,
+        variantId: {{ mystery_box_variant.id | json }},
+        productHandle: {{ mystery_box_product.handle | json }},
+        thresholdCents: 15000
+      };
+    </script>
+    <script type="module">
+      import 'components/mystery-box-gift';
+    </script>
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,65 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Join our team",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<h5><strong>Part-Time Sales Associate</strong> </h5><p>📍 Parker's Alley  & Eastern Market</p><p>Starting at $15 depending on experience | Part-Time, Hourly Non-Exempt</p><p><strong>What You'll Do</strong></p><p>Sell, style, and connect with customers as a brand ambassador, both in-store and at community events. Support day-to-day store operations including POS and inventory.</p><p><strong>What We're Looking For</strong></p><p>18+, dependable, and a team player. Retail experience is a plus but not required. Most importantly, you're passionate about Rebel Nell's mission.</p><p></p><p><strong>We encourage everyone to apply — even if you don't meet every qualification!</strong></p><p>To apply, use the contact form below or email <a href=\"mailto:kim.blair@rebelnell.com\" target=\"_blank\">kim.blair@rebelnell.com</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact us",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "text": "",
+        "show_phone": false,
+        "narrow_column": true,
+        "color_scheme": "1"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich-text",
+    "form"
+  ]
+}

@@ -43,7 +43,7 @@
         "heading_ccnJPt": {
           "type": "heading",
           "settings": {
-            "title": "Valentine's Day Gift Guide",
+            "title": "Shop Unique Valentine's Day Gifts & Jewelry",
             "heading_size": "h1"
           }
         },
@@ -51,7 +51,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<p>At Rebel Nell, we believe in the power of unique gifts to tell your story. Every piece is handcrafted with love, empowering women and making a positive impact. This Valentine's and Galentine's Day, be the hero of heartfelt gifting. Choose Rebel Nell to express your one-of-a-kind love and friendship. Explore our full collection and find the perfect piece that celebrates love and friendship with gifts as unique as your story.</p>"
+            "text": "<p>Our Valentine's Day jewelry gifts collection covers necklaces, earrings, rings, and bracelets handmade from reclaimed materials and finished in sterling silver or gold plated bezels. <br/></p>"
           }
         }
       },
@@ -60,6 +60,7 @@
         "text_JrRE6y"
       ],
       "settings": {
+        "custom_class_btn": "",
         "align_text": "center",
         "narrow_column": true,
         "color_scheme": "none",
@@ -110,12 +111,36 @@
         "heading_position": "left",
         "divider": false
       }
+    },
+    "rich_text_Kni6iB": {
+      "type": "rich-text",
+      "blocks": {
+        "text_74MVFa": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Whether you're shopping for a partner, a best friend, a Galentine, or yourself, you'll find unique Valentine's Day gifts that feel personal without leaning into the usual hearts-and-roses cliches. Because every piece is set with a one-of-a-kind fragment of source material, the gift you give literally cannot be matched by anyone else, which is what makes it feel right for the people who matter most. Browse our full unique jewelry collection for more reclaimed pieces with the same craft behind them.</p><p><strong>Rebel Nell was founded in Detroit in 2013 to put real craft and meaning behind every piece we make. </strong>Our Creative Designers, women employed through our workforce program, are the hands behind every piece, so each one carries both the history of its material and a story of opportunity along with it. Read more about <a href=\"https://www.rebelnell.com/pages/our-story\" title=\"https://www.rebelnell.com/pages/our-story\">Rebel Nell's story</a> and read our <a href=\"https://www.rebelnell.com/pages/reviews-1\" title=\"https://www.rebelnell.com/pages/reviews-1\">customer reviews</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_74MVFa"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "main",
     "slideshow_image_JiifY4",
     "rich_text_LgPpjG",
-    "featured_collections_QN7BVR"
+    "featured_collections_QN7BVR",
+    "rich_text_Kni6iB"
   ]
 }

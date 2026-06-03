@@ -11,7 +11,6 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {}
     },
     "featured_collection_fMFFVh": {
@@ -185,11 +184,35 @@
         "heading_position": "left",
         "divider": false
       }
+    },
+    "rich_text_Ltpewd": {
+      "type": "rich-text",
+      "blocks": {
+        "text_hB4pRR": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Rebel Nell's necklaces are made from repurposed graffiti, others from fragments of iconic landmarks, fan-favorite sports collaborations, or college campus rocks, so every necklace stands on its own</strong>. That mix of style and meaning is what turns our necklace gifts into something more than jewelry, whether you're picking one out for yourself or for someone who deserves a piece they won't see on anyone else. Browse the rest of our <a href=\"https://www.rebelnell.com/pages/products\" title=\"shop all jewelry\">unique jewelry collection</a> for more reclaimed pieces with the same craft behind them.</p><p><strong>Rebel Nell was founded in Detroit in 2013 to give every piece we make a deeper purpose. </strong>Our Creative Designers, women employed through our workforce program, are the hands behind every necklace, so each one carries the history of its material and a story of opportunity right along with it. You can read <a href=\"https://www.rebelnell.com/pages/our-story\" title=\"read rebel nell's story\">Rebel Nell's story</a> and our <a href=\"https://www.rebelnell.com/pages/reviews-1\" title=\"read our reviews\">customer reviews</a>. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_hB4pRR"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "main",
     "featured_collection_fMFFVh",
-    "featured_collections_wiNFEq"
+    "featured_collections_wiNFEq",
+    "rich_text_Ltpewd"
   ]
 }

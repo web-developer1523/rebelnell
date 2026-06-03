@@ -50,7 +50,7 @@
         "heading_6bg6Ax": {
           "type": "heading",
           "settings": {
-            "title": "Hudson's Collaboration",
+            "title": "Shop Hudson's Jewelry & Gifts",
             "heading_size": "h2"
           }
         },
@@ -58,7 +58,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Hudson’s wasn’t just a store — it was the place Detroit came to celebrate, connect, and make memories. Once the second-largest department store in the world, its holiday windows, parades, and grand scale shaped generations. We’ve repurposed Hudson’s iconic green-and-gold retail bags into jewelry that keeps that spirit alive. A piece of Detroit’s history, reimagined for today. </p>"
+            "text": "<p>This Hudson's Detroit jewelry collection is made from the iconic green-and-gold retail bags that once carried purchases home from one of Detroit's most beloved department stores.</p>"
           }
         }
       },
@@ -158,12 +158,36 @@
         "heading_position": "left",
         "divider": false
       }
+    },
+    "rich_text_ePWPzj": {
+      "type": "rich-text",
+      "blocks": {
+        "text_GPiGR7": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Every necklace, keychain, earring, and more is handcrafted from that original material, with gold leaf added to each piece to bring out the richness of the source. Hudson's on Woodward Avenue was a cornerstone of Detroit life for generations, and these pieces are a way to hold onto that connection in something you can wear every day. If you're shopping for a Detroit gift for someone with roots in the city, this collection hits differently.</p><p><strong>Rebel Nell has been handcrafting meaningful jewelry in Detroit since 2013. </strong>Every piece is made by our Creative Designers, women employed through our workforce development program. So your purchase supports both a one-of-a-kind piece of Detroit history and women building better futures right here in the city. Learn more <a href=\"https://www.rebelnell.com/pages/our-story\" title=\"our story\">about our story</a> and read <a href=\"https://www.rebelnell.com/pages/reviews-1\" title=\"reviews\">our customer reviews.</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_GPiGR7"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "custom_class_btn": "",
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "promo-grid",
     "rich_text_zAbLD6",
     "main-collection",
-    "featured_collections_DYqaea"
+    "featured_collections_DYqaea",
+    "rich_text_ePWPzj"
   ]
 }
