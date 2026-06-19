@@ -106,7 +106,13 @@
                         .slideshow__slide--{{ block.id }} .hero__title p {
                           font-size: {{ block.settings.title_size }}px;
                         }
-                      }
+                      }.hero__title {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  }
+  .hero__top-subtitle,
+  .hero__subtitle {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  }
 
                       {%- assign button_alpha = block.settings.color_accent | color_extract: 'alpha' -%}
                       {% unless button_alpha == 0.0 %}

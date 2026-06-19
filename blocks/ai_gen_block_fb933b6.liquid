@@ -1,0 +1,422 @@
+{% doc %}
+  @prompt
+    Rich text editor. Free control over layout, font size, spacing, color, and background color.
+    
+{% enddoc %}
+{% liquid
+  assign width_class = 'rich-text-editor--medium'
+  case block.settings.width
+    when 'narrow'
+      assign width_class = 'rich-text-editor--narrow'
+    when 'medium'
+      assign width_class = 'rich-text-editor--medium'
+    when 'wide'
+      assign width_class = 'rich-text-editor--wide'
+    when 'full'
+      assign width_class = 'rich-text-editor--full'
+  endcase
+%}
+
+<div class="rich-text-editor {{ width_class }}" {{ block.shopify_attributes }}>
+  <div class="rich-text-editor__content">
+    {{ block.settings.content }}
+  </div>
+</div>
+
+<style>
+  .rich-text-editor {
+    margin-top: {{ block.settings.margin_top }}px;
+    margin-bottom: {{ block.settings.margin_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+    {% if block.settings.enable_border %}
+      border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    {% endif %}
+    border-radius: {{ block.settings.border_radius }}px;
+    {% if block.settings.enable_shadow %}
+      box-shadow: 0 4px 20px rgba(0, 0, 0, {{ block.settings.shadow_opacity | divided_by: 100.0 }});
+    {% endif %}
+  }
+
+  .rich-text-editor__content {
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_right }}px {{ block.settings.padding_bottom }}px {{ block.settings.padding_left }}px;
+    font-size: {{ block.settings.font_size }}px;
+    line-height: {{ block.settings.line_height }};
+    letter-spacing: {{ block.settings.letter_spacing }}px;
+    font-weight: {{ block.settings.font_weight }};
+    color: {{ block.settings.text_color }};
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .rich-text-editor--narrow .rich-text-editor__content {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rich-text-editor--medium .rich-text-editor__content {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rich-text-editor--wide .rich-text-editor__content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rich-text-editor--full .rich-text-editor__content {
+    max-width: 100%;
+  }
+
+  .rich-text-editor__content a {
+    color: {{ block.settings.link_color }};
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  .rich-text-editor__content a:hover {
+    color: {{ block.settings.link_hover_color }};
+  }
+
+  .rich-text-editor__content h1,
+  .rich-text-editor__content h2,
+  .rich-text-editor__content h3,
+  .rich-text-editor__content h4,
+  .rich-text-editor__content h5,
+  .rich-text-editor__content h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    font-weight: {{ block.settings.font_weight }};
+  }
+
+  .rich-text-editor__content h1:first-child,
+  .rich-text-editor__content h2:first-child,
+  .rich-text-editor__content h3:first-child,
+  .rich-text-editor__content h4:first-child,
+  .rich-text-editor__content h5:first-child,
+  .rich-text-editor__content h6:first-child,
+  .rich-text-editor__content p:first-child {
+    margin-top: 0;
+  }
+
+  .rich-text-editor__content p {
+    margin-bottom: 1em;
+  }
+
+  .rich-text-editor__content ul,
+  .rich-text-editor__content ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+  }
+
+  .rich-text-editor__content li {
+    margin-bottom: 0.5em;
+  }
+
+  .rich-text-editor__content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .rich-text-editor__content blockquote {
+    border-left: 4px solid {{ block.settings.link_color }};
+    padding-left: 1.5em;
+    margin: 1.5em 0;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  .rich-text-editor__content strong,
+  .rich-text-editor__content b {
+    font-weight: 700;
+  }
+
+  .rich-text-editor__content em,
+  .rich-text-editor__content i {
+    font-style: italic;
+  }
+
+  @media screen and (max-width: 768px) {
+    .rich-text-editor__content {
+      font-size: calc({{ block.settings.font_size }}px * 0.9);
+      padding: {{ block.settings.padding_top | times: 0.6 }}px {{ block.settings.padding_right | times: 0.6 }}px {{ block.settings.padding_bottom | times: 0.6 }}px {{ block.settings.padding_left | times: 0.6 }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Rich Text Editor",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Text Content",
+      "default": "<p>Add your custom content here. You have complete control over formatting, layout, and styling.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Content Width",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "Narrow (600px)"
+        },
+        {
+          "value": "medium",
+          "label": "Medium (900px)"
+        },
+        {
+          "value": "wide",
+          "label": "Wide (1200px)"
+        },
+        {
+          "value": "full",
+          "label": "Full Width"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "justify",
+          "label": "Justify"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "min": 1,
+      "max": 3,
+      "step": 0.1,
+      "label": "Line Height",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "min": -2,
+      "max": 5,
+      "step": 0.1,
+      "unit": "px",
+      "label": "Letter Spacing",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font Weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Left",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Right",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link Color",
+      "default": "#c81688"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link Hover Color",
+      "default": "#a01370"
+    },
+    {
+      "type": "header",
+      "content": "Advanced Styling"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Radius",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_border",
+      "label": "Enable Border",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#eef0f6"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Width",
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_shadow",
+      "label": "Enable Shadow",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Shadow Opacity",
+      "default": 20
+    }
+  ]
+}
+{% endschema %}

@@ -24,7 +24,7 @@
         "subtitle": "96 Monroe Center St NW, Grand Rapids, MI 49503",
         "title": "Grand Rapids",
         "heading_size": "h2",
-        "text": "<p>Visit our Grand Rapids store to shop unique jewelry and gifts made from reclaimed Grand Rapids graffiti and other meaningful local materials. Our space is also available for private events—from creative team-building workshops to corporate fundraisers and community celebrations. Discover jewelry with purpose, crafted in Grand Rapids and made to inspire connection, creativity, and impact.<br/><br/>Mon.-Sat. 11-6<br/>Sun 11-4</p>",
+        "text": "<p>Visit our Grand Rapids store to shop unique jewelry and gifts made from reclaimed Grand Rapids graffiti and other meaningful local materials. Our space is also available for private events—from creative team-building workshops to corporate fundraisers and community celebrations. Discover jewelry with purpose, crafted in Grand Rapids and made to inspire connection, creativity, and impact.</p><p>Tue. - Sat. 11:00am - 6:00pm<br/>Sunday 11:00pm - 4:00pm</p><p>Monday appointments only.</p><p></p><p></p>",
         "button_label": "GET DIRECTIONS",
         "button_link": "https://maps.app.goo.gl/T4QQDG7dpEkh4bH87",
         "button_style": "primary",
@@ -83,36 +83,12 @@
         "bottom_padding": true,
         "lazyload_images": true
       }
-    },
-    "text_and_image_QKQNQg": {
-      "type": "text-and-image",
-      "settings": {
-        "image": "shopify://shop_images/Airport_Store.jpg",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "EVANS TERMINAL | SUITE 2-5A DETROIT, MI 48242",
-        "title": "Detroit Metro Airport",
-        "heading_size": "h2",
-        "text": "<p>Stop by our new Detroit Airport store and discover a unique piece of Detroit's history to take home with you. Our selection of ready-to-wear jewelry and gifts are crafted from fallen graffiti and iconic Detroit locations like Comerica Park, Belle Isle Conservatory, and Joe Louis Arena. Perfect for last-minute gifts or a special keepsake, Rebel Nell now makes it easy to bring home a piece of the Motor City before you catch your flight!</p><p>Mon. - Sun. 7:00am - 8:00pm</p>",
-        "button_label": "Get Directions",
-        "button_link": "https://www.rebelnell.com/pages/rebel-nell-dtw",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "left",
-        "color_scheme": "none",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true,
-        "lazyload_images": true
-      }
     }
   },
   "order": [
     "main",
     "text_and_image_9gtdrB",
     "text_and_image_VWFPGW",
-    "text_and_image_YcxriN",
-    "text_and_image_QKQNQg"
+    "text_and_image_YcxriN"
   ]
 }

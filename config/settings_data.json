@@ -30,7 +30,7 @@
     "color_footer_text": "#111111",
     "color_scheme_1_bg": "#c81688",
     "color_scheme_1_text": "#ffffff",
-    "color_scheme_1_texture": "marble.jpg",
+    "color_scheme_1_texture": "none",
     "color_scheme_2_bg": "#eef0f6",
     "color_scheme_2_text": "#000000",
     "color_scheme_2_texture": "paper.jpg",
@@ -2312,12 +2312,15 @@
       ".btn.btn--secondary.btn--small {border-color: #c81688; color: #310654;}",
       ".variant__button-label.disabled {display: none;}",
       ".add-to-cart.btn--secondary {border: 3px solid rgb(200, 22, 136); color: rgb(200, 22, 136);}",
-      "@media (min-width: 750px) {h2[class*=\"ai-featured-collection-hero-title\"] {position: relative; top: -65px; }}",
+      "@media (min-width: 750px) {h2[class*=\"ai-featured-collection-hero-title\"] {position: relative; top: 0px; }}",
       "@media (max-width: 749px) {h2[class*=\"ai-featured-collection-hero-title\"] {position: relative; top: +10px; } @media (min-width: 750px) {div[class*=\"ai-featured-collection-hero-content\"] {bottom: 60px !important; } } @media (max-width: 749px) {div[class*=\"ai-featured-collection-hero-description\"] {position: relative; top: -0px; } }}",
       "@media (min-width: 750px) {h2[class*=\"ai-featured-collection-hero-title\"] {font-size: 40px !important; }}",
       "@media (max-width: 749px) {h2[class*=\"ai-featured-collection-hero-title\"] {font-size: 26px !important; }}",
       "@media (min-width: 750px) {div[class*=\"ai-featured-collection-hero-description\"] {font-size: 25px !important; }}",
-      "@media (max-width: 749px) {div[class*=\"ai-featured-collection-hero-description\"] {font-size: 14px !important; }}"
+      "@media (max-width: 749px) {div[class*=\"ai-featured-collection-hero-description\"] {font-size: 14px !important; }}",
+      ".toolbar {background-color: #ffffff !important; color: #000000 !important;}",
+      ".toolbar * {color: #000000 !important; fill: #000000 !important;}",
+      ".featured-collection .grid--4-col-desktop {grid-template-columns: repeat(3, 1fr) !important;}"
     ]
   }
 }

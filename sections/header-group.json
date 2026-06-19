@@ -24,8 +24,8 @@
         "announcement_d3f4DR": {
           "type": "announcement",
           "settings": {
-            "richtext": "<p><a href=\"https://www.rebelnell.com/products/mystery-box?_pos=1&_sid=2b39a5c47&_ss=r&view=sl-B2073E4C\" title=\"https://www.rebelnell.com/products/mystery-box?_pos=1&_sid=2b39a5c47&_ss=r&view=sl-B2073E4C\">🎁 Spend $150+, Get a Free Mystery Box! Detroit history in every box. Add to cart now →</a></p>",
-            "richtext_mobile": "<p><a href=\"https://www.rebelnell.com/products/mystery-box?_pos=1&_sid=2b39a5c47&_ss=r&view=sl-B2073E4C\" title=\"https://www.rebelnell.com/products/mystery-box?_pos=1&_sid=2b39a5c47&_ss=r&view=sl-B2073E4C\">🎁 Spend $150+, Get a Free Mystery Box! Add to cart now →</a></p>"
+            "richtext": "<p><a href=\"https://www.rebelnell.com/pages/fathers-day-gift-guide\" title=\"https://www.rebelnell.com/pages/fathers-day-gift-guide\">Find the perfect gift for Dad. Use code <strong>DAD15</strong> for 15% off the Father's Day collection. Offer ends June 21.</a></p>",
+            "richtext_mobile": "<p><a href=\"https://www.rebelnell.com/pages/fathers-day-gift-guide\" title=\"https://www.rebelnell.com/pages/fathers-day-gift-guide\">Use code <strong>DAD15</strong> for 15% off the Father's Day collection. Offer ends June 21.</a></p>"
           }
         },
         "announcement_mgFb4U": {
@@ -78,6 +78,7 @@
     },
     "scrolling_text_Y4VHk7": {
       "type": "scrolling-text",
+      "disabled": true,
       "settings": {
         "text": "🎁 Free Gift Alert! Spend $150 or more and get a FREE Mystery Box 🎁 Filled with a surprise piece of Detroit history! Add it to your cart before checkout. Offer ends June 15. →",
         "link": "https://www.rebelnell.com/products/mystery-box?_pos=1&_sid=2b39a5c47&_ss=r&view=sl-B2073E4C",

@@ -11,6 +11,58 @@
   "sections": {
     "main": {
       "type": "main-page-full-width",
+      "disabled": true,
+      "settings": {}
+    },
+    "1781555262c2efaf42": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_bbb866e_GgdpCW": {
+          "type": "ai_gen_block_bbb866e",
+          "settings": {
+            "collection": "fathers-day",
+            "collection_image": "shopify://shop_images/DSC04372_websize.jpg",
+            "image_height": 500,
+            "mobile_image_height": 200,
+            "desktop_width_percent": 100,
+            "title": "Shop Father's Day Gifts & Jewelry",
+            "description": "Dad deserves the best. Use code: DAD15 for 15% off our Father's Day collection, June 16–21",
+            "vertical_position": "bottom",
+            "content_vertical_offset": 40,
+            "mobile_content_vertical_offset": 30,
+            "text_alignment": "center",
+            "content_horizontal_padding": 50,
+            "mobile_content_horizontal_padding": 20,
+            "content_gap": 16,
+            "mobile_content_gap": 8,
+            "title_size": 32,
+            "mobile_title_size": 18,
+            "title_line_height": 1,
+            "title_max_width": 1000,
+            "description_size": 20,
+            "mobile_description_size": 13,
+            "description_line_height": 1.2,
+            "description_max_width": 750,
+            "button_text": "Shop All",
+            "button_link": "",
+            "button_text_size": 17,
+            "button_padding_vertical": 8,
+            "button_padding_horizontal": 20,
+            "button_border_radius": 2,
+            "button_bg_color": "#c81688",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#000000",
+            "button_hover_text_color": "#ffffff",
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.3
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_bbb866e_GgdpCW"
+      ],
       "settings": {}
     },
     "slideshow_image_JiifY4": {
@@ -18,15 +70,18 @@
       "blocks": {
         "image_4NCFTj": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "link": "",
-            "image": "shopify://shop_images/Father_s_Day_Gift_Guide_1.jpg"
+            "image": "shopify://shop_images/DSC04372_websize.jpg",
+            "image_mobile": "shopify://shop_images/DSC04372_websize.jpg"
           }
         }
       },
       "block_order": [
         "image_4NCFTj"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "style": "arrows",
@@ -40,6 +95,7 @@
       "blocks": {
         "heading_ccnJPt": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "title": "Father's Day Gift Guide",
             "heading_size": "h1"
@@ -63,8 +119,8 @@
         "collection_JAA6Y3": {
           "type": "collection",
           "settings": {
-            "collection": "antonio-cuff-links-square",
-            "title": "Cuff Links"
+            "collection": "bottle-stopper",
+            "title": "Bottle Stopper"
           }
         },
         "collection_nCjt9N": {
@@ -78,13 +134,6 @@
           "type": "collection",
           "settings": {
             "collection": "carl-bracelet",
-            "title": ""
-          }
-        },
-        "collection_WMDYD9": {
-          "type": "collection",
-          "settings": {
-            "collection": "jayson-dog-tag",
             "title": ""
           }
         },
@@ -105,8 +154,8 @@
         "collection_wj6BWV": {
           "type": "collection",
           "settings": {
-            "collection": "bottle-stopper",
-            "title": ""
+            "collection": "antonio-cuff-links-square",
+            "title": "Cuff Links"
           }
         },
         "collection_FgVtmW": {
@@ -115,17 +164,40 @@
             "collection": "design-your-own-jewelry",
             "title": ""
           }
+        },
+        "collection_AhmCJW": {
+          "type": "collection",
+          "settings": {
+            "collection": "tigers-fathers-day",
+            "title": "Comerica Park"
+          }
+        },
+        "collection_LrdGRW": {
+          "type": "collection",
+          "settings": {
+            "collection": "lions-fathers-day",
+            "title": "Lions"
+          }
+        },
+        "collection_ygLYGb": {
+          "type": "collection",
+          "settings": {
+            "collection": "shop-joe-louis-arena-fathers-day-gifts",
+            "title": "Joe Louis Arena"
+          }
         }
       },
       "block_order": [
         "collection_JAA6Y3",
         "collection_nCjt9N",
         "collection_eMMFta",
-        "collection_WMDYD9",
         "collection_gd6rb8",
         "collection_DyQVV3",
         "collection_wj6BWV",
-        "collection_FgVtmW"
+        "collection_FgVtmW",
+        "collection_AhmCJW",
+        "collection_LrdGRW",
+        "collection_ygLYGb"
       ],
       "settings": {
         "title": "",
@@ -160,6 +232,7 @@
   },
   "order": [
     "main",
+    "1781555262c2efaf42",
     "slideshow_image_JiifY4",
     "rich_text_LgPpjG",
     "featured_collections_QN7BVR",

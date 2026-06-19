@@ -9,43 +9,82 @@
  */
 {
   "sections": {
+    "17818093579f4aac13": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_fb933b6_jCMVTm": {
+          "type": "ai_gen_block_fb933b6",
+          "settings": {
+            "content": "<h5><strong>📍 Parker's Alley  & Eastern Market</strong></h5><h5><em><strong>Part-Time Sales Associate </strong></em></h5><p>Starting at $15 depending on experience | Part-Time, Hourly Non-Exempt</p><p><strong>What You'll Do: </strong>Sell, style, and connect with customers as a brand ambassador, both in-store and at community events. Support day-to-day store operations including POS and inventory.</p><p><strong>What We're Looking For: </strong>18+, dependable, and a team player. Retail experience is a plus but not required. Most importantly, you're passionate about Rebel Nell's mission.</p><p><strong>We encourage everyone to apply , even if you don't meet every qualification!</strong></p><p>To apply, please email <a href=\"mailto:kim.blair@rebelnell.com\" target=\"_blank\">kim.blair@rebelnell.com</a></p>",
+            "width": "full",
+            "text_alignment": "left",
+            "font_size": 13,
+            "line_height": 1.2,
+            "letter_spacing": -0.1,
+            "font_weight": "300",
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "padding_left": 20,
+            "padding_right": 20,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "text_color": "#000000",
+            "background_color": "#ffffff",
+            "link_color": "#c81688",
+            "link_hover_color": "#a01370",
+            "border_radius": 0,
+            "enable_border": false,
+            "border_color": "#eef0f6",
+            "border_width": 1,
+            "enable_shadow": false,
+            "shadow_opacity": 20
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_fb933b6_9renbe": {
+          "type": "ai_gen_block_fb933b6",
+          "settings": {
+            "content": "<h5><strong>📍 </strong>96 Monroe Center St NW, Grand Rapids, MI 49503</h5><h5><em><strong>Part-Time Sales Associate </strong></em></h5><p>Starting at $15 depending on experience | Part-Time, Hourly Non-Exempt</p><p><strong>What You'll Do: </strong>Sell, style, and connect with customers as a brand ambassador, both in-store and at community events. Support day-to-day store operations including POS and inventory.</p><p><strong>What We're Looking For: </strong>18+, dependable, and a team player. Retail experience is a plus but not required. Most importantly, you're passionate about Rebel Nell's mission.</p><p><strong>We encourage everyone to apply , even if you don't meet every qualification!</strong></p><p>To apply, please email <a href=\"mailto:kim.blair@rebelnell.com\" target=\"_blank\">kim.blair@rebelnell.com</a></p>",
+            "width": "full",
+            "text_alignment": "left",
+            "font_size": 13,
+            "line_height": 1.2,
+            "letter_spacing": -0.1,
+            "font_weight": "300",
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "padding_left": 20,
+            "padding_right": 20,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "text_color": "#000000",
+            "background_color": "#ffffff",
+            "link_color": "#c81688",
+            "link_hover_color": "#a01370",
+            "border_radius": 0,
+            "enable_border": false,
+            "border_color": "#eef0f6",
+            "border_width": 1,
+            "enable_shadow": false,
+            "shadow_opacity": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_fb933b6_jCMVTm",
+        "ai_gen_block_fb933b6_9renbe"
+      ],
+      "settings": {}
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
       "settings": {}
     },
-    "rich-text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "Join our team",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": false,
-            "text": "<h5><strong>Part-Time Sales Associate</strong> </h5><p>📍 Parker's Alley  & Eastern Market</p><p>Starting at $15 depending on experience | Part-Time, Hourly Non-Exempt</p><p><strong>What You'll Do</strong></p><p>Sell, style, and connect with customers as a brand ambassador, both in-store and at community events. Support day-to-day store operations including POS and inventory.</p><p><strong>What We're Looking For</strong></p><p>18+, dependable, and a team player. Retail experience is a plus but not required. Most importantly, you're passionate about Rebel Nell's mission.</p><p></p><p><strong>We encourage everyone to apply — even if you don't meet every qualification!</strong></p><p>To apply, use the contact form below or email <a href=\"mailto:kim.blair@rebelnell.com\" target=\"_blank\">kim.blair@rebelnell.com</a></p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "custom_class_btn": "",
-        "align_text": "center",
-        "narrow_column": true,
-        "color_scheme": "none",
-        "divider": false
-      }
-    },
     "form": {
       "type": "contact-form",
+      "disabled": true,
       "settings": {
         "title": "Contact us",
         "heading_size": "h2",
@@ -58,8 +97,8 @@
     }
   },
   "order": [
+    "17818093579f4aac13",
     "main",
-    "rich-text",
     "form"
   ]
 }

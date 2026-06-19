@@ -112,7 +112,7 @@
             {%- render 'price', price: item.original_price, shop: shop, superscript_decimals: superscript_decimals -%}
           </small>
           <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
-          <span class="cart__price cart__discount">
+          <span class="cart__price cart__discount show-discount-line">
             {%- render 'price', price: item.final_price, shop: shop, superscript_decimals: superscript_decimals -%}
           </span>
         {% else %}
