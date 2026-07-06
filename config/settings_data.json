@@ -37,9 +37,9 @@
     "color_scheme_3_bg": "#c81688",
     "color_scheme_3_text": "#ffffff",
     "color_scheme_3_texture": "none",
-    "type_header_font_family": "avenir_next_n6",
+    "type_header_font_family": "arial_n4",
     "type_header_spacing": "25",
-    "type_header_base_size": 35,
+    "type_header_base_size": 39,
     "type_header_line_height": 1.1,
     "type_header_capitalize": false,
     "type_base_font_family": "avenir_next_n4",
@@ -243,14 +243,14 @@
         "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": false,
         "settings": {
+          "greeting_message": "",
           "button_color": "#000000",
           "secondary_color": "#FFFFFF",
           "ternary_color": "#6A6A6A",
           "button_icon": "chat_bubble",
           "button_text": "chat_with_us",
           "button_horizontal_position": "bottom_right",
-          "button_vertical_position": "lowest",
-          "greeting_message": ""
+          "button_vertical_position": "lowest"
         }
       },
       "10967200920248657493": {

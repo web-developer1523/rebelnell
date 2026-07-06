@@ -17,15 +17,8 @@
         "announcement_3VwtxL": {
           "type": "announcement",
           "settings": {
-            "richtext": "<p>Enjoy free standard U.S. shipping on orders over $100</p>",
+            "richtext": "<p>Enjoy free standard U.S. shipping on all orders</p>",
             "richtext_mobile": ""
-          }
-        },
-        "announcement_d3f4DR": {
-          "type": "announcement",
-          "settings": {
-            "richtext": "<p><a href=\"https://www.rebelnell.com/pages/fathers-day-gift-guide\" title=\"https://www.rebelnell.com/pages/fathers-day-gift-guide\">Find the perfect gift for Dad. Use code <strong>DAD15</strong> for 15% off the Father's Day collection. Offer ends June 21.</a></p>",
-            "richtext_mobile": "<p><a href=\"https://www.rebelnell.com/pages/fathers-day-gift-guide\" title=\"https://www.rebelnell.com/pages/fathers-day-gift-guide\">Use code <strong>DAD15</strong> for 15% off the Father's Day collection. Offer ends June 21.</a></p>"
           }
         },
         "announcement_mgFb4U": {
@@ -38,7 +31,6 @@
       },
       "block_order": [
         "announcement_3VwtxL",
-        "announcement_d3f4DR",
         "announcement_mgFb4U"
       ],
       "custom_css": [],
@@ -78,10 +70,9 @@
     },
     "scrolling_text_Y4VHk7": {
       "type": "scrolling-text",
-      "disabled": true,
       "settings": {
-        "text": "🎁 Free Gift Alert! Spend $150 or more and get a FREE Mystery Box 🎁 Filled with a surprise piece of Detroit history! Add it to your cart before checkout. Offer ends June 15. →",
-        "link": "https://www.rebelnell.com/products/mystery-box?_pos=1&_sid=2b39a5c47&_ss=r&view=sl-B2073E4C",
+        "text": "🚚 Free standard U.S. shipping on all orders through July 31.",
+        "link": "",
         "text_size": 20,
         "text_spacing": true,
         "direction": "left",
